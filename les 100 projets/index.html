@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Les 100 – Cookies d'Exception</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" href="logo/logo les100_DEF ROND.png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+</head>
+<body>
+
+<!-- Header fixe avec logo animé -->
+<header>
+  <div class="logo">
+    <a href="index.html">
+      <img src="logo/logo les100_DEF ROND.png" alt="Logo Les 100" />
+    </a>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="#collection">Cookies</a></li>
+      <li><a href="#histoire">Notre Histoire</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<!-- Première section "Les 100" -->
+<section id="hero" class="parallax-container hero">
+  <div class="parallax-bg" style="background-image: url('image/cookie_accueil.png');"></div>
+  <div class="content animate-element fade-up">
+    <img src="logo/logo les100_DEF.png" alt="Logo Les 100" class="hero-logo" />
+    <h1>Les cookies qui ont 100 raisons d'exister</h1>
+    <a href="cookie.html" class="btn">Découvrir la collection</a>
+  </div>
+</section>
+
+<!-- Meilleurs cookies (accroche visuelle) -->
+<section id="incontournables" class="incontournables-section">
+  <h2>Nos incontournables</h2>
+  <div class="incontournables-grid">
+    <div class="cookie-card">
+      <img src="image/COOKIE PNG/Le-11.png" alt="Le 11">
+      <h3>Le 11</h3>
+      <p>Moelleux aux pépites de chocolat</p>
+    </div>
+    <div class="cookie-card">
+      <img src="image/COOKIE PNG/le 06 CHOCO NOCCIOLATA.png" alt="Le 06">
+      <h3>Le 06</h3>
+      <p>Tout choco avec un coeur fondant Nocciolata</p>
+    </div>
+    <div class="cookie-card">
+      <img src="image/COOKIE PNG/le 12 Pistache.png" alt="Le 12">
+      <h3>Le 12</h3>
+      <p>Pépite de chocolat coeur pistache</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="histoire-section">
+  <div class="histoire-container">
+    <div class="histoire-image">
+      <img src="image/chateau.png" alt="Notre histoire">
+    </div>
+    <div class="histoire-content">
+      <h2>Notre histoire</h2>
+      <p>
+        Née d'une passion pour la gourmandise authentique, Les 100 s'engage à créer des cookies généreux, éthiques et inoubliables. Chaque recette est une ode au plaisir et à la sincérité.
+      </p>
+      <a href="notre-histoire.html" class="hero-btn">Découvrir notre univers</a>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- Footer -->
+<footer>
+  <p>© Les 100 – Tous droits réservés</p>
+  <ul>
+    <li><a href="#collection">Cookies</a></li>
+    <li><a href="#histoire">Notre histoire</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</footer>
+
+<!-- Script pour déclencher l'apparition -->
+<script>
+  window.addEventListener("load", () => {
+    document.querySelectorAll('.animate-element').forEach(el => {
+      el.classList.add('active');
+    });
+  });
+</script>
+
+<script src="script.js"></script>
+</body>
+</html>
+

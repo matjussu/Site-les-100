@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Détail cookie</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">  
+  <!-- Préchargement des ressources critiques -->
+  <link rel="preload" href="logo/logo les100_DEF ROND.png" as="image">
+  <link rel="preload" href="image/cookie_accueil.png" as="image">
+  <link rel="preload" href="styles.css" as="style">
+  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" as="style">
+  
+  <!-- Préconnexion aux domaines externes -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+</head>
+<body>
+
+<header>
+  <div class="logo">
+    <a href="index.html"><img src="logo/logo les100_DEF ROND.png" alt="Logo Les 100" /></a>
+  </div>
+  <nav>
+    <ul>
+      <li><a href="cookie.html">Retour à la collection</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="cookie-detail">
+    <div class="cookie-image">
+      <img id="cookie-img" src="" alt="">
+    </div>
+    <div class="cookie-info">
+      <h1 id="cookie-name">Nom du cookie</h1>
+      <p id="cookie-desc">Description</p>
+      
+        <div class="cookie-pricing">
+          <label for="cookie-size">Taille :</label>
+          <select id="cookie-size">
+            <option value="petit">Petit </option>
+            <option value="moyen">Moyen </option>
+            <option value="grand">Grand </option>
+          </select>
+        </div>
+      
+        <p class="prix-dynamique">Prix : <span id="prix-actuel">2,90 €</span></p>
+      
+        <button class="btn-panier">Ajouter au panier</button>
+      </div>    
+    </div>
+  </section>
+  
+
+  <section class="cookie-suggestions">
+    <h2>D'autres cookies à découvrir</h2>
+    <div class="carousel-container">
+      <div class="carousel" id="other-cookies"></div>
+      <button class="carousel-btn prev" id="prevBtn">&#10094;</button>
+      <button class="carousel-btn next" id="nextBtn">&#10095;</button>
+    </div>
+  </section>
+  
+
+<footer>
+  <p>© Les 100 - Tous droits réservés</p>
+</footer>
+
+<script src="cookie-detail.js"></script>
+</body>
+</html>

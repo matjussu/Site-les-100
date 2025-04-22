@@ -13,6 +13,7 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 </head>
 <body>
+  <div id="page-transition"></div>
 
 <!-- Header fixe avec logo animé -->
 <header>
@@ -23,7 +24,7 @@
   </div>
   <nav>
     <ul>
-      <li><a href="#collection">Cookies</a></li>
+      <li><a href="cookie.html">Cookies</a></li>
       <li><a href="#histoire">Notre Histoire</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -33,32 +34,34 @@
 <!-- Première section "Les 100" -->
 <section id="hero" class="parallax-container hero">
   <div class="parallax-bg" style="background-image: url('image/cookie_accueil.png');"></div>
-  <div class="content animate-element fade-up">
-    <img src="logo/logo les100_DEF.png" alt="Logo Les 100" class="hero-logo" />
-    <h1>Les cookies qui ont 100 raisons d'exister</h1>
-    <a href="cookie.html" class="btn">Découvrir la collection</a>
+  <div class="content">
+    <img src="logo/logo les100_DEF.png" alt="Logo Les 100" class="hero-logo animate-element fade-up" />
+    <h1 class="animate-element fade-up">Les cookies qui ont 100 raisons d'exister</h1>
+    <a href="cookie.html" class="btn animate-element fade-up">Découvrir la collection</a>
   </div>
+  
 </section>
 
 <!-- Meilleurs cookies (accroche visuelle) -->
 <section id="incontournables" class="incontournables-section">
   <h2>Nos incontournables</h2>
   <div class="incontournables-grid">
-    <div class="cookie-card">
+    <a href="cookie-detail.html?id=le-11" class="cookie-card">
       <img src="image/COOKIE PNG/Le-11.png" alt="Le 11">
       <h3>Le 11</h3>
       <p>Moelleux aux pépites de chocolat</p>
-    </div>
-    <div class="cookie-card">
+    </a>    
+    <a href="cookie-detail.html?id=le-06" class="cookie-card">
       <img src="image/COOKIE PNG/le 06 CHOCO NOCCIOLATA.png" alt="Le 06">
       <h3>Le 06</h3>
       <p>Tout choco avec un coeur fondant Nocciolata</p>
-    </div>
-    <div class="cookie-card">
+    </a>
+    
+    <a href="cookie-detail.html?id=le-12" class="cookie-card">
       <img src="image/COOKIE PNG/le 12 Pistache.png" alt="Le 12">
       <h3>Le 12</h3>
       <p>Pépite de chocolat coeur pistache</p>
-    </div>
+    </a>    
   </div>
 </section>
 
@@ -89,15 +92,6 @@
     <li><a href="#contact">Contact</a></li>
   </ul>
 </footer>
-
-<!-- Script pour déclencher l'apparition -->
-<script>
-  window.addEventListener("load", () => {
-    document.querySelectorAll('.animate-element').forEach(el => {
-      el.classList.add('active');
-    });
-  });
-</script>
 
 <script src="script.js"></script>
 </body>

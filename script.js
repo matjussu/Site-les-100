@@ -45,13 +45,22 @@ document.addEventListener('DOMContentLoaded', function() {
           }, '-=0.4');
           
           // Animation des éléments de la section principale
-          timeline.fromTo('.animate-element.fade-up', {
+          timeline.from('.animate-element.fade-up', {
             opacity: 0,
             y: 50,
             duration: 0.8,
             stagger: 0.2,
+            delay: 0.2,
             ease: 'power3.out'
           }, '-=0.2');
+
+          setTimeout(() => {
+            document.querySelectorAll('.animate-element.fade-up').forEach(el => {
+              el.classList.add('animate-visible');
+            });
+          }, 1200); // Laisse GSAP finir avant d'ajouter
+          
+
           
           // Configurer le parallaxe
           setupParallax();
@@ -88,14 +97,16 @@ function setupScrollAnimations() {
     if (i > 0) { // Ne pas animer la première section (déjà animée)
       gsap.from(section, {
         opacity: 0,
-        y: 100,
-        duration: 1,
+        y: 30,
+        duration: 0.8,
+        ease: 'power2.out',
         scrollTrigger: {
           trigger: section,
-          start: 'top 80%',
+          start: 'top 85%',
           toggleActions: 'play none none none'
         }
       });
+      
     }
   });
   
@@ -166,18 +177,13 @@ document.querySelectorAll('.btn, .btn-panier').forEach(button => {
 });
 
 // Transitions fluides entre les pages
-document.querySelectorAll('a[href^="cookie"], a[href^="index"]').forEach(link => {
+document.querySelectorAll('a[href$=".html"]:not([href^="#"])').forEach(link => {
   link.addEventListener('click', function(e) {
     const href = this.getAttribute('href');
-    const linkUrl = new URL(href, window.location.href);
-    const currentUrl = window.location.href;
-
-    // Évite d'intercepter les ancres, les liens externes ou les redirections vers la même page
-    if (href.startsWith('#') || href.includes('://') || linkUrl.href === currentUrl) {
-      return;
-    }
-
     e.preventDefault();
+
+    const transition = document.getElementById('page-transition');
+    const logo = document.querySelector('.logo img');
 
     const timeline = gsap.timeline({
       onComplete: () => {
@@ -185,25 +191,37 @@ document.querySelectorAll('a[href^="cookie"], a[href^="index"]').forEach(link =>
       }
     });
 
-    timeline.to('body', {
-      opacity: 0,
-      duration: 0.4,
-      ease: 'power2.inOut'
-    });
+    timeline
+      .to(logo, {
+        rotation: 360,
+        duration: 0.6,
+        ease: 'power2.inOut'
+      }, 0)
+      .to(transition, {
+        opacity: 1,
+        duration: 0.4,
+        ease: 'power1.inOut'
+      }, 0.2);
   });
 });
 
 
 
+
+
 // Restaurer l'opacité du body après la navigation
 window.addEventListener('pageshow', function(event) {
-  if (event.persisted) {
-    gsap.to('body', {
-      opacity: 1,
-      duration: 0.4
-    });
-  }
+  const transition = document.getElementById('page-transition');
+  gsap.fromTo(transition, { opacity: 1 }, {
+    opacity: 0,
+    duration: 0.4,
+    delay: 0.1,
+    onComplete: () => {
+      transition.style.pointerEvents = 'none';
+    }
+  });
 });
+
 
 // Enregistrer le service worker
 if ('serviceWorker' in navigator && location.hostname !== '127.0.0.1') {
@@ -282,8 +300,37 @@ function setupCookieDetailInteractions() {
   }
 }
 
+gsap.utils.toArray('.cookie-card').forEach((card, i) => {
+  gsap.from(card, {
+    opacity: 0,
+    y: 30,
+    duration: 0.6,
+    delay: i * 0.05,
+    ease: 'power2.out',
+    scrollTrigger: {
+      trigger: card,
+      start: 'top 85%',
+      toggleActions: 'play none none none'
+    }
+  });
+});
+
+
 // Appeler la fonction au chargement du DOM
 document.addEventListener('DOMContentLoaded', function() {
   setupCookieDetailInteractions();
   // ... autres fonctions existantes
+
+  window.addEventListener('pageshow', function(event) {
+    const transition = document.getElementById('page-transition');
+    gsap.fromTo(transition, { opacity: 1 }, {
+      opacity: 0,
+      duration: 0.4,
+      delay: 0.1,
+      onComplete: () => {
+        transition.style.pointerEvents = 'none';
+      }
+    });
+  });
+  
 });

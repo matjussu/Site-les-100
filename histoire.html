@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notre histoire - Les 100</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+</head>
+<body>
+    <div id="page-transition"></div>
+    <header>
+        <div class="logo">
+          <a href="index.html">
+            <img src="logo/logo les100_DEF ROND.png" alt="Logo Les 100" />
+          </a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="cookie.html">Cookies</a></li>
+            <li><a href="histoire.html" class="active">Notre Histoire</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+        </nav>
+      </header>
+      
+      <section id="hero-histoire" class="parallax-container">
+        <div class="parallax-bg" style="background-image: url('image/cooks_cacahuètes.png');"></div>
+        <div class="hero-histoire-content">
+          <img src="logo/logo les100_DEF ROND.png" alt="Logo Les 100" class="hero-histoire-logo animate-element fade-up" />
+          <h1 class="animate-element fade-up">Notre Histoire</h1>
+          <p class="hero-tagline animate-element fade-up">Une aventure de partage et de gourmandise</p>
+        </div>
+      </section>
+
+
+    <div class="story-timeline">
+        <div class="timeline-line"></div>
+        
+        <section class="story-section" id="section1">
+            <div class="story-container">
+                <div class="story-icon">
+                    <span>1</span>
+                </div>
+                <div class="story-content">
+                    <p>📍 Tout a commencé avec un besoin.<br>
+                    Mes filles et moi avons des intolérances (🌾❌🥛❌🥚❌) et trouver de bons cookies était une vraie mission...<br>
+                    Alors, j'ai décidé de les créer. 🍪💛</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section" id="section2">
+            <div class="story-container">
+                <div class="story-icon">
+                    <span>2</span>
+                </div>
+                <div class="story-content">
+                    <p>👩‍🧑‍💡 Ce sont elles qui m'ont poussée à aller plus loin...<br>
+                    Parce que personne ne devrait renoncer au plaisir d'un vrai cookie. 😋✨</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section" id="section3">
+            <div class="story-container">
+                <div class="story-icon">
+                    <span>3</span>
+                </div>
+                <div class="story-content">
+                    <p>🔬🧁 J'ai testé, ajusté, recommencé.<br>
+                    Jusqu'à obtenir des cookies gourmands, moelleux, croquants...<br>
+                    Des cookies de partage 💛 que tout le monde peut savourer : intolérants, vegan ou juste gourmands. 🥰🌱🍪</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section" id="section4">
+            <div class="story-container">
+                <div class="story-icon">
+                    <span>4</span>
+                </div>
+                <div class="story-content">
+                    <p>🏡🥜 Tout est fait maison :<br>
+                    Beurre de cacahuètes 🥜, praliné 🌰, beurre de pistaches, lemon curd 🍋<br>
+                    Avec des ingrédients bio autant que possible.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section" id="section5">
+            <div class="story-container">
+                <div class="story-icon">
+                    <span>5</span>
+                </div>
+                <div class="story-content">
+                    <p>🗓️🍂 Des recettes qui suivent les saisons :<br>
+                    🎃 Novembre : cookie courge et épices de Noël<br>
+                    🎄 Décembre : cookie chocolat & écorces d'orange confites maison<br>
+                    🍁 Janvier : sucre d'érable<br>
+                    🍋 Février : citron en clin d'œil à la fête de Menton</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section" id="section6">
+            <div class="story-container">
+                <div class="story-icon">
+                    <span>6</span>
+                </div>
+                <div class="story-content">
+                    <p>🖊️🍪 Mini ou maxi, chacun son cookie !<br>
+                    👉 Mini : pour les petits 👧<br>
+                    👉 Maxi 4-6 parts : anniversaires & fêtes 🎉<br>
+                    👉 Maxi 6-8 parts : encore plus de partage</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="story-section" id="section7">
+            <div class="story-container">
+                <div class="story-icon">
+                    <span>7</span>
+                </div>
+                <div class="story-content">
+                    <p>📢 Sur commande, presque tous les parfums peuvent être adaptés à la taille qui vous convient ✏️❤️</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <section class="our-mission">
+        <div class="mission-container">
+            <h2>💛 Mon objectif</h2>
+            <div class="mission-content">
+                <p>👉 Prouver que se faire plaisir n'a pas de limite.<br>
+                👉 Avec Les 100, le plaisir, c'est avant tout le plaisir de partager. 🥰🍪</p>
+            </div>
+            <div class="cta-container">
+                <a href="cookie.html" class="cta-button">Découvrir nos cookies</a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+            <div class="footer-logo">
+                <img src="logo/logo les100_DEF ROND.png" alt="Les 100">
+            </div>
+            <div class="footer-links">
+                <ul>
+                    <li><a href="index.html">Accueil</a></li>
+                    <li><a href="cookie.html">Les Cookies</a></li>
+                    <li><a href="histoire.html">Notre histoire</a></li>
+                </ul>
+            </div>
+            <p class="copyright">Les 100 &copy; 2025 - Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Enregistrer le plugin ScrollTrigger
+            gsap.registerPlugin(ScrollTrigger);
+            
+            // Forcer l'affichage initial des éléments
+            gsap.set(['.hero-histoire-logo', '.hero-histoire-content h1', '.hero-tagline'], {
+                opacity: 1,
+                y: 0,
+                visibility: 'visible'
+            });
+            
+            // Animation pour le logo
+            gsap.from('.hero-histoire-logo', {
+                opacity: 0,
+                y: 40,
+                duration: 1.2,
+                ease: "power3.out"
+            });
+            
+            // Animation pour le titre
+            gsap.from('.hero-histoire-content h1', {
+                opacity: 0,
+                y: 50,
+                duration: 1.2,
+                delay: 0.2,
+                ease: "power3.out"
+            });
+            
+            // Animation pour le sous-titre
+            gsap.from('.hero-tagline', {
+                opacity: 0,
+                y: 30,
+                duration: 1.2,
+                delay: 0.4,
+                ease: "power3.out"
+            });
+            
+            // Effet parallaxe sur le background
+            gsap.to('#hero-histoire .parallax-bg', {
+                y: (i, target) => ScrollTrigger.maxScroll(window) * 0.3,
+                ease: "none",
+                scrollTrigger: {
+                    start: 0,
+                    end: "max",
+                    invalidateOnRefresh: true,
+                    scrub: 0
+                }
+            });
+            
+            gsap.from('.timeline-line', {
+                scaleY: 0,
+                transformOrigin: "top center",
+                duration: 1.5,
+                ease: "power1.inOut",
+                scrollTrigger: {
+                    trigger: '.story-timeline',
+                    start: "top 80%",
+                    end: "bottom 20%",
+                    scrub: 1
+                }
+            });
+
+            
+            // Animation des sections d'histoire
+            const storySections = document.querySelectorAll('.story-section');
+            storySections.forEach((section, index) => {
+                gsap.from(section, {
+                    opacity: 0,
+                    x: index % 2 === 0 ? -50 : 50,
+                    duration: 0.8,
+                    scrollTrigger: {
+                        trigger: section,
+                        start: "top 80%",
+                        toggleActions: "play none none none"
+                    }
+                });
+                
+                // Animation de la surbrillance pour chaque section
+                ScrollTrigger.create({
+                    trigger: section,
+                    start: "top center",
+                    end: "bottom center",
+                    onEnter: () => {
+                        gsap.to(section.querySelector('.story-icon'), {
+                            scale: 1.1,
+                            background: 'linear-gradient(135deg, #f8660e, #ff8c3a)',
+                            duration: 0.3
+                        });
+                    },
+                    onLeave: () => {
+                        gsap.to(section.querySelector('.story-icon'), {
+                            scale: 1,
+                            background: 'linear-gradient(135deg, #f8660e, #ffa15f)',
+                            duration: 0.3
+                        });
+                    },
+                    onEnterBack: () => {
+                        gsap.to(section.querySelector('.story-icon'), {
+                            scale: 1.1,
+                            background: 'linear-gradient(135deg, #f8660e, #ff8c3a)',
+                            duration: 0.3
+                        });
+                    },
+                    onLeaveBack: () => {
+                        gsap.to(section.querySelector('.story-icon'), {
+                            scale: 1,
+                            background: 'linear-gradient(135deg, #f8660e, #ffa15f)',
+                            duration: 0.3
+                        });
+                    }
+                });
+            });
+            
+            // Animation de la section mission
+            gsap.from('.mission-container', {
+                opacity: 0,
+                y: 50,
+                duration: 1,
+                scrollTrigger: {
+                    trigger: '.our-mission',
+                    start: "top 80%",
+                    toggleActions: "play none none none"
+                }
+            });
+        });
+    </script>
+</body>
+</html>

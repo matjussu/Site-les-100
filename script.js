@@ -4,8 +4,71 @@ gsap.config({
   nullTargetWarn: false
 });
 
-// Animations fluides avec GSAP
+// Variables globales pour synchronisation
+let pageIsReady = false;
+let animationsStarted = false;
+
+// Fonction pour démarrer les animations de façon fluide et synchronisée
+function startPageAnimations() {
+  if (!pageIsReady || animationsStarted) return;
+  animationsStarted = true;
+  
+  // Timeline pour les animations d'entrée
+  const introTimeline = gsap.timeline();
+  
+  // Affiche le contenu d'abord
+  introTimeline.to('#hero .content', {
+    opacity: 1,
+    duration: 0.3,
+    ease: 'power2.out'
+  });
+  
+  // Animations des éléments avec délai progressif
+  const heroElements = document.querySelectorAll('#hero .animate-element');
+  heroElements.forEach((element, index) => {
+    element.style.visibility = 'visible'; // Rend visible avant l'animation
+    
+    // IMPORTANT: utilisation de fromTo pour garantir l'état final
+    introTimeline.fromTo(element, 
+      {
+        opacity: 0,
+        y: 50
+      },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.8,
+        ease: 'power3.out',
+        delay: index * 0.2
+      },
+      index === 0 ? '-=0.2' : '-=0.6'
+    );
+  });
+  
+  // S'assurer que les éléments restent visibles
+  introTimeline.add(() => {
+    heroElements.forEach(element => {
+      gsap.set(element, {
+        opacity: 1,
+        y: 0,
+        visibility: 'visible'
+      });
+    });
+  });
+  
+  // Ajoute la classe page-loaded pour les autres animations
+  document.body.classList.add('page-loaded');
+}
+
+// Document ready
 document.addEventListener('DOMContentLoaded', function() {
+  // Masque le flash de transition
+  const pageTransition = document.getElementById('page-transition');
+  if (pageTransition) {
+    pageTransition.style.opacity = '0';
+    pageTransition.style.visibility = 'hidden';
+  }
+  
   // Loader professionnel avec animation de logo
   function createProfessionalLoader() {
     const loader = document.createElement('div');
@@ -47,7 +110,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   const loader = createProfessionalLoader();
   
-  // Préchargement des images pour éviter les saccades
+  // Préchargement des images
   const images = document.querySelectorAll('img');
   let loadedImages = 0;
   const totalImages = images.length;
@@ -62,17 +125,23 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     if (loadedImages === totalImages) {
-      gsap.to(loader, {
-        opacity: 0,
-        duration: 0.8,
-        delay: 0.5,
-        ease: 'power2.inOut',
-        onComplete: () => {
-          loader.remove();
-          initMainAnimations();
-        }
-      });
+      removeLoaderAndStartAnimations();
     }
+  }
+  
+  function removeLoaderAndStartAnimations() {
+    // Animation de sortie du loader
+    gsap.to(loader, {
+      opacity: 0,
+      duration: 0.6,
+      ease: 'power2.inOut',
+      onComplete: () => {
+        loader.remove();
+        pageIsReady = true;
+        // Attente courte pour s'assurer que le DOM est prêt
+        setTimeout(startPageAnimations, 100);
+      }
+    });
   }
   
   images.forEach(img => {
@@ -84,22 +153,13 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
   
-  // Si aucune image, lancer directement les animations
+  // Si aucune image, lancer après un délai
   if (totalImages === 0) {
-    setTimeout(() => {
-      gsap.to(loader, {
-        opacity: 0,
-        duration: 0.8,
-        onComplete: () => {
-          loader.remove();
-          initMainAnimations();
-        }
-      });
-    }, 1500);
+    setTimeout(removeLoaderAndStartAnimations, 1500);
   }
   
+  // Reste du code (inchangé)...
   function initMainAnimations() {
-    // Parallaxe amélioré avec GSAP
     gsap.registerPlugin(ScrollTrigger);
     
     // Animation du header
@@ -124,8 +184,8 @@ document.addEventListener('DOMContentLoaded', function() {
       lastScroll = currentScroll;
     });
     
-    // Parallaxe sur les sections
-    const parallaxSections = document.querySelectorAll('.parallax-container');
+    // Parallaxe sur les sections (sauf le hero et hero-histoire)
+    const parallaxSections = document.querySelectorAll('.parallax-container:not(#hero):not(#hero-histoire)');
     parallaxSections.forEach(section => {
       const bg = section.querySelector('.parallax-bg');
       if (bg) {
@@ -140,27 +200,6 @@ document.addEventListener('DOMContentLoaded', function() {
           }
         });
       }
-    });
-    
-    // Animations d'entrée des éléments
-    gsap.utils.toArray('.animate-element').forEach(element => {
-      gsap.fromTo(element, 
-        {
-          opacity: 0,
-          y: 50
-        },
-        {
-          opacity: 1,
-          y: 0,
-          duration: 1,
-          ease: 'power3.out',
-          scrollTrigger: {
-            trigger: element,
-            start: 'top 80%',
-            toggleActions: 'play none none none'
-          }
-        }
-      );
     });
     
     // Animation des cartes de cookies
@@ -213,203 +252,74 @@ document.addEventListener('DOMContentLoaded', function() {
       });
     });
     
-    // Timeline animations améliorées
-    const timelineItems = document.querySelectorAll('.story-section');
-    timelineItems.forEach((item, index) => {
-      const tl = gsap.timeline({
-        scrollTrigger: {
-          trigger: item,
-          start: 'top 80%',
-          toggleActions: 'play none none none'
-        }
-      });
-      
-      const direction = index % 2 === 0 ? -100 : 100;
-      
-      tl.from(item.querySelector('.story-container'), {
-        x: direction,
-        opacity: 0,
-        duration: 0.8,
-        ease: 'power3.out'
-      })
-      .from(item.querySelector('.story-icon'), {
-        scale: 0,
-        rotation: -180,
-        duration: 0.6,
-        ease: 'back.out(1.7)'
-      }, '-=0.4')
-      .from(item.querySelector('.story-content'), {
-        opacity: 0,
-        y: 30,
-        duration: 0.6,
-        ease: 'power2.out'
-      }, '-=0.3');
-    });
-    
-    // Transitions de page ultra-fluides
+    // Transitions de page CORRIGÉES
     const pageLinks = document.querySelectorAll('a[href$=".html"]:not([href^="#"])');
     pageLinks.forEach(link => {
       link.addEventListener('click', function(e) {
         e.preventDefault();
         const href = this.getAttribute('href');
+        const transitionElement = document.getElementById('page-transition');
         
-        const tl = gsap.timeline();
-        tl.to('#page-transition', {
-          scaleY: 1,
-          transformOrigin: 'bottom center',
-          duration: 0.5,
-          ease: 'power2.inOut'
-        })
-        .to('.logo img', {
-          rotation: 360,
-          scale: 0.8,
-          duration: 0.5,
-          ease: 'power2.inOut'
-        }, '-=0.5')
-        .to('body', {
-          opacity: 0,
-          duration: 0.2,
-          onComplete: () => {
-            window.location.href = href;
-          }
-        });
-      });
-    });
-    
-    // Animation du bouton panier
-    const btnPanier = document.querySelector('.btn-panier');
-    if (btnPanier) {
-      btnPanier.addEventListener('click', function() {
-        // Animation de particules
-        for (let i = 0; i < 8; i++) {
-          const particle = document.createElement('div');
-          particle.className = 'cart-particle';
-          document.body.appendChild(particle);
+        if (transitionElement) {
+          transitionElement.style.opacity = '1';
+          transitionElement.style.visibility = 'visible';
+          transitionElement.classList.add('active');
           
-          const angle = (i / 8) * Math.PI * 2;
-          const distance = 50 + Math.random() * 50;
+          // Création d'une timeline complète pour la transition
+          const tl = gsap.timeline();
           
-          gsap.set(particle, {
-            x: this.offsetLeft + this.offsetWidth / 2,
-            y: this.offsetTop + this.offsetHeight / 2
-          });
+          // Phase 1: Animation de l'écran de transition et du logo simultanément
+          tl.to(transitionElement, {
+            scaleY: 1,
+            transformOrigin: 'bottom center',
+            duration: 0.6,
+            ease: 'power2.inOut'
+          })
+          .to('.logo img', {
+            rotation: 360,
+            scale: 0.8,
+            duration: 0.6,
+            ease: 'power2.inOut'
+          }, 0) // Le 0 signifie que cette animation démarre en même temps que la précédente
           
-          gsap.to(particle, {
-            x: '+=' + Math.cos(angle) * distance,
-            y: '+=' + Math.sin(angle) * distance,
+          // Phase 2: Fade out du body
+          .to('body', {
             opacity: 0,
-            scale: 0,
-            duration: 0.8,
-            ease: 'power2.out',
-            onComplete: () => particle.remove()
-          });
-        }
-        
-        // Animation du bouton
-        gsap.timeline()
-          .to(this, {
-            scale: 0.95,
-            duration: 0.1
+            duration: 0.3,
+            ease: 'power2.inOut'
           })
-          .to(this, {
-            scale: 1.05,
-            duration: 0.2,
-            ease: 'back.out(2)'
-          })
-          .to(this, {
-            scale: 1,
+          
+          // Phase 3: Attendre un peu pour que l'animation soit bien visible
+          .to({}, {
             duration: 0.2
+          })
+          
+          // Phase 4: Changement de page seulement après que TOUT soit terminé
+          .add(() => {
+            window.location.href = href;
           });
-        
-        // Notification
-        const notification = document.createElement('div');
-        notification.className = 'add-to-cart-notification';
-        notification.innerHTML = `
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M20 6L9 17l-5-5"/>
-          </svg>
-          <span>Ajouté au panier</span>
-        `;
-        document.body.appendChild(notification);
-        
-        gsap.fromTo(notification, 
-          { y: 100, opacity: 0 },
-          { 
-            y: 0, 
-            opacity: 1, 
-            duration: 0.4, 
-            ease: 'back.out(1.7)',
-            onComplete: () => {
-              gsap.to(notification, {
-                y: -100,
-                opacity: 0,
-                duration: 0.4,
-                delay: 2,
-                ease: 'power2.in',
-                onComplete: () => notification.remove()
-              });
-            }
-          }
-        );
+          
+        } else {
+          window.location.href = href;
+        }
       });
-    }
-    
-    // Animation du changement de prix
-    const cookieSize = document.getElementById('cookie-size');
-    if (cookieSize) {
-      cookieSize.addEventListener('change', function() {
-        const prixElement = document.getElementById('prix-actuel');
-        gsap.fromTo(prixElement,
-          { scale: 1.2, color: '#f8660e' },
-          { 
-            scale: 1, 
-            color: '#333', 
-            duration: 0.5, 
-            ease: 'elastic.out(1, 0.5)'
-          }
-        );
-      });
-    }
-    
-    // Scroll indicator animation
-    const scrollIndicator = document.createElement('div');
-    scrollIndicator.className = 'scroll-indicator';
-    scrollIndicator.innerHTML = `
-      <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-        <path d="M12 5v14M19 12l-7 7-7-7"/>
-      </svg>
-    `;
-    const heroSection = document.querySelector('#hero');
-    if (heroSection) {
-      heroSection.appendChild(scrollIndicator);
-      
-      gsap.to(scrollIndicator, {
-        y: 15,
-        duration: 1,
-        repeat: -1,
-        yoyo: true,
-        ease: 'power1.inOut'
-      });
-    }
-  }
-});
-
-// Performance optimization
-window.addEventListener('load', () => {
-  // Lazy loading des images
-  const lazyImages = document.querySelectorAll('img[data-src]');
-  const imageObserver = new IntersectionObserver((entries, observer) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const img = entry.target;
-        img.src = img.dataset.src;
-        img.removeAttribute('data-src');
-        observer.unobserve(img);
-      }
     });
-  });
+  }
   
-  lazyImages.forEach(img => imageObserver.observe(img));
+  // Démarre les animations principales une fois la page prête
+  window.addEventListener('load', () => {
+    if (pageIsReady) {
+      initMainAnimations();
+    } else {
+      // Si le loader est encore visible, attendre qu'il soit terminé
+      const checkReady = setInterval(() => {
+        if (pageIsReady) {
+          clearInterval(checkReady);
+          initMainAnimations();
+        }
+      }, 100);
+    }
+  });
 });
 
 // Fix pour la transition de retour
@@ -418,3 +328,595 @@ window.addEventListener('pageshow', function(event) {
     window.location.reload();
   }
 });
+
+// Gestion de l'effet de scroll pour le header
+document.addEventListener('DOMContentLoaded', function() {
+  const header = document.querySelector('header');
+  
+  function handleScroll() {
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    } else {
+      header.classList.remove('scrolled');
+    }
+  }
+  
+  window.addEventListener('scroll', handleScroll);
+  handleScroll();
+});
+
+// Désactive l'effet parallax sur la section hero de la page d'accueil
+document.addEventListener('DOMContentLoaded', function() {
+  const heroParallax = document.querySelector('#hero .parallax-bg');
+  if (heroParallax) {
+    gsap.set(heroParallax, {
+      clearProps: "all",
+      y: 0,
+      force3D: false,
+      transform: "none"
+    });
+    
+    ScrollTrigger.getAll().forEach(trigger => {
+      if (trigger.trigger && trigger.trigger.id === 'hero') {
+        trigger.kill();
+      }
+    });
+  }
+});
+
+// Ajoutez ceci à la fin de votre fichier script.js
+
+// Menu hamburger pour mobile
+document.addEventListener('DOMContentLoaded', function() {
+  // Créer le bouton hamburger
+  const menuToggle = document.createElement('button');
+  menuToggle.className = 'menu-toggle';
+  menuToggle.setAttribute('aria-label', 'Menu');
+  menuToggle.setAttribute('aria-expanded', 'false');
+  menuToggle.innerHTML = '<span></span><span></span><span></span>';
+  
+  const header = document.querySelector('header');
+  const nav = document.querySelector('nav');
+  const navList = document.querySelector('nav ul');
+  
+  if (header && nav) {
+    nav.parentNode.insertBefore(menuToggle, nav);
+    
+    menuToggle.addEventListener('click', function() {
+      navList.classList.toggle('active');
+      const isExpanded = navList.classList.contains('active');
+      menuToggle.setAttribute('aria-expanded', isExpanded);
+      
+      // Animation du hamburger en X
+      if (isExpanded) {
+        menuToggle.classList.add('active');
+      } else {
+        menuToggle.classList.remove('active');
+      }
+    });
+    
+    // Fermer le menu quand on clique sur un lien
+    navList.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => {
+        navList.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.classList.remove('active');
+      });
+    });
+    
+    // Fermer le menu en cliquant à l'extérieur
+    document.addEventListener('click', function(e) {
+      if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
+        navList.classList.remove('active');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.classList.remove('active');
+      }
+    });
+  }
+});
+
+// Optimisation des images pour mobile
+function optimizeImagesForMobile() {
+  if (window.innerWidth <= 768) {
+    document.querySelectorAll('img').forEach(img => {
+      // Réduire la qualité des images sur mobile pour des performances optimales
+      if (img.src.includes('COOKIE PNG')) {
+        img.loading = 'lazy';
+      }
+    });
+  }
+}
+
+window.addEventListener('load', optimizeImagesForMobile);
+window.addEventListener('resize', optimizeImagesForMobile);
+
+// Ajout de l'icône du panier dans le header
+document.addEventListener('DOMContentLoaded', function() {
+  const nav = document.querySelector('nav ul');
+  if (nav) {
+    const cartLi = document.createElement('li');
+    cartLi.innerHTML = `
+      <a href="#" class="cart-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="9" cy="21" r="1"></circle>
+          <circle cx="20" cy="21" r="1"></circle>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
+        </svg>
+        <span class="cart-count">0</span>
+      </a>
+    `;
+    nav.appendChild(cartLi);
+    
+    document.querySelector('.cart-icon').addEventListener('click', (e) => {
+      e.preventDefault();
+      showCartModal();
+    });
+    
+    updateCartCount();
+  }
+});
+
+// ==========================================
+// COOKIE DU MOIS
+// ==========================================
+
+function initCookieOfTheMonth() {
+const cookieOfTheMonth = {
+  id: "avril",
+  nom: "Avril - Le 69",
+  description: "Un cookie à moitié pepite de chocolat noir et à moitié tout choco. Un régal pour les gourmands !",
+  image: "image/COOKIE PNG/AVRIL.png",
+  featured: true
+};
+
+// Vérifier s'il y a une section hero
+const heroSection = document.querySelector('#hero');
+if (heroSection) {
+  // Ajouter le badge cookie du mois
+  const badge = document.createElement('div');
+  badge.className = 'featured-badge';
+  badge.innerHTML = `
+    <div class="featured-content">
+      <span class="featured-title">Cookie du Mois</span>
+      <span class="featured-name">${cookieOfTheMonth.nom}</span>
+      <a href="cookie-detail.html?id=${cookieOfTheMonth.id}" class="featured-link">Découvrir</a>
+    </div>
+  `;
+  heroSection.appendChild(badge);
+  
+  // Animation d'entrée du badge
+  gsap.from(badge, {
+    x: 100,
+    opacity: 0,
+    duration: 1,
+    delay: 1.5,
+    ease: 'power3.out'
+  });
+}
+
+// Ajouter une bannière promotionnelle sur la page des cookies
+const cookiePage = document.querySelector('.cookies-catalogue');
+if (cookiePage) {
+  const banner = document.createElement('div');
+  banner.className = 'cookie-month-banner';
+  banner.innerHTML = `
+    <div class="banner-content">
+      <div class="banner-text">
+        <h3>Cookie du Mois</h3>
+        <h2>${cookieOfTheMonth.nom}</h2>
+        <p>${cookieOfTheMonth.description}</p>
+        <a href="cookie-detail.html?id=${cookieOfTheMonth.id}" class="banner-btn">Découvrir</a>
+      </div>
+      <div class="banner-image">
+        <img src="${cookieOfTheMonth.image}" alt="${cookieOfTheMonth.nom}">
+      </div>
+    </div>
+  `;
+  
+  cookiePage.insertBefore(banner, cookiePage.firstChild);
+  
+  // Animation de la bannière
+  gsap.from('.banner-content', {
+    y: 50,
+    opacity: 0,
+    duration: 0.8,
+    scrollTrigger: {
+      trigger: '.cookie-month-banner',
+      start: 'top 80%'
+    }
+  });
+}
+
+// Mettre en avant le cookie du mois dans la grille
+const cookieCards = document.querySelectorAll('.cookie-card');
+cookieCards.forEach(card => {
+  if (card.href.includes(cookieOfTheMonth.id)) {
+    card.classList.add('featured-cookie');
+    const ribbon = document.createElement('div');
+    ribbon.className = 'featured-ribbon';
+    ribbon.textContent = 'Cookie du Mois';
+    card.appendChild(ribbon);
+  }
+});
+}
+
+// Appeler la fonction au chargement de la page
+document.addEventListener('DOMContentLoaded', initCookieOfTheMonth);document.addEventListener('DOMContentLoaded', function() {
+  const form = document.getElementById('contact-form');
+  
+  form.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const submitButton = form.querySelector('.submit-button');
+      submitButton.classList.add('loading');
+      submitButton.disabled = true;
+      
+      // Récupération des données du formulaire
+      const formData = {
+          name: document.getElementById('name').value,
+          email: document.getElementById('email').value,
+          subject: document.getElementById('subject').value,
+          message: document.getElementById('message').value
+      };
+      
+      // Simulation d'envoi (remplacez par votre vrai endpoint)
+      setTimeout(() => {
+          // Pour l'instant, nous allons utiliser mailto comme solution temporaire
+          const mailtoLink = `mailto:contact@les100.fr?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
+              `Nom: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+          )}`;
+          
+          window.location.href = mailtoLink;
+          
+          submitButton.classList.remove('loading');
+          submitButton.disabled = false;
+          
+          // Message de confirmation
+          showNotification('Message envoyé !', 'Nous vous répondrons dans les plus brefs délais.');
+          
+          form.reset();
+      }, 1000);
+  });
+  
+  // Animation des champs au focus
+  const formInputs = document.querySelectorAll('.form-group input, .form-group select, .form-group textarea');
+  formInputs.forEach(input => {
+      input.addEventListener('focus', function() {
+          gsap.to(this.parentElement, {
+              y: -2,
+              duration: 0.3,
+              ease: 'power2.out'
+          });
+      });
+      
+      input.addEventListener('blur', function() {
+          gsap.to(this.parentElement, {
+              y: 0,
+              duration: 0.3,
+              ease: 'power2.out'
+          });
+      });
+  });
+});
+
+// ==========================================
+// SYSTÈME DE PANIER
+// ==========================================
+
+// Structure de données pour le panier
+let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+// Fonction pour ajouter au panier
+function addToCart(product) {
+  const existingProduct = cart.find(item => 
+    item.id === product.id && item.taille === product.taille
+  );
+  
+  if (existingProduct) {
+    // Si le produit existe déjà, on ajoute la quantité spécifiée
+    existingProduct.quantity += product.quantity || 1;
+  } else {
+    // Si c'est un nouveau produit, on l'ajoute avec la quantité spécifiée
+    cart.push({
+      ...product,
+      quantity: product.quantity || 1  // Si pas de quantité spécifiée, on met 1 par défaut
+    });
+  }
+  
+  localStorage.setItem('cart', JSON.stringify(cart));
+  updateCartCount();
+  showCartNotification(product);
+  animateAddToCart(event);
+}
+
+// Met à jour le compteur du panier
+function updateCartCount() {
+  const count = cart.reduce((total, item) => total + item.quantity, 0);
+  const cartIndicator = document.querySelector('.cart-count');
+  
+  if (cartIndicator) {
+    cartIndicator.textContent = count;
+    cartIndicator.style.display = count > 0 ? 'flex' : 'none';
+  }
+}
+
+// Animation d'ajout au panier
+function animateAddToCart(event) {
+  const button = event.target;
+  const productCard = button.closest('.cookie-card, .cookie-detail');
+  const productImage = productCard.querySelector('img');
+  
+  // Clone de l'image pour l'animation
+  const imageClone = productImage.cloneNode(true);
+  imageClone.style.position = 'fixed';
+  imageClone.style.zIndex = '9999';
+  imageClone.style.width = '100px';
+  imageClone.style.height = '100px';
+  imageClone.style.borderRadius = '50%';
+  imageClone.style.objectFit = 'cover';
+  
+  const rect = productImage.getBoundingClientRect();
+  imageClone.style.left = rect.left + 'px';
+  imageClone.style.top = rect.top + 'px';
+  
+  document.body.appendChild(imageClone);
+  
+  // Animation vers l'icône du panier
+  const cartIcon = document.querySelector('.cart-icon');
+  const cartRect = cartIcon.getBoundingClientRect();
+  
+  gsap.to(imageClone, {
+    x: cartRect.left - rect.left + cartRect.width / 2 - 50,
+    y: cartRect.top - rect.top + cartRect.height / 2 - 50,
+    scale: 0.1,
+    opacity: 0,
+    duration: 0.8,
+    ease: 'power2.inOut',
+    onComplete: () => {
+      imageClone.remove();
+      
+      // Animation du compteur
+      gsap.fromTo('.cart-count', 
+        { scale: 0.5 },
+        { scale: 1, duration: 0.3, ease: 'back.out(4)' }
+      );
+    }
+  });
+}
+
+// Notification d'ajout au panier
+function showCartNotification(product) {
+  const notification = document.createElement('div');
+  notification.className = 'cart-notification';
+  notification.innerHTML = `
+    <div class="notification-content">
+      <div class="notification-icon">✓</div>
+      <div class="notification-text">
+        <h4>${product.quantity || 1} x ${product.nom} ajouté(s) au panier</h4>
+        <p>Taille: ${product.taille} - Prix unitaire: ${product.prix}€</p>
+      </div>
+    </div>
+    <div class="notification-actions">
+      <button class="view-cart-btn">Voir le panier</button>
+      <button class="continue-shopping-btn">Continuer</button>
+    </div>
+  `;
+  
+  document.body.appendChild(notification);
+  
+  // Animations de la notification
+  gsap.fromTo(notification, 
+    { y: 50, opacity: 0 },
+    { y: 0, opacity: 1, duration: 0.3, ease: 'power2.out' }
+  );
+  
+  // Gestion des boutons
+  notification.querySelector('.view-cart-btn').addEventListener('click', () => {
+    showCartModal();
+    notification.remove();
+  });
+  
+  notification.querySelector('.continue-shopping-btn').addEventListener('click', () => {
+    gsap.to(notification, {
+      y: 50,
+      opacity: 0,
+      duration: 0.3,
+      ease: 'power2.in',
+      onComplete: () => notification.remove()
+    });
+  });
+  
+  // Auto-fermeture après 5 secondes
+  setTimeout(() => {
+    if (notification.parentElement) {
+      gsap.to(notification, {
+        y: 50,
+        opacity: 0,
+        duration: 0.3,
+        ease: 'power2.in',
+        onComplete: () => notification.remove()
+      });
+    }
+  }, 5000);
+}
+
+// Modal du panier
+function showCartModal() {
+  const modal = document.createElement('div');
+  modal.className = 'cart-modal';
+  modal.innerHTML = `
+    <div class="cart-modal-content">
+      <div class="cart-modal-header">
+        <h2>Votre panier</h2>
+        <button class="close-modal">×</button>
+      </div>
+      <div class="cart-modal-body">
+        ${cart.length > 0 ? generateCartItems() : '<p class="empty-cart">Votre panier est vide</p>'}
+      </div>
+      <div class="cart-modal-footer">
+        <div class="cart-total">
+          <span>Total:</span>
+          <span>${calculateTotal()}€</span>
+        </div>
+        <div class="cart-info">
+          <p>Les cookies sont disponibles uniquement au marché de Gouvieux, tous les dimanches.</p>
+          <p>Suivez-nous sur Instagram <a href="https://instagram.com/les100_gluten_oeuf_lactose" target="_blank">@les100_gluten_oeuf_lactose</a></p>
+        </div>
+        <div class="cart-actions">
+          <a href="contact.html" class="contact-btn">Nous contacter</a>
+          <button class="close-cart-btn">Continuer vos achats</button>
+        </div>
+      </div>
+    </div>
+  `;
+  
+  document.body.appendChild(modal);
+  document.body.style.overflow = 'hidden';
+  
+  // Animation d'ouverture
+  gsap.fromTo(modal, 
+    { opacity: 0 },
+    { opacity: 1, duration: 0.3 }
+  );
+  
+  gsap.fromTo('.cart-modal-content',
+    { y: 50, opacity: 0 },
+    { y: 0, opacity: 1, duration: 0.5, ease: 'power3.out' }
+  );
+  
+  // Ajout des écouteurs d'événements pour les boutons de quantité
+  modal.querySelectorAll('.quantity-btn.minus').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.id;
+      const taille = btn.dataset.taille;
+      updateQuantity(id, taille, -1);
+    });
+  });
+  
+  modal.querySelectorAll('.quantity-btn.plus').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.id;
+      const taille = btn.dataset.taille;
+      updateQuantity(id, taille, 1);
+    });
+  });
+  
+  // Ajout des écouteurs d'événements pour les boutons de suppression
+  modal.querySelectorAll('.remove-item').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.id;
+      const taille = btn.dataset.taille;
+      removeFromCart(id, taille);
+    });
+  });
+  
+  // Fermeture du modal
+  function closeModal() {
+    gsap.to(modal, {
+      opacity: 0,
+      duration: 0.3,
+      onComplete: () => {
+        modal.remove();
+        document.body.style.overflow = '';
+      }
+    });
+  }
+  
+  modal.querySelector('.close-modal').addEventListener('click', closeModal);
+  modal.querySelector('.close-cart-btn').addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+}
+  
+
+
+// Génère les items du panier
+function generateCartItems() {
+  return cart.map(item => `
+    <div class="cart-item">
+      <img src="${item.image}" alt="${item.nom}">
+      <div class="cart-item-info">
+        <h3>${item.nom}</h3>
+        <p>Taille: ${item.taille}</p>
+        <p>Prix: ${item.prix}€</p>
+      </div>
+      <div class="cart-item-quantity">
+        <button class="quantity-btn minus" data-id="${item.id}" data-taille="${item.taille}">-</button>
+        <span class="quantity-value">${item.quantity}</span>
+        <button class="quantity-btn plus" data-id="${item.id}" data-taille="${item.taille}">+</button>
+      </div>
+      <button class="remove-item" data-id="${item.id}" data-taille="${item.taille}">×</button>
+    </div>
+  `).join('');
+}
+
+// Calcule le total du panier
+function calculateTotal() {
+  return cart.reduce((total, item) => total + (item.prix * item.quantity), 0).toFixed(2);
+}
+
+// Fonction pour mettre à jour la quantité
+function updateQuantity(id, taille, change) {
+  const item = cart.find(item => item.id === id && item.taille === taille);
+  if (item) {
+    item.quantity += change;
+    if (item.quantity <= 0) {
+      removeFromCart(id, taille);
+    } else {
+      localStorage.setItem('cart', JSON.stringify(cart));
+      updateCartUI();
+    }
+  }
+}
+
+// Fonction pour supprimer un article du panier
+function removeFromCart(id, taille) {
+  cart = cart.filter(item => !(item.id === id && item.taille === taille));
+  localStorage.setItem('cart', JSON.stringify(cart));
+  updateCartUI();
+}
+
+// Fonction pour mettre à jour l'interface utilisateur du panier
+function updateCartUI() {
+  updateCartCount();
+  
+  // Si le modal est ouvert, mettre à jour son contenu
+  const modalBody = document.querySelector('.cart-modal-body');
+  if (modalBody) {
+    modalBody.innerHTML = cart.length > 0 ? generateCartItems() : '<p class="empty-cart">Votre panier est vide</p>';
+    
+    // Mettre à jour le total
+    const totalElement = document.querySelector('.cart-total span:last-child');
+    if (totalElement) {
+      totalElement.textContent = calculateTotal() + '€';
+    }
+    
+    // Réattacher les écouteurs d'événements
+    if (cart.length > 0) {
+      modalBody.querySelectorAll('.quantity-btn.minus').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.dataset.id;
+          const taille = btn.dataset.taille;
+          updateQuantity(id, taille, -1);
+        });
+      });
+      
+      modalBody.querySelectorAll('.quantity-btn.plus').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.dataset.id;
+          const taille = btn.dataset.taille;
+          updateQuantity(id, taille, 1);
+        });
+      });
+      
+      modalBody.querySelectorAll('.remove-item').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const id = btn.dataset.id;
+          const taille = btn.dataset.taille;
+          removeFromCart(id, taille);
+        });
+      });
+    }
+  }
+}

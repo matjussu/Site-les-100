@@ -1,5 +1,5 @@
 // Version du cache
-const CACHE_NAME = 'les100-cache-v2';
+const CACHE_NAME = 'les100-cache-v3';
 
 // Ressources à mettre en cache immédiatement
 const CACHE_URLS = [

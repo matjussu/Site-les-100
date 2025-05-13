@@ -364,57 +364,80 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 });
 
-// Ajoutez ceci à la fin de votre fichier script.js
-
-// Menu hamburger pour mobile
+// Menu hamburger amélioré pour mobile (positionné à droite)
 document.addEventListener('DOMContentLoaded', function() {
-  // Créer le bouton hamburger
-  const menuToggle = document.createElement('button');
-  menuToggle.className = 'menu-toggle';
-  menuToggle.setAttribute('aria-label', 'Menu');
-  menuToggle.setAttribute('aria-expanded', 'false');
-  menuToggle.innerHTML = '<span></span><span></span><span></span>';
-  
-  const header = document.querySelector('header');
-  const nav = document.querySelector('nav');
-  const navList = document.querySelector('nav ul');
-  
-  if (header && nav) {
-    nav.parentNode.insertBefore(menuToggle, nav);
+  // Créer le bouton hamburger s'il n'existe pas déjà
+  let menuToggle = document.querySelector('.menu-toggle');
+  if (!menuToggle) {
+    menuToggle = document.createElement('button');
+    menuToggle.className = 'menu-toggle';
+    menuToggle.setAttribute('aria-label', 'Menu');
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.innerHTML = '<span></span><span></span><span></span>';
     
-    menuToggle.addEventListener('click', function() {
-      navList.classList.toggle('active');
-      const isExpanded = navList.classList.contains('active');
-      menuToggle.setAttribute('aria-expanded', isExpanded);
-      
-      // Animation du hamburger en X
-      if (isExpanded) {
-        menuToggle.classList.add('active');
+    const header = document.querySelector('header');
+    const nav = document.querySelector('nav');
+    
+    if (header && nav) {
+      // Insérer après la navigation (au lieu d'avant)
+      // Cela le placera à droite visuellement
+      if (nav.nextSibling) {
+        header.insertBefore(menuToggle, nav.nextSibling);
       } else {
-        menuToggle.classList.remove('active');
+        header.appendChild(menuToggle);
       }
-    });
-    
-    // Fermer le menu quand on clique sur un lien
-    navList.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', () => {
-        navList.classList.remove('active');
-        menuToggle.setAttribute('aria-expanded', 'false');
-        menuToggle.classList.remove('active');
+      
+      const navList = document.querySelector('nav ul');
+      
+      // Toggle menu
+      menuToggle.addEventListener('click', function() {
+        navList.classList.toggle('active');
+        const isExpanded = navList.classList.contains('active');
+        menuToggle.setAttribute('aria-expanded', isExpanded);
+        
+        // Animation du hamburger en X
+        if (isExpanded) {
+          menuToggle.classList.add('active');
+          document.body.style.overflow = 'hidden'; // Empêcher le défilement du body
+        } else {
+          menuToggle.classList.remove('active');
+          document.body.style.overflow = ''; // Rétablir le défilement
+        }
       });
-    });
-    
-    // Fermer le menu en cliquant à l'extérieur
-    document.addEventListener('click', function(e) {
-      if (!nav.contains(e.target) && !menuToggle.contains(e.target)) {
-        navList.classList.remove('active');
-        menuToggle.setAttribute('aria-expanded', 'false');
-        menuToggle.classList.remove('active');
-      }
-    });
+      
+      // Fermer le menu quand on clique sur un lien
+      navList.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+          navList.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.classList.remove('active');
+          document.body.style.overflow = ''; // Rétablir le défilement
+        });
+      });
+      
+      // Fermer le menu en cliquant à l'extérieur
+      document.addEventListener('click', function(e) {
+        if (navList.classList.contains('active') && 
+            !nav.contains(e.target) && 
+            !menuToggle.contains(e.target)) {
+          navList.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          menuToggle.classList.remove('active');
+          document.body.style.overflow = ''; // Rétablir le défilement
+        }
+      });
+      
+      // Ajustement pour l'orientation du téléphone
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 768 && navList.classList.contains('active')) {
+          navList.classList.remove('active');
+          menuToggle.classList.remove('active');
+          document.body.style.overflow = '';
+        }
+      });
+    }
   }
 });
-
 // Optimisation des images pour mobile
 function optimizeImagesForMobile() {
   if (window.innerWidth <= 768) {
@@ -920,3 +943,137 @@ function updateCartUI() {
     }
   }
 }
+
+// Optimisations de performance spécifiques pour mobile
+function optimizeForMobile() {
+  const isMobile = window.innerWidth <= 768;
+  
+  if (isMobile) {
+    // Désactiver certaines animations lourdes sur mobile
+    document.querySelectorAll('.parallax-bg').forEach(parallax => {
+      parallax.style.transform = 'none';
+      parallax.style.willChange = 'auto';
+    });
+    
+    // Réduire la qualité d'image sur mobile
+    document.querySelectorAll('img:not(.hero-logo):not(.logo img)').forEach(img => {
+      if (!img.src.includes('logo')) {
+        img.loading = 'lazy';
+      }
+    });
+    
+    // Simplifier les animations scroll
+    const scrollTriggers = ScrollTrigger.getAll();
+    for (let st of scrollTriggers) {
+      if (st.animation && typeof st.animation.duration === 'function') {
+        const currentDuration = st.animation.duration();
+        st.animation.duration(currentDuration * 0.7);
+      }
+    }
+  }
+}
+
+// Appliquer les optimisations au chargement et au redimensionnement
+window.addEventListener('load', optimizeForMobile);
+window.addEventListener('resize', optimizeForMobile);
+
+// Animation spécifique pour la page histoire - à ajouter dans script.js
+document.addEventListener('DOMContentLoaded', function() {
+  // Vérifie si nous sommes sur la page histoire
+  const heroHistoire = document.getElementById('hero-histoire');
+  if (heroHistoire) {
+    // Animation immédiate des éléments du hero
+    const animatedElements = document.querySelectorAll('.hero-histoire-content .animate-element');
+    
+    // Force l'animation immédiate sans attendre le chargement complet
+    setTimeout(() => {
+      animatedElements.forEach((element, index) => {
+        setTimeout(() => {
+          element.style.opacity = '1';
+          element.style.transform = 'translateY(0)';
+          element.style.visibility = 'visible';
+        }, index * 200); // Délai progressif pour chaque élément
+      });
+    }, 300);
+    
+    // Animation de la timeline quand elle devient visible
+    const timelineProgress = document.querySelector('.timeline-progress');
+    if (timelineProgress) {
+      // Initialisation de ScrollTrigger pour la timeline
+      gsap.registerPlugin(ScrollTrigger);
+      
+      gsap.to(timelineProgress, {
+        scaleY: 1,
+        duration: 1.5,
+        ease: 'power2.out',
+        scrollTrigger: {
+          trigger: '.story-timeline',
+          start: 'top 80%',
+          end: 'bottom 20%',
+          scrub: 1
+        }
+      });
+    }
+    
+    // Animation pour chaque section d'histoire
+    const storySections = document.querySelectorAll('.story-section');
+    storySections.forEach((section, index) => {
+      gsap.from(section, {
+        opacity: 0,
+        y: 50,
+        duration: 0.8,
+        scrollTrigger: {
+          trigger: section,
+          start: 'top 85%',
+          toggleActions: 'play none none none'
+        }
+      });
+    });
+  }
+});
+
+// Désactivation du parallax sur mobile - à ajouter dans script.js
+document.addEventListener('DOMContentLoaded', function() {
+  const isMobile = window.innerWidth <= 768;
+  
+  // Désactive spécifiquement le parallax pour hero-histoire sur mobile
+  if (isMobile) {
+    const heroHistoireParallax = document.querySelector('#hero-histoire .parallax-bg');
+    if (heroHistoireParallax) {
+      // Fixe l'image en arrière-plan sans effet parallax
+      heroHistoireParallax.style.position = 'absolute';
+      heroHistoireParallax.style.transform = 'none';
+      heroHistoireParallax.style.top = '0';
+      heroHistoireParallax.style.left = '0';
+      heroHistoireParallax.style.width = '100%';
+      heroHistoireParallax.style.height = '100%';
+      heroHistoireParallax.style.objectFit = 'cover';
+      
+      // Si des ScrollTriggers sont configurés pour cet élément, les supprimer
+      const allTriggers = ScrollTrigger.getAll();
+      allTriggers.forEach(trigger => {
+        if (trigger.trigger && trigger.trigger.id === 'hero-histoire') {
+          trigger.kill();
+        }
+      });
+    }
+  }
+});
+
+// Forcer l'affichage des animations sur la page histoire
+window.addEventListener('load', function() {
+  const heroHistoire = document.getElementById('hero-histoire');
+  if (heroHistoire) {
+    // Après que la page soit complètement chargée
+    document.body.classList.add('page-loaded');
+    
+    // Force l'affichage des éléments animés
+    const animatedElements = document.querySelectorAll('.hero-histoire-content .animate-element');
+    animatedElements.forEach(element => {
+      element.classList.add('animate-visible');
+    });
+    
+    // Ajoute une classe spécifique pour indiquer que la page histoire est chargée
+    document.body.classList.add('histoire-loaded');
+  }
+});

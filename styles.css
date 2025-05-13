@@ -3213,3 +3213,1125 @@ img {
     opacity: 1;
     transform: scale(1.1);
 }
+
+/* Menu hamburger complet pour mobile */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+    position: relative;
+    width: 44px;
+    height: 40px;
+  }
+  
+  .menu-toggle span {
+    display: block;
+    width: 24px;
+    height: 2px;
+    background: #f8660e;
+    margin: 5px auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  /* Animation du menu hamburger en X */
+  .menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+  }
+  
+  .menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
+  }
+  
+  /* Styles de navigation mobile */
+  @media (max-width: 768px) {
+    header {
+      padding: 10px 15px;
+    }
+    
+    .menu-toggle {
+      display: block;
+    }
+    
+    nav ul {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      flex-direction: column;
+      justify-content: center;
+      padding: 20px;
+      display: none;
+      z-index: 1000;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      transform: translateY(-100%);
+      opacity: 0;
+      height: 100vh;
+    }
+    
+    nav ul.active {
+      display: flex;
+      transform: translateY(0);
+      opacity: 1;
+    }
+    
+    nav ul li {
+      margin: 15px 0;
+      text-align: center;
+    }
+    
+    nav ul li a {
+      font-size: 1.4rem !important;
+      color: #3c2b1a !important;
+      text-shadow: none !important;
+      padding: 10px 0;
+      display: block;
+    }
+    
+    /* Gestion de l'icône panier dans le menu mobile */
+    .cart-icon {
+      margin: 20px auto 0;
+    }
+    
+    /* Arrière-plan sombre pour le header mobile au scroll */
+    header.scrolled {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+    }
+  }
+
+  /* Optimisations mobile spécifiques pour la page d'accueil */
+@media (max-width: 768px) {
+    /* Hero section */
+    #hero {
+      height: 85vh;
+    }
+    
+    #hero .content {
+      padding: 0 15px;
+    }
+    
+    #hero h1 {
+      font-size: 2.2rem;
+      line-height: 1.3;
+      padding: 0 10px;
+      margin-bottom: 20px;
+    }
+    
+    .hero-logo {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 20px;
+    }
+    
+    /* Incontournables section */
+    .incontournables-section {
+      padding: 60px 15px;
+    }
+    
+    .incontournables-section h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+    
+    .incontournables-grid {
+      gap: 25px;
+    }
+    
+    .incontournables-grid .cookie-card {
+      width: 100%;
+      max-width: 280px;
+    }
+    
+    /* Histoire section */
+    .histoire-section {
+      padding: 60px 15px;
+    }
+    
+    .histoire-container {
+      flex-direction: column;
+      gap: 40px;
+    }
+    
+    .histoire-content h2 {
+      font-size: 2rem;
+    }
+    
+    .histoire-content p {
+      font-size: 1rem;
+    }
+    
+    /* Badge cookie du mois */
+    .featured-badge {
+      position: relative;
+      bottom: auto;
+      right: auto;
+      margin: 20px auto -40px;
+      max-width: 250px;
+      z-index: 10;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #hero h1 {
+      font-size: 1.8rem;
+    }
+    
+    .hero-logo {
+      width: 120px;
+      height: 120px;
+    }
+    
+    .incontournables-section h2,
+    .histoire-content h2 {
+      font-size: 1.8rem;
+    }
+  }
+
+  /* Optimisations mobile spécifiques pour la page d'accueil */
+@media (max-width: 768px) {
+    /* Hero section */
+    #hero {
+      height: 85vh;
+    }
+    
+    #hero .content {
+      padding: 0 15px;
+    }
+    
+    #hero h1 {
+      font-size: 2.2rem;
+      line-height: 1.3;
+      padding: 0 10px;
+      margin-bottom: 20px;
+    }
+    
+    .hero-logo {
+      width: 150px;
+      height: 150px;
+      margin-bottom: 20px;
+    }
+    
+    /* Incontournables section */
+    .incontournables-section {
+      padding: 60px 15px;
+    }
+    
+    .incontournables-section h2 {
+      font-size: 2rem;
+      margin-bottom: 40px;
+    }
+    
+    .incontournables-grid {
+      gap: 25px;
+    }
+    
+    .incontournables-grid .cookie-card {
+      width: 100%;
+      max-width: 280px;
+    }
+    
+    /* Histoire section */
+    .histoire-section {
+      padding: 60px 15px;
+    }
+    
+    .histoire-container {
+      flex-direction: column;
+      gap: 40px;
+    }
+    
+    .histoire-content h2 {
+      font-size: 2rem;
+    }
+    
+    .histoire-content p {
+      font-size: 1rem;
+    }
+    
+    /* Badge cookie du mois */
+    .featured-badge {
+      position: relative;
+      bottom: auto;
+      right: auto;
+      margin: 20px auto -40px;
+      max-width: 250px;
+      z-index: 10;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #hero h1 {
+      font-size: 1.8rem;
+    }
+    
+    .hero-logo {
+      width: 120px;
+      height: 120px;
+    }
+    
+    .incontournables-section h2,
+    .histoire-content h2 {
+      font-size: 1.8rem;
+    }
+  }
+
+  /* Optimisations mobile spécifiques pour la page cookies */
+@media (max-width: 768px) {
+    .cookies-intro {
+      height: 70vh;
+    }
+    
+    .cookies-intro-content {
+      padding: 0 15px;
+    }
+    
+    .cookies-intro-logo {
+      width: 120px;
+    }
+    
+    .cookies-intro h1 {
+      font-size: 2.5rem;
+    }
+    
+    .cookies-intro p {
+      font-size: 1.1rem;
+    }
+    
+    .cookies-catalogue {
+      padding: 60px 15px;
+    }
+    
+    .cookies-catalogue h2 {
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+    }
+    
+    .cookies-grid {
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 25px;
+      padding: 0;
+    }
+    
+    /* Bannière du cookie du mois */
+    .cookie-month-banner {
+      padding: 40px 0;
+    }
+    
+    .banner-content {
+      flex-direction: column;
+      padding: 0 15px;
+    }
+    
+    .banner-text h2 {
+      font-size: 2rem;
+    }
+    
+    .banner-text p {
+      font-size: 1rem;
+    }
+    
+    .banner-image {
+      width: 100%;
+      max-width: 250px;
+      margin: 0 auto;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .cookies-intro h1 {
+      font-size: 2rem;
+    }
+    
+    .cookies-catalogue h2 {
+      font-size: 1.8rem;
+    }
+    
+    .cookies-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .banner-text h2 {
+      font-size: 1.8rem;
+    }
+  }
+
+  /* Optimisations mobile spécifiques pour la page détail cookie */
+@media (max-width: 768px) {
+    .cookie-detail-hero {
+      padding: 30px 0;
+    }
+    
+    .cookie-detail-container {
+      grid-template-columns: 1fr;
+      gap: 30px;
+      padding: 0 15px;
+    }
+    
+    .cookie-gallery {
+      position: relative;
+      top: 0;
+    }
+    
+    .cookie-info-wrapper {
+      padding: 30px 20px;
+    }
+    
+    #cookie-name {
+      font-size: 2rem;
+    }
+    
+    .cookie-features {
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    
+    /* Tabs section */
+    .cookie-details-tabs {
+      padding: 40px 0;
+    }
+    
+    .tabs-container {
+      padding: 0 15px;
+    }
+    
+    .tabs {
+      overflow-x: auto;
+      white-space: nowrap;
+      padding-bottom: 5px;
+    }
+    
+    .tab {
+      padding: 10px 20px;
+    }
+    
+    /* Suggestions section */
+    .cookie-suggestions-enhanced {
+      padding: 40px 0;
+    }
+    
+    .cookie-suggestions-enhanced h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+    
+    .suggestions-carousel {
+      padding: 0 40px;
+    }
+    
+    .suggestions-track .cookie-card {
+      width: 220px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #cookie-name {
+      font-size: 1.8rem;
+    }
+    
+    .cookie-description {
+      font-size: 1rem;
+    }
+    
+    .size-selector {
+      grid-template-columns: 1fr;
+      gap: 10px;
+    }
+    
+    .cookie-suggestions-enhanced h2 {
+      font-size: 1.8rem;
+    }
+    
+    .cookie-details-tabs .tab {
+      padding: 8px 15px;
+      font-size: 0.9rem;
+    }
+  }
+
+  /* Optimisations mobile spécifiques pour la page histoire */
+@media (max-width: 768px) {
+    #hero-histoire {
+      height: 70vh;
+    }
+    
+    .hero-histoire-content {
+      padding: 0 15px;
+    }
+    
+    .hero-histoire-logo {
+      width: 120px;
+      height: 120px;
+    }
+    
+    .hero-histoire-content h1 {
+      font-size: 3rem;
+    }
+    
+    .hero-tagline {
+      font-size: 1.1rem;
+    }
+    
+    .story-timeline {
+      margin: 50px auto;
+      padding: 0 15px 0 30px;
+    }
+    
+    .timeline-progress {
+      left: 20px;
+    }
+    
+    .story-container {
+      flex-direction: column;
+      text-align: center;
+      margin-left: 40px !important;
+      padding: 20px;
+    }
+    
+    .story-icon {
+      margin: 0 auto 15px;
+    }
+    
+    .story-section:nth-child(odd) .story-container {
+      flex-direction: column;
+      margin-right: 0;
+    }
+    
+    .our-mission {
+      padding: 60px 15px;
+    }
+    
+    .our-mission h2 {
+      font-size: 2.2rem;
+    }
+    
+    .mission-content {
+      font-size: 1.1rem;
+    }
+    
+    .cta-button {
+      width: 100%;
+      margin-top: 20px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .hero-histoire-content h1 {
+      font-size: 2.5rem;
+    }
+    
+    .story-container {
+      margin-left: 30px !important;
+    }
+    
+    .story-icon {
+      width: 60px;
+      height: 60px;
+    }
+    
+    .our-mission h2 {
+      font-size: 1.8rem;
+    }
+    
+    .mission-content {
+      font-size: 1rem;
+    }
+  }
+
+  /* Optimisations mobile spécifiques pour la page contact */
+@media (max-width: 768px) {
+    .contact-hero {
+      height: 30vh;
+      min-height: 300px;
+    }
+    
+    .contact-hero-content {
+      padding: 0 15px;
+    }
+    
+    .contact-hero h1 {
+      font-size: 2.5rem;
+    }
+    
+    .contact-hero p {
+      font-size: 1.1rem;
+    }
+    
+    .contact-section {
+      padding: 50px 15px;
+    }
+    
+    .contact-container {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+    
+    .contact-info {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    
+    .contact-form-wrapper {
+      padding: 30px 20px;
+    }
+    
+    .contact-form-wrapper h2 {
+      font-size: 1.8rem;
+    }
+    
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      padding: 12px 15px;
+    }
+    
+    .submit-button {
+      width: 100%;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .contact-hero h1 {
+      font-size: 2rem;
+    }
+    
+    .contact-form-wrapper {
+      padding: 25px 15px;
+    }
+  }
+
+  /* Optimisations globales pour mobile */
+@media (max-width: 768px) {
+    /* Ajustement du footer */
+    .site-footer {
+      padding: 50px 15px 30px;
+    }
+    
+    .footer-content {
+      gap: 30px;
+    }
+    
+    .footer-links ul {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    
+    .instagram-link {
+      flex-direction: column;
+      text-align: center;
+      gap: 5px;
+    }
+    
+    /* Amélioration du tap target pour mobile */
+    a, button {
+      min-height: 44px;
+      min-width: 44px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    /* Fix pour le clic sur mobiles */
+    nav ul li a,
+    .cookie-card,
+    .info-card,
+    .submit-button,
+    .cookie-features .feature {
+      -webkit-tap-highlight-color: transparent;
+    }
+    
+    /* Optimisation des polices */
+    body {
+      font-size: 16px;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+    }
+    
+    h2 {
+      font-size: 2rem;
+    }
+    
+    h3 {
+      font-size: 1.5rem;
+    }
+    
+    /* Ajustement du panier sur mobile */
+    .cart-notification {
+      left: 15px;
+      right: 15px;
+      bottom: 15px;
+    }
+    
+    .cart-modal-content {
+      width: 90%;
+    }
+  }
+  
+  /* Pour très petits écrans */
+  @media (max-width: 360px) {
+    .logo img {
+      width: 40px;
+      height: 40px;
+    }
+    
+    .site-footer .footer-logo img {
+      width: 60px;
+      height: 60px;
+    }
+    
+    body {
+      font-size: 15px;
+    }
+    
+    /* Moins d'animations pour économiser les performances */
+    .cookie-card:hover {
+      transform: translateY(-5px);
+    }
+    
+    .cookie-card:hover img {
+      transform: scale(1.05);
+    }
+  }
+
+  /* Positionnement du menu hamburger à droite */
+@media (max-width: 768px) {
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo {
+      order: 1; /* Premier élément (à gauche) */
+    }
+    
+    .menu-toggle {
+      order: 3; /* Dernier élément (à droite) */
+      margin-left: auto; /* Force le déplacement à droite */
+    }
+    
+    nav {
+      order: 2; /* Élément du milieu (mais il sera caché en mobile) */
+      width: auto;
+    }
+  }
+
+  /* Corrections pour la page histoire en mobile */
+@media (max-width: 768px) {
+    /* Hero histoire - fixe les problèmes de superposition et visibilité du texte */
+    #hero-histoire {
+      height: auto;
+      min-height: 70vh;
+      padding: 100px 0 50px;
+    }
+    
+    #hero-histoire .parallax-bg {
+      opacity: 0.6; /* Réduit l'opacité de l'image pour meilleure lisibilité */
+    }
+    
+    .hero-histoire-content {
+      position: relative;
+      z-index: 10;
+      max-width: 90%;
+      padding: 0 15px;
+    }
+    
+    .hero-histoire-logo {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 10px;
+    }
+    
+    .hero-histoire-content h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      word-break: break-word; /* Évite le débordement du texte */
+      hyphens: auto;
+    }
+    
+    .hero-histoire-content .hero-tagline {
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+    
+    /* Timeline - assure la visibilité et l'espacement correct */
+    .story-timeline {
+      margin: 40px auto;
+      padding: 0 15px 0 40px; /* Plus d'espace à gauche pour la timeline */
+      max-width: 100%;
+    }
+    
+    /* Ajuste la position de la ligne de timeline */
+    .timeline-line,
+    .timeline-progress {
+      left: 20px;
+      width: 3px; /* Légèrement plus fine pour mobile */
+    }
+    
+    /* Réalignement des conteneurs d'histoire */
+    .story-container {
+      max-width: 100%;
+      padding: 20px 15px;
+      margin-left: 20px !important;
+      margin-right: 0 !important;
+      margin-bottom: 40px;
+      flex-direction: column !important;
+      text-align: left;
+    }
+    
+    .story-section:nth-child(odd) .story-container {
+      margin-right: 0 !important;
+      margin-left: 20px !important;
+      text-align: left;
+    }
+    
+    /* Icônes de timeline redimensionnées */
+    .story-icon {
+      width: 40px;
+      height: 40px;
+      margin: 0 0 15px 0;
+      align-self: flex-start;
+    }
+    
+    .story-icon span {
+      font-size: 1.2rem;
+    }
+    
+    /* Ajustement du contenu de l'histoire */
+    .story-content {
+      width: 100%;
+    }
+    
+    .story-content p {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+    
+    /* Section mission */
+    .our-mission {
+      padding: 50px 15px;
+    }
+    
+    .our-mission h2 {
+      font-size: 2rem;
+      margin-bottom: 30px;
+    }
+    
+    .mission-content {
+      font-size: 1rem;
+      margin-bottom: 30px;
+    }
+    
+    .cta-button {
+      padding: 15px 25px;
+      font-size: 1rem;
+      width: 100%;
+    }
+    
+    /* Correction spécifique pour l'animate-element */
+    .animate-element {
+      transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+  }
+  
+  /* Ajustements supplémentaires pour très petits écrans */
+  @media (max-width: 480px) {
+    #hero-histoire {
+      min-height: 60vh;
+      padding: 80px 0 40px;
+    }
+    
+    .hero-histoire-content h1 {
+      font-size: 2rem;
+    }
+    
+    .hero-histoire-logo {
+      width: 80px;
+      height: 80px;
+    }
+    
+    .story-timeline {
+      padding-left: 30px;
+    }
+    
+    .timeline-line,
+    .timeline-progress {
+      left: 15px;
+    }
+    
+    .story-container {
+      margin-left: 15px !important;
+    }
+    
+    .story-section:nth-child(odd) .story-container {
+      margin-left: 15px !important;
+    }
+    
+    .story-icon {
+      width: 35px;
+      height: 35px;
+    }
+    
+    .story-icon span {
+      font-size: 1rem;
+    }
+  }
+
+  /* Overlay pour le hero histoire */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.5), rgba(0,0,0,0.7));
+    z-index: 1;
+  }
+  
+  /* S'assure que le contenu est au-dessus de l'overlay */
+  .hero-histoire-content {
+    z-index: 2;
+    position: relative;
+  }
+
+/* Styles pour forcer l'affichage des animations */
+.histoire-loaded .hero-histoire-content .animate-element {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    visibility: visible !important;
+  }
+  
+  .animate-visible {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+    visibility: visible !important;
+    transition: none !important;
+  }
+
+  /* Fix d'urgence pour la page histoire */
+.story-timeline {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    z-index: 5; /* S'assurer qu'il est au-dessus des autres éléments */
+  }
+  
+  .story-section {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    margin-bottom: 40px !important;
+  }
+  
+  .story-container {
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    background-color: white !important;
+  }
+  
+  .hero-overlay {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.5)); /* Moins foncé */
+    opacity: 0.7; /* Réduire l'opacité */
+  }
+  
+  #hero-histoire img.parallax-bg {
+    filter: brightness(0.7); /* Augmenter la luminosité (était à 0.5) */
+  }
+  
+  /* Garantir que le contenu de la mission est visible */
+  .our-mission {
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+
+  /* ==========================================
+   TIMELINE SIMPLIFIÉE ET ROBUSTE
+   ========================================== */
+.story-timeline {
+    max-width: 1000px;
+    margin: 100px auto;
+    padding: 0 30px;
+    position: relative;
+    /* Garantir visibilité */
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .timeline-line {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background-color: #eee;
+    transform: translateX(-50%);
+    border-radius: 4px;
+    z-index: 1;
+  }
+  
+  .timeline-progress {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, #f8660e, #ff8c3a);
+    transform: translateX(-50%) scaleY(0);
+    transform-origin: top;
+    border-radius: 4px;
+    z-index: 2;
+  }
+  
+  .story-section {
+    margin-bottom: 80px;
+    position: relative;
+    z-index: 3;
+    /* Garantir visibilité */
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .story-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    background-color: white;
+    border-radius: 12px;
+    padding: 30px 40px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.06);
+    position: relative;
+    max-width: 80%;
+    margin-left: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Garantir visibilité */
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+  }
+  
+  .story-section:nth-child(even) .story-container {
+    margin-left: 0;
+    margin-right: auto;
+    flex-direction: row-reverse;
+  }
+  
+  .story-container:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+  }
+  
+  .story-icon {
+    flex-shrink: 0;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #f8660e, #ffa15f);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 6px 15px rgba(248, 102, 14, 0.2);
+    transition: all 0.3s ease;
+    position: relative;
+  }
+  
+  .story-icon:hover {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #f8660e, #ff8c3a);
+  }
+  
+  .story-icon span {
+    color: white;
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  
+  .story-content {
+    flex-grow: 1;
+  }
+  
+  .story-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #5e5e5e;
+  }
+  
+  /* ==========================================
+     RESPONSIVE POUR LA TIMELINE
+     ========================================== */
+  @media (max-width: 768px) {
+    .story-timeline {
+      margin: 50px auto;
+      padding: 0 15px 0 40px;
+    }
+    
+    .timeline-line,
+    .timeline-progress {
+      left: 20px;
+    }
+    
+    .story-container {
+      max-width: 100%;
+      margin-left: 40px !important;
+      margin-right: 0 !important;
+      padding: 20px;
+      flex-direction: column !important;
+      align-items: flex-start;
+      text-align: left;
+    }
+    
+    .story-section:nth-child(even) .story-container {
+      margin-right: 0 !important;
+      margin-left: 40px !important;
+      flex-direction: column !important;
+    }
+    
+    .story-icon {
+      margin-bottom: 15px;
+      width: 60px;
+      height: 60px;
+    }
+    
+    .story-icon span {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .timeline-line,
+    .timeline-progress {
+      left: 15px;
+    }
+    
+    .story-container {
+      margin-left: 30px !important;
+    }
+    
+    .story-section:nth-child(even) .story-container {
+      margin-left: 30px !important;
+    }
+    
+    .story-icon {
+      width: 50px;
+      height: 50px;
+    }
+    
+    .story-icon span {
+      font-size: 1.2rem;
+    }
+  }

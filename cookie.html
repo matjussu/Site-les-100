@@ -91,17 +91,52 @@
         background-color: #fff;
       }
       
-      .new-badge {
+      /* Styles pour centrer le cookie du mois et corriger la banderole */
+      .edition-limitee-grid {
+        display: flex;
+        justify-content: center;
+      }
+      
+      .cookie-du-mois {
+        max-width: 350px;
+        position: relative;
+        overflow: visible;
+      }
+      
+      .ribbon-container {
         position: absolute;
         top: 15px;
-        right: 15px;
-        background-color: #f8660e;
+        right: -8px;
+        overflow: visible;
+        z-index: 3;
+      }
+      
+      .ribbon {
+        background: #f8660e;
         color: white;
-        padding: 5px 10px;
-        border-radius: 20px;
-        font-weight: 600;
-        font-size: 0.8rem;
-        z-index: 2;
+        font-weight: bold;
+        font-size: 0.9rem;
+        padding: 8px 20px;
+        position: relative;
+        transform: rotate(45deg);
+        transform-origin: center right;
+        right: -30px;
+        top: 20px;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        text-align: center;
+        width: 160px;
+      }
+      
+      .ribbon:before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        border-style: solid;
+        border-width: 0px 0px 10px 10px;
+        border-color: transparent transparent #d35400 transparent;
+        transform: rotate(45deg);
+        transform-origin: bottom right;
       }
     </style>
 </head>
@@ -139,9 +174,8 @@
     <h2 class="category-title">Édition Limitée</h2>
     <p class="category-description">Découvrez notre création spéciale du mois, une recette inédite à durée limitée. Ne la manquez pas, elle sera remplacée le mois prochain !</p>
     
-    <div class="cookies-grid">
-      <a href="cookie-detail.html?id=avril" class="cookie-card">
-        <div class="new-badge">Nouveau</div>
+    <div class="cookies-grid edition-limitee-grid">
+      <a href="cookie-detail.html?id=avril" class="cookie-card cookie-du-mois">
         <img src="image/COOKIE PNG/AVRIL.png" alt="Cookie du mois">
         <h3>Avril - Le 69</h3>
         <p>Mi-pépites de chocolat noir, mi-tout choco pour une double expérience gourmande.</p>

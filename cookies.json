@@ -1,75 +1,704 @@
 [
-    {
-      "id": "le-11",
-      "nom": "Le 11",
-      "description": "Un cookie moelleux aux pépites de chocolat.",
-      "image": "image/COOKIE PNG/Le-11.png"
+  {
+    "id": "le-11",
+    "nom": "Le 11",
+    "description": "Le cookie classique aux pépites de chocolat noir, moelleux à l'intérieur et légèrement croustillant sur les bords. Une recette simple mais parfaitement exécutée.",
+    "image": "image/COOKIE PNG/Le-11.png",
+    "categorie": "essentiels",
+    "ingredients": [
+      "Farine de riz bio",
+      "Pépites de chocolat noir",
+      "Sucre de canne blond bio",
+      "Boisson végétale",
+      "Pomme bio"
+    ],
+    "allergenes": ["Peut contenir des traces de fruits à coque"],
+    "valeurs_nutritionnelles": {
+      "energie": "435 kcal",
+      "matieres_grasses": "21g",
+      "dont_saturees": "10g",
+      "glucides": "56g",
+      "dont_sucres": "30g",
+      "proteines": "5g",
+      "sel": "0.4g"
     },
-    {
-      "id": "le-08",
-      "nom": "Le 08",
-      "description": "Chocolat fondant avec pépites.",
-      "image": "image/COOKIE PNG/Le-08.png"
+    "prix": {
+      "petit": 2.50,
+      "moyen": 4.50,
+      "grand": null
     },
-    {
-      "id": "le-27",
-      "nom": "Le 27",
-      "description": "Un incontournable au beurre de cacahuètes maison, intense et fondant.",
-      "image": "image/COOKIE PNG/LE 27.png"
+    "format_mini": {
+      "unite": 2.50,
+      "x2": 4.50,
+      "x3": 6.50,
+      "x6": 12.50,
+      "x9": 18.00,
+      "x12": 24.00,
+      "x18": 35.00,
+      "x24": 47.00
     },
-    {
-      "id": "le-05",
-      "nom": "Le 05",
-      "description": "Cranberries acidulées et pâte moelleuse pour une version fruitée.",
-      "image": "image/COOKIE PNG/le 05 Cranberries.png"
+    "format_standard": {
+      "unite": 4.50,
+      "x4": 16.00
     },
-    {
-      "id": "le-03",
-      "nom": "Le 03",
-      "description": "Beurre de cacahuètes maison avec un cœur fondant à la framboise.",
-      "image": "image/COOKIE PNG/Le 03.png"
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
     },
-    {
-      "id": "le-04",
-      "nom": "Le 04",
-      "description": "Pépites de chocolat avec un cœur fondant de Nocciolata bio.",
-      "image": "image/COOKIE PNG/Le 04 NOCCIOLATA.png"
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
     },
-    {
-      "id": "le-06",
-      "nom": "Le 06",
-      "description": "Double chocolat et cœur Nocciolata, pour les vrais gourmands.",
-      "image": "image/COOKIE PNG/le 06 CHOCO NOCCIOLATA.png"
+    "description_detaillee": "Notre cookie aux pépites de chocolat est l'équilibre parfait entre douceur et gourmandise. Parsemé généreusement de pépites de chocolat noir qui fondent délicatement en bouche, ce cookie a conquis le cœur de nos clients fidèles. Sa texture moelleuse à cœur et légèrement croustillante sur les bords en fait un incontournable de notre collection."
+  },
+  {
+    "id": "le-08",
+    "nom": "Le 08",
+    "description": "Un cookie tout chocolat rehaussé de pépites de chocolat noir fondantes pour doubler l'intensité du plaisir.",
+    "image": "image/COOKIE PNG/Le-08.png",
+    "categorie": "essentiels",
+    "ingredients": [
+      "Farine de riz bio",
+      "Cacao en poudre bio",
+      "Pépites de chocolat noir",
+      "Sucre de canne blond bio",
+      "Boisson végétale",
+      "Pomme bio"
+    ],
+    "allergenes": ["Peut contenir des traces de fruits à coque"],
+    "valeurs_nutritionnelles": {
+      "energie": "450 kcal",
+      "matieres_grasses": "22g",
+      "dont_saturees": "12g",
+      "glucides": "58g",
+      "dont_sucres": "32g",
+      "proteines": "6g",
+      "sel": "0.5g"
     },
-    {
-      "id": "le-12",
-      "nom": "Le 12",
-      "description": "Un cœur pistache au centre d’un cookie moelleux aux pépites.",
-      "image": "image/COOKIE PNG/le 12 Pistache.png"
+    "prix": {
+      "petit": 2.50,
+      "moyen": 4.50,
+      "grand": null
     },
-    {
-      "id": "le-18",
-      "nom": "Le 18",
-      "description": "Chocolat et pistache réunis pour un cookie aussi beau que bon.",
-      "image": "image/COOKIE PNG/chocolat pistache.png"
+    "format_mini": {
+      "unite": 2.50,
+      "x2": 4.50,
+      "x3": 6.50,
+      "x6": 12.50,
+      "x9": 18.00,
+      "x12": 24.00,
+      "x18": 35.00,
+      "x24": 47.00
     },
-    {
-      "id": "le-02",
-      "nom": "Le 02",
-      "description": "Une touche citronnée subtile pour un cookie frais et surprenant.",
-      "image": "image/COOKIE PNG/02 PETIT .png"
+    "format_standard": {
+      "unite": 4.50,
+      "x4": 16.00
     },
-    {
-      "id": "le-65",
-      "nom": "Le 65",
-      "description": "Praliné maison dans une base de cookie généreuse.",
-      "image": "image/COOKIE PNG/pralin.jpg"
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
     },
-    {
-      "id": "avril",
-      "nom": "Avril",
-      "description": "Le cookie du mois, en édition limitée. À découvrir chaque mois !",
-      "image": "image/COOKIE PNG/AVRIL.png"
-    }
-  ]
-  
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    },
+    "description_detaillee": "Pour les vrais amateurs de chocolat, notre cookie Le 08 est une expérience intense qui combine une pâte au cacao et des pépites de chocolat noir fondantes. Sa texture reste incroyablement moelleuse malgré sa richesse en cacao. Un pur moment de plaisir pour les adeptes de saveurs profondes et chocolatées."
+  },
+  {
+    "id": "le-27",
+    "nom": "Le 27",
+    "description": "Un incontournable au beurre de cacahuètes maison, intense et fondant. Sa texture unique et son goût authentique en font un favori de nos clients.",
+    "image": "image/COOKIE PNG/LE 27.png",
+    "categorie": "essentiels",
+    "ingredients": [
+      "Farine de riz bio",
+      "Beurre de cacahuètes maison",
+      "Sucre de canne blond bio",
+      "Boisson végétale",
+      "Pomme bio"
+    ],
+    "allergenes": ["Cacahuètes", "Peut contenir des traces d'autres fruits à coque"],
+    "valeurs_nutritionnelles": {
+      "energie": "470 kcal",
+      "matieres_grasses": "25g",
+      "dont_saturees": "5g",
+      "glucides": "52g",
+      "dont_sucres": "28g",
+      "proteines": "9g",
+      "sel": "0.3g"
+    },
+    "prix": {
+      "petit": 2.50,
+      "moyen": 4.50,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": 2.50,
+      "x2": 4.50,
+      "x3": 6.50,
+      "x6": 12.50,
+      "x9": 18.00,
+      "x12": 24.00,
+      "x18": 35.00,
+      "x24": 47.00
+    },
+    "format_standard": {
+      "unite": 4.50,
+      "x4": 16.00
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    },
+    "description_detaillee": "Le 27 est l'un de nos cookies les plus appréciés. Notre beurre de cacahuètes est préparé maison, ce qui lui confère un goût incomparable, sans additifs ni conservateurs. La texture légèrement friable et fondante en bouche offre une expérience authentique qui ravira les amateurs de cacahuètes."
+  },
+  {
+    "id": "le-05",
+    "nom": "Le 05",
+    "description": "Cranberries acidulées et pâte moelleuse pour une version fruitée de notre cookie qui apporte une touche de fraîcheur.",
+    "image": "image/COOKIE PNG/le 05 Cranberries.png",
+    "categorie": "essentiels",
+    "ingredients": [
+      "Farine de riz bio",
+      "Cranberries séchées",
+      "Sucre de canne blond bio",
+      "Boisson végétale",
+      "Pomme bio"
+    ],
+    "allergenes": ["Peut contenir des traces de fruits à coque"],
+    "valeurs_nutritionnelles": {
+      "energie": "430 kcal",
+      "matieres_grasses": "18g",
+      "dont_saturees": "9g",
+      "glucides": "62g",
+      "dont_sucres": "35g",
+      "proteines": "4g",
+      "sel": "0.4g"
+    },
+    "prix": {
+      "petit": 2.50,
+      "moyen": 4.50,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": 2.50,
+      "x2": 4.50,
+      "x3": 6.50,
+      "x6": 12.50,
+      "x9": 18.00,
+      "x12": 24.00,
+      "x18": 35.00,
+      "x24": 47.00
+    },
+    "format_standard": {
+      "unite": 4.50,
+      "x4": 16.00
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    },
+    "description_detaillee": "Notre cookie aux cranberries offre un délicieux contraste entre la douceur de la pâte et l'acidité des baies. Les cranberries apportent une touche fruitée qui réveille les papilles et fait de ce cookie une option plus légère mais tout aussi savoureuse. Parfait pour ceux qui préfèrent une pause gourmande avec un peu de fraîcheur."
+  },
+  {
+    "id": "le-03",
+    "nom": "Le 03",
+    "description": "Beurre de cacahuètes maison avec un cœur fondant à la framboise. Une association surprenante et délicieuse.",
+    "image": "image/COOKIE PNG/Le 03.png",
+    "categorie": "gourmets",
+    "ingredients": [
+      "Farine de riz bio",
+      "Beurre de cacahuètes maison",
+      "Confiture de framboise",
+      "Sucre de canne blond bio",
+      "Boisson végétale",
+      "Pomme bio"
+    ],
+    "allergenes": ["Cacahuètes", "Peut contenir des traces d'autres fruits à coque"],
+    "valeurs_nutritionnelles": {
+      "energie": "460 kcal",
+      "matieres_grasses": "23g",
+      "dont_saturees": "5g",
+      "glucides": "54g",
+      "dont_sucres": "32g",
+      "proteines": "8g",
+      "sel": "0.3g"
+    },
+    "prix": {
+      "petit": null,
+      "moyen": 5.00,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": null,
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
+    },
+    "format_standard": {
+      "unite": null,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": 5.00,
+      "x3": 14.00,
+      "x5": 23.00
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    },
+    "description_detaillee": "Le cookie 03 est une création originale qui marie le goût intense du beurre de cacahuètes maison avec un cœur fondant à la framboise. Cette association inattendue entre le côté terreux des cacahuètes et l'acidité des framboises crée une explosion de saveurs en bouche. Chaque bouchée révèle progressivement la confiture de framboise lovée au centre du cookie."
+  },
+  {
+    "id": "le-04",
+    "nom": "Le 04",
+    "description": "Pépites de chocolat avec un cœur fondant de Nocciolata bio, la version sans lactose de la célèbre pâte à tartiner.",
+    "image": "image/COOKIE PNG/Le 04 NOCCIOLATA.png",
+    "categorie": "gourmets",
+    "ingredients": [
+      "Farine de riz bio",
+      "Pépites de chocolat noir",
+      "Nocciolata sans lait bio",
+      "Sucre de canne blond bio",
+      "Boisson végétale",
+      "Pomme bio"
+    ],
+    "allergenes": ["Noisettes", "Peut contenir des traces d'autres fruits à coque"],
+    "valeurs_nutritionnelles": {
+      "energie": "480 kcal",
+      "matieres_grasses": "24g",
+      "dont_saturees": "11g",
+      "glucides": "60g",
+      "dont_sucres": "34g",
+      "proteines": "5g",
+      "sel": "0.4g"
+    },
+    "prix": {
+      "petit": null,
+      "moyen": 5.00,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": null,
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
+    },
+    "format_standard": {
+      "unite": null,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": 5.00,
+      "x3": 14.00,
+      "x5": 23.00
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    },
+    "description_detaillee": "Le cookie 04 allie le plaisir des pépites de chocolat à un cœur fondant de Nocciolata bio sans lait. Ce cœur coulant apporte une dimension supplémentaire à la dégustation avec ses notes de noisettes torréfiées. La Nocciolata utilisée est 100% bio et sans lactose, permettant à tous de savourer ce délice chocolaté même en cas d'intolérance."
+  },
+  {
+    "id": "le-06",
+    "nom": "Le 06",
+    "description": "Double chocolat et cœur Nocciolata, pour les vrais gourmands. La version tout chocolat de notre cookie au cœur fondant.",
+    "image": "image/COOKIE PNG/le 06 CHOCO NOCCIOLATA.png",
+    "categorie": "gourmets",
+    "ingredients": [
+      "Farine de riz bio",
+      "Cacao en poudre bio",
+      "Pépites de chocolat noir",
+      "Nocciolata sans lait bio",
+      "Sucre de canne blond bio",
+      "Boisson végétale",
+      "Pomme bio"
+    ],
+    "allergenes": ["Noisettes", "Peut contenir des traces d'autres fruits à coque"],
+    "valeurs_nutritionnelles": {
+      "energie": "490 kcal",
+      "matieres_grasses": "26g",
+      "dont_saturees": "13g",
+      "glucides": "59g",
+      "dont_sucres": "36g",
+      "proteines": "6g",
+      "sel": "0.5g"
+    },
+    "prix": {
+      "petit": null,
+      "moyen": 5.00,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": null,
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
+    },
+    "format_standard": {
+      "unite": null,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": 5.00,
+      "x3": 14.00,
+      "x5": 23.00
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    },
+    "description_detaillee": "Le cookie 06 est la version ultime pour les amateurs de chocolat. Sa base intense au cacao est parsemée de pépites de chocolat et renferme un cœur fondant de Nocciolata bio sans lait. L'association de ces trois textures de chocolat crée une expérience de dégustation riche et inoubliable. C'est notre cookie le plus décadent, destiné aux véritables passionnés de saveurs chocolatées."
+  },
+  {
+    "id": "le-10",
+    "nom": "Le 10",
+    "description": "Un cookie aux pépites de chocolat avec un cœur fondant à la pistache. Élégant et raffiné.",
+    "image": "image/COOKIE PNG/le 12 Pistache.png",
+    "categorie": "gourmets",
+    "ingredients": [
+      "Farine de riz bio",
+      "Pépites de chocolat noir",
+      "Crème de pistache",
+      "Pistaches bio concassées",
+      "Sucre de canne blond bio",
+      "Boisson végétale",
+      "Pomme bio"
+    ],
+    "allergenes": ["Pistaches", "Peut contenir des traces d'autres fruits à coque"],
+    "valeurs_nutritionnelles": {
+      "energie": "470 kcal",
+      "matieres_grasses": "25g",
+      "dont_saturees": "10g",
+      "glucides": "55g",
+      "dont_sucres": "30g",
+      "proteines": "7g",
+      "sel": "0.4g"
+    },
+    "prix": {
+      "petit": null,
+      "moyen": 5.00,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": null,
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
+    },
+    "format_standard": {
+      "unite": null,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": 5.00,
+      "x3": 14.00,
+      "x5": 23.00
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    },
+    "description_detaillee": "Le cookie 10 est une création raffinée qui marie délicatement les pépites de chocolat à un cœur fondant à la pistache. Le contraste entre le chocolat et la saveur subtile de la pistache en fait un cookie particulièrement élégant. Sa belle couleur verte au centre ajoute une touche de surprise lorsqu'on le coupe ou qu'on le croque. Chaque cookie est décoré de quelques éclats de pistaches pour suggérer le trésor qu'il renferme."
+  },
+  {
+    "id": "le-18",
+    "nom": "Le 18",
+    "description": "Chocolat et pistache réunis pour un cookie aussi beau que bon. La version tout chocolat de notre cookie à la pistache.",
+    "image": "image/COOKIE PNG/chocolat pistache.png",
+    "categorie": "gourmets",
+    "ingredients": [
+      "Farine de riz bio",
+      "Cacao en poudre bio",
+      "Pépites de chocolat noir",
+      "Crème de pistache",
+      "Pistaches bio concassées",
+      "Sucre de canne blond bio",
+      "Boisson végétale",
+      "Pomme bio"
+    ],
+    "allergenes": ["Pistaches", "Peut contenir des traces d'autres fruits à coque"],
+    "valeurs_nutritionnelles": {
+      "energie": "480 kcal",
+      "matieres_grasses": "27g",
+      "dont_saturees": "12g",
+      "glucides": "54g",
+      "dont_sucres": "32g",
+      "proteines": "8g",
+      "sel": "0.5g"
+    },
+    "prix": {
+      "petit": null,
+      "moyen": 5.00,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": null,
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
+    },
+    "format_standard": {
+      "unite": null,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": 5.00,
+      "x3": 14.00,
+      "x5": 23.00
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    },
+    "description_detaillee": "Le cookie 18 est une version sophistiquée qui associe l'intensité du cacao à la délicatesse de la pistache. Sa base au chocolat noir est réhaussée par un cœur fondant à la pistache qui crée un contraste de saveurs exceptionnel. Le vert tendre de la pistache au cœur du cookie marron foncé offre une expérience visuelle aussi attrayante que sa dégustation. Un cookie gourmet qui ravira les palais les plus exigeants."
+  },
+  {
+    "id": "le-02",
+    "nom": "Le 02",
+    "description": "Une touche citronnée subtile pour un cookie frais et surprenant. Léger et parfait pour l'été.",
+    "image": "image/COOKIE PNG/02 PETIT .png",
+    "categorie": "essentiels",
+    "ingredients": [
+      "Farine de riz bio",
+      "Citron bio",
+      "Sucre de canne blond bio",
+      "Boisson végétale de riz et d'amandes bio",
+      "Pomme bio"
+    ],
+    "allergenes": ["Amandes", "Peut contenir des traces d'autres fruits à coque"],
+    "valeurs_nutritionnelles": {
+      "energie": "410 kcal",
+      "matieres_grasses": "18g",
+      "dont_saturees": "8g",
+      "glucides": "58g",
+      "dont_sucres": "28g",
+      "proteines": "4g",
+      "sel": "0.3g"
+    },
+    "prix": {
+      "petit": 2.50,
+      "moyen": 4.50,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": 2.50,
+      "x2": 4.50,
+      "x3": 6.50,
+      "x6": 12.50,
+      "x9": 18.00,
+      "x12": 24.00,
+      "x18": 35.00,
+      "x24": 47.00
+    },
+    "format_standard": {
+      "unite": 4.50,
+      "x4": 16.00
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": 36.00,
+      "parts_6_8": 42.00
+    },
+    "description_detaillee": "Notre cookie au citron offre une expérience gustative rafraîchissante qui change des cookies traditionnels. Le zeste de citron bio apporte une légère acidité qui équilibre parfaitement la douceur de la pâte. Ce cookie plus léger est idéal pour les journées ensoleillées ou comme note fraîche en fin de repas. Le cookie Le 02 est également disponible en format géant pour vos occasions spéciales."
+  },
+  {
+    "id": "le-65",
+    "nom": "Le 65",
+    "description": "Praliné maison dans une base de cookie généreuse. Une délicieuse alliance de noisettes caramélisées et de cookie moelleux.",
+    "image": "image/COOKIE PNG/pralin.jpg",
+    "categorie": "essentiels",
+    "ingredients": [
+      "Farine de riz bio",
+      "Praliné maison bio (noisettes caramélisées)",
+      "Sucre de canne blond bio",
+      "Boisson végétale",
+      "Pomme bio"
+    ],
+    "allergenes": ["Noisettes", "Peut contenir des traces d'autres fruits à coque"],
+    "valeurs_nutritionnelles": {
+      "energie": "460 kcal",
+      "matieres_grasses": "24g",
+      "dont_saturees": "6g",
+      "glucides": "54g",
+      "dont_sucres": "30g",
+      "proteines": "7g",
+      "sel": "0.3g"
+    },
+    "prix": {
+      "petit": 2.50,
+      "moyen": 4.50,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": 2.50,
+      "x2": 4.50,
+      "x3": 6.50,
+      "x6": 12.50,
+      "x9": 18.00,
+      "x12": 24.00,
+      "x18": 35.00,
+      "x24": 47.00
+    },
+    "format_standard": {
+      "unite": 4.50,
+      "x4": 16.00
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    },
+    "description_detaillee": "Le cookie 65 met à l'honneur notre praliné maison, préparé avec des noisettes soigneusement caramélisées. La texture à la fois croquante et fondante du praliné apporte une dimension gourmande à ce cookie. Chaque morceau offre une expérience différente, entre le croustillant des éclats de noisettes et le moelleux de la pâte à cookie. Un équilibre parfait pour les amateurs de saveurs authentiques."
+  },
+  {
+    "id": "le-12",
+    "nom": "Le 12",
+    "description": "Un cœur pistache au centre d'un cookie moelleux aux pépites. Notre version du cookie Le 10 avec des pépites de chocolat en plus.",
+    "image": "image/COOKIE PNG/le 12 Pistache.png",
+    "categorie": "mini",
+    "ingredients": [
+      "Farine de riz bio",
+      "Pépites de chocolat noir",
+      "Crème de pistache",
+      "Pistaches bio concassées",
+      "Sucre de canne blond bio",
+      "Boisson végétale",
+      "Pomme bio"
+    ],
+    "allergenes": ["Pistaches", "Peut contenir des traces d'autres fruits à coque"],
+    "valeurs_nutritionnelles": {
+      "energie": "470 kcal",
+      "matieres_grasses": "25g",
+      "dont_saturees": "10g",
+      "glucides": "55g",
+      "dont_sucres": "30g",
+      "proteines": "7g",
+      "sel": "0.4g"
+    },
+    "prix": {
+      "petit": 2.50,
+      "moyen": null,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": 2.50,
+      "x2": 4.50,
+      "x3": 6.50,
+      "x6": 12.50,
+      "x9": 18.00,
+      "x12": 24.00,
+      "x18": 35.00,
+      "x24": 47.00
+    },
+    "format_standard": {
+      "unite": null,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    },
+    "description_detaillee": "Le cookie 12 est notre version mini du célèbre cookie à la pistache. Malgré sa petite taille, il offre tout le plaisir gustatif de la combinaison entre le chocolat et la pistache. Ces mini cookies sont parfaits pour les goûters des plus petits ou pour se faire plaisir sans excès. Aussi délicieux que leurs grands frères, ils offrent une expérience gustative concentrée en format réduit."
+  },
+  {
+    "id": "avril",
+    "nom": "Avril - Le 69",
+    "description": "Le cookie du mois, en édition limitée. Mi-pépites de chocolat noir, mi-tout choco pour une double expérience gourmande.",
+    "image": "image/COOKIE PNG/AVRIL.png",
+    "categorie": "edition_limitee",
+    "ingredients": [
+      "Farine de riz bio",
+      "Cacao en poudre bio",
+      "Pépites de chocolat noir",
+      "Sucre de canne blond bio",
+      "Boisson végétale",
+      "Pomme bio"
+    ],
+    "allergenes": ["Peut contenir des traces de fruits à coque"],
+    "valeurs_nutritionnelles": {
+      "energie": "450 kcal",
+      "matieres_grasses": "22g",
+      "dont_saturees": "11g",
+      "glucides": "58g",
+      "dont_sucres": "32g",
+      "proteines": "6g",
+      "sel": "0.4g"
+    },
+    "prix": {
+      "petit": 2.50,
+      "moyen": 5.00,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": 2.50,
+      "x2": 4.50,
+      "x3": 6.50,
+      "x6": 12.50,
+      "x9": 18.00,
+      "x12": 24.00,
+      "x18": 35.00,
+      "x24": 47.00
+    },
+    "format_standard": {
+      "unite": 5.00,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    },
+    "description_detaillee": "Le cookie d'Avril est une création spéciale en édition limitée qui combine deux de nos recettes les plus populaires dans un seul cookie. Une moitié parfaitement chocolatée et l'autre aux pépites de chocolat noir, pour une expérience de dégustation surprenante et contrastée. Cette édition limitée n'est disponible que pendant le mois d'avril, ne tardez pas à la découvrir !"
+  }
+]

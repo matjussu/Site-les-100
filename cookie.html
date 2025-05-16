@@ -2,7 +2,7 @@
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
-  <title>Nos Cookies</title>
+  <title>Nos Cookies - Les 100</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
     <!-- Préchargement des ressources critiques -->
@@ -19,6 +19,91 @@
     <!-- Scripts GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <style>
+      /* Styles spécifiques pour la page des cookies */
+      .cookies-section {
+        padding: 80px 0;
+      }
+      
+      .category-title {
+        font-size: 2.5rem;
+        text-align: center;
+        color: #3c2b1a;
+        margin-bottom: 30px;
+        position: relative;
+      }
+      
+      .category-title::after {
+        content: '';
+        position: absolute;
+        bottom: -10px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80px;
+        height: 3px;
+        background: #f8660e;
+        border-radius: 3px;
+      }
+      
+      .category-description {
+        text-align: center;
+        max-width: 800px;
+        margin: 0 auto 50px;
+        font-size: 1.1rem;
+        color: #666;
+        line-height: 1.6;
+      }
+      
+      .price-info {
+        text-align: center;
+        margin-bottom: 40px;
+        background-color: #fff5ef;
+        padding: 15px;
+        border-radius: 10px;
+        max-width: 800px;
+        margin: 0 auto 40px;
+      }
+      
+      .price-info p {
+        margin: 5px 0;
+        font-size: 1.1rem;
+      }
+      
+      .price-info strong {
+        color: #f8660e;
+      }
+      
+      .cookies-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 30px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+      
+      .cookies-section:nth-child(odd) {
+        background-color: #fffaf4;
+      }
+      
+      .cookies-section:nth-child(even) {
+        background-color: #fff;
+      }
+      
+      .new-badge {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        background-color: #f8660e;
+        color: white;
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-weight: 600;
+        font-size: 0.8rem;
+        z-index: 2;
+      }
+    </style>
 </head>
 <body>
   <div id="page-transition"></div>
@@ -46,87 +131,205 @@
       <p>Tout ce dont vous avez rêvé</p>
       <p>Et sans gluten, sans oeufs et sans lactose</p>
     </div>
-  </section>
-  
+</section>
 
-<section class="cookies-catalogue">
-    <h2>Notre collection de cookies</h2>
+<!-- Section Edition Limitée (Si présente) -->
+<section class="cookies-section" id="edition-limitee">
+  <div class="container">
+    <h2 class="category-title">Édition Limitée</h2>
+    <p class="category-description">Découvrez notre création spéciale du mois, une recette inédite à durée limitée. Ne la manquez pas, elle sera remplacée le mois prochain !</p>
+    
     <div class="cookies-grid">
-        <!-- Exemple de carte -->
-        <a href="cookie-detail.html?id=le-11" class="cookie-card">
-            <img src="image/COOKIE PNG/Le-11.png" alt="Le 11">
-            <h3>Le 11</h3>
-            <p>Un cookie moelleux aux pépites de chocolat</p>
-        </a>
-        
-        <a href="cookie-detail.html?id=le-08" class="cookie-card">
-            <img src="image/COOKIE PNG/Le-08.png" alt="Le 08">
-            <h3>Le 08</h3>
-            <p>Chocolat fondant avec pépites</p>
-        </a>
-        
-        <a href="cookie-detail.html?id=le-27" class="cookie-card">
-            <img src="image/COOKIE PNG/LE 27.png" alt="Le 27">
-            <h3>Le 27</h3>
-            <p>Beurre de cacahuètes maison</p>
-        </a>
-        
-        <a href="cookie-detail.html?id=le-05" class="cookie-card">
-            <img src="image/COOKIE PNG/le 05 Cranberries.png" alt="Le 05">
-            <h3>Le 05</h3>
-            <p>Cranberries acidulées</p>
-        </a>
-        
-        <a href="cookie-detail.html?id=le-03" class="cookie-card">
-            <img src="image/COOKIE PNG/Le 03.png" alt="Le 03">
-            <h3>Le 03</h3>
-            <p>Cœur fondant à la framboise</p>
-        </a>
-        
-        <a href="cookie-detail.html?id=le-04" class="cookie-card">
-            <img src="image/COOKIE PNG/Le 04 NOCCIOLATA.png" alt="Le 04">
-            <h3>Le 04</h3>
-            <p>Cœur Nocciolata bio</p>
-        </a>
-        
-        <a href="cookie-detail.html?id=le-06" class="cookie-card">
-            <img src="image/COOKIE PNG/le 06 CHOCO NOCCIOLATA.png" alt="Le 06">
-            <h3>Le 06</h3>
-            <p>Double chocolat & Nocciolata</p>
-        </a>
-        
-        <a href="cookie-detail.html?id=le-10" class="cookie-card">
-            <img src="image/COOKIE PNG/le 12 Pistache.png" alt="Le 10">
-            <h3>Le 10</h3>
-            <p>Cœur pistache</p>
-        </a>
-        
-        <a href="cookie-detail.html?id=le-18" class="cookie-card">
-            <img src="image/COOKIE PNG/chocolat pistache.png" alt="Le 18">
-            <h3>Le 18</h3>
-            <p>Chocolat et pistache</p>
-        </a>
-        
-        <a href="cookie-detail.html?id=le-02" class="cookie-card">
-            <img src="image/COOKIE PNG/02 PETIT .png" alt="Le 02">
-            <h3>Le 02</h3>
-            <p>Saveur citron</p>
-        </a>
-        
-        <a href="cookie-detail.html?id=le-65" class="cookie-card">
-            <img src="image/COOKIE PNG/pralin.jpg" alt="Le 65">
-            <h3>Le 65</h3>
-            <p>Praliné maison</p>
-        </a>
-        
-        <a href="cookie-detail.html?id=avril" class="cookie-card">
-            <img src="image/COOKIE PNG/AVRIL.png" alt="Avril">
-            <h3>Avril</h3>
-            <p>Le cookie du mois</p>
-        </a>      
-        
-        <!-- Duplique selon tes cookies -->
+      <a href="cookie-detail.html?id=avril" class="cookie-card">
+        <div class="new-badge">Nouveau</div>
+        <img src="image/COOKIE PNG/AVRIL.png" alt="Cookie du mois">
+        <h3>Avril - Le 69</h3>
+        <p>Mi-pépites de chocolat noir, mi-tout choco pour une double expérience gourmande.</p>
+      </a>
     </div>
+  </div>
+</section>
+
+<!-- Section Les Gourmets -->
+<section class="cookies-section" id="les-gourmets">
+  <div class="container">
+    <h2 class="category-title">Les Gourmets</h2>
+    <p class="category-description">Nos cookies les plus sophistiqués avec un cœur fondant pour une expérience de dégustation inoubliable.</p>
+    
+    <div class="price-info">
+      <p><strong>Prix :</strong> 5 € l'unité | 14 € les 3 | 23 € les 5</p>
+    </div>
+    
+    <div class="cookies-grid">
+      <a href="cookie-detail.html?id=le-03" class="cookie-card">
+        <img src="image/COOKIE PNG/Le 03.png" alt="Le 03">
+        <h3>Le 03</h3>
+        <p>Beurre de cacahuètes maison avec un cœur fondant à la framboise.</p>
+      </a>
+      
+      <a href="cookie-detail.html?id=le-04" class="cookie-card">
+        <img src="image/COOKIE PNG/Le 04 NOCCIOLATA.png" alt="Le 04">
+        <h3>Le 04</h3>
+        <p>Pépites de chocolat avec un cœur fondant de Nocciolata bio.</p>
+      </a>
+      
+      <a href="cookie-detail.html?id=le-06" class="cookie-card">
+        <img src="image/COOKIE PNG/le 06 CHOCO NOCCIOLATA.png" alt="Le 06">
+        <h3>Le 06</h3>
+        <p>Double chocolat et cœur Nocciolata, pour les vrais gourmands.</p>
+      </a>
+      
+      <a href="cookie-detail.html?id=le-10" class="cookie-card">
+        <img src="image/COOKIE PNG/le 12 Pistache.png" alt="Le 10">
+        <h3>Le 10</h3>
+        <p>Pépites de chocolat avec un cœur fondant à la pistache.</p>
+      </a>
+      
+      <a href="cookie-detail.html?id=le-18" class="cookie-card">
+        <img src="image/COOKIE PNG/chocolat pistache.png" alt="Le 18">
+        <h3>Le 18</h3>
+        <p>Chocolat et pistache réunis pour un cookie aussi beau que bon.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Section Les Essentiels -->
+<section class="cookies-section" id="les-essentiels">
+  <div class="container">
+    <h2 class="category-title">Les Essentiels</h2>
+    <p class="category-description">Nos recettes classiques qui ont fait le succès des 100. Des cookies simples mais délicieux, que vous pouvez savourer à tout moment.</p>
+    
+    <div class="price-info">
+      <p><strong>Prix :</strong> 4,50 € l'unité | 16 € les 4</p>
+    </div>
+    
+    <div class="cookies-grid">
+      <a href="cookie-detail.html?id=le-11" class="cookie-card">
+        <img src="image/COOKIE PNG/Le-11.png" alt="Le 11">
+        <h3>Le 11</h3>
+        <p>Un cookie moelleux aux pépites de chocolat, notre classique incontournable.</p>
+      </a>
+      
+      <a href="cookie-detail.html?id=le-08" class="cookie-card">
+        <img src="image/COOKIE PNG/Le-08.png" alt="Le 08">
+        <h3>Le 08</h3>
+        <p>Chocolat fondant avec pépites, pour les vrais amateurs de cacao.</p>
+      </a>
+      
+      <a href="cookie-detail.html?id=le-27" class="cookie-card">
+        <img src="image/COOKIE PNG/LE 27.png" alt="Le 27">
+        <h3>Le 27</h3>
+        <p>Beurre de cacahuètes maison, intense et fondant.</p>
+      </a>
+      
+      <a href="cookie-detail.html?id=le-05" class="cookie-card">
+        <img src="image/COOKIE PNG/le 05 Cranberries.png" alt="Le 05">
+        <h3>Le 05</h3>
+        <p>Cranberries acidulées pour une version fruitée et légèrement acidulée.</p>
+      </a>
+      
+      <a href="cookie-detail.html?id=le-02" class="cookie-card">
+        <img src="image/COOKIE PNG/02 PETIT .png" alt="Le 02">
+        <h3>Le 02</h3>
+        <p>Saveur citron, frais et surprenant pour une pause gourmande.</p>
+      </a>
+      
+      <a href="cookie-detail.html?id=le-65" class="cookie-card">
+        <img src="image/COOKIE PNG/pralin.jpg" alt="Le 65">
+        <h3>Le 65</h3>
+        <p>Praliné maison dans une base de cookie généreuse.</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Section Les Minis -->
+<section class="cookies-section" id="les-minis">
+  <div class="container">
+    <h2 class="category-title">Les Minis</h2>
+    <p class="category-description">Nos cookies version mini, parfaits pour les goûters des enfants ou pour se faire plaisir sans excès. Tous nos parfums sont disponibles en format mini.</p>
+    
+    <div class="price-info">
+      <p><strong>Prix :</strong></p>
+      <p>2,50 € l'unité | 4,50 € les 2 | 6,50 € les 3 | 12,50 € les 6</p>
+      <p>18 € les 9 | 24 € les 12 | 35 € les 18 | 47 € les 24</p>
+    </div>
+    
+    <div class="cookies-grid">
+      <a href="cookie-detail.html?id=le-11" class="cookie-card">
+        <img src="image/COOKIE PNG/Le-11.png" alt="Mini Le 11">
+        <h3>Mini Le 11</h3>
+        <p>Pépites de chocolat</p>
+      </a>
+      
+      <a href="cookie-detail.html?id=le-08" class="cookie-card">
+        <img src="image/COOKIE PNG/Le-08.png" alt="Mini Le 08">
+        <h3>Mini Le 08</h3>
+        <p>Chocolat + Pépites de chocolat</p>
+      </a>
+      
+      <a href="cookie-detail.html?id=le-27" class="cookie-card">
+        <img src="image/COOKIE PNG/LE 27.png" alt="Mini Le 27">
+        <h3>Mini Le 27</h3>
+        <p>Beurre de cacahuètes</p>
+      </a>
+      
+      <a href="cookie-detail.html?id=le-05" class="cookie-card">
+        <img src="image/COOKIE PNG/le 05 Cranberries.png" alt="Mini Le 05">
+        <h3>Mini Le 05</h3>
+        <p>Cranberries</p>
+      </a>
+      
+      <a href="cookie-detail.html?id=le-12" class="cookie-card">
+        <img src="image/COOKIE PNG/le 12 Pistache.png" alt="Mini Le 12">
+        <h3>Mini Le 12</h3>
+        <p>Pistaches</p>
+      </a>
+      
+      <a href="cookie-detail.html?id=le-02" class="cookie-card">
+        <img src="image/COOKIE PNG/02 PETIT .png" alt="Mini Le 02">
+        <h3>Mini Le 02</h3>
+        <p>Citron</p>
+      </a>
+      
+      <a href="cookie-detail.html?id=le-65" class="cookie-card">
+        <img src="image/COOKIE PNG/pralin.jpg" alt="Mini Le 65">
+        <h3>Mini Le 65</h3>
+        <p>Praliné</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Section Les Géants -->
+<section class="cookies-section" id="les-geants">
+  <div class="container">
+    <h2 class="category-title">Les Géants</h2>
+    <p class="category-description">Pour vos fêtes et événements, nos cookies géants à partager. Idéaux pour remplacer un gâteau d'anniversaire ou pour un repas de fête.</p>
+    
+    <div class="price-info">
+      <p><strong>Format 4-6 parts :</strong> 30-36 € selon le parfum</p>
+      <p><strong>Format 6-8 parts :</strong> 35-42 € selon le parfum</p>
+      <p>Sur commande uniquement, contactez-nous pour plus d'informations.</p>
+    </div>
+    
+    <div class="cookies-grid">
+      <a href="cookie-detail.html?id=le-02" class="cookie-card">
+        <img src="image/COOKIE PNG/02 PETIT .png" alt="Géant Le 02">
+        <h3>Géant Le 02</h3>
+        <p>Notre cookie au citron en version à partager</p>
+      </a>
+      
+      <a href="contact.html" class="cookie-card">
+        <div style="height: 200px; background-color: #f8f8f8; border-radius: 10px; display: flex; justify-content: center; align-items: center;">
+          <span style="font-size: 4rem; color: #f8660e;">+</span>
+        </div>
+        <h3>Autres parfums</h3>
+        <p>Contactez-nous pour commander n'importe quel parfum en version géante</p>
+      </a>
+    </div>
+  </div>
 </section>
 
 <footer class="site-footer">

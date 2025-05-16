@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="fr">
-
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,6 +9,30 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  
+  <style>
+    /* Styles spécifiques pour corriger l'image de fond sur mobile */
+    #hero .parallax-bg {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-image: url('image/accueil_cookie.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: -1;
+      filter: brightness(0.5);
+    }
+    
+    @media (max-width: 768px) {
+      #hero .parallax-bg {
+        background-attachment: scroll;
+        background-position: center top;
+      }
+    }
+  </style>
 </head>
 <body>
   <div id="page-transition"></div>
@@ -33,7 +55,7 @@
 
 <!-- Première section "Les 100" -->
 <section id="hero" class="parallax-container hero">
-  <div class="parallax-bg" style="background-image: url('image/accueil_cookie.png');"></div>
+  <div class="parallax-bg"></div>
   <div class="content">
     <img src="logo/logo les100_DEF.png" alt="Logo Les 100" class="hero-logo animate-element fade-up" />
     <h1 class="animate-element fade-up">Les cookies qui ont 100 raisons d'exister</h1>
@@ -80,8 +102,6 @@
   </div>
 </section>
 
-
-
 <!-- Footer -->
 <footer class="site-footer">
   <div class="footer-content">
@@ -109,6 +129,27 @@
 </footer>
 
 <script src="script.js"></script>
+<script>
+  // Fix pour l'image de fond sur mobile
+  document.addEventListener('DOMContentLoaded', function() {
+    const isMobile = window.innerWidth <= 768;
+    const heroParallax = document.querySelector('#hero .parallax-bg');
+    
+    if (heroParallax) {
+      // Pour éviter que les scripts GSAP n'effacent l'image
+      heroParallax.classList.add('mobile-bg-fixed');
+      
+      // Cette méthode est plus fiable que background-attachment: fixed sur mobile
+      if (isMobile) {
+        // S'assurer que l'image est bien visible sur mobile
+        heroParallax.style.position = 'absolute';
+        heroParallax.style.backgroundAttachment = 'scroll';
+        heroParallax.style.backgroundPosition = 'center top';
+        heroParallax.style.width = '100%';
+        heroParallax.style.height = '100%';
+      }
+    }
+  });
+</script>
 </body>
 </html>
-

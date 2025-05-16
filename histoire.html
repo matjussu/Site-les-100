@@ -10,131 +10,440 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <style>
+        /* Styles spécifiques pour la timeline améliorée avec ID uniques pour éviter les conflits */
+        #histoire-timeline {
+            max-width: 1000px;
+            margin: 100px auto;
+            padding: 0 30px;
+            position: relative;
+            overflow: visible;
+        }
+        
+        #histoire-timeline-line {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            height: 100%;
+            background-color: #eee;
+            transform: translateX(-50%);
+            border-radius: 4px;
+            z-index: 1;
+            pointer-events: none;
+        }
+        
+        #histoire-timeline-progress {
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            height: 100%;
+            background: linear-gradient(to bottom, #f8660e, #ff8c3a);
+            transform: translateX(-50%) scaleY(0);
+            transform-origin: top;
+            border-radius: 4px;
+            z-index: 2;
+            pointer-events: none;
+            will-change: transform;
+        }
+        
+        .histoire-story-section {
+            margin-bottom: 100px;
+            position: relative;
+            z-index: 5;
+            opacity: 1;
+            transform: translateY(0);
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .histoire-story-container {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            background-color: white;
+            border-radius: 18px;
+            padding: 35px 40px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            position: relative;
+            max-width: 60%;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 5;
+            will-change: transform, box-shadow;
+            overflow: visible;
+        }
+        
+        /* Cases alternées gauche/droite */
+        .histoire-story-section:nth-child(odd) .histoire-story-container {
+            margin-left: auto;
+            margin-right: 12%;
+        }
+        
+        .histoire-story-section:nth-child(even) .histoire-story-container {
+            margin-right: auto;
+            margin-left: 12%;
+            flex-direction: row-reverse;
+        }
+        
+        .histoire-story-container:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .histoire-story-icon {
+            flex-shrink: 0;
+            width: 85px;
+            height: 85px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f8660e, #ff9f46);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 8px 20px rgba(248, 102, 14, 0.25);
+            transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+            position: relative;
+            z-index: 6;
+            will-change: transform;
+        }
+        
+        .histoire-story-icon::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            background: rgba(248, 102, 14, 0.08);
+            border-radius: 50%;
+            z-index: -1;
+        }
+        
+        .histoire-story-icon span {
+            color: white;
+            font-size: 2.2rem;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .histoire-story-container:hover .histoire-story-icon {
+            transform: scale(1.15) rotate(5deg);
+        }
+        
+        .histoire-story-content {
+            flex-grow: 1;
+        }
+        
+        .histoire-story-content p {
+            font-size: 1.15rem;
+            line-height: 1.8;
+            color: #444;
+            margin: 0;
+        }
+        
+        /* Un connecteur pour relier la timeline à chaque boîte */
+        .histoire-timeline-connector {
+            position: absolute;
+            top: 50%;
+            width: 60px;
+            height: 4px;
+            background-color: #f8660e;
+            z-index: 3;
+            pointer-events: none;
+        }
+        
+        .histoire-story-section:nth-child(odd) .histoire-timeline-connector {
+            left: calc(50% - 60px);
+            transform: translateY(-50%);
+        }
+        
+        .histoire-story-section:nth-child(even) .histoire-timeline-connector {
+            right: calc(50% - 60px);
+            transform: translateY(-50%);
+        }
+        
+        /* Amélioration du hero */
+        #hero-histoire {
+            height: 80vh;
+            background-color: #000;
+        }
+        
+        #hero-histoire .parallax-bg {
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            filter: brightness(0.6);
+        }
+        
+        .hero-histoire-content {
+            text-align: center;
+        }
+        
+        .hero-histoire-content h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Amélioration de la mission */
+        .our-mission {
+            background-color: #fff;
+            padding: 120px 30px;
+        }
+        
+        .mission-container {
+            max-width: 800px;
+        }
+        
+        .mission-container h2 {
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+        
+        .mission-content p {
+            font-size: 1.3rem;
+            line-height: 1.8;
+            margin-bottom: 2.5rem;
+        }
+        
+        .cta-button {
+            font-size: 1.1rem;
+            padding: 16px 40px;
+            border-radius: 50px;
+            box-shadow: 0 10px 25px rgba(248, 102, 14, 0.25);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(248, 102, 14, 0.35);
+        }
+        
+        /* Responsive styles - Optimisé */
+        @media (max-width: 1024px) {
+            .histoire-story-container {
+                max-width: 70%;
+            }
+            
+            .hero-histoire-content h1 {
+                font-size: 3.5rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            #histoire-timeline-line,
+            #histoire-timeline-progress {
+                left: 30px;
+                z-index: 2;
+            }
+            
+            .histoire-story-container {
+                max-width: calc(100% - 70px);
+                margin-left: 70px !important;
+                margin-right: 0 !important;
+                padding: 25px 30px;
+            }
+            
+            /* Sur mobile, on inverse chaque carte paire */
+            .histoire-story-section:nth-child(even) .histoire-story-container {
+                flex-direction: row;
+                margin-left: 70px !important;
+                margin-right: 0 !important;
+            }
+            
+            .histoire-timeline-connector {
+                width: 40px;
+            }
+            
+            .histoire-story-section:nth-child(odd) .histoire-timeline-connector,
+            .histoire-story-section:nth-child(even) .histoire-timeline-connector {
+                left: 30px;
+                right: auto;
+            }
+            
+            .hero-histoire-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .mission-container h2 {
+                font-size: 2.5rem;
+            }
+            
+            .mission-content p {
+                font-size: 1.2rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .histoire-story-container {
+                padding: 25px 20px;
+                margin-left: 50px !important;
+            }
+            
+            #histoire-timeline-line,
+            #histoire-timeline-progress {
+                left: 20px;
+            }
+            
+            .histoire-story-icon {
+                width: 65px;
+                height: 65px;
+            }
+            
+            .histoire-story-icon span {
+                font-size: 1.8rem;
+            }
+            
+            .histoire-timeline-connector {
+                width: 30px;
+            }
+            
+            .histoire-story-section:nth-child(odd) .histoire-timeline-connector,
+            .histoire-story-section:nth-child(even) .histoire-timeline-connector {
+                left: 20px;
+            }
+            
+            .hero-histoire-content h1 {
+                font-size: 2.3rem;
+            }
+            
+            .mission-container h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
 </head>
 <body>
     <div id="page-transition"></div>
-<header>
-    <div class="logo">
-      <a href="index.html">
-        <img src="logo/logo les100_DEF ROND.png" alt="Logo Les 100" />
-      </a>
+    <header>
+        <div class="logo">
+          <a href="index.html">
+            <img src="logo/logo les100_DEF ROND.png" alt="Logo Les 100" />
+          </a>
+        </div>
+        <nav>
+          <ul>
+            <li><a href="cookie.html">Cookies</a></li>
+            <li><a href="histoire.html">Notre Histoire</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </nav>
+    </header>
+
+    <section id="hero-histoire" class="parallax-container">
+        <img src="image/cooks_cacahuetes.png" class="parallax-bg" alt="Background" />
+        <div class="hero-overlay"></div>
+        <div class="hero-histoire-content">
+          <img src="logo/logo les100_DEF ROND.png" alt="Logo Les 100" class="hero-histoire-logo animate-element fade-up" />
+          <h1 class="animate-element fade-up">Notre Histoire</h1>
+          <p class="hero-tagline animate-element fade-up">Une aventure de partage et de gourmandise</p>
+        </div>
+    </section>
+
+    <div id="histoire-timeline">
+        <div id="histoire-timeline-line"></div>
+        <div id="histoire-timeline-progress"></div>
+        
+        <section class="histoire-story-section" id="histoire-section1">
+            <div class="histoire-timeline-connector"></div>
+            <div class="histoire-story-container">
+                <div class="histoire-story-icon">
+                    <span>1</span>
+                </div>
+                <div class="histoire-story-content">
+                    <p>📍 Tout a commencé avec un besoin.<br>
+                    Mes filles et moi avons des intolérances (🌾❌🥛❌🥚❌) et trouver de bons cookies était une vraie mission...<br>
+                    Alors, j'ai décidé de les créer. 🍪💛</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="histoire-story-section" id="histoire-section2">
+            <div class="histoire-timeline-connector"></div>
+            <div class="histoire-story-container">
+                <div class="histoire-story-content">
+                    <p>👩‍🧑‍💡 Ce sont elles qui m'ont poussée à aller plus loin...<br>
+                    Parce que personne ne devrait renoncer au plaisir d'un vrai cookie. 😋✨</p>
+                </div>
+                <div class="histoire-story-icon">
+                    <span>2</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="histoire-story-section" id="histoire-section3">
+            <div class="histoire-timeline-connector"></div>
+            <div class="histoire-story-container">
+                <div class="histoire-story-icon">
+                    <span>3</span>
+                </div>
+                <div class="histoire-story-content">
+                    <p>🔬🧁 J'ai testé, ajusté, recommencé.<br>
+                    Jusqu'à obtenir des cookies gourmands, moelleux, croquants...<br>
+                    Des cookies de partage 💛 que tout le monde peut savourer : intolérants, vegan ou juste gourmands. 🥰🌱🍪</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="histoire-story-section" id="histoire-section4">
+            <div class="histoire-timeline-connector"></div>
+            <div class="histoire-story-container">
+                <div class="histoire-story-content">
+                    <p>🏡🥜 Tout est fait maison :<br>
+                    Beurre de cacahuètes 🥜, praliné 🌰, beurre de pistaches, lemon curd 🍋<br>
+                    Avec des ingrédients bio autant que possible.</p>
+                </div>
+                <div class="histoire-story-icon">
+                    <span>4</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="histoire-story-section" id="histoire-section5">
+            <div class="histoire-timeline-connector"></div>
+            <div class="histoire-story-container">
+                <div class="histoire-story-icon">
+                    <span>5</span>
+                </div>
+                <div class="histoire-story-content">
+                    <p>🗓️🍂 Des recettes qui suivent les saisons :<br>
+                    🎃 Novembre : cookie courge et épices de Noël<br>
+                    🎄 Décembre : cookie chocolat & écorces d'orange confites maison<br>
+                    🍁 Janvier : sucre d'érable<br>
+                    🍋 Février : citron en clin d'œil à la fête de Menton</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="histoire-story-section" id="histoire-section6">
+            <div class="histoire-timeline-connector"></div>
+            <div class="histoire-story-container">
+                <div class="histoire-story-content">
+                    <p>🖊️🍪 Mini ou maxi, chacun son cookie !<br>
+                    👉 Mini : pour les petits 👧<br>
+                    👉 Maxi 4-6 parts : anniversaires & fêtes 🎉<br>
+                    👉 Maxi 6-8 parts : encore plus de partage</p>
+                </div>
+                <div class="histoire-story-icon">
+                    <span>6</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="histoire-story-section" id="histoire-section7">
+            <div class="histoire-timeline-connector"></div>
+            <div class="histoire-story-container">
+                <div class="histoire-story-icon">
+                    <span>7</span>
+                </div>
+                <div class="histoire-story-content">
+                    <p>📢 Sur commande, presque tous les parfums peuvent être adaptés à la taille qui vous convient ✏️❤️</p>
+                </div>
+            </div>
+        </section>
     </div>
-    <nav>
-      <ul>
-        <li><a href="cookie.html">Cookies</a></li>
-        <li><a href="histoire.html">Notre Histoire</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
-      
-
- 
-  <section id="hero-histoire" class="parallax-container">
-    <img src="image/cooks_cacahuetes.png" class="parallax-bg" alt="Background" />
-    <div class="hero-overlay"></div>
-    <div class="hero-histoire-content">
-      <img src="logo/logo les100_DEF ROND.png" alt="Logo Les 100" class="hero-histoire-logo animate-element fade-up" />
-      <h1 class="animate-element fade-up">Notre Histoire</h1>
-      <p class="hero-tagline animate-element fade-up">Une aventure de partage et de gourmandise</p>
-    </div>
-  </section>
-
-  <div class="story-timeline">
-    <div class="timeline-line"></div>
-    <div class="timeline-progress" id="timeline-progress"></div>   
-    
-    <section class="story-section" id="section1">
-        <div class="story-container">
-            <div class="story-icon">
-                <span>1</span>
-            </div>
-            <div class="story-content">
-                <p>📍 Tout a commencé avec un besoin.<br>
-                Mes filles et moi avons des intolérances (🌾❌🥛❌🥚❌) et trouver de bons cookies était une vraie mission...<br>
-                Alors, j'ai décidé de les créer. 🍪💛</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="story-section" id="section2">
-        <div class="story-container">
-            <div class="story-icon">
-                <span>2</span>
-            </div>
-            <div class="story-content">
-                <p>👩‍🧑‍💡 Ce sont elles qui m'ont poussée à aller plus loin...<br>
-                Parce que personne ne devrait renoncer au plaisir d'un vrai cookie. 😋✨</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="story-section" id="section3">
-        <div class="story-container">
-            <div class="story-icon">
-                <span>3</span>
-            </div>
-            <div class="story-content">
-                <p>🔬🧁 J'ai testé, ajusté, recommencé.<br>
-                Jusqu'à obtenir des cookies gourmands, moelleux, croquants...<br>
-                Des cookies de partage 💛 que tout le monde peut savourer : intolérants, vegan ou juste gourmands. 🥰🌱🍪</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="story-section" id="section4">
-        <div class="story-container">
-            <div class="story-icon">
-                <span>4</span>
-            </div>
-            <div class="story-content">
-                <p>🏡🥜 Tout est fait maison :<br>
-                Beurre de cacahuètes 🥜, praliné 🌰, beurre de pistaches, lemon curd 🍋<br>
-                Avec des ingrédients bio autant que possible.</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="story-section" id="section5">
-        <div class="story-container">
-            <div class="story-icon">
-                <span>5</span>
-            </div>
-            <div class="story-content">
-                <p>🗓️🍂 Des recettes qui suivent les saisons :<br>
-                🎃 Novembre : cookie courge et épices de Noël<br>
-                🎄 Décembre : cookie chocolat & écorces d'orange confites maison<br>
-                🍁 Janvier : sucre d'érable<br>
-                🍋 Février : citron en clin d'œil à la fête de Menton</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="story-section" id="section6">
-        <div class="story-container">
-            <div class="story-icon">
-                <span>6</span>
-            </div>
-            <div class="story-content">
-                <p>🖊️🍪 Mini ou maxi, chacun son cookie !<br>
-                👉 Mini : pour les petits 👧<br>
-                👉 Maxi 4-6 parts : anniversaires & fêtes 🎉<br>
-                👉 Maxi 6-8 parts : encore plus de partage</p>
-            </div>
-        </div>
-    </section>
-
-    <section class="story-section" id="section7">
-        <div class="story-container">
-            <div class="story-icon">
-                <span>7</span>
-            </div>
-            <div class="story-content">
-                <p>📢 Sur commande, presque tous les parfums peuvent être adaptés à la taille qui vous convient ✏️❤️</p>
-            </div>
-        </div>
-    </section>
-</div>
 
     <section class="our-mission">
         <div class="mission-container">
@@ -174,108 +483,158 @@
         </div>
     </footer>
 
-    <script src="script.js"></script>
     <script>
-        // Script simple et robuste pour la timeline
         document.addEventListener('DOMContentLoaded', function() {
-          // Référence à la barre de progression
-          const timelineProgress = document.getElementById('timeline-progress');
-          const storyTimeline = document.querySelector('.story-timeline');
-          
-          // Animation de la timeline au scroll
-          function updateTimelineProgress() {
-            if (!timelineProgress || !storyTimeline) return;
+            // Animation d'entrée pour les éléments du hero
+            const heroElements = document.querySelectorAll('.hero-histoire-content .animate-element');
             
-            // Position de la timeline par rapport à la fenêtre
-            const rect = storyTimeline.getBoundingClientRect();
-            const windowHeight = window.innerHeight;
-            const timelineHeight = storyTimeline.offsetHeight;
+            setTimeout(() => {
+                heroElements.forEach((element, index) => {
+                    setTimeout(() => {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                        element.style.visibility = 'visible';
+                    }, index * 200);
+                });
+            }, 300);
             
-            // Calcul du pourcentage visible
-            let visiblePercentage = 0;
+            // Initialisation de GSAP ScrollTrigger avec des noms uniques
+            gsap.registerPlugin(ScrollTrigger);
             
-            if (rect.top <= 0 && rect.bottom >= windowHeight) {
-              // Timeline occupe toute la hauteur de l'écran
-              visiblePercentage = 1;
-            } else if (rect.top < windowHeight && rect.bottom > 0) {
-              // Timeline partiellement visible
-              const visibleTop = Math.max(0, rect.top);
-              const visibleBottom = Math.min(windowHeight, rect.bottom);
-              const visibleHeight = visibleBottom - visibleTop;
-              
-              // Pourcentage de défilement relatif à la hauteur totale
-              const scrolledDistance = window.scrollY - (storyTimeline.offsetTop - windowHeight);
-              const totalScrollDistance = timelineHeight + windowHeight;
-              visiblePercentage = Math.max(0, Math.min(1, scrolledDistance / totalScrollDistance));
+            // Animation de la barre de progression de la timeline - VERSION CORRIGÉE
+            const timelineProgress = document.getElementById('histoire-timeline-progress');
+            const timeline = document.getElementById('histoire-timeline');
+            
+            // S'assurer que les éléments existent avant de créer les animations
+            if (timelineProgress && timeline) {
+                // Créer une animation GSAP dédiée avec un ID unique
+                const progressAnimation = gsap.fromTo(timelineProgress, 
+                    { scaleY: 0 }, 
+                    {
+                        scaleY: 1,
+                        ease: 'none',
+                        scrollTrigger: {
+                            id: 'histoire-progress',
+                            trigger: '#histoire-timeline',
+                            start: 'top 80%', 
+                            end: 'bottom 20%',
+                            scrub: 0.3
+                        }
+                    }
+                );
+                
+                // Utiliser aussi une fonction manuelle au cas où
+                function updateHistoireProgress() {
+                    if (!timelineProgress || !timeline) return;
+                    
+                    const rect = timeline.getBoundingClientRect();
+                    const windowHeight = window.innerHeight;
+                    
+                    // Si la timeline est visible
+                    if (rect.top < windowHeight && rect.bottom > 0) {
+                        // Calculer la progression
+                        const startView = Math.max(0, rect.top);
+                        const endView = Math.min(windowHeight, rect.bottom);
+                        const visibleHeight = endView - startView;
+                        const timelineHeight = rect.height;
+                        
+                        // Position relative dans la fenêtre
+                        const percentVisible = visibleHeight / windowHeight;
+                        
+                        // Position absolue dans la timeline
+                        const scrollProgress = (window.scrollY - (timeline.offsetTop - windowHeight)) / (timelineHeight + windowHeight);
+                        const progress = Math.max(0, Math.min(1, scrollProgress));
+                        
+                        // Appliquer la transformation directement
+                        timelineProgress.style.transform = `translateX(-50%) scaleY(${progress})`;
+                    }
+                }
+                
+                // Mettre à jour manuellement
+                window.addEventListener('scroll', updateHistoireProgress);
+                window.addEventListener('resize', updateHistoireProgress);
+                
+                // Première mise à jour
+                setTimeout(updateHistoireProgress, 100);
             }
             
-            // Application de la transformation
-            timelineProgress.style.transform = `translateX(-50%) scaleY(${visiblePercentage})`;
-          }
-          
-          // Détecter le scroll
-          window.addEventListener('scroll', updateTimelineProgress);
-          
-          // Mise à jour initiale
-          updateTimelineProgress();
-          
-          // Garantir que la timeline est visible même si les animations échouent
-          setTimeout(function() {
-            document.querySelectorAll('.story-section').forEach(section => {
-              section.style.opacity = '1';
-              section.style.visibility = 'visible';
+            // Animation des sections de l'histoire
+            const historySections = document.querySelectorAll('.histoire-story-section');
+            historySections.forEach((section, index) => {
+                gsap.from(section, {
+                    y: 50,
+                    opacity: 0,
+                    duration: 0.7,
+                    ease: 'power3.out',
+                    scrollTrigger: {
+                        id: `histoire-section-${index}`,
+                        trigger: section,
+                        start: 'top 85%',
+                        toggleActions: 'play none none none'
+                    }
+                });
+                
+                // Animation des connecteurs
+                const connector = section.querySelector('.histoire-timeline-connector');
+                if (connector) {
+                    gsap.from(connector, {
+                        width: 0,
+                        duration: 0.4,
+                        delay: 0.2,
+                        ease: 'power2.out',
+                        scrollTrigger: {
+                            id: `histoire-connector-${index}`,
+                            trigger: section,
+                            start: 'top 85%',
+                            toggleActions: 'play none none none'
+                        }
+                    });
+                }
             });
             
-            // Forcer la visibilité des conteneurs
-            document.querySelectorAll('.story-container').forEach(container => {
-              container.style.opacity = '1';
-              container.style.visibility = 'visible';
-            });
-          }, 500);
+            // Animation du parallaxe du hero
+            if (window.innerWidth > 768) {
+                gsap.to('#hero-histoire .parallax-bg', {
+                    yPercent: 20,
+                    ease: 'none',
+                    scrollTrigger: {
+                        id: 'histoire-hero-parallax',
+                        trigger: '#hero-histoire',
+                        start: 'top top',
+                        end: 'bottom top',
+                        scrub: true
+                    }
+                });
+            }
+            
+            // Désactiver des animations sur mobile
+            function optimizeForMobile() {
+                if (window.innerWidth <= 768) {
+                    // Désactiver le parallaxe
+                    const parallaxBg = document.querySelector('#hero-histoire .parallax-bg');
+                    if (parallaxBg) {
+                        gsap.set(parallaxBg, {
+                            clearProps: 'all',
+                            position: 'absolute',
+                            top: 0,
+                            left: 0,
+                            width: '100%',
+                            height: '100%',
+                            objectFit: 'cover'
+                        });
+                    }
+                    
+                    // Tuer les ScrollTriggers spécifiques à cette page
+                    ScrollTrigger.getAll().forEach(trigger => {
+                        if (trigger.vars && trigger.vars.id && trigger.vars.id.includes('histoire')) {
+                            trigger.kill();
+                        }
+                    });
+                }
+            }
+            
+            window.addEventListener('load', optimizeForMobile);
+            window.addEventListener('resize', optimizeForMobile);
         });
-        </script>
-
-<script>
-    // Animation simplifiée pour le hero
-    document.addEventListener('DOMContentLoaded', function() {
-      // Référence aux éléments du hero
-      const heroLogo = document.querySelector('.hero-histoire-logo');
-      const heroTitle = document.querySelector('.hero-histoire-content h1');
-      const heroTagline = document.querySelector('.hero-tagline');
-      
-      // Animation simple avec setTimout (fiable)
-      setTimeout(() => {
-        if (heroLogo) {
-          heroLogo.style.opacity = '1';
-          heroLogo.style.transform = 'translateY(0)';
-          heroLogo.style.visibility = 'visible';
-        }
-        
-        setTimeout(() => {
-          if (heroTitle) {
-            heroTitle.style.opacity = '1';
-            heroTitle.style.transform = 'translateY(0)';
-            heroTitle.style.visibility = 'visible';
-          }
-          
-          setTimeout(() => {
-            if (heroTagline) {
-              heroTagline.style.opacity = '1';
-              heroTagline.style.transform = 'translateY(0)';
-              heroTagline.style.visibility = 'visible';
-            }
-          }, 200);
-        }, 200);
-      }, 300);
-      
-      // Gestion du header
-      const header = document.querySelector('header');
-      window.addEventListener('scroll', function() {
-        if (window.scrollY > 50) {
-          header.classList.add('scrolled');
-        } else {
-          header.classList.remove('scrolled');
-        }
-      });
-    });
     </script>
+</body>

@@ -22,7 +22,10 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     // Animation du bouton au clic
-    form.addEventListener('submit', function() {
+    form.addEventListener('submit', function(e) {
+        // NE PAS EMPÊCHER L'ACTION PAR DÉFAUT
+        // NE PAS UTILISER e.preventDefault();
+        
         const submitButton = form.querySelector('.submit-button');
         
         // Ajouter une classe pour indiquer le chargement
@@ -36,24 +39,25 @@ document.addEventListener('DOMContentLoaded', function() {
         timeline
             .to(submitButton, { width: '50px', borderRadius: '25px' })
             .to(submitButton, { 
-                innerHTML: '<div class="loader"></div>',
-                onComplete: function() {
-                    // Le formulaire sera soumis normalement à FormSubmit
-                    // Cette animation est juste pour l'effet visuel
-                }
+                innerHTML: '<div class="loader"></div>'
             });
+        
+        // FormSubmit se chargera automatiquement d'envoyer le formulaire
+        // NE PAS ajouter de code de redirection ou de traitement d'e-mail ici
     });
 });
 
-// Gardez la fonction initCookieOfTheMonth telle quelle
+// Fonction pour le cookie du mois
 function initCookieOfTheMonth() {
-  const cookieOfTheMonth = {
-    id: "avril",
-    nom: "Avril - Le 69",
-    description: "Un cookie aux éclats de pistache et fleur d'oranger, célébrant l'arrivée du printemps",
-    image: "image/COOKIE PNG/AVRIL.png",
-    featured: true
-  };
+    const cookieOfTheMonth = {
+        id: "avril",
+        nom: "Avril - Le 69",
+        description: "Un cookie aux éclats de pistache et fleur d'oranger, célébrant l'arrivée du printemps",
+        image: "image/COOKIE PNG/AVRIL.png",
+        featured: true
+    };
+    
+    // Ajoutez ici le code pour afficher le cookie du mois si nécessaire
 }
 
 // Appeler la fonction au chargement de la page

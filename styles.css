@@ -4335,3 +4335,36 @@ img {
       font-size: 1.2rem;
     }
   }
+
+  /* Styles pour le bouton de soumission */
+.submit-button {
+    position: relative;
+    transition: width 0.3s, border-radius 0.3s;
+    overflow: hidden;
+}
+
+.submit-button.loading {
+    color: transparent;
+}
+
+.loader {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s infinite linear;
+}
+
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}

@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://les-100.fr/sitemap.xml

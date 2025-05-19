@@ -380,7 +380,7 @@ nav ul li a.active::before {
 
 /* Alternative: si l'image est définie dans le CSS */
 #hero .parallax-bg {
-    background-image: url('image/accueil_cookie.png');
+    background-image: url('image/accueil_cookie.webp');
 }
 
 /* S'assure que l'image est visible même avec les animations */
@@ -623,7 +623,7 @@ nav ul li a.active::before {
 .cookies-intro {
     position: relative;
     height: 100vh;
-    background-image: url('image/cookie_accueil.png');
+    background-image: url('image/cookie_accueil.webp');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -2861,7 +2861,7 @@ img {
     position: relative;
     height: 40vh;
     min-height: 400px;
-    background-image: url('image/cookie_accueil.png');
+    background-image: url('image/cookie_accueil.webp');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -4366,5 +4366,30 @@ img {
     }
     100% {
         transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.histoire-fixed .histoire-story-section,
+.histoire-fixed .histoire-story-container,
+.histoire-fixed .histoire-story-icon,
+.histoire-fixed .histoire-story-content,
+.histoire-fixed .histoire-timeline-connector {
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+}
+
+@media (max-width: 768px) {
+    #histoire-timeline-line,
+    #histoire-timeline-progress {
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    
+    .histoire-story-container {
+        opacity: 1 !important;
+        visibility: visible !important;
+        transform: none !important;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
     }
 }

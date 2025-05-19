@@ -648,15 +648,15 @@
     "description_detaillee": "Le cookie 12 est notre version mini du célèbre cookie à la pistache. Malgré sa petite taille, il offre tout le plaisir gustatif de la combinaison entre le chocolat et la pistache. Ces mini cookies sont parfaits pour les goûters des plus petits ou pour se faire plaisir sans excès. Aussi délicieux que leurs grands frères, ils offrent une expérience gustative concentrée en format réduit."
   },
   {
-    "id": "avril",
-    "nom": "Avril - Le 69",
-    "description": "Le cookie du mois, en édition limitée. Mi-pépites de chocolat noir, mi-tout choco pour une double expérience gourmande.",
-    "image": "image/COOKIE PNG/AVRIL.png",
+    "id": "Mai",
+    "nom": "Mai - Coeur coco",
+    "description": "Le cookie du mois, en édition limitée. Un cookie coco avec un cœur fondant à la noix de coco. Parfait pour les amateurs de saveurs tropicales.",
+    "image": "image/COOKIE PNG/Mai.png",
     "categorie": "edition_limitee",
     "ingredients": [
       "Farine de riz bio",
       "Cacao en poudre bio",
-      "Pépites de chocolat noir",
+      "poudre de coco bio",
       "Sucre de canne blond bio",
       "Boisson végétale",
       "Pomme bio"
@@ -699,6 +699,6 @@
       "parts_4_6": null,
       "parts_6_8": null
     },
-    "description_detaillee": "Le cookie d'Avril est une création spéciale en édition limitée qui combine deux de nos recettes les plus populaires dans un seul cookie. Une moitié parfaitement chocolatée et l'autre aux pépites de chocolat noir, pour une expérience de dégustation surprenante et contrastée. Cette édition limitée n'est disponible que pendant le mois d'avril, ne tardez pas à la découvrir !"
+    "description_detaillee": "Le cookie de Mai est une création spéciale en édition limitée ! Venez découvrir notre cookie au cœur fondant à la noix de coco. Sa texture moelleuse et son goût délicat de coco en font un véritable délice."
   }
 ]

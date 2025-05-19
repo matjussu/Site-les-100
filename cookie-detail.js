@@ -206,7 +206,7 @@ function fetchCookieData() {
       document.getElementById('cookie-desc').textContent = cookie.description;
       
       // Afficher le badge "Nouveau" pour le cookie du mois
-      if (cookie.id === 'avril') {
+      if (cookie.id === 'Mai') {
         document.getElementById('cookie-badge').style.display = 'block';
       }
       

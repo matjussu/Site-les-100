@@ -485,10 +485,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
 function initCookieOfTheMonth() {
 const cookieOfTheMonth = {
-  id: "avril",
-  nom: "Avril - Le 69",
+  id: "MAI",
+  nom: "Mai - Coeur coco",
   description: "Un cookie à moitié pepite de chocolat noir et à moitié tout choco. Un régal pour les gourmands !",
-  image: "image/COOKIE PNG/AVRIL.png",
+  image: "image/COOKIE PNG/Mai.png",
   featured: true
 };
 
@@ -1075,5 +1075,115 @@ window.addEventListener('load', function() {
     
     // Ajoute une classe spécifique pour indiquer que la page histoire est chargée
     document.body.classList.add('histoire-loaded');
+  }
+});
+
+// Correctif à ajouter dans script.js
+// ==========================================
+// CORRECTIONS SPÉCIFIQUES POUR LA PAGE HISTOIRE
+// ==========================================
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Détection de la page histoire
+  const isHistoirePage = document.getElementById('histoire-timeline') !== null;
+  
+  if (isHistoirePage) {
+      console.log("Page histoire détectée, application des correctifs...");
+      
+      // 1. Forcer l'affichage des sections immédiatement
+      const historySections = document.querySelectorAll('.histoire-story-section');
+      historySections.forEach(section => {
+          section.style.opacity = '1';
+          section.style.visibility = 'visible';
+          section.style.transform = 'translateY(0)';
+          
+          // Forcer l'affichage du conteneur d'histoire
+          const container = section.querySelector('.histoire-story-container');
+          if (container) {
+              container.style.opacity = '1';
+              container.style.visibility = 'visible';
+              container.style.transform = 'translateY(0)';
+          }
+          
+          // Forcer l'affichage de l'icône
+          const icon = section.querySelector('.histoire-story-icon');
+          if (icon) {
+              icon.style.opacity = '1';
+              icon.style.visibility = 'visible';
+          }
+          
+          // Forcer l'affichage du contenu
+          const content = section.querySelector('.histoire-story-content');
+          if (content) {
+              content.style.opacity = '1';
+              content.style.visibility = 'visible';
+          }
+          
+          // Forcer l'affichage du connecteur
+          const connector = section.querySelector('.histoire-timeline-connector');
+          if (connector) {
+              connector.style.opacity = '1';
+              connector.style.visibility = 'visible';
+          }
+      });
+      
+      // 2. Correction de la timeline progress
+      const timelineProgress = document.getElementById('histoire-timeline-progress');
+      if (timelineProgress) {
+          // Afficher la ligne de timeline à 50% par défaut si mobile
+          if (window.innerWidth <= 768) {
+              timelineProgress.style.transform = 'translateX(-50%) scaleY(0.5)';
+              timelineProgress.style.opacity = '1';
+              timelineProgress.style.visibility = 'visible';
+          }
+      }
+      
+      // 3. Forcer l'affichage du contenu du hero
+      const heroElements = document.querySelectorAll('.hero-histoire-content .animate-element');
+      heroElements.forEach(element => {
+          element.style.opacity = '1';
+          element.style.transform = 'translateY(0)';
+          element.style.visibility = 'visible';
+      });
+      
+      // 4. Créer une animation manuelle simplifiée pour mobile
+      if (window.innerWidth <= 768) {
+          // Animation séquentielle des sections sur mobile
+          historySections.forEach((section, index) => {
+              setTimeout(() => {
+                  section.style.transform = 'translateY(0)';
+                  section.style.opacity = '1';
+                  
+                  const container = section.querySelector('.histoire-story-container');
+                  if (container) {
+                      container.style.transform = 'translateY(0)';
+                      container.style.opacity = '1';
+                  }
+              }, index * 100);
+          });
+          
+          // Mise à jour manuelle de la barre de progression lors du scroll
+          window.addEventListener('scroll', function() {
+              if (!timelineProgress) return;
+              
+              const timeline = document.getElementById('histoire-timeline');
+              if (!timeline) return;
+              
+              const rect = timeline.getBoundingClientRect();
+              const windowHeight = window.innerHeight;
+              
+              if (rect.top < windowHeight && rect.bottom > 0) {
+                  const scrollProgress = Math.min(1, Math.max(0, 
+                      (window.scrollY - (timeline.offsetTop - windowHeight)) / 
+                      (timeline.offsetHeight + windowHeight)
+                  ));
+                  
+                  timelineProgress.style.transform = `translateX(-50%) scaleY(${scrollProgress})`;
+              }
+          });
+      }
+      
+      // 5. Ajout d'une classe pour indiquer que les corrections sont appliquées
+      document.body.classList.add('histoire-fixed');
   }
 });

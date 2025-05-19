@@ -648,10 +648,10 @@
     "description_detaillee": "Le cookie 12 est notre version mini du célèbre cookie à la pistache. Malgré sa petite taille, il offre tout le plaisir gustatif de la combinaison entre le chocolat et la pistache. Ces mini cookies sont parfaits pour les goûters des plus petits ou pour se faire plaisir sans excès. Aussi délicieux que leurs grands frères, ils offrent une expérience gustative concentrée en format réduit."
   },
   {
-    "id": "Mai",
+    "id": "mai",
     "nom": "Mai - Coeur coco",
     "description": "Le cookie du mois, en édition limitée. Un cookie coco avec un cœur fondant à la noix de coco. Parfait pour les amateurs de saveurs tropicales.",
-    "image": "image/COOKIE PNG/Mai.png",
+    "image": "image/COOKIE PNG/Mai.jpg",
     "categorie": "edition_limitee",
     "ingredients": [
       "Farine de riz bio",

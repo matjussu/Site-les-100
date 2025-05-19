@@ -459,15 +459,29 @@ document.addEventListener('DOMContentLoaded', function() {
   if (nav) {
     const cartLi = document.createElement('li');
     cartLi.innerHTML = `
-      <a href="#" class="cart-icon">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <circle cx="9" cy="21" r="1"></circle>
-          <circle cx="20" cy="21" r="1"></circle>
-          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-        </svg>
-        <span class="cart-count">0</span>
-      </a>
-    `;
+  <a href="#" class="cart-icon">
+    <svg width="24" height="24" viewBox="0 0 512 512" fill="none" stroke="currentColor" stroke-width="2">
+  <!-- Poignée du panier - corrigée pour être dans le bon sens (orientée vers le haut) -->
+  <path d="M140 160C140 160 140 70 256 70C372 70 372 160 372 160" stroke="currentColor" stroke-width="24" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <!-- Rebord supérieur du panier -->
+  <rect x="60" y="160" width="392" height="50" rx="10" stroke="currentColor" stroke-width="24" fill="none"/>
+  
+  <!-- Corps du panier - forme trapézoïdale avec coins arrondis -->
+  <path d="M80 210L110 430C110 440 120 450 130 450H382C392 450 402 440 402 430L432 210" stroke="currentColor" stroke-width="24" fill="none" stroke-linejoin="round"/>
+  
+  <!-- Lignes verticales du panier -->
+  <path d="M155 210L170 450" stroke="currentColor" stroke-width="20" fill="none"/>
+  <path d="M256 210L256 450" stroke="currentColor" stroke-width="20" fill="none"/>
+  <path d="M357 210L342 450" stroke="currentColor" stroke-width="20" fill="none"/>
+  
+  <!-- Lignes horizontales du panier -->
+  <path d="M85 290L427 290" stroke="currentColor" stroke-width="20" fill="none"/>
+  <path d="M95 370L417 370" stroke="currentColor" stroke-width="20" fill="none"/>
+</svg>
+    <span class="cart-count">0</span>
+  </a>
+`;
     nav.appendChild(cartLi);
     
     document.querySelector('.cart-icon').addEventListener('click', (e) => {
@@ -770,7 +784,7 @@ function showCartModal() {
   modal.innerHTML = `
     <div class="cart-modal-content">
       <div class="cart-modal-header">
-        <h2>Votre panier</h2>
+        <h2>Votre panier du marché</h2>
         <button class="close-modal">×</button>
       </div>
       <div class="cart-modal-body">

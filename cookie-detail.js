@@ -190,7 +190,7 @@ function fetchCookieData() {
       return res.json();
     })
     .then(cookies => {
-      const cookie = cookies.find(c => c.id === cookieId);
+      const cookie = cookies.find(c => c.id.toLowerCase() === cookieId.toLowerCase());
       if (!cookie) {
         console.error('Cookie introuvable avec cet ID.');
         return;
@@ -206,7 +206,7 @@ function fetchCookieData() {
       document.getElementById('cookie-desc').textContent = cookie.description;
       
       // Afficher le badge "Nouveau" pour le cookie du mois
-      if (cookie.id === 'Mai') {
+      if (cookie.id.toLowerCase() === 'mai') {
         document.getElementById('cookie-badge').style.display = 'block';
       }
       

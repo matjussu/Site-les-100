@@ -577,64 +577,7 @@ cookieCards.forEach(card => {
 });
 }
 
-// Appeler la fonction au chargement de la page
-document.addEventListener('DOMContentLoaded', initCookieOfTheMonth);document.addEventListener('DOMContentLoaded', function() {
-  const form = document.getElementById('contact-form');
-  
-  form.addEventListener('submit', function(e) {
-      e.preventDefault();
-      
-      const submitButton = form.querySelector('.submit-button');
-      submitButton.classList.add('loading');
-      submitButton.disabled = true;
-      
-      // Récupération des données du formulaire
-      const formData = {
-          name: document.getElementById('name').value,
-          email: document.getElementById('email').value,
-          subject: document.getElementById('subject').value,
-          message: document.getElementById('message').value
-      };
-      
-      // Simulation d'envoi (remplacez par votre vrai endpoint)
-      setTimeout(() => {
-          // Pour l'instant, nous allons utiliser mailto comme solution temporaire
-          const mailtoLink = `mailto:contact@les100.fr?subject=${encodeURIComponent(formData.subject)}&body=${encodeURIComponent(
-              `Nom: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-          )}`;
-          
-          window.location.href = mailtoLink;
-          
-          submitButton.classList.remove('loading');
-          submitButton.disabled = false;
-          
-          // Message de confirmation
-          showNotification('Message envoyé !', 'Nous vous répondrons dans les plus brefs délais.');
-          
-          form.reset();
-      }, 1000);
-  });
-  
-  // Animation des champs au focus
-  const formInputs = document.querySelectorAll('.form-group input, .form-group select, .form-group textarea');
-  formInputs.forEach(input => {
-      input.addEventListener('focus', function() {
-          gsap.to(this.parentElement, {
-              y: -2,
-              duration: 0.3,
-              ease: 'power2.out'
-          });
-      });
-      
-      input.addEventListener('blur', function() {
-          gsap.to(this.parentElement, {
-              y: 0,
-              duration: 0.3,
-              ease: 'power2.out'
-          });
-      });
-  });
-});
+
 
 // ==========================================
 // SYSTÈME DE PANIER

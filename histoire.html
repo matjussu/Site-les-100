@@ -357,6 +357,12 @@
             <li><a href="contact.html">Contact</a></li>
           </ul>
         </nav>
+        <!-- Ajout du bouton hamburger pour mobile -->
+        <button class="menu-toggle" aria-label="Menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
 
     <section id="hero-histoire" class="parallax-container">
@@ -510,9 +516,69 @@
         </div>
     </footer>
 
+    <script src="script.js"></script>
+
+    <!-- Script spécifique pour la page histoire -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            // Animation d'entrée pour les éléments du hero
+            // 1. S'assurer que le header est visible et fixe
+            const header = document.querySelector('header');
+            if (header) {
+                header.style.position = 'fixed';
+                header.style.top = '0';
+                header.style.left = '0';
+                header.style.right = '0';
+                header.style.zIndex = '1000';
+                header.style.display = 'flex';
+                header.style.visibility = 'visible';
+                header.style.opacity = '1';
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+
+            // 2. Gestion du menu hamburger pour mobile
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navList = document.querySelector('nav ul');
+
+            if (menuToggle && navList) {
+                menuToggle.addEventListener('click', function() {
+                    navList.classList.toggle('active');
+                    this.classList.toggle('active');
+                    const isExpanded = navList.classList.contains('active');
+                    this.setAttribute('aria-expanded', isExpanded);
+                    
+                    // Bloquer le défilement quand le menu est ouvert
+                    if (isExpanded) {
+                        document.body.style.overflow = 'hidden';
+                    } else {
+                        document.body.style.overflow = '';
+                    }
+                });
+
+                // Fermer le menu quand on clique ailleurs
+                document.addEventListener('click', function(e) {
+                    if (navList.classList.contains('active') && 
+                        !navList.contains(e.target) && 
+                        !menuToggle.contains(e.target)) {
+                        navList.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                        document.body.style.overflow = '';
+                    }
+                });
+
+                // Fermer le menu si on clique sur un lien
+                navList.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navList.classList.remove('active');
+                        menuToggle.classList.remove('active');
+                        menuToggle.setAttribute('aria-expanded', 'false');
+                        document.body.style.overflow = '';
+                    });
+                });
+            }
+
+            // 3. Animation d'entrée pour les éléments du hero
             const heroElements = document.querySelectorAll('.hero-histoire-content .animate-element');
             
             setTimeout(() => {
@@ -525,143 +591,273 @@
                 });
             }, 300);
             
-            // Initialisation de GSAP ScrollTrigger avec des noms uniques
-            gsap.registerPlugin(ScrollTrigger);
-            
-            // Animation de la barre de progression de la timeline - VERSION CORRIGÉE
-            const timelineProgress = document.getElementById('histoire-timeline-progress');
-            const timeline = document.getElementById('histoire-timeline');
-            
-            // S'assurer que les éléments existent avant de créer les animations
-            if (timelineProgress && timeline) {
-                // Créer une animation GSAP dédiée avec un ID unique
-                const progressAnimation = gsap.fromTo(timelineProgress, 
-                    { scaleY: 0 }, 
-                    {
-                        scaleY: 1,
-                        ease: 'none',
-                        scrollTrigger: {
-                            id: 'histoire-progress',
-                            trigger: '#histoire-timeline',
-                            start: 'top 80%', 
-                            end: 'bottom 20%',
-                            scrub: 0.3
-                        }
-                    }
-                );
+            // 4. Initialisation de GSAP ScrollTrigger avec des noms uniques
+            if (typeof gsap !== 'undefined' && typeof ScrollTrigger !== 'undefined') {
+                gsap.registerPlugin(ScrollTrigger);
                 
-                // Utiliser aussi une fonction manuelle au cas où
-                function updateHistoireProgress() {
-                    if (!timelineProgress || !timeline) return;
-                    
-                    const rect = timeline.getBoundingClientRect();
-                    const windowHeight = window.innerHeight;
-                    
-                    // Si la timeline est visible
-                    if (rect.top < windowHeight && rect.bottom > 0) {
-                        // Calculer la progression
-                        const startView = Math.max(0, rect.top);
-                        const endView = Math.min(windowHeight, rect.bottom);
-                        const visibleHeight = endView - startView;
-                        const timelineHeight = rect.height;
-                        
-                        // Position relative dans la fenêtre
-                        const percentVisible = visibleHeight / windowHeight;
-                        
-                        // Position absolue dans la timeline
-                        const scrollProgress = (window.scrollY - (timeline.offsetTop - windowHeight)) / (timelineHeight + windowHeight);
-                        const progress = Math.max(0, Math.min(1, scrollProgress));
-                        
-                        // Appliquer la transformation directement
-                        timelineProgress.style.transform = `translateX(-50%) scaleY(${progress})`;
-                    }
+                // Animation de la barre de progression de la timeline
+                const timelineProgress = document.getElementById('histoire-timeline-progress');
+                const timeline = document.getElementById('histoire-timeline');
+                
+                if (timelineProgress && timeline) {
+                    gsap.fromTo(timelineProgress, 
+                        { scaleY: 0 }, 
+                        {
+                            scaleY: 1,
+                            ease: 'none',
+                            scrollTrigger: {
+                                id: 'histoire-progress',
+                                trigger: '#histoire-timeline',
+                                start: 'top 80%', 
+                                end: 'bottom 20%',
+                                scrub: 0.3
+                            }
+                        }
+                    );
                 }
                 
-                // Mettre à jour manuellement
-                window.addEventListener('scroll', updateHistoireProgress);
-                window.addEventListener('resize', updateHistoireProgress);
-                
-                // Première mise à jour
-                setTimeout(updateHistoireProgress, 100);
-            }
-            
-            // Animation des sections de l'histoire
-            const historySections = document.querySelectorAll('.histoire-story-section');
-            historySections.forEach((section, index) => {
-                gsap.from(section, {
-                    y: 50,
-                    opacity: 0,
-                    duration: 0.7,
-                    ease: 'power3.out',
-                    scrollTrigger: {
-                        id: `histoire-section-${index}`,
-                        trigger: section,
-                        start: 'top 85%',
-                        toggleActions: 'play none none none'
-                    }
-                });
-                
-                // Animation des connecteurs
-                const connector = section.querySelector('.histoire-timeline-connector');
-                if (connector) {
-                    gsap.from(connector, {
-                        width: 0,
-                        duration: 0.4,
-                        delay: 0.2,
-                        ease: 'power2.out',
+                // Animation des sections de l'histoire
+                const historySections = document.querySelectorAll('.histoire-story-section');
+                historySections.forEach((section, index) => {
+                    gsap.from(section, {
+                        y: 50,
+                        opacity: 0,
+                        duration: 0.7,
+                        ease: 'power3.out',
                         scrollTrigger: {
-                            id: `histoire-connector-${index}`,
+                            id: `histoire-section-${index}`,
                             trigger: section,
                             start: 'top 85%',
                             toggleActions: 'play none none none'
                         }
                     });
-                }
-            });
-            
-            // Animation du parallaxe du hero
-            if (window.innerWidth > 768) {
-                gsap.to('#hero-histoire .parallax-bg', {
-                    yPercent: 20,
-                    ease: 'none',
-                    scrollTrigger: {
-                        id: 'histoire-hero-parallax',
-                        trigger: '#hero-histoire',
-                        start: 'top top',
-                        end: 'bottom top',
-                        scrub: true
-                    }
-                });
-            }
-            
-            // Désactiver des animations sur mobile
-            function optimizeForMobile() {
-                if (window.innerWidth <= 768) {
-                    // Désactiver le parallaxe
-                    const parallaxBg = document.querySelector('#hero-histoire .parallax-bg');
-                    if (parallaxBg) {
-                        gsap.set(parallaxBg, {
-                            clearProps: 'all',
-                            position: 'absolute',
-                            top: 0,
-                            left: 0,
-                            width: '100%',
-                            height: '100%',
-                            objectFit: 'cover'
+                    
+                    // Animation des connecteurs
+                    const connector = section.querySelector('.histoire-timeline-connector');
+                    if (connector) {
+                        gsap.from(connector, {
+                            width: 0,
+                            duration: 0.4,
+                            delay: 0.2,
+                            ease: 'power2.out',
+                            scrollTrigger: {
+                                id: `histoire-connector-${index}`,
+                                trigger: section,
+                                start: 'top 85%',
+                                toggleActions: 'play none none none'
+                            }
                         });
                     }
-                    
-                    // Tuer les ScrollTriggers spécifiques à cette page
-                    ScrollTrigger.getAll().forEach(trigger => {
-                        if (trigger.vars && trigger.vars.id && trigger.vars.id.includes('histoire')) {
-                            trigger.kill();
+                });
+                
+                // Animation du parallaxe du hero
+                if (window.innerWidth > 768) {
+                    gsap.to('#hero-histoire .parallax-bg', {
+                        yPercent: 20,
+                        ease: 'none',
+                        scrollTrigger: {
+                            id: 'histoire-hero-parallax',
+                            trigger: '#hero-histoire',
+                            start: 'top top',
+                            end: 'bottom top',
+                            scrub: true
                         }
                     });
                 }
             }
             
-            window.addEventListener('load', optimizeForMobile);
+            // 5. Garantir que l'affichage est correct même si les animations ne se déclenchent pas
+            function ensureVisibility() {
+                // Assurer que le header est visible (mais pas fixe sur mobile)
+                const header = document.querySelector('header');
+                if (header) {
+                    header.style.visibility = 'visible';
+                    header.style.opacity = '1';
+                    // Ne pas rendre le header fixe sur mobile
+                    if (window.innerWidth <= 768) {
+                        header.style.position = 'relative';
+                    }
+                }
+                
+                // Assurer que les sections d'histoire sont visibles
+                const historySections = document.querySelectorAll('.histoire-story-section');
+                historySections.forEach(section => {
+                    section.style.opacity = '1';
+                    section.style.visibility = 'visible';
+                    section.style.transform = 'translateY(0)';
+                    
+                    // Conteneur d'histoire
+                    const container = section.querySelector('.histoire-story-container');
+                    if (container) {
+                        container.style.opacity = '1';
+                        container.style.visibility = 'visible';
+                    }
+                    
+                    // Connecteur
+                    const connector = section.querySelector('.histoire-timeline-connector');
+                    if (connector) {
+                        connector.style.opacity = '1';
+                        connector.style.visibility = 'visible';
+                    }
+                });
+                
+                // Assurer que les éléments du hero sont visibles
+                const heroElements = document.querySelectorAll('.hero-histoire-content .animate-element');
+                heroElements.forEach(element => {
+                    element.style.opacity = '1';
+                    element.style.transform = 'translateY(0)';
+                    element.style.visibility = 'visible';
+                });
+                
+                // Assurer que la timeline est visible
+                const timelineProgress = document.getElementById('histoire-timeline-progress');
+                const timelineLine = document.getElementById('histoire-timeline-line');
+                if (timelineProgress && timelineLine) {
+                    timelineLine.style.opacity = '1';
+                    timelineLine.style.visibility = 'visible';
+                    timelineProgress.style.opacity = '1';
+                    timelineProgress.style.visibility = 'visible';
+                }
+            }
+            
+            // Appliquer ces corrections après un court délai et au scroll
+            setTimeout(ensureVisibility, 1000);
+            window.addEventListener('scroll', ensureVisibility, { once: true });
+            
+            // 6. Corrections pour la gestion du menu hamburger sur mobile
+            function setupMobileMenu() {
+                const menuToggle = document.querySelector('.menu-toggle');
+                const navList = document.querySelector('nav ul');
+                
+                if (menuToggle && navList) {
+                    // Supprimer tous les écouteurs d'événements existants pour éviter les conflits
+                    const newMenuToggle = menuToggle.cloneNode(true);
+                    menuToggle.parentNode.replaceChild(newMenuToggle, menuToggle);
+                    
+                    // Ajout d'un nouvel écouteur d'événements
+                    newMenuToggle.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        e.stopPropagation();
+                        navList.classList.toggle('active');
+                        this.classList.toggle('active');
+                        
+                        // Marquer l'état d'expansion pour l'accessibilité
+                        const isExpanded = navList.classList.contains('active');
+                        this.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+                        
+                        // Bloquer/débloquer le scroll du body
+                        document.body.style.overflow = isExpanded ? 'hidden' : '';
+                    });
+                    
+                    // S'assurer que les items du menu peuvent être cliqués
+                    navList.querySelectorAll('a').forEach(link => {
+                        link.addEventListener('click', function() {
+                            navList.classList.remove('active');
+                            newMenuToggle.classList.remove('active');
+                            newMenuToggle.setAttribute('aria-expanded', 'false');
+                            document.body.style.overflow = '';
+                        });
+                    });
+                    
+                    // Fermer le menu en cliquant en dehors
+                    document.addEventListener('click', function(e) {
+                        if (navList.classList.contains('active') && 
+                            !navList.contains(e.target) && 
+                            !newMenuToggle.contains(e.target)) {
+                            navList.classList.remove('active');
+                            newMenuToggle.classList.remove('active');
+                            newMenuToggle.setAttribute('aria-expanded', 'false');
+                            document.body.style.overflow = '';
+                        }
+                    });
+                }
+            }
+            
+            // Appliquer la configuration du menu mobile
+            setupMobileMenu();
+            
+            // 7. Corrections spécifiques pour mobile
+            function optimizeForMobile() {
+                if (window.innerWidth <= 768) {
+                    // S'assurer que le header n'est pas fixe sur mobile
+                    const header = document.querySelector('header');
+                    if (header) {
+                        header.style.position = 'relative';
+                        header.style.top = 'auto';
+                    }
+                    
+                    // Positionnement correct pour les éléments de timeline sur mobile
+                    const timelineProgress = document.getElementById('histoire-timeline-progress');
+                    const timelineLine = document.getElementById('histoire-timeline-line');
+                    
+                    if (timelineProgress && timelineLine) {
+                        timelineProgress.style.left = '30px';
+                        timelineProgress.style.transform = 'translateX(0) scaleY(0)';
+                        timelineLine.style.left = '30px';
+                        timelineLine.style.transform = 'translateX(0)';
+                    }
+                    
+                    // Ajuster les conteneurs pour mobile
+                    const containers = document.querySelectorAll('.histoire-story-container');
+                    containers.forEach(container => {
+                        container.style.marginLeft = '70px';
+                        container.style.marginRight = '0';
+                        container.style.maxWidth = 'calc(100% - 70px)';
+                    });
+                    
+                    // Ajuster les connecteurs
+                    const connectors = document.querySelectorAll('.histoire-timeline-connector');
+                    connectors.forEach(connector => {
+                        connector.style.left = '30px';
+                        connector.style.right = 'auto';
+                    });
+                    
+                    // Désactiver les animations qui pourraient affecter le positionnement
+                    if (typeof ScrollTrigger !== 'undefined') {
+                        const triggers = ScrollTrigger.getAll();
+                        triggers.forEach(trigger => {
+                            if (trigger.vars && trigger.vars.id && trigger.vars.id.includes('histoire')) {
+                                trigger.kill();
+                            }
+                        });
+                    }
+                    
+                    // Forcer l'affichage correct sur les très petits écrans
+                    if (window.innerWidth <= 480) {
+                        const timelineProgress = document.getElementById('histoire-timeline-progress');
+                        const timelineLine = document.getElementById('histoire-timeline-line');
+                        
+                        if (timelineProgress && timelineLine) {
+                            timelineProgress.style.left = '20px';
+                            timelineLine.style.left = '20px';
+                        }
+                        
+                        const containers = document.querySelectorAll('.histoire-story-container');
+                        containers.forEach(container => {
+                            container.style.marginLeft = '50px';
+                            container.style.maxWidth = 'calc(100% - 50px)';
+                        });
+                        
+                        const connectors = document.querySelectorAll('.histoire-timeline-connector');
+                        connectors.forEach(connector => {
+                            connector.style.left = '20px';
+                        });
+                    }
+                } else {
+                    // Sur desktop, le header peut être fixe
+                    const header = document.querySelector('header');
+                    if (header) {
+                        header.style.position = 'fixed';
+                        header.style.top = '0';
+                    }
+                }
+            }
+            
+            // Appliquer les optimisations mobile au chargement et au redimensionnement
+            optimizeForMobile();
             window.addEventListener('resize', optimizeForMobile);
+            
+            // Ajouter une classe pour indiquer que le script a été exécuté
+            document.body.classList.add('histoire-fixed');
         });
-    </script>
-</body>
+

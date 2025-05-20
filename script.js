@@ -1092,112 +1092,505 @@ window.addEventListener('load', function() {
   }
 });
 
-// Correctif à ajouter dans script.js
-// ==========================================
-// CORRECTIONS SPÉCIFIQUES POUR LA PAGE HISTOIRE
-// ==========================================
+
+
+// Ce script corrige les problèmes d'affichage sur la page histoire.html en mobile
+// Ajouter à la fin du fichier script.js ou dans un fichier séparé à charger dans histoire.html
 
 document.addEventListener('DOMContentLoaded', function() {
-  // Détection de la page histoire
+  // 1. Détection de la page histoire
   const isHistoirePage = document.getElementById('histoire-timeline') !== null;
   
   if (isHistoirePage) {
-      console.log("Page histoire détectée, application des correctifs...");
+    console.log("Page histoire détectée, application des correctifs...");
+    
+    // 2. Assurer que le header est visible
+    const header = document.querySelector('header');
+    if (header) {
+      header.style.display = 'flex';
+      header.style.visibility = 'visible';
+      header.style.opacity = '1';
+      header.style.zIndex = '1000';
       
-      // 1. Forcer l'affichage des sections immédiatement
-      const historySections = document.querySelectorAll('.histoire-story-section');
+      // Forcer la couleur de fond du header pour cette page
+      header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+      header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+      
+      // S'assurer que les liens de navigation sont visibles
+      const navLinks = document.querySelectorAll('nav ul li a');
+      navLinks.forEach(link => {
+        link.style.color = '#3c2b1a';
+        link.style.textShadow = 'none';
+      });
+    }
+    
+    // 3. Forcer l'affichage des sections d'histoire
+    const historySections = document.querySelectorAll('.histoire-story-section');
+    historySections.forEach(section => {
+      section.style.opacity = '1';
+      section.style.visibility = 'visible';
+      section.style.transform = 'translateY(0)';
+      
+      // Forcer l'affichage du conteneur d'histoire
+      const container = section.querySelector('.histoire-story-container');
+      if (container) {
+        container.style.opacity = '1';
+        container.style.visibility = 'visible';
+        container.style.transform = 'translateY(0)';
+      }
+      
+      // Forcer l'affichage de l'icône
+      const icon = section.querySelector('.histoire-story-icon');
+      if (icon) {
+        icon.style.opacity = '1';
+        icon.style.visibility = 'visible';
+      }
+      
+      // Forcer l'affichage du contenu
+      const content = section.querySelector('.histoire-story-content');
+      if (content) {
+        content.style.opacity = '1';
+        content.style.visibility = 'visible';
+      }
+      
+      // Forcer l'affichage du connecteur
+      const connector = section.querySelector('.histoire-timeline-connector');
+      if (connector) {
+        connector.style.opacity = '1';
+        connector.style.visibility = 'visible';
+      }
+    });
+    
+    // 4. Correction de la timeline progress
+    const timelineProgress = document.getElementById('histoire-timeline-progress');
+    const timelineLine = document.getElementById('histoire-timeline-line');
+    
+    if (timelineProgress && timelineLine) {
+      timelineLine.style.opacity = '1';
+      timelineLine.style.visibility = 'visible';
+      
+      // Afficher la ligne de timeline par défaut
+      timelineProgress.style.transform = 'translateX(-50%) scaleY(0.5)';
+      timelineProgress.style.opacity = '1';
+      timelineProgress.style.visibility = 'visible';
+      
+      // Positionnement correct pour mobile
+      if (window.innerWidth <= 768) {
+        timelineProgress.style.left = '30px';
+        timelineLine.style.left = '30px';
+      }
+    }
+    
+    // 5. Forcer l'affichage du contenu du hero
+    const heroElements = document.querySelectorAll('.hero-histoire-content .animate-element');
+    heroElements.forEach(element => {
+      element.style.opacity = '1';
+      element.style.transform = 'translateY(0)';
+      element.style.visibility = 'visible';
+    });
+    
+    // 6. Désactiver les animations GSAP qui pourraient bloquer l'affichage
+    if (typeof ScrollTrigger !== 'undefined') {
+      const triggers = ScrollTrigger.getAll();
+      triggers.forEach(trigger => {
+        if (trigger.vars && trigger.vars.id && 
+            (trigger.vars.id.includes('histoire') || 
+             trigger.vars.trigger && trigger.vars.trigger.id === 'hero-histoire')) {
+          trigger.kill();
+        }
+      });
+    }
+    
+    // 7. Ajouter une mise à jour manuelle de la barre de progression lors du scroll
+    window.addEventListener('scroll', function() {
+      if (!timelineProgress) return;
+      
+      const timeline = document.getElementById('histoire-timeline');
+      if (!timeline) return;
+      
+      const rect = timeline.getBoundingClientRect();
+      const windowHeight = window.innerHeight;
+      
+      if (rect.top < windowHeight && rect.bottom > 0) {
+        const scrollProgress = Math.min(1, Math.max(0, 
+          (window.scrollY - (timeline.offsetTop - windowHeight)) / 
+          (timeline.offsetHeight + windowHeight)
+        ));
+        
+        timelineProgress.style.transform = `translateX(-50%) scaleY(${scrollProgress})`;
+        
+        // Correction pour mobile
+        if (window.innerWidth <= 768) {
+          timelineProgress.style.transform = `translateX(0) scaleY(${scrollProgress})`;
+        }
+      }
+    });
+    
+    // 8. Ajustements spécifiques pour mobile
+    if (window.innerWidth <= 768) {
+      // Ajustement des styles de la timeline
+      const timeline = document.getElementById('histoire-timeline');
+      if (timeline) {
+        timeline.style.paddingLeft = '50px';
+      }
+      
+      // Repositionner les conteneurs pour mobile
       historySections.forEach(section => {
-          section.style.opacity = '1';
-          section.style.visibility = 'visible';
-          section.style.transform = 'translateY(0)';
-          
-          // Forcer l'affichage du conteneur d'histoire
+        const container = section.querySelector('.histoire-story-container');
+        if (container) {
+          container.style.marginLeft = '50px';
+          container.style.maxWidth = 'calc(100% - 50px)';
+          container.style.flexDirection = 'row';
+        }
+      });
+      
+      // Animation séquentielle des sections pour améliorer l'expérience mobile
+      historySections.forEach((section, index) => {
+        setTimeout(() => {
           const container = section.querySelector('.histoire-story-container');
           if (container) {
-              container.style.opacity = '1';
-              container.style.visibility = 'visible';
-              container.style.transform = 'translateY(0)';
+            container.style.transform = 'translateY(0)';
+            container.style.opacity = '1';
           }
-          
-          // Forcer l'affichage de l'icône
-          const icon = section.querySelector('.histoire-story-icon');
-          if (icon) {
-              icon.style.opacity = '1';
-              icon.style.visibility = 'visible';
-          }
-          
-          // Forcer l'affichage du contenu
-          const content = section.querySelector('.histoire-story-content');
-          if (content) {
-              content.style.opacity = '1';
-              content.style.visibility = 'visible';
-          }
-          
-          // Forcer l'affichage du connecteur
-          const connector = section.querySelector('.histoire-timeline-connector');
-          if (connector) {
-              connector.style.opacity = '1';
-              connector.style.visibility = 'visible';
-          }
+        }, index * 100);
       });
-      
-      // 2. Correction de la timeline progress
-      const timelineProgress = document.getElementById('histoire-timeline-progress');
-      if (timelineProgress) {
-          // Afficher la ligne de timeline à 50% par défaut si mobile
-          if (window.innerWidth <= 768) {
-              timelineProgress.style.transform = 'translateX(-50%) scaleY(0.5)';
-              timelineProgress.style.opacity = '1';
-              timelineProgress.style.visibility = 'visible';
-          }
-      }
-      
-      // 3. Forcer l'affichage du contenu du hero
-      const heroElements = document.querySelectorAll('.hero-histoire-content .animate-element');
-      heroElements.forEach(element => {
-          element.style.opacity = '1';
-          element.style.transform = 'translateY(0)';
-          element.style.visibility = 'visible';
-      });
-      
-      // 4. Créer une animation manuelle simplifiée pour mobile
-      if (window.innerWidth <= 768) {
-          // Animation séquentielle des sections sur mobile
-          historySections.forEach((section, index) => {
-              setTimeout(() => {
-                  section.style.transform = 'translateY(0)';
-                  section.style.opacity = '1';
-                  
-                  const container = section.querySelector('.histoire-story-container');
-                  if (container) {
-                      container.style.transform = 'translateY(0)';
-                      container.style.opacity = '1';
-                  }
-              }, index * 100);
-          });
-          
-          // Mise à jour manuelle de la barre de progression lors du scroll
-          window.addEventListener('scroll', function() {
-              if (!timelineProgress) return;
-              
-              const timeline = document.getElementById('histoire-timeline');
-              if (!timeline) return;
-              
-              const rect = timeline.getBoundingClientRect();
-              const windowHeight = window.innerHeight;
-              
-              if (rect.top < windowHeight && rect.bottom > 0) {
-                  const scrollProgress = Math.min(1, Math.max(0, 
-                      (window.scrollY - (timeline.offsetTop - windowHeight)) / 
-                      (timeline.offsetHeight + windowHeight)
-                  ));
-                  
-                  timelineProgress.style.transform = `translateX(-50%) scaleY(${scrollProgress})`;
-              }
-          });
-      }
-      
-      // 5. Ajout d'une classe pour indiquer que les corrections sont appliquées
-      document.body.classList.add('histoire-fixed');
+    }
+    
+    // 9. Ajout d'une classe pour indiquer que les corrections sont appliquées
+    document.body.classList.add('histoire-fixed');
   }
+});
+
+// Garantir que le menu hamburger fonctionne correctement sur mobile
+document.addEventListener('DOMContentLoaded', function() {
+  // Vérifier si nous sommes sur mobile
+  const isMobile = window.innerWidth <= 768;
+  
+  if (isMobile) {
+    // S'assurer que le bouton hamburger existe
+    let menuToggle = document.querySelector('.menu-toggle');
+    
+    if (!menuToggle) {
+      // Créer le bouton s'il n'existe pas
+      menuToggle = document.createElement('button');
+      menuToggle.className = 'menu-toggle';
+      menuToggle.setAttribute('aria-label', 'Menu');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.innerHTML = '<span></span><span></span><span></span>';
+      
+      const header = document.querySelector('header');
+      
+      if (header) {
+        // Ajouter le bouton au header
+        header.appendChild(menuToggle);
+        
+        const navList = document.querySelector('nav ul');
+        
+        // Assigner l'événement de bascule du menu
+        menuToggle.addEventListener('click', function(e) {
+          e.stopPropagation();
+          navList.classList.toggle('active');
+          menuToggle.classList.toggle('active');
+          const isExpanded = navList.classList.contains('active');
+          menuToggle.setAttribute('aria-expanded', isExpanded);
+          
+          // Bloquer le défilement quand le menu est ouvert
+          if (isExpanded) {
+            document.body.style.overflow = 'hidden';
+          } else {
+            document.body.style.overflow = '';
+          }
+        });
+        
+        // Fermer le menu quand on clique ailleurs
+        document.addEventListener('click', function(e) {
+          if (navList.classList.contains('active') && 
+              !navList.contains(e.target) && 
+              !menuToggle.contains(e.target)) {
+            navList.classList.remove('active');
+            menuToggle.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+          }
+        });
+      }
+    }
+  }
+});
+
+// Script correctif pour la page histoire.html
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Détecte si nous sommes sur la page histoire
+  const isHistoirePage = document.getElementById('histoire-timeline') !== null || 
+                        document.querySelectorAll('.histoire-story-section').length > 0;
+  
+  if (isHistoirePage) {
+    console.log("Page histoire détectée - Application des correctifs...");
+    
+    // 1. Correction du header pour qu'il ne soit pas fixe sur mobile
+    function updateHeaderBasedOnViewport() {
+      const header = document.querySelector('header');
+      const isMobile = window.innerWidth <= 768;
+      
+      if (header) {
+        if (isMobile) {
+          // Sur mobile, le header n'est pas fixe
+          header.style.position = 'relative';
+          header.style.top = 'auto';
+          header.style.left = 'auto';
+          header.style.right = 'auto';
+          header.style.zIndex = '1000';
+          
+          // S'assurer que le fond du header est visible
+          header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+          header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+        } else {
+          // Sur desktop, le header est fixe
+          header.style.position = 'fixed';
+          header.style.top = '0';
+          header.style.left = '0';
+          header.style.right = '0';
+          header.style.zIndex = '1000';
+        }
+      }
+    }
+    
+    // 2. Correction du menu hamburger
+    function setupMobileMenu() {
+      let menuToggle = document.querySelector('.menu-toggle');
+      const navList = document.querySelector('nav ul');
+      
+      // Si le menu hamburger n'existe pas, on le crée
+      if (!menuToggle) {
+        menuToggle = document.createElement('button');
+        menuToggle.className = 'menu-toggle';
+        menuToggle.setAttribute('aria-label', 'Menu');
+        menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.innerHTML = '<span></span><span></span><span></span>';
+        
+        const header = document.querySelector('header');
+        if (header) {
+          header.appendChild(menuToggle);
+        }
+      }
+      
+      // On s'assure que tous les event listeners sont supprimés avant d'en ajouter de nouveaux
+      const newMenuToggle = menuToggle.cloneNode(true);
+      if (menuToggle.parentNode) {
+        menuToggle.parentNode.replaceChild(newMenuToggle, menuToggle);
+      }
+      menuToggle = newMenuToggle;
+      
+      // On ajoute des nouveaux event listeners au menu hamburger
+      if (menuToggle && navList) {
+        menuToggle.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          // Bascule de la classe active pour l'animation
+          this.classList.toggle('active');
+          navList.classList.toggle('active');
+          
+          // Mise à jour de l'état expanded pour l'accessibilité
+          const isExpanded = navList.classList.contains('active');
+          this.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+          
+          // Désactivation du scroll quand le menu est ouvert
+          document.body.style.overflow = isExpanded ? 'hidden' : '';
+          
+          console.log("Menu toggle clicked - Menu is now " + (isExpanded ? "open" : "closed"));
+        });
+        
+        // Fermer le menu quand on clique sur un lien
+        navList.querySelectorAll('a').forEach(link => {
+          link.addEventListener('click', function() {
+            menuToggle.classList.remove('active');
+            navList.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+            
+            console.log("Nav link clicked - Menu closed");
+          });
+        });
+        
+        // Fermer le menu quand on clique à l'extérieur
+        document.addEventListener('click', function(e) {
+          if (navList.classList.contains('active') && 
+              !navList.contains(e.target) && 
+              !menuToggle.contains(e.target)) {
+            menuToggle.classList.remove('active');
+            navList.classList.remove('active');
+            menuToggle.setAttribute('aria-expanded', 'false');
+            document.body.style.overflow = '';
+            
+            console.log("Outside click detected - Menu closed");
+          }
+        });
+      }
+    }
+    
+    // 3. S'assurer que le contenu est bien visible
+    function ensureVisibility() {
+      // Tout le contenu de la timeline doit être visible
+      document.querySelectorAll('#histoire-timeline, #histoire-timeline-line, #histoire-timeline-progress, .histoire-story-section, .histoire-story-container, .histoire-story-icon, .histoire-story-content, .histoire-timeline-connector').forEach(el => {
+        el.style.visibility = 'visible';
+        el.style.opacity = '1';
+      });
+      
+      // Tout le contenu du hero doit être visible
+      document.querySelectorAll('.hero-histoire-content .animate-element').forEach(el => {
+        el.style.opacity = '1';
+        el.style.transform = 'translateY(0)';
+        el.style.visibility = 'visible';
+      });
+    }
+    
+    // Appliquer les correctifs immédiatement
+    updateHeaderBasedOnViewport();
+    setupMobileMenu();
+    ensureVisibility();
+    
+    // Appliquer à nouveau les correctifs lors du redimensionnement de la fenêtre
+    window.addEventListener('resize', updateHeaderBasedOnViewport);
+    
+    // Ajouter une classe pour indiquer que les correctifs ont été appliqués
+    document.body.classList.add('histoire-fixed-js');
+  }
+});
+
+// Script pour rendre le header fixe sur toutes les pages et assurer le fonctionnement du menu hamburger
+
+document.addEventListener('DOMContentLoaded', function() {
+  console.log("Initialisation du header fixe et du menu hamburger global...");
+  
+  // 1. S'assurer que le header est en position fixe
+  function setupFixedHeader() {
+    const header = document.querySelector('header');
+    
+    if (header) {
+      // Configurer le header en position fixe
+      header.style.position = 'fixed';
+      header.style.top = '0';
+      header.style.left = '0';
+      header.style.right = '0';
+      header.style.width = '100%';
+      header.style.zIndex = '1000';
+      
+      // S'assurer que le fond du header est visible
+      header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+      header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+      
+      // Ajouter une classe pour indiquer que le header est fixe
+      header.classList.add('fixed-header');
+      
+      // Trouver le premier élément principal pour ajouter un padding
+      const mainContent = document.querySelector('#hero, #hero-histoire, .cookies-intro, .contact-hero, .cookie-detail-hero, .main-content, .page-hero');
+      if (mainContent) {
+        mainContent.style.paddingTop = '70px';
+      }
+    }
+  }
+  
+  // 2. Configuration du menu hamburger
+  function setupMobileMenu() {
+    let menuToggle = document.querySelector('.menu-toggle');
+    const navList = document.querySelector('nav ul');
+    
+    // Si le menu hamburger n'existe pas, on le crée
+    if (!menuToggle) {
+      menuToggle = document.createElement('button');
+      menuToggle.className = 'menu-toggle';
+      menuToggle.setAttribute('aria-label', 'Menu');
+      menuToggle.setAttribute('aria-expanded', 'false');
+      menuToggle.innerHTML = '<span></span><span></span><span></span>';
+      
+      const header = document.querySelector('header');
+      if (header) {
+        header.appendChild(menuToggle);
+      }
+    }
+    
+    // On s'assure que tous les event listeners sont supprimés avant d'en ajouter de nouveaux
+    const newMenuToggle = menuToggle.cloneNode(true);
+    if (menuToggle.parentNode) {
+      menuToggle.parentNode.replaceChild(newMenuToggle, menuToggle);
+    }
+    menuToggle = newMenuToggle;
+    
+    // On ajoute des nouveaux event listeners au menu hamburger
+    if (menuToggle && navList) {
+      menuToggle.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        console.log("Menu hamburger cliqué");
+        
+        // Bascule de la classe active pour l'animation
+        this.classList.toggle('active');
+        navList.classList.toggle('active');
+        
+        // Mise à jour de l'état expanded pour l'accessibilité
+        const isExpanded = navList.classList.contains('active');
+        this.setAttribute('aria-expanded', isExpanded ? 'true' : 'false');
+        
+        // Désactivation du scroll quand le menu est ouvert
+        document.body.style.overflow = isExpanded ? 'hidden' : '';
+        
+        console.log("Menu est maintenant " + (isExpanded ? "ouvert" : "fermé"));
+      });
+      
+      // Fermer le menu quand on clique sur un lien
+      navList.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', function() {
+          menuToggle.classList.remove('active');
+          navList.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+          
+          console.log("Lien cliqué - Menu fermé");
+        });
+      });
+      
+      // Fermer le menu quand on clique à l'extérieur
+      document.addEventListener('click', function(e) {
+        if (navList.classList.contains('active') && 
+            !navList.contains(e.target) && 
+            !menuToggle.contains(e.target)) {
+          menuToggle.classList.remove('active');
+          navList.classList.remove('active');
+          menuToggle.setAttribute('aria-expanded', 'false');
+          document.body.style.overflow = '';
+          
+          console.log("Clic détecté à l'extérieur - Menu fermé");
+        }
+      });
+    }
+  }
+  
+  // 3. Gestion de l'effet de scroll pour le header
+  function setupScrollEffect() {
+    const header = document.querySelector('header');
+    
+    window.addEventListener('scroll', function() {
+      if (window.scrollY > 50) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    });
+    
+    // Appliquer l'état initial
+    if (window.scrollY > 50) {
+      header.classList.add('scrolled');
+    }
+  }
+  
+  // Appliquer tous les correctifs
+  setupFixedHeader();
+  setupMobileMenu();
+  setupScrollEffect();
+  
+  // Ajouter une classe pour indiquer que les correctifs ont été appliqués
+  document.body.classList.add('global-header-fixed');
 });

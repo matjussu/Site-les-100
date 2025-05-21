@@ -1062,7 +1062,7 @@ document.addEventListener('DOMContentLoaded', function() {
       // S'assurer que les liens de navigation sont visibles
       const navLinks = document.querySelectorAll('nav ul li a');
       navLinks.forEach(link => {
-        link.style.color = '#3c2b1a';
+        link.style.color = '#fffff';
         link.style.textShadow = 'none';
       });
     }

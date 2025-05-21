@@ -5046,3 +5046,23 @@ header.scrolled nav ul li a {
     align-items: center !important;
   }
 }
+
+/* Add this to your styles.css file */
+@media (max-width: 768px) {
+  .quantity-btn {
+    color: #3c2b1a !important; /* Force the text color */
+  }
+  
+  .size-option {
+    color: #3c2b1a !important; /* Force the text color */
+  }
+  
+  .size-option .price {
+    color: #f8660e !important; /* Keep the orange color for the price */
+  }
+  
+  /* Make the quantity input text color consistent */
+  #quantity {
+    color: #3c2b1a !important;
+  }
+}

@@ -744,7 +744,7 @@ function showCartModal() {
         </div>
         <div class="cart-actions">
           <a href="contact.html" class="contact-btn">Nous contacter</a>
-          <button class="close-cart-btn">Continuer vos achats</button>
+          <button class="close-cart-btn">Continuer vos découvertes</button>
         </div>
       </div>
     </div>

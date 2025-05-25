@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Page spéciale Les 100">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Message spécial - Les 100</title>
+    
+    <!-- Préchargement des ressources critiques -->
+    <link rel="preload" href="logo/logo les100_DEF ROND.png" as="image" fetchpriority="high">
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" as="style">
+
+    <!-- Préconnexion aux domaines externes -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" type="image/png" href="logo/logo les100_DEF ROND.png" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    
+    <!-- Balises Open Graph -->
+    <meta property="og:title" content="Message spécial - Les 100">
+    <meta property="og:description" content="Une page spéciale pour une personne spéciale">
+    <meta property="og:image" content="https://les-100.fr/logo/logo les100_DEF ROND.png">
+    <meta property="og:url" content="https://les-100.fr/secret.html">
+    <meta property="og:type" content="website">
+
+    <!-- Balise canonical -->
+    <link rel="canonical" href="https://les-100.fr/secret.html">
+    
+    <style>
+        /* Page de connexion */
+        .login-container {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #fffaf4 0%, #fff5ef 50%, #ffe8d6 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .login-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(248, 102, 14, 0.05) 0%, transparent 70%);
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        .login-card {
+            background: white;
+            padding: 60px 50px;
+            border-radius: 25px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+            position: relative;
+            z-index: 2;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        .login-logo {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px;
+            border-radius: 50%;
+            object-fit: cover;
+            box-shadow: 0 10px 30px rgba(248, 102, 14, 0.2);
+            animation: pulse 3s ease-in-out infinite;
+        }
+        
+        .login-title {
+            font-size: 2.5rem;
+            color: #3c2b1a;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .login-subtitle {
+            color: #666;
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+        
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+        }
+        
+        .form-group {
+            position: relative;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 18px 25px;
+            border: 2px solid #eee;
+            border-radius: 15px;
+            font-size: 1.1rem;
+            font-family: 'Poppins', sans-serif;
+            transition: all 0.3s ease;
+            background: #fcfcfc;
+            box-sizing: border-box;
+        }
+        
+        .form-group input:focus {
+            border-color: #f8660e;
+            outline: none;
+            box-shadow: 0 0 0 4px rgba(248, 102, 14, 0.1);
+            background: white;
+            transform: translateY(-2px);
+        }
+        
+        .form-group label {
+            position: absolute;
+            left: 25px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #666;
+            pointer-events: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .form-group input:focus + label,
+        .form-group input:not(:placeholder-shown) + label {
+            top: -10px;
+            left: 20px;
+            font-size: 0.9rem;
+            color: #f8660e;
+            background: white;
+            padding: 0 10px;
+        }
+        
+        .login-button {
+            background: linear-gradient(135deg, #f8660e, #ffa15f);
+            color: white;
+            border: none;
+            padding: 20px;
+            border-radius: 15px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .login-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(248, 102, 14, 0.4);
+        }
+        
+        .login-button:active {
+            transform: translateY(-1px);
+        }
+        
+        .error-message {
+            color: #ff4444;
+            font-size: 1rem;
+            margin-top: 15px;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+        
+        .error-message.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Page secrète */
+        .secret-page {
+            display: none;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #fffaf4 0%, #fff5ef 100%);
+            position: relative;
+        }
+        
+        .secret-hero {
+            position: relative;
+            height: 50vh;
+            background-image: url('image/famille.jpg');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .secret-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(248, 102, 14, 0.22), rgba(255, 161, 95, 0.2));
+            z-index: 1;
+        }
+        
+        .secret-hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 0 20px;
+        }
+        
+        .secret-hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            color: white;
+        }
+        
+        .secret-hero .subtitle {
+            font-size: 1.5rem;
+            font-weight: 400;
+            opacity: 0.95;
+        }
+        
+        .message-section {
+            padding: 100px 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .message-card {
+            background: fffaf4;
+            padding: 60px;
+            border-radius: 25px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            position: relative;
+            margin-bottom: 50px;
+        }
+        
+        .message-card::before {
+            content: '';
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: white;
+            border-radius: 25px;
+            z-index: -1;
+        }
+        
+        .message-text {
+            font-size: 1.4rem;
+            line-height: 1.8;
+            color: #f8660e;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .message-text p {
+            margin-bottom: 25px;
+        }
+        
+        .signature {
+            text-align: right;
+            font-size: 1.3rem;
+            color: #f8660e;
+            font-weight: 600;
+            font-style: italic;
+        }
+        
+        .decorative-elements {
+            text-align: center;
+            margin: 50px 0;
+        }
+        
+        .heart {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            margin: 0 20px;
+            color: #f8660e;
+            font-size: 3rem;
+            animation: heartbeat 2s ease-in-out infinite;
+        }
+        
+        .cookie-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin: 50px 0;
+        }
+        
+        .cookie-memory {
+            background: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .cookie-memory:hover {
+            transform: translateY(-10px);
+        }
+        
+        .cookie-memory img {
+            width: 100%;
+            height: 150px;
+            border-radius: 15px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+        
+        .cookie-memory h3 {
+            color: #f8660e;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        .cookie-memory p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        .logout-button {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            background: rgba(255, 255, 255, 0.9);
+            color: #f8660e;
+            border: 2px solid #f8660e;
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+        
+        .logout-button:hover {
+            background: #f8660e;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+        
+        @keyframes heartbeat {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(1.1); }
+            50% { transform: scale(1); }
+            75% { transform: scale(1.05); }
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .login-card {
+                padding: 40px 30px;
+                margin: 20px;
+            }
+            
+            .login-title {
+                font-size: 2rem;
+            }
+            
+            .login-subtitle {
+                font-size: 1rem;
+            }
+            
+            .secret-hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .secret-hero .subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .message-card {
+                padding: 40px 30px;
+                margin: 20px;
+            }
+            
+            .message-text {
+                font-size: 1.2rem;
+            }
+            
+            .message-section {
+                padding: 60px 20px;
+            }
+            
+            .logout-button {
+                top: 20px;
+                right: 20px;
+                padding: 10px 20px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .login-card {
+                padding: 30px 20px;
+            }
+            
+            .login-logo {
+                width: 80px;
+                height: 80px;
+            }
+            
+            .secret-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .cookie-gallery {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="page-transition"></div>
+
+    <!-- Page de connexion -->
+    <div id="login-page" class="login-container">
+        <div class="login-card">
+            <img src="logo/logo les100_DEF ROND.png" alt="Logo Les 100" class="login-logo">
+            <h1 class="login-title">Page Spéciale</h1>
+            <p class="login-subtitle">Cette page est réservée ✨</p>
+            
+            <form id="login-form" class="login-form">
+                <div class="form-group">
+                    <input type="password" id="password" placeholder=" " required autocomplete="off">
+                    <label for="password">Mot de passe</label>
+                </div>
+                
+                <button type="submit" class="login-button">
+                    Entrer
+                </button>
+                
+                <div id="error-message" class="error-message">
+                    Mot de passe incorrect. Essayez encore ! 💝
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Page secrète -->
+    <div id="secret-page" class="secret-page">
+        <button class="logout-button" onclick="logout()">Se déconnecter</button>
+        
+        <section class="secret-hero">
+            <div class="secret-hero-content">
+                <h1>Pour Maman ❤️</h1>
+                <p class="subtitle">Joyeuse Fête des Mères</p>
+            </div>
+        </section>
+        
+        <section class="message-section">
+            <div class="message-card">
+                <div class="message-text">
+                    <p>Coucou Maman,</p>
+                    
+                    <p>Je voulais profiter de cette journée pour te faire passer un petit mot. Je voulais te dire que ce site était surtout ma façon de te dire que je t'aime fort.</p>
+                    
+                    <p> J'essaie ces derniers temps de m'ouvrir plus à toi et j'adore ça, mais ça reste compliqué pour moi. En quelques mois, ma vie a beaucoup changé : je suis devenu un adulte, un vrai, mais sache que j'ai toujours besoin de ma maman et que j'aurai toujours besoin de toi.</p>
+                    
+                    <p>Je voudrais te tenir plus au courant de ce qui se passe dans ma vie. J'adore tes petits messages et nos appels, j'aimerais qu'il y en ait plus, donc je vais faire des efforts. Et toi, si tu as envie de juste me parler, n'hésite pas, ça me fera toujours plaisir.</p>
+                    <p>Je voulais aussi te dire que je suis très fier de toi, je suis admiratif de la détermination et du courage que tu as. Les 100, c'est un projet incroyable que tu as créé toute seule et tu es une vraie source d'inspiration pour tes enfants.</p>
+                    
+                </div>
+                
+                <div class="signature">
+                    Avec tout mon amour,<br>
+                    Ton fils qui t'aime ❤️
+                </div>
+            </div>
+            
+            <div class="decorative-elements">
+                <span class="heart">💝</span>
+                <span class="heart">🍪</span>
+                <span class="heart">❤️</span>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Configuration
+        const correctPassword = "grumeau"; // Changez ce mot de passe selon vos souhaits
+        
+        // Éléments DOM
+        const loginPage = document.getElementById('login-page');
+        const secretPage = document.getElementById('secret-page');
+        const loginForm = document.getElementById('login-form');
+        const passwordInput = document.getElementById('password');
+        const errorMessage = document.getElementById('error-message');
+        
+        // Vérifier si déjà connecté
+        if (sessionStorage.getItem('secretPageAccess') === 'granted') {
+            showSecretPage();
+        }
+        
+        // Gestion du formulaire de connexion
+        loginForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const enteredPassword = passwordInput.value;
+            
+            if (enteredPassword === correctPassword) {
+                // Mot de passe correct
+                sessionStorage.setItem('secretPageAccess', 'granted');
+                
+                // Animation de transition
+                gsap.to(loginPage, {
+                    opacity: 0,
+                    scale: 0.8,
+                    duration: 0.8,
+                    ease: 'power2.inOut',
+                    onComplete: showSecretPage
+                });
+                
+            } else {
+                // Mot de passe incorrect
+                showError();
+                
+                // Animation de secousse
+                gsap.to('.login-card', {
+                    x: -10,
+                    duration: 0.1,
+                    yoyo: true,
+                    repeat: 5,
+                    ease: 'power2.inOut',
+                    onComplete: () => {
+                        gsap.set('.login-card', { x: 0 });
+                    }
+                });
+                
+                // Vider le champ
+                passwordInput.value = '';
+            }
+        });
+        
+        // Afficher l'erreur
+        function showError() {
+            errorMessage.classList.add('show');
+            
+            setTimeout(() => {
+                errorMessage.classList.remove('show');
+            }, 3000);
+        }
+        
+        // Afficher la page secrète
+        function showSecretPage() {
+            loginPage.style.display = 'none';
+            secretPage.style.display = 'block';
+            
+            // Animations d'entrée
+            gsap.fromTo('.secret-hero-content', 
+                { opacity: 0, y: 50 },
+                { opacity: 1, y: 0, duration: 1.2, ease: 'power3.out', delay: 0.3 }
+            );
+            
+            gsap.fromTo('.message-card', 
+                { opacity: 0, y: 80 },
+                { opacity: 1, y: 0, duration: 1, ease: 'power3.out', delay: 0.8 }
+            );
+        }
+        
+        // Déconnexion
+        function logout() {
+            sessionStorage.removeItem('secretPageAccess');
+            
+            gsap.to(secretPage, {
+                opacity: 0,
+                duration: 0.5,
+                onComplete: () => {
+                    // Redirection vers la page d'accueil
+                    window.location.href = 'index.html';
+                }
+            });
+        }
+        
+        // Sécurité supplémentaire - empêcher l'accès direct
+        window.addEventListener('beforeunload', function() {
+            if (sessionStorage.getItem('secretPageAccess') !== 'granted') {
+                sessionStorage.removeItem('secretPageAccess');
+            }
+        });
+        
+        // Animation continue des cœurs
+        gsap.to('.heart', {
+            y: -10,
+            duration: 2,
+            ease: 'power2.inOut',
+            yoyo: true,
+            repeat: -1,
+            stagger: 0.3
+        });
+    </script>
+</body>
+</html>

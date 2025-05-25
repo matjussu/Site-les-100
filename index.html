@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com">
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="styles.css">
   <link rel="icon" type="image/png" href="logo/logo les100_DEF ROND.png" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -59,6 +59,170 @@
         background-position: center top;
       }
     }
+
+    /* Styles pour le lien cadeau secret */
+    .secret-gift {
+      position: fixed;
+      bottom: 30px;
+      left: 30px;
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #f8660e, #ffa15f);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      z-index: 999;
+      box-shadow: 0 8px 25px rgba(248, 102, 14, 0.3);
+      transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+      opacity: 0.8;
+      cursor: pointer;
+      animation: giftPulse 3s ease-in-out infinite;
+    }
+
+    .secret-gift:hover {
+      transform: scale(1.15) rotate(5deg);
+      opacity: 1;
+      box-shadow: 0 12px 35px rgba(248, 102, 14, 0.5);
+    }
+
+    .secret-gift svg {
+      width: 28px;
+      height: 28px;
+      fill: white;
+      transition: transform 0.3s ease;
+    }
+
+    .secret-gift:hover svg {
+      transform: scale(1.1) rotate(-5deg);
+    }
+
+    /* Animation subtile pour attirer l'attention */
+    @keyframes giftPulse {
+      0%, 100% {
+        transform: scale(1);
+        box-shadow: 0 8px 25px rgba(248, 102, 14, 0.3);
+      }
+      50% {
+        transform: scale(1.05);
+        box-shadow: 0 12px 30px rgba(248, 102, 14, 0.4);
+      }
+    }
+
+    /* Tooltip au survol */
+    .secret-gift::before {
+      content: "Surprise spéciale ✨";
+      position: absolute;
+      bottom: 70px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(60, 43, 26, 0.9);
+      color: white;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .secret-gift:hover::before {
+      opacity: 1;
+      bottom: 75px;
+    }
+
+    /* Petite flèche pour le tooltip */
+    .secret-gift::after {
+      content: "";
+      position: absolute;
+      bottom: 62px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid rgba(60, 43, 26, 0.9);
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+
+    .secret-gift:hover::after {
+      opacity: 1;
+      bottom: 67px;
+    }
+
+    /* Responsive pour mobile */
+    @media (max-width: 768px) {
+      .secret-gift {
+        bottom: 20px;
+        left: 20px;
+        width: 50px;
+        height: 50px;
+      }
+
+      .secret-gift svg {
+        width: 24px;
+        height: 24px;
+      }
+
+      .secret-gift::before {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+        bottom: 60px;
+      }
+
+      .secret-gift:hover::before {
+        bottom: 65px;
+      }
+
+      .secret-gift::after {
+        bottom: 52px;
+      }
+
+      .secret-gift:hover::after {
+        bottom: 57px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .secret-gift {
+        width: 45px;
+        height: 45px;
+        bottom: 15px;
+        left: 15px;
+      }
+
+      .secret-gift svg {
+        width: 20px;
+        height: 20px;
+      }
+    }
+
+    /* Animation d'apparition retardée */
+    .secret-gift {
+      animation-delay: 2s;
+      animation-fill-mode: both;
+    }
+
+    @keyframes fadeInGift {
+      from {
+        opacity: 0;
+        transform: scale(0.5) translateY(20px);
+      }
+      to {
+        opacity: 0.8;
+        transform: scale(1) translateY(0);
+      }
+    }
+
+    .secret-gift.visible {
+      animation: fadeInGift 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+    }
   </style>
 </head>
 <body>
@@ -89,6 +253,20 @@
     <a href="cookie.html" class="btn animate-element fade-up">Découvrir la collection</a>
   </div>
 </section>
+
+<!-- Lien cadeau secret -->
+<a href="page_secrète.html" class="secret-gift" aria-label="Surprise spéciale">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+    <path d="M20 12v6c0 1.105-.895 2-2 2H6c-1.105 0-2-.895-2-2v-6H2l10-8 10 8h-2z"/>
+    <path d="M12 3l-1.5 1.5L12 6l1.5-1.5L12 3z"/>
+    <path d="M9 10h6v8H9v-8z"/>
+    <path d="M10 12h4v2h-4v-2z"/>
+    <path d="M10 15h4v1h-4v-1z"/>
+    <rect x="11" y="7" width="2" height="3"/>
+    <path d="M8 7c-1.5 0-3-1-3-2.5S6.5 2 8 2s3 1 3 2.5S9.5 7 8 7z"/>
+    <path d="M16 7c1.5 0 3-1 3-2.5S17.5 2 16 2s-3 1-3 2.5S14.5 7 16 7z"/>
+  </svg>
+</a>
 
 <!-- Meilleurs cookies (accroche visuelle) -->
 <section id="incontournables" class="incontournables-section">
@@ -176,6 +354,14 @@
         heroParallax.style.height = '100%';
       }
     }
+
+    // Animation retardée pour le lien cadeau
+    setTimeout(() => {
+      const giftLink = document.querySelector('.secret-gift');
+      if (giftLink) {
+        giftLink.classList.add('visible');
+      }
+    }, 3000); // Apparaît après 3 secondes
   });
 </script>
 </body>

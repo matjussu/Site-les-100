@@ -200,8 +200,43 @@ function fetchCookieData() {
       currentCookie = cookie;
 
       // Remplit les infos du cookie sélectionné
-      document.getElementById('cookie-main-img').src = cookie.image;
-      document.getElementById('cookie-main-img').alt = cookie.nom;
+      const mainImg = document.getElementById('cookie-main-img');
+      const thumbnailContainer = document.getElementById('thumbnail-container');
+      thumbnailContainer.innerHTML = ''; // Vider le conteneur de vignettes
+
+      // Configuration spéciale pour le cookie #11 avec galerie
+      if (cookie.id === 'le-11') {
+        const images = [
+          { src: 'image/IMG_0708.JPG', alt: 'Le 11 vue principale' },
+          { src: 'image/11_coupé_bois.JPG', alt: 'Le 11 coupé' }
+        ];
+
+        // Configurer l'image principale
+        mainImg.src = images[0].src;
+        mainImg.alt = images[0].alt;
+
+        // Créer les vignettes
+        images.forEach((img, index) => {
+          const thumb = document.createElement('img');
+          thumb.src = img.src;
+          thumb.alt = img.alt;
+          thumb.className = 'thumbnail' + (index === 0 ? ' active' : '');
+          thumb.addEventListener('click', () => {
+            // Mettre à jour l'image principale
+            mainImg.src = img.src;
+            mainImg.alt = img.alt;
+            // Mettre à jour la classe active
+            document.querySelectorAll('.thumbnail').forEach(t => t.classList.remove('active'));
+            thumb.classList.add('active');
+          });
+          thumbnailContainer.appendChild(thumb);
+        });
+      } else {
+        // Pour les autres cookies, afficher simplement l'image principale
+        mainImg.src = cookie.image;
+        mainImg.alt = cookie.nom;
+      }
+
       document.getElementById('cookie-name').textContent = cookie.nom;
       document.getElementById('cookie-desc').textContent = cookie.description;
       

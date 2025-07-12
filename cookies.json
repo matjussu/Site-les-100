@@ -3,7 +3,7 @@
     "id": "le-11",
     "nom": "Le 11",
     "description": "Le cookie classique aux pépites de chocolat noir, moelleux à l'intérieur et légèrement croustillant sur les bords. Une recette simple mais parfaitement exécutée.",
-    "image": "image/COOKIE PNG/Le-11.png",
+    "image": "image/IMG_0708.JPG",
     "categorie": "essentiels",
     "ingredients": [
       "Farine de riz bio",
@@ -55,7 +55,7 @@
   {
     "id": "le-08",
     "nom": "Le 08",
-    "description": "Un cookie tout chocolat rehaussé de pépites de chocolat noir fondantes pour doubler l'intensité du plaisir.",
+    "description": " Cookie chocolat avec des pépites de chocolats",
     "image": "image/COOKIE PNG/Le-08.png",
     "categorie": "essentiels",
     "ingredients": [
@@ -109,7 +109,7 @@
   {
     "id": "le-27",
     "nom": "Le 27",
-    "description": "Un incontournable au beurre de cacahuètes maison, intense et fondant. Sa texture unique et son goût authentique en font un favori de nos clients.",
+    "description": "Un incontournable au beurre de cacahuètes bio maison.",
     "image": "image/COOKIE PNG/LE 27.png",
     "categorie": "essentiels",
     "ingredients": [
@@ -162,7 +162,7 @@
   {
     "id": "le-05",
     "nom": "Le 05",
-    "description": "Cranberries acidulées et pâte moelleuse pour une version fruitée de notre cookie qui apporte une touche de fraîcheur.",
+    "description": "Un cookie aux cramberries bio",
     "image": "image/COOKIE PNG/le 05 Cranberries.png",
     "categorie": "essentiels",
     "ingredients": [
@@ -269,7 +269,7 @@
   {
     "id": "le-04",
     "nom": "Le 04",
-    "description": "Pépites de chocolat avec un cœur fondant de Nocciolata bio, la version sans lactose de la célèbre pâte à tartiner.",
+    "description": "Nature avec des pépites de chocolat et un cœur fondant au Nocciolata.",
     "image": "image/COOKIE PNG/Le 04 NOCCIOLATA.png",
     "categorie": "gourmets",
     "ingredients": [
@@ -323,7 +323,7 @@
   {
     "id": "le-06",
     "nom": "Le 06",
-    "description": "Double chocolat et cœur Nocciolata, pour les vrais gourmands. La version tout chocolat de notre cookie au cœur fondant.",
+    "description": "Chocolat  avec des pépites de chocolat et un cœur fondant au Nocciolata",
     "image": "image/COOKIE PNG/le 06 CHOCO NOCCIOLATA.png",
     "categorie": "gourmets",
     "ingredients": [
@@ -378,7 +378,7 @@
   {
     "id": "le-10",
     "nom": "Le 10",
-    "description": "Un cookie aux pépites de chocolat avec un cœur fondant à la pistache. Élégant et raffiné.",
+    "description": "Un cookie nature avec des pépites de chocolat et un cœur fondant à la pistache",
     "image": "image/COOKIE PNG/le 12 Pistache.png",
     "categorie": "gourmets",
     "ingredients": [
@@ -433,7 +433,7 @@
   {
     "id": "le-18",
     "nom": "Le 18",
-    "description": "Chocolat et pistache réunis pour un cookie aussi beau que bon. La version tout chocolat de notre cookie à la pistache.",
+    "description": " Chocolat  avec des pépites de chocolat et un cœur fondant à la pistache",
     "image": "image/COOKIE PNG/chocolat pistache.png",
     "categorie": "gourmets",
     "ingredients": [

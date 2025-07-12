@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -87,6 +88,32 @@
       font-size: 0.8rem;
       margin-right: 10px;
     }
+
+    .thumbnail-container {
+      display: flex;
+      gap: 10px;
+      margin-top: 15px;
+      justify-content: center;
+    }
+
+    .thumbnail {
+      width: 80px;
+      height: 80px;
+      object-fit: cover;
+      border-radius: 8px;
+      cursor: pointer;
+      opacity: 0.7;
+      transition: opacity 0.2s ease;
+    }
+
+    .thumbnail:hover {
+      opacity: 1;
+    }
+
+    .thumbnail.active {
+      opacity: 1;
+      border: 2px solid #f8660e;
+    }
   </style>
 </head>
 <body>
@@ -114,7 +141,7 @@
             <span>Édition Limitée</span>
           </div>
         </div>
-        <div class="thumbnail-container">
+        <div class="thumbnail-container" id="thumbnail-container">
           <!-- Thumbnails will be inserted here dynamically if needed -->
         </div>
       </div>
@@ -123,7 +150,7 @@
         <div class="cookie-header">
           <h1 id="cookie-name">Nom du cookie</h1>
           <div class="cookie-badges">
-            <span class="bio-badge">100% Bio</span>
+            <span class="bio-badge">80% Bio</span>
           </div>
         </div>
         
@@ -132,7 +159,7 @@
         <div class="cookie-features">
           <div class="feature">
             <span class="feature-icon">🌱</span>
-            <span>100% Bio</span>
+            <span>80% Bio</span>
           </div>
           <div class="feature">
             <span class="feature-icon">🥚</span>

@@ -380,7 +380,7 @@ nav ul li a.active::before {
 
 /* Alternative: si l'image est définie dans le CSS */
 #hero .parallax-bg {
-    background-image: url('image/accueil_cookie.webp');
+    background-image: url('image/accueil_cookie_2.jpg');
 }
 
 /* S'assure que l'image est visible même avec les animations */

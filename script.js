@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <img src="logo/logo les100_DEF ROND.png" alt="Logo" class="loader-logo">
           <div class="loader-progress"></div>
         </div>
-        <div class="loader-text">Chargement des cookies...</div>
+        <div class="loader-text">Chargement des Gookies...</div>
       </div>
     `;
     document.body.appendChild(loader);
@@ -202,9 +202,9 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
     
-    // Animation des cartes de cookies
-    const cookieCards = document.querySelectorAll('.cookie-card');
-    cookieCards.forEach((card, index) => {
+    // Animation des cartes de Gookies
+    const GookieCards = document.querySelectorAll('.Gookie-card');
+    GookieCards.forEach((card, index) => {
       // Hover effects
       card.addEventListener('mouseenter', () => {
         gsap.to(card, {
@@ -443,7 +443,7 @@ function optimizeImagesForMobile() {
   if (window.innerWidth <= 768) {
     document.querySelectorAll('img').forEach(img => {
       // Réduire la qualité des images sur mobile pour des performances optimales
-      if (img.src.includes('COOKIE PNG')) {
+      if (img.src.includes('Gookie PNG')) {
         img.loading = 'lazy';
       }
     });
@@ -461,21 +461,16 @@ document.addEventListener('DOMContentLoaded', function() {
     cartLi.innerHTML = `
   <a href="#" class="cart-icon">
     <svg width="24" height="24" viewBox="0 0 512 512" fill="none" stroke="currentColor" stroke-width="2">
-  <!-- Poignée du panier - corrigée pour être dans le bon sens (orientée vers le haut) -->
   <path d="M140 160C140 160 140 70 256 70C372 70 372 160 372 160" stroke="currentColor" stroke-width="24" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
   
-  <!-- Rebord supérieur du panier -->
   <rect x="60" y="160" width="392" height="50" rx="10" stroke="currentColor" stroke-width="24" fill="none"/>
   
-  <!-- Corps du panier - forme trapézoïdale avec coins arrondis -->
   <path d="M80 210L110 430C110 440 120 450 130 450H382C392 450 402 440 402 430L432 210" stroke="currentColor" stroke-width="24" fill="none" stroke-linejoin="round"/>
   
-  <!-- Lignes verticales du panier -->
   <path d="M155 210L170 450" stroke="currentColor" stroke-width="20" fill="none"/>
   <path d="M256 210L256 450" stroke="currentColor" stroke-width="20" fill="none"/>
   <path d="M357 210L342 450" stroke="currentColor" stroke-width="20" fill="none"/>
   
-  <!-- Lignes horizontales du panier -->
   <path d="M85 290L427 290" stroke="currentColor" stroke-width="20" fill="none"/>
   <path d="M95 370L417 370" stroke="currentColor" stroke-width="20" fill="none"/>
 </svg>
@@ -494,29 +489,29 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ==========================================
-// COOKIE DU MOIS
+// Gookie DU MOIS
 // ==========================================
 
-function initCookieOfTheMonth() {
-const cookieOfTheMonth = {
-  id: "MAI",
-  nom: "Mai - Coeur coco",
-  description: "Un cookie à moitié pepite de chocolat noir et à moitié tout choco. Un régal pour les gourmands !",
-  image: "image/COOKIE PNG/Mai.png",
+function initGookieOfTheMonth() {
+const GookieOfTheMonth = {
+  id: "septembre",
+  nom: "Septembre - Crumble Amande",
+  description: "Découvrez notre Gookie de la rentrée : une base sablée recouverte d'un crumble croustillant à l'amande.",
+  image: "gookie_images/le-?-1.webp",
   featured: true
 };
 
 // Vérifier s'il y a une section hero
 const heroSection = document.querySelector('#hero');
 if (heroSection) {
-  // Ajouter le badge cookie du mois
+  // Ajouter le badge Gookie du mois
   const badge = document.createElement('div');
   badge.className = 'featured-badge';
   badge.innerHTML = `
     <div class="featured-content">
-      <span class="featured-title">Cookie du Mois</span>
-      <span class="featured-name">${cookieOfTheMonth.nom}</span>
-      <a href="cookie-detail.html?id=${cookieOfTheMonth.id}" class="featured-link">Découvrir</a>
+      <span class="featured-title">Gookie du Mois</span>
+      <span class="featured-name">${GookieOfTheMonth.nom}</span>
+      <a href="Gookie-detail.html?id=${GookieOfTheMonth.id}" class="featured-link">Découvrir</a>
     </div>
   `;
   heroSection.appendChild(badge);
@@ -531,26 +526,26 @@ if (heroSection) {
   });
 }
 
-// Ajouter une bannière promotionnelle sur la page des cookies
-const cookiePage = document.querySelector('.cookies-catalogue');
-if (cookiePage) {
+// Ajouter une bannière promotionnelle sur la page des Gookies
+const GookiePage = document.querySelector('.Gookies-catalogue');
+if (GookiePage) {
   const banner = document.createElement('div');
-  banner.className = 'cookie-month-banner';
+  banner.className = 'Gookie-month-banner';
   banner.innerHTML = `
     <div class="banner-content">
       <div class="banner-text">
-        <h3>Cookie du Mois</h3>
-        <h2>${cookieOfTheMonth.nom}</h2>
-        <p>${cookieOfTheMonth.description}</p>
-        <a href="cookie-detail.html?id=${cookieOfTheMonth.id}" class="banner-btn">Découvrir</a>
+        <h3>Gookie du Mois</h3>
+        <h2>${GookieOfTheMonth.nom}</h2>
+        <p>${GookieOfTheMonth.description}</p>
+        <a href="Gookie-detail.html?id=${GookieOfTheMonth.id}" class="banner-btn">Découvrir</a>
       </div>
       <div class="banner-image">
-        <img src="${cookieOfTheMonth.image}" alt="${cookieOfTheMonth.nom}">
+        <img src="${GookieOfTheMonth.image}" alt="${GookieOfTheMonth.nom}">
       </div>
     </div>
   `;
   
-  cookiePage.insertBefore(banner, cookiePage.firstChild);
+  GookiePage.insertBefore(banner, GookiePage.firstChild);
   
   // Animation de la bannière
   gsap.from('.banner-content', {
@@ -558,20 +553,20 @@ if (cookiePage) {
     opacity: 0,
     duration: 0.8,
     scrollTrigger: {
-      trigger: '.cookie-month-banner',
+      trigger: '.Gookie-month-banner',
       start: 'top 80%'
     }
   });
 }
 
-// Mettre en avant le cookie du mois dans la grille
-const cookieCards = document.querySelectorAll('.cookie-card');
-cookieCards.forEach(card => {
-  if (card.href.includes(cookieOfTheMonth.id)) {
-    card.classList.add('featured-cookie');
+// Mettre en avant le Gookie du mois dans la grille
+const GookieCards = document.querySelectorAll('.Gookie-card');
+GookieCards.forEach(card => {
+  if (card.href.includes(GookieOfTheMonth.id)) {
+    card.classList.add('featured-Gookie');
     const ribbon = document.createElement('div');
     ribbon.className = 'featured-ribbon';
-    ribbon.textContent = 'Cookie du Mois';
+    ribbon.textContent = 'Gookie du Mois';
     card.appendChild(ribbon);
   }
 });
@@ -623,7 +618,7 @@ function updateCartCount() {
 // Animation d'ajout au panier
 function animateAddToCart(event) {
   const button = event.target;
-  const productCard = button.closest('.cookie-card, .cookie-detail');
+  const productCard = button.closest('.Gookie-card, .Gookie-detail');
   const productImage = productCard.querySelector('img');
   
   // Clone de l'image pour l'animation
@@ -739,7 +734,7 @@ function showCartModal() {
           <span>${calculateTotal()}€</span>
         </div>
         <div class="cart-info">
-          <p>Les cookies sont disponibles uniquement au marché de Gouvieux, tous les dimanches.</p>
+          <p>Les Gookies sont disponibles uniquement au marché de Gouvieux, tous les dimanches.</p>
           <p>Suivez-nous sur Instagram <a href="https://instagram.com/les100_gluten_oeuf_lactose" target="_blank">@les100_gluten_oeuf_lactose</a></p>
         </div>
         <div class="cart-actions">
@@ -1428,7 +1423,7 @@ document.addEventListener('DOMContentLoaded', function() {
       header.classList.add('fixed-header');
       
       // Trouver le premier élément principal pour ajouter un padding
-      const mainContent = document.querySelector('#hero, #hero-histoire, .cookies-intro, .contact-hero, .cookie-detail-hero, .main-content, .page-hero');
+      const mainContent = document.querySelector('#hero, #hero-histoire, .Gookies-intro, .contact-hero, .Gookie-detail-hero, .main-content, .page-hero');
       if (mainContent) {
         mainContent.style.paddingTop = '70px';
       }

@@ -8,17 +8,17 @@
     <priority>1.0</priority>
   </url>
   
-  <!-- Page des cookies -->
+  <!-- Page des Gookies -->
   <url>
-    <loc>https://les-100.fr/cookie.html</loc>
+    <loc>https://les-100.fr/Gookie.html</loc>
     <lastmod>2025-05-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   
-  <!-- Page détail cookie -->
+  <!-- Page détail Gookie -->
   <url>
-    <loc>https://les-100.fr/cookie-detail.html</loc>
+    <loc>https://les-100.fr/Gookie-detail.html</loc>
     <lastmod>2025-05-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>

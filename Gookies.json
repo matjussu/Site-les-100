@@ -1,0 +1,629 @@
+[
+  {
+    "id": "le-11",
+    "nom": "Le 11",
+    "description": "Le Gookie classique aux pépites de chocolat noir, moelleux à l'intérieur et légèrement croustillant sur les bords. Une recette simple mais parfaitement exécutée.",
+    "images": [
+      "gookie_images/le-11-01.webp",
+      "gookie_images/le-11-2.webp"
+    ],
+    "categorie": "essentiels",
+    "ingredients": [
+      "Farine de riz Bio",
+      "Sucre de canne blond Bio",
+      "Extrait de vanille",
+      "Compte de pomme bio fait maison",
+      "Margarine sans huile de palme",
+      "Chocolat noir en palet"
+    ],
+    "prix": {
+      "petit": 2.50,
+      "moyen": 4.50,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": 2.50,
+      "x2": 4.50,
+      "x3": 6.50,
+      "x6": 12.50,
+      "x9": 18.00,
+      "x12": 24.00,
+      "x18": 35.00,
+      "x24": 47.00
+    },
+    "format_standard": {
+      "unite": 4.50,
+      "x4": 16.00
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    }
+  },
+  {
+    "id": "le-08",
+    "nom": "Le 08",
+    "description": " Gookie chocolat avec des pépites de chocolats",
+    "image": "image/Gookie PNG/Le-08.png",
+    "categorie": "essentiels",
+    "ingredients": [
+      "Farine de riz Bio",
+      "Sucre de canne blond Bio",
+      "Extrait de vanille",
+      "Compte de pomme bio fait maison",
+      "Margarine sans huile de palme",
+      "Chocolat noir en palet",
+      "Chocolat en poudre van Houten"
+    ],
+    "prix": {
+      "petit": 2.50,
+      "moyen": 4.50,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": 2.50,
+      "x2": 4.50,
+      "x3": 6.50,
+      "x6": 12.50,
+      "x9": 18.00,
+      "x12": 24.00,
+      "x18": 35.00,
+      "x24": 47.00
+    },
+    "format_standard": {
+      "unite": 4.50,
+      "x4": 16.00
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    }
+  },
+  {
+    "id": "le-27",
+    "nom": "Le 27",
+    "description": "Un incontournable au beurre de cacahuètes bio maison.",
+    "images": [
+      "gookie_images/le-27-1.webp"
+    ],
+    "categorie": "essentiels",
+    "ingredients": [
+      "Farine de riz Bio",
+      "Sucre de canne blond Bio",
+      "Extrait de vanille",
+      "Compte de pomme bio fait maison",
+      "Margarine sans huile de palme",
+      "Beurre de cacahouète fait maison avec cacahouète bio"
+    ],
+    "prix": {
+      "petit": 2.50,
+      "moyen": 4.50,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": 2.50,
+      "x2": 4.50,
+      "x3": 6.50,
+      "x6": 12.50,
+      "x9": 18.00,
+      "x12": 24.00,
+      "x18": 35.00,
+      "x24": 47.00
+    },
+    "format_standard": {
+      "unite": 4.50,
+      "x4": 16.00
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    }
+  },
+  {
+    "id": "le-05",
+    "nom": "Le 05",
+    "description": "Un Gookie aux cramberries bio",
+    "image": "image/Gookie PNG/le 05 Cranberries.png",
+    "categorie": "essentiels",
+    "ingredients": [
+      "Farine de riz Bio",
+      "Sucre de canne blond Bio",
+      "Extrait de vanille",
+      "Compte de pomme bio fait maison",
+      "Margarine sans huile de palme",
+      "Cranberries bio"
+    ],
+    "prix": {
+      "petit": 2.50,
+      "moyen": 4.50,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": 2.50,
+      "x2": 4.50,
+      "x3": 6.50,
+      "x6": 12.50,
+      "x9": 18.00,
+      "x12": 24.00,
+      "x18": 35.00,
+      "x24": 47.00
+    },
+    "format_standard": {
+      "unite": 4.50,
+      "x4": 16.00
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    }
+  },
+  {
+    "id": "le-03",
+    "nom": "Le 03",
+    "description": "Beurre de cacahuètes maison avec un cœur fondant à la framboise. Une association surprenante et délicieuse.",
+    "images": [
+      "gookie_images/le-03-1.webp",
+      "gookie_images/le-03-2.webp"
+    ],
+    "categorie": "gourmets",
+    "ingredients": [
+      "Farine de riz Bio",
+      "Sucre de canne blond Bio",
+      "Extrait de vanille",
+      "Compte de pomme bio fait maison",
+      "Margarine sans huile de palme",
+      "Beurre de cacahouète fait maison avec cacahouète bio",
+      "Confiture de framboise locale"
+    ],
+    "prix": {
+      "petit": null,
+      "moyen": 5.00,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": null,
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
+    },
+    "format_standard": {
+      "unite": null,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": 5.00,
+      "x3": 14.00,
+      "x5": 23.00
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    }
+  },
+  {
+    "id": "le-04",
+    "nom": "Le 04",
+    "description": "Nature avec des pépites de chocolat et un cœur fondant au Nocciolata.",
+    "images": [
+      "gookie_images/le-4-1.webp"
+    ],
+    "categorie": "gourmets",
+    "ingredients": [
+      "Farine de riz Bio",
+      "Sucre de canne blond Bio",
+      "Extrait de vanille",
+      "Compte de pomme bio fait maison",
+      "Margarine sans huile de palme",
+      "Nocciolata bio",
+      "Chocolat noir en palet"
+    ],
+    "prix": {
+      "petit": null,
+      "moyen": 5.00,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": null,
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
+    },
+    "format_standard": {
+      "unite": null,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": 5.00,
+      "x3": 14.00,
+      "x5": 23.00
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    }
+  },
+  {
+    "id": "le-06",
+    "nom": "Le 06",
+    "description": "Chocolat  avec des pépites de chocolat et un cœur fondant au Nocciolata",
+    "image": "image/Gookie PNG/le 06 CHOCO NOCCIOLATA.png",
+    "categorie": "gourmets",
+    "ingredients": [
+      "Farine de riz Bio",
+      "Sucre de canne blond Bio",
+      "Extrait de vanille",
+      "Compte de pomme bio fait maison",
+      "Margarine sans huile de palme",
+      "Chocolat noir en palet",
+      "Chocolat en poudre van Houten",
+      "Nocciolata bio"
+    ],
+    "prix": {
+      "petit": null,
+      "moyen": 5.00,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": null,
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
+    },
+    "format_standard": {
+      "unite": null,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": 5.00,
+      "x3": 14.00,
+      "x5": 23.00
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    }
+  },
+  {
+    "id": "le-10",
+    "nom": "Le 10",
+    "description": "Un Gookie nature avec des pépites de chocolat et un cœur fondant à la pistache",
+    "images": [
+      "gookie_images/le-10-1.webp",
+      "gookie_images/le-10-2.webp"
+    ],
+    "categorie": "gourmets",
+    "ingredients": [
+      "Farine de riz Bio",
+      "Sucre de canne blond Bio",
+      "Extrait de vanille",
+      "Compte de pomme bio fait maison",
+      "Margarine sans huile de palme",
+      "Chocolat noir en palet",
+      "Beurre de pistache bio fait maison"
+    ],
+    "prix": {
+      "petit": null,
+      "moyen": 5.00,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": null,
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
+    },
+    "format_standard": {
+      "unite": null,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": 5.00,
+      "x3": 14.00,
+      "x5": 23.00
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    }
+  },
+  {
+    "id": "le-18",
+    "nom": "Le 18",
+    "description": " Chocolat  avec des pépites de chocolat et un cœur fondant à la pistache",
+    "images": [
+      "gookie_images/le-18-1.webp",
+      "gookie_images/le-18-2.webp"
+    ],
+    "categorie": "gourmets",
+    "ingredients": [
+      "Farine de riz Bio",
+      "Sucre de canne blond Bio",
+      "Extrait de vanille",
+      "Compte de pomme bio fait maison",
+      "Margarine sans huile de palme",
+      "Chocolat noir en palet",
+      "Chocolat en poudre van Houten",
+      "Beurre de pistache bio fait maison"
+    ],
+    "prix": {
+      "petit": null,
+      "moyen": 5.00,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": null,
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
+    },
+    "format_standard": {
+      "unite": null,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": 5.00,
+      "x3": 14.00,
+      "x5": 23.00
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    }
+  },
+  {
+    "id": "le-02",
+    "nom": "Le 02",
+    "description": "Une touche citronnée subtile pour un Gookie frais et surprenant. Léger et parfait pour l'été.",
+    "image": "image/citron.jpeg",
+    "categorie": "essentiels",
+    "ingredients": [
+      "Farine de riz bio",
+      "Citron bio",
+      "Sucre de canne blond bio",
+      "Boisson végétale de riz et d'amandes bio",
+      "Pomme bio"
+    ],
+    "prix": {
+      "petit": 2.50,
+      "moyen": 4.50,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": 2.50,
+      "x2": 4.50,
+      "x3": 6.50,
+      "x6": 12.50,
+      "x9": 18.00,
+      "x12": 24.00,
+      "x18": 35.00,
+      "x24": 47.00
+    },
+    "format_standard": {
+      "unite": 4.50,
+      "x4": 16.00
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": 36.00,
+      "parts_6_8": 42.00
+    }
+  },
+  {
+    "id": "le-65",
+    "nom": "Le 65",
+    "description": "Praliné maison dans une base de Gookie généreuse. Une délicieuse alliance de noisettes caramélisées et de Gookie moelleux.",
+    "image": "image/Gookie PNG/pralin.jpg",
+    "categorie": "essentiels",
+    "ingredients": [
+      "Farine de riz bio",
+      "Praliné maison bio (noisettes caramélisées)",
+      "Sucre de canne blond bio",
+      "Boisson végétale",
+      "Pomme bio"
+    ],
+    "prix": {
+      "petit": 2.50,
+      "moyen": 4.50,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": 2.50,
+      "x2": 4.50,
+      "x3": 6.50,
+      "x6": 12.50,
+      "x9": 18.00,
+      "x12": 24.00,
+      "x18": 35.00,
+      "x24": 47.00
+    },
+    "format_standard": {
+      "unite": 4.50,
+      "x4": 16.00
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    }
+  },
+  {
+    "id": "le-12",
+    "nom": "Le 12",
+    "description": "Un cœur pistache au centre d'un Gookie moelleux aux pépites. Notre version du Gookie Le 10 avec des pépites de chocolat en plus.",
+    "image": "image/Gookie PNG/le 12 Pistache.png",
+    "categorie": "mini",
+    "ingredients": [
+      "Farine de riz bio",
+      "Pépites de chocolat noir",
+      "Crème de pistache",
+      "Pistaches bio concassées",
+      "Sucre de canne blond bio",
+      "Boisson végétale",
+      "Pomme bio"
+    ],
+    "prix": {
+      "petit": 2.50,
+      "moyen": null,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": 2.50,
+      "x2": 4.50,
+      "x3": 6.50,
+      "x6": 12.50,
+      "x9": 18.00,
+      "x12": 24.00,
+      "x18": 35.00,
+      "x24": 47.00
+    },
+    "format_standard": {
+      "unite": null,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    }
+  },
+  {
+    "id": "mai",
+    "nom": "Mai - Coeur coco",
+    "description": "Le Gookie du mois, en édition limitée. Un Gookie coco avec un cœur fondant à la noix de coco. Parfait pour les amateurs de saveurs tropicales.",
+    "image": "image/Gookie PNG/Mai_2.jpeg",
+    "categorie": "edition_limitee",
+    "ingredients": [
+      "Farine de riz bio",
+      "Cacao en poudre bio",
+      "poudre de coco bio",
+      "Sucre de canne blond bio",
+      "Boisson végétale",
+      "Pomme bio"
+    ],
+    "prix": {
+      "petit": 2.50,
+      "moyen": 5.00,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": 2.50,
+      "x2": 4.50,
+      "x3": 6.50,
+      "x6": 12.50,
+      "x9": 18.00,
+      "x12": 24.00,
+      "x18": 35.00,
+      "x24": 47.00
+    },
+    "format_standard": {
+      "unite": 5.00,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    }
+  },
+  {
+    "id": "septembre",
+    "nom": "Le ? - Crumble Amande",
+    "description": "Le Gookie de la rentrée. Une base sablée recouverte d'un crumble croustillant à l'amande.",
+    "images": [
+      "gookie_images/le-_-1.webp",
+      "gookie_images/le-_-2.webp"
+    ],
+    "categorie": "edition_limitee",
+    "ingredients": [
+      "Farine de riz Bio",
+      "Sucre de canne blond Bio",
+      "Poudre d'amande Bio",
+      "Margarine sans huile de palme",
+      "Compote de pomme bio fait maison"
+    ],
+    "prix": {
+      "petit": 2.50,
+      "moyen": 5.00,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": 2.50,
+      "x2": 4.50,
+      "x3": 6.50,
+      "x6": 12.50,
+      "x9": 18.00,
+      "x12": 24.00,
+      "x18": 35.00,
+      "x24": 47.00
+    },
+    "format_standard": {
+      "unite": 5.00,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    }
+  }
+]

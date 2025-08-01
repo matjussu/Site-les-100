@@ -4,12 +4,12 @@ const CACHE_NAME = 'les100-cache-v3';
 // Ressources à mettre en cache immédiatement
 const CACHE_URLS = [
   'index.html',
-  'cookie.html',
+  'Gookie.html',
   'styles.css',
   'script.js',
   'logo/logo les100_DEF ROND.png',
   'logo/logo_horizontale.png',
-  'image/cookie_accueil.png',
+  'image/Gookie_accueil.png',
   // Ajoutez d'autres ressources importantes
 ];
 

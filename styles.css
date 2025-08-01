@@ -25,7 +25,7 @@ body {
 
 /* Performance GPU */
 .parallax-bg,
-.cookie-card,
+.Gookie-card,
 .animate-element,
 .btn,
 .logo img {
@@ -380,7 +380,7 @@ nav ul li a.active::before {
 
 /* Alternative: si l'image est définie dans le CSS */
 #hero .parallax-bg {
-    background-image: url('image/accueil_cookie_2.jpg');
+    background-image: url('image/accueil_Gookie_2.jpg');
 }
 
 /* S'assure que l'image est visible même avec les animations */
@@ -448,9 +448,9 @@ nav ul li a.active::before {
 }
 
 /* ==========================================
-   CARTES DE COOKIES
+   CARTES DE GookieS
    ========================================== */
-.cookie-card {
+.Gookie-card {
     background: white;
     border-radius: 20px;
     padding: 25px;
@@ -466,7 +466,7 @@ nav ul li a.active::before {
     text-align: center;
 }
 
-.cookie-card img {
+.Gookie-card img {
     width: 100%;
     border-radius: 14px;
     margin-bottom: 15px;
@@ -476,23 +476,23 @@ nav ul li a.active::before {
     max-width: 250px;
 }
 
-.cookie-card:hover {
+.Gookie-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
 }
 
-.cookie-card:hover img {
+.Gookie-card:hover img {
     transform: scale(1.1);
 }
 
-.cookie-card h3 {
+.Gookie-card h3 {
     font-size: 1.4em;
     font-weight: 600;
     color: #f8660e;
     margin: 10px 0 8px;
 }
 
-.cookie-card p {
+.Gookie-card p {
     font-size: 1em;
     color: #666;
     margin: 0;
@@ -521,7 +521,7 @@ nav ul li a.active::before {
     margin: 0 auto;
 }
 
-.incontournables-grid .cookie-card {
+.incontournables-grid .Gookie-card {
     width: 280px;
 }
 
@@ -550,11 +550,14 @@ nav ul li a.active::before {
     text-align: left;
 }
 
-.histoire-image img {
+.histoire-image video { /* Changement ici */
     width: 100%;
     max-width: 550px;
     border-radius: 18px;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+    object-fit: cover; /* Ajout recommandé */
+    height: 100%;
+    background-color: #fffaf4; /* Ajout recommandé pour un bon ratio */
 }
 
 .histoire-content h2 {
@@ -595,21 +598,21 @@ nav ul li a.active::before {
     transform: scale(1.05);
 }
 
-/* Catalogue cookies */
-.cookies-catalogue {
+/* Catalogue Gookies */
+.Gookies-catalogue {
     padding: 120px 30px;
     background: linear-gradient(to bottom, #fffaf4, #ffffff);
     text-align: center;
 }
 
-.cookies-catalogue h2 {
+.Gookies-catalogue h2 {
     font-size: 3.4em;
     color: #3c2b1a;
     font-weight: 600;
     margin-bottom: 80px;
 }
 
-.cookies-catalogue .cookies-grid {
+.Gookies-catalogue .Gookies-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 50px;
@@ -619,8 +622,8 @@ nav ul li a.active::before {
     align-items: stretch;
 }
 
-/* Cookie intro */
-.cookies-intro {
+/* Gookie intro */
+.Gookies-intro {
     position: relative;
     height: 100vh;
     background-image: url('image/cooks_cacahuetes.webp');
@@ -633,7 +636,7 @@ nav ul li a.active::before {
     overflow: hidden;
 }
 
-.cookies-intro-overlay {
+.Gookies-intro-overlay {
     position: absolute;
     top: 0;
     left: 0;
@@ -643,7 +646,7 @@ nav ul li a.active::before {
     z-index: 1;
 }
 
-.cookies-intro-content {
+.Gookies-intro-content {
     position: relative;
     z-index: 2;
     color: white;
@@ -654,28 +657,28 @@ nav ul li a.active::before {
     animation-fill-mode: forwards;
 }
 
-.cookies-intro-logo {
+.Gookies-intro-logo {
     width: 200px;
     height: auto;
     margin-bottom: 10px;
     animation: float 3s ease-in-out infinite;
 }
 
-.cookies-intro h1 {
+.Gookies-intro h1 {
     font-size: 3.5em;
     font-weight: 700;
     margin-bottom: 10px;
     color: #f8660e;
 }
 
-.cookies-intro p {
+.Gookies-intro p {
     font-size: 1.3em;
     font-weight: 400;
     color: white;
 }
 
-/* Cookie detail */
-.cookie-detail {
+/* Gookie detail */
+.Gookie-detail {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -686,7 +689,7 @@ nav ul li a.active::before {
     animation: fadeIn 0.6s ease-in;
 }
 
-.cookie-image img {
+.Gookie-image img {
     max-width: 400px;
     width: 100%;
     border-radius: 20px;
@@ -694,38 +697,38 @@ nav ul li a.active::before {
     transition: transform 0.3s ease;
 }
 
-.cookie-image img:hover {
+.Gookie-image img:hover {
     transform: scale(1.05);
 }
 
-.cookie-info {
+.Gookie-info {
     max-width: 480px;
     text-align: center;
 }
 
-.cookie-info h1 {
+.Gookie-info h1 {
     font-size: 2.5em;
     color: #f8660e;
     margin-bottom: 20px;
 }
 
-.cookie-info p {
+.Gookie-info p {
     font-size: 1.1em;
     color: #444;
     margin-bottom: 30px;
 }
 
-.cookie-pricing {
+.Gookie-pricing {
     font-size: 1em;
     color: #333;
 }
 
-.cookie-pricing label {
+.Gookie-pricing label {
     font-weight: bold;
     margin-right: 10px;
 }
 
-.cookie-pricing select {
+.Gookie-pricing select {
     font-size: 1em;
     padding: 10px 20px;
     border-radius: 12px;
@@ -741,12 +744,12 @@ nav ul li a.active::before {
     cursor: pointer;
 }
 
-.cookie-pricing select:hover {
+.Gookie-pricing select:hover {
     border-color: #e65b00;
     box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
 }
 
-.cookie-pricing select:focus {
+.Gookie-pricing select:focus {
     outline: none;
     border-color: #e65b00;
     box-shadow: 0 0 0 3px rgba(248, 102, 14, 0.2);
@@ -779,14 +782,14 @@ nav ul li a.active::before {
 }
 
 /* Section Suggestions avec Carousel */
-.cookie-suggestions {
+.Gookie-suggestions {
     background-color: #fffaf4;
     padding: 100px 30px;
     text-align: center;
     position: relative;
 }
 
-.cookie-suggestions h2 {
+.Gookie-suggestions h2 {
     font-size: 2.5em;
     color: #3c2a19;
     margin-bottom: 40px;
@@ -809,7 +812,7 @@ nav ul li a.active::before {
     padding: 20px 10px;
 }
 
-.carousel .cookie-card {
+.carousel .Gookie-card {
     scroll-snap-align: center;
     flex: 0 0 auto;
     width: 260px;
@@ -1345,12 +1348,14 @@ body.page-loaded .animate-element:nth-child(3) { transition-delay: 0.3s; }
         flex-wrap: wrap;
     }
   
-    .histoire-image img {
-        width: 100%;
-        max-width: 500px;
-        height: auto;
-        border-radius: 15px;
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08);
+    .histoire-image video { /* Changement ici */
+      width: 100%;
+      max-width: 550px;
+      border-radius: 18px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      object-fit: cover; /* Ajout recommandé */
+      height: 100%; /* Ajout recommandé pour un bon ratio */
+      background-color: #fffaf4;
     }
     
     .histoire-content {
@@ -1365,7 +1370,7 @@ body.page-loaded .animate-element:nth-child(3) { transition-delay: 0.3s; }
         height: 200px;
     }
     
-    .cookie-card:hover {
+    .Gookie-card:hover {
         transform: translateY(-5px);
     }
     
@@ -1448,7 +1453,7 @@ body.page-loaded .animate-element:nth-child(3) { transition-delay: 0.3s; }
 }
 
 @media (max-width: 500px) {
-    .cookies-catalogue .cookies-grid {
+    .Gookies-catalogue .Gookies-grid {
         grid-template-columns: 1fr;
     }
 }
@@ -1502,7 +1507,7 @@ body.page-loaded .animate-element:nth-child(3) { transition-delay: 0.3s; }
 }
 
 @media (max-width: 400px) {
-    .cookie-card img {
+    .Gookie-card img {
         max-width: 180px;
     }
 }
@@ -1638,12 +1643,12 @@ img {
       transition: opacity 0.3s ease !important;
     }
     
-    .cookie-card:hover {
+    .Gookie-card:hover {
       transform: translateY(-3px);
     }
     
-    /* Grille responsive pour les cookies */
-    .incontournables-grid, .cookies-grid {
+    /* Grille responsive pour les Gookies */
+    .incontournables-grid, .Gookies-grid {
       grid-template-columns: 1fr;
       gap: 20px;
       padding: 0 15px;
@@ -2072,16 +2077,16 @@ img {
 }
 
 /* ==========================================
-   PAGE DE DÉTAIL COOKIE AMÉLIORÉE
+   PAGE DE DÉTAIL Gookie AMÉLIORÉE
    ========================================== */
 
-   .cookie-detail-hero {
+   .Gookie-detail-hero {
     background: #fffaf4;
     padding: 80px 0;
     min-height: 60vh;
 }
 
-.cookie-detail-container {
+.Gookie-detail-container {
     max-width: 1300px;
     margin: 0 auto;
     display: grid;
@@ -2091,7 +2096,7 @@ img {
 }
 
 /* Galerie d'images */
-.cookie-gallery {
+.Gookie-gallery {
     position: sticky;
     top: 100px;
     height: fit-content;
@@ -2106,7 +2111,7 @@ img {
     padding: 20px;
 }
 
-#cookie-main-img {
+#Gookie-main-img {
     width: 100%;
     height: auto;
     border-radius: 15px;
@@ -2114,7 +2119,7 @@ img {
     aspect-ratio: 1;
 }
 
-.cookie-badge {
+.Gookie-badge {
     position: absolute;
     top: 30px;
     left: 30px;
@@ -2153,26 +2158,26 @@ img {
     object-fit: cover;
 }
 
-/* Informations sur le cookie */
-.cookie-info-wrapper {
+/* Informations sur le Gookie */
+.Gookie-info-wrapper {
     background: white;
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
-.cookie-header {
+.Gookie-header {
     margin-bottom: 20px;
 }
 
-#cookie-name {
+#Gookie-name {
     font-size: 2.5rem;
     color: #3c2b1a;
     margin: 0 0 10px 0;
 }
 
 
-.cookie-description {
+.Gookie-description {
     font-size: 1.1rem;
     color: #666;
     line-height: 1.6;
@@ -2180,7 +2185,7 @@ img {
 }
 
 /* Features */
-.cookie-features {
+.Gookie-features {
     display: flex;
     gap: 20px;
     margin-bottom: 30px;
@@ -2203,11 +2208,11 @@ img {
 }
 
 /* Ingrédients */
-.cookie-ingredients {
+.Gookie-ingredients {
     margin-bottom: 30px;
 }
 
-.cookie-ingredients h3 {
+.Gookie-ingredients h3 {
     font-size: 1.2rem;
     color: #3c2b1a;
     margin-bottom: 15px;
@@ -2230,7 +2235,7 @@ img {
 }
 
 /* Sélecteurs de taille et quantité */
-.cookie-options {
+.Gookie-options {
     margin-bottom: 30px;
 }
 
@@ -2278,7 +2283,7 @@ img {
 }
 
 /* Sélecteur de quantité */
-.cookie-quantity {
+.Gookie-quantity {
     margin-top: 20px;
 }
 
@@ -2319,7 +2324,7 @@ img {
 }
 
 /* Prix et bouton d'ajout au panier */
-.cookie-price-container {
+.Gookie-price-container {
     margin-bottom: 20px;
     display: flex;
     align-items: baseline;
@@ -2363,21 +2368,21 @@ img {
     font-size: 1.3rem;
 }
 
-.cookie-availability {
+.Gookie-availability {
     margin-top: 30px;
     padding: 20px;
     background: #f8f8f8;
     border-radius: 10px;
 }
 
-.cookie-availability p {
+.Gookie-availability p {
     margin: 5px 0;
     color: #666;
     font-size: 0.9rem;
 }
 
 /* Tabs section */
-.cookie-details-tabs {
+.Gookie-details-tabs {
     background: white;
     padding: 60px 0;
 }
@@ -2449,13 +2454,13 @@ img {
 }
 
 /* Carrousel de suggestions amélioré */
-.cookie-suggestions-enhanced {
+.Gookie-suggestions-enhanced {
     background: #fffaf4;
     padding: 80px 0;
     overflow: hidden;
 }
 
-.cookie-suggestions-enhanced h2 {
+.Gookie-suggestions-enhanced h2 {
     text-align: center;
     font-size: 2.5rem;
     color: #3c2b1a;
@@ -2480,7 +2485,7 @@ img {
 }
 
 /* Style des cartes dans le carrousel */
-.suggestions-track .cookie-card {
+.suggestions-track .Gookie-card {
     flex: 0 0 auto;
     width: 280px;
     background: white;
@@ -2495,7 +2500,7 @@ img {
     color: inherit;
 }
 
-.suggestions-track .cookie-card img {
+.suggestions-track .Gookie-card img {
     width: 100%;
     max-width: 200px;
     height: 200px;
@@ -2504,7 +2509,7 @@ img {
     margin-bottom: 16px;
 }
 
-.suggestions-track .cookie-card h3 {
+.suggestions-track .Gookie-card h3 {
     font-size: 1.3rem;
     font-weight: 600;
     color: #f8660e;
@@ -2512,7 +2517,7 @@ img {
     text-align: center;
 }
 
-.suggestions-track .cookie-card p {
+.suggestions-track .Gookie-card p {
     font-size: 0.95rem;
     color: #666;
     text-align: center;
@@ -2528,7 +2533,7 @@ img {
 
 
 
-.suggestions-track .cookie-card:hover {
+.suggestions-track .Gookie-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
 }
@@ -2584,7 +2589,7 @@ img {
         padding: 20px 40px;
     }
     
-    .suggestions-track .cookie-card {
+    .suggestions-track .Gookie-card {
         width: 240px;
     }
     
@@ -2595,7 +2600,7 @@ img {
 }
 
 @media (max-width: 480px) {
-    .cookie-suggestions-enhanced {
+    .Gookie-suggestions-enhanced {
         padding: 60px 0;
     }
     
@@ -2603,7 +2608,7 @@ img {
         padding: 20px;
     }
     
-    .suggestions-track .cookie-card {
+    .suggestions-track .Gookie-card {
         width: 200px;
     }
     
@@ -2621,7 +2626,7 @@ img {
     }
 }
 /* ==========================================
-   COOKIE DU MOIS
+   Gookie DU MOIS
    ========================================== */
 
 /* Badge sur la page d'accueil */
@@ -2674,8 +2679,8 @@ img {
     transform: translateY(-2px);
 }
 
-/* Bannière sur la page des cookies */
-.cookie-month-banner {
+/* Bannière sur la page des Gookies */
+.Gookie-month-banner {
     background: linear-gradient(135deg, #fff5ef 0%, #ffe8d6 100%);
     padding: 80px 0;
     margin-bottom: 60px;
@@ -2683,7 +2688,7 @@ img {
     overflow: hidden;
 }
 
-.cookie-month-banner::before {
+.Gookie-month-banner::before {
     content: '';
     position: absolute;
     top: 0;
@@ -2769,13 +2774,13 @@ img {
 }
 
 /* Mise en valeur dans la grille */
-.featured-cookie {
+.featured-Gookie {
     position: relative;
     transform: scale(1.05);
     z-index: 2;
 }
 
-.featured-cookie:hover {
+.featured-Gookie:hover {
     transform: scale(1.1);
 }
 
@@ -2818,7 +2823,7 @@ img {
         font-size: 1.2rem;
     }
     
-    .cookie-month-banner {
+    .Gookie-month-banner {
         padding: 60px 0;
     }
     
@@ -2861,7 +2866,7 @@ img {
     position: relative;
     height: 40vh;
     min-height: 400px;
-    background-image: url('image/cookie_accueil.webp');
+    background-image: url('image/Gookie_accueil.webp');
     background-size: cover;
     background-position: center;
     display: flex;
@@ -3347,7 +3352,7 @@ img {
       gap: 25px;
     }
     
-    .incontournables-grid .cookie-card {
+    .incontournables-grid .Gookie-card {
       width: 100%;
       max-width: 280px;
     }
@@ -3370,7 +3375,7 @@ img {
       font-size: 1rem;
     }
     
-    /* Badge cookie du mois */
+    /* Badge Gookie du mois */
     .featured-badge {
       position: relative;
       bottom: auto;
@@ -3435,7 +3440,7 @@ img {
       gap: 25px;
     }
     
-    .incontournables-grid .cookie-card {
+    .incontournables-grid .Gookie-card {
       width: 100%;
       max-width: 280px;
     }
@@ -3458,7 +3463,7 @@ img {
       font-size: 1rem;
     }
     
-    /* Badge cookie du mois */
+    /* Badge Gookie du mois */
     .featured-badge {
       position: relative;
       bottom: auto;
@@ -3485,45 +3490,45 @@ img {
     }
   }
 
-  /* Optimisations mobile spécifiques pour la page cookies */
+  /* Optimisations mobile spécifiques pour la page Gookies */
 @media (max-width: 768px) {
-    .cookies-intro {
+    .Gookies-intro {
       height: 70vh;
     }
     
-    .cookies-intro-content {
+    .Gookies-intro-content {
       padding: 0 15px;
     }
     
-    .cookies-intro-logo {
+    .Gookies-intro-logo {
       width: 120px;
     }
     
-    .cookies-intro h1 {
+    .Gookies-intro h1 {
       font-size: 2.5rem;
     }
     
-    .cookies-intro p {
+    .Gookies-intro p {
       font-size: 1.1rem;
     }
     
-    .cookies-catalogue {
+    .Gookies-catalogue {
       padding: 60px 15px;
     }
     
-    .cookies-catalogue h2 {
+    .Gookies-catalogue h2 {
       font-size: 2.2rem;
       margin-bottom: 40px;
     }
     
-    .cookies-grid {
+    .Gookies-grid {
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
       gap: 25px;
       padding: 0;
     }
     
-    /* Bannière du cookie du mois */
-    .cookie-month-banner {
+    /* Bannière du Gookie du mois */
+    .Gookie-month-banner {
       padding: 40px 0;
     }
     
@@ -3548,15 +3553,15 @@ img {
   }
   
   @media (max-width: 480px) {
-    .cookies-intro h1 {
+    .Gookies-intro h1 {
       font-size: 2rem;
     }
     
-    .cookies-catalogue h2 {
+    .Gookies-catalogue h2 {
       font-size: 1.8rem;
     }
     
-    .cookies-grid {
+    .Gookies-grid {
       grid-template-columns: 1fr;
     }
     
@@ -3565,38 +3570,38 @@ img {
     }
   }
 
-  /* Optimisations mobile spécifiques pour la page détail cookie */
+  /* Optimisations mobile spécifiques pour la page détail Gookie */
 @media (max-width: 768px) {
-    .cookie-detail-hero {
+    .Gookie-detail-hero {
       padding: 30px 0;
     }
     
-    .cookie-detail-container {
+    .Gookie-detail-container {
       grid-template-columns: 1fr;
       gap: 30px;
       padding: 0 15px;
     }
     
-    .cookie-gallery {
+    .Gookie-gallery {
       position: relative;
       top: 0;
     }
     
-    .cookie-info-wrapper {
+    .Gookie-info-wrapper {
       padding: 30px 20px;
     }
     
-    #cookie-name {
+    #Gookie-name {
       font-size: 2rem;
     }
     
-    .cookie-features {
+    .Gookie-features {
       flex-wrap: wrap;
       gap: 10px;
     }
     
     /* Tabs section */
-    .cookie-details-tabs {
+    .Gookie-details-tabs {
       padding: 40px 0;
     }
     
@@ -3615,11 +3620,11 @@ img {
     }
     
     /* Suggestions section */
-    .cookie-suggestions-enhanced {
+    .Gookie-suggestions-enhanced {
       padding: 40px 0;
     }
     
-    .cookie-suggestions-enhanced h2 {
+    .Gookie-suggestions-enhanced h2 {
       font-size: 2rem;
       margin-bottom: 30px;
     }
@@ -3628,17 +3633,17 @@ img {
       padding: 0 40px;
     }
     
-    .suggestions-track .cookie-card {
+    .suggestions-track .Gookie-card {
       width: 220px;
     }
   }
   
   @media (max-width: 480px) {
-    #cookie-name {
+    #Gookie-name {
       font-size: 1.8rem;
     }
     
-    .cookie-description {
+    .Gookie-description {
       font-size: 1rem;
     }
     
@@ -3647,11 +3652,11 @@ img {
       gap: 10px;
     }
     
-    .cookie-suggestions-enhanced h2 {
+    .Gookie-suggestions-enhanced h2 {
       font-size: 1.8rem;
     }
     
-    .cookie-details-tabs .tab {
+    .Gookie-details-tabs .tab {
       padding: 8px 15px;
       font-size: 0.9rem;
     }
@@ -3843,10 +3848,10 @@ img {
     
     /* Fix pour le clic sur mobiles */
     nav ul li a,
-    .cookie-card,
+    .Gookie-card,
     .info-card,
     .submit-button,
-    .cookie-features .feature {
+    .Gookie-features .feature {
       -webkit-tap-highlight-color: transparent;
     }
     
@@ -3896,11 +3901,11 @@ img {
     }
     
     /* Moins d'animations pour économiser les performances */
-    .cookie-card:hover {
+    .Gookie-card:hover {
       transform: translateY(-5px);
     }
     
-    .cookie-card:hover img {
+    .Gookie-card:hover img {
       transform: scale(1.05);
     }
   }
@@ -4904,9 +4909,9 @@ header.scrolled {
 /* Ajout d'un espace en haut pour toutes les sections principales pour compenser le header fixe */
 #hero, 
 #hero-histoire, 
-.cookies-intro,
+.Gookies-intro,
 .contact-hero,
-.cookie-detail-hero,
+.Gookie-detail-hero,
 .main-content,
 .page-hero {
   padding-top: 70px !important;
@@ -4998,9 +5003,9 @@ header.scrolled nav ul li a {
   
   #hero, 
   #hero-histoire, 
-  .cookies-intro,
+  .Gookies-intro,
   .contact-hero,
-  .cookie-detail-hero,
+  .Gookie-detail-hero,
   .main-content,
   .page-hero {
     padding-top: 60px !important;
@@ -5065,4 +5070,48 @@ header.scrolled nav ul li a {
   #quantity {
     color: #3c2b1a !important;
   }
+}
+
+/* ==========================================
+   BOUTONS DE NAVIGATION GALERIE DÉTAIL
+   ========================================== */
+
+.main-image-container {
+    position: relative; /* Nécessaire pour positionner les boutons par-dessus */
+}
+
+.gallery-nav-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border: none;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #3c2b1a;
+    transition: all 0.2s ease-in-out;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.gallery-nav-btn:hover {
+    background-color: white;
+    transform: translateY(-50%) scale(1.1);
+}
+
+.gallery-nav-btn.prev {
+    left: 15px;
+}
+
+.gallery-nav-btn.next {
+    right: 15px;
+}
+
+.gallery-nav-btn svg {
+    width: 20px;
+    height: 20px;
 }

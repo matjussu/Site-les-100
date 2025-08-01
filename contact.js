@@ -47,18 +47,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Fonction pour le cookie du mois
-function initCookieOfTheMonth() {
-    const cookieOfTheMonth = {
+// Fonction pour le Gookie du mois
+function initGookieOfTheMonth() {
+    const GookieOfTheMonth = {
         id: "avril",
         nom: "Avril - Le 69",
-        description: "Un cookie aux éclats de pistache et fleur d'oranger, célébrant l'arrivée du printemps",
-        image: "image/COOKIE PNG/AVRIL.png",
+        description: "Un Gookie aux éclats de pistache et fleur d'oranger, célébrant l'arrivée du printemps",
+        image: "image/Gookie PNG/AVRIL.png",
         featured: true
     };
     
-    // Ajoutez ici le code pour afficher le cookie du mois si nécessaire
+    // Ajoutez ici le code pour afficher le Gookie du mois si nécessaire
 }
 
 // Appeler la fonction au chargement de la page
-document.addEventListener('DOMContentLoaded', initCookieOfTheMonth);
+document.addEventListener('DOMContentLoaded', initGookieOfTheMonth);

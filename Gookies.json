@@ -49,7 +49,9 @@
     "id": "le-08",
     "nom": "Le 08",
     "description": " Gookie chocolat avec des pépites de chocolats",
-    "image": "image/Gookie PNG/Le-08.png",
+    "image": [
+      "gookie_images/08.png"
+    ],
     "categorie": "essentiels",
     "ingredients": [
       "Farine de riz Bio",
@@ -138,7 +140,7 @@
     "id": "le-05",
     "nom": "Le 05",
     "description": "Un Gookie aux cramberries bio",
-    "image": "image/Gookie PNG/le 05 Cranberries.png",
+    "image": "gookie_images/05.png",
     "categorie": "essentiels",
     "ingredients": [
       "Farine de riz Bio",
@@ -270,6 +272,53 @@
       "parts_6_8": null
     }
   },
+
+  {
+   "id": "le-04-big",
+    "nom": "Le 04",
+    "description": "Nature avec des pépites de chocolat et un cœur fondant au Nocciolata.",
+    "images": [
+      "gookie_images/04-big.png"
+    ],
+    "categorie": "gourmets",
+    "ingredients": [
+      "Farine de riz Bio",
+      "Sucre de canne blond Bio",
+      "Extrait de vanille",
+      "Compte de pomme bio fait maison",
+      "Margarine sans huile de palme",
+      "Nocciolata bio",
+      "Chocolat noir en palet"
+    ],
+    "prix": {
+      "petit": 2.50,
+      "moyen": 4.50,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": 2.50,
+      "x2": 4.50,
+      "x3": 6.50,
+      "x6": 12.50,
+      "x9": 18.00,
+      "x12": 24.00,
+      "x18": 35.00,
+      "x24": 47.00
+    },
+    "format_standard": {
+      "unite": 4.50,
+      "x4": 16.00
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": 36.00,
+      "parts_6_8": 42.00
+    }
+  },
   {
     "id": "le-06",
     "nom": "Le 06",
@@ -315,6 +364,8 @@
       "parts_6_8": null
     }
   },
+
+  
   {
     "id": "le-10",
     "nom": "Le 10",
@@ -583,7 +634,7 @@
   },
   {
     "id": "septembre",
-    "nom": "Le ? - Crumble Amande",
+    "nom": "Le 09 - Crumble Amande",
     "description": "Le Gookie de la rentrée. Une base sablée recouverte d'un crumble croustillant à l'amande.",
     "images": [
       "gookie_images/le-_-1.webp",

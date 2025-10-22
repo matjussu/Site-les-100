@@ -497,7 +497,7 @@ const GoukieOfTheMonth = {
   id: "septembre",
   nom: "Septembre - Crumble Amande",
   description: "Découvrez notre Goukie de la rentrée : une base sablée recouverte d'un crumble croustillant à l'amande.",
-  image: "Goukie_images/le-?-1.webp",
+  image: "goukie_images/le-?-1.webp",
   featured: true
 };
 

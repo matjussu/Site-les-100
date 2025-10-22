@@ -4,8 +4,8 @@
     "nom": "Le 11",
     "description": "Le Goukie classique aux pépites de chocolat noir, moelleux à l'intérieur et légèrement croustillant sur les bords. Une recette simple mais parfaitement exécutée.",
     "images": [
-      "Goukie_images/le-11-01.webp",
-      "Goukie_images/le-11-2.webp"
+      "goukie_images/le-11-01.webp",
+      "goukie_images/le-11-2.webp"
     ],
     "categorie": "essentiels",
     "ingredients": [
@@ -50,8 +50,8 @@
     "nom": "Le 08",
     "description": " Goukie chocolat avec des pépites de chocolats",
     "images": [
-      "Goukie_images/08.png",
-      "Goukie_images/08-2.png"
+      "goukie_images/08.png",
+      "goukie_images/08-2.png"
     ],
     "categorie": "essentiels",
     "ingredients": [
@@ -97,8 +97,8 @@
     "nom": "Le 27",
     "description": "Un incontournable au beurre de cacahuètes bio maison.",
     "images": [
-      "Goukie_images/le-27-1.webp",
-      "Goukie_images/27-2.png"
+      "goukie_images/le-27-1.webp",
+      "goukie_images/27-2.png"
     ],
     "categorie": "essentiels",
     "ingredients": [
@@ -143,8 +143,8 @@
     "nom": "Le 05",
     "description": "Un Goukie aux cramberries bio",
     "images": [
-      "Goukie_images/05.png",
-      "Goukie_images/05-2.png"],
+      "goukie_images/05.png",
+      "goukie_images/05-2.png"],
     "categorie": "essentiels",
     "ingredients": [
       "Farine de riz Bio",
@@ -188,8 +188,8 @@
     "nom": "Le 03",
     "description": "Beurre de cacahuètes maison avec un cœur fondant à la framboise. Une association surprenante et délicieuse.",
     "images": [
-      "Goukie_images/le-03-1.webp",
-      "Goukie_images/le-03-2.webp"
+      "goukie_images/le-03-1.webp",
+      "goukie_images/le-03-2.webp"
     ],
     "categorie": "gourmets",
     "ingredients": [
@@ -236,7 +236,7 @@
     "nom": "Le 03 Mini",
     "description": "Nature avec des pépites de chocolat et un cœur fondant au Nocciolata.",
     "images": [
-      "Goukie_images/03m.png"
+      "goukie_images/03m.png"
     ],
     "categorie": "gourmets",
     "ingredients": [
@@ -277,8 +277,8 @@
     "nom": "Le 04",
     "description": "Nature avec des pépites de chocolat et un cœur fondant au Nocciolata.",
     "images": [
-      "Goukie_images/le-4-1.webp",
-      "Goukie_images/04-2.png"
+      "goukie_images/le-4-1.webp",
+      "goukie_images/04-2.png"
     ],
     "categorie": "gourmets",
     "ingredients": [
@@ -325,8 +325,8 @@
     "nom": "Le 04 mini",
     "description": "Nature avec des pépites de chocolat et un cœur fondant au Nocciolata.",
     "images": [
-      "Goukie_images/04m.png",
-      "Goukie_images/04m-2.png"
+      "goukie_images/04m.png",
+      "goukie_images/04m-2.png"
     ],
     "categorie": "gourmets",
     "ingredients": [
@@ -373,7 +373,7 @@
     "nom": "géant Gourmands",
     "description": "Tout les Goukies gourmands peuvent être adaptés en géant sur commande",
     "images": [
-      "Goukie_images/04-big.png"
+      "goukie_images/04-big.png"
     ],
     "categorie": "gourmets",
     "ingredients": [
@@ -419,8 +419,8 @@
     "nom": "Le 06",
     "description": "Chocolat  avec des pépites de chocolat et un cœur fondant au Nocciolata",
     "images": [
-      "Goukie_images/06_new.png",
-      "Goukie_images/06-2.png"
+      "goukie_images/06_new.png",
+      "goukie_images/06-2.png"
     ],
     "categorie": "gourmets",
     "ingredients": [
@@ -468,8 +468,8 @@
     "nom": "Le 06 mini",
     "description": "Chocolat  avec des pépites de chocolat et un cœur fondant au Nocciolata",
     "images": [
-      "Goukie_images/06M.png",
-      "Goukie_images/06m-2.png"
+      "goukie_images/06M.png",
+      "goukie_images/06m-2.png"
     ],
     "categorie": "gourmets",
     "ingredients": [
@@ -514,8 +514,8 @@
     "nom": "Le 10",
     "description": "Un Goukie nature avec des pépites de chocolat et un cœur fondant à la pistache",
     "images": [
-      "Goukie_images/le-10-1.webp",
-      "Goukie_images/le-10-2.webp"
+      "goukie_images/le-10-1.webp",
+      "goukie_images/le-10-2.webp"
     ],
     "categorie": "gourmets",
     "ingredients": [
@@ -562,8 +562,8 @@
     "nom": "Le 10 mini",
     "description": "Un Goukie nature avec des pépites de chocolat et un cœur fondant à la pistache",
     "images": [
-      "Goukie_images/010m.png",
-      "Goukie_images/010m-2.png"
+      "goukie_images/010m.png",
+      "goukie_images/010m-2.png"
     ],
     "categorie": "gourmets",
     "ingredients": [
@@ -604,8 +604,8 @@
     "nom": "Le 18",
     "description": " Chocolat  avec des pépites de chocolat et un cœur fondant à la pistache",
     "images": [
-      "Goukie_images/le-18-1.webp",
-      "Goukie_images/le-18-2.webp"
+      "goukie_images/le-18-1.webp",
+      "goukie_images/le-18-2.webp"
     ],
     "categorie": "gourmets",
     "ingredients": [
@@ -653,8 +653,8 @@
     "nom": "le 18 mini",
     "description": " Chocolat  avec des pépites de chocolat et un cœur fondant à la pistache",
     "images": [
-      "Goukie_images/018m.png",
-      "Goukie_images/18m-2.png"
+      "goukie_images/018m.png",
+      "goukie_images/18m-2.png"
     ],
     "categorie": "gourmets",
     "ingredients": [
@@ -869,8 +869,8 @@
     "nom": "Le 67",
     "description": "Goukie d'octobre : une pâte moelleuse à la noisette, renfermant un coeur fondant de beurre de noisette et chocolat vegan, le tout délicatement enrobé d'une fine coque de chocolat noir.",
     "images": [
-      "Goukie_images/02.png",
-      "Goukie_images/02-2.png"
+      "goukie_images/02.png",
+      "goukie_images/02-2.png"
     ],
     "categorie": "edition_limitee",
     "ingredients": [
@@ -917,8 +917,8 @@
     "nom": "Le 09 - Crumble Amande",
     "description": "Le Goukie de la rentrée. Une base sablée recouverte d'un crumble croustillant à l'amande.",
     "images": [
-      "Goukie_images/le-_-1.webp",
-      "Goukie_images/le-_-2.webp"
+      "goukie_images/le-_-1.webp",
+      "goukie_images/le-_-2.webp"
     ],
     "categorie": "edition_limitee",
     "ingredients": [

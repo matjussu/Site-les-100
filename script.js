@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <img src="logo/logo les100_DEF ROND.png" alt="Logo" class="loader-logo">
           <div class="loader-progress"></div>
         </div>
-        <div class="loader-text">Chargement des Gookies...</div>
+        <div class="loader-text">Chargement des Goukies...</div>
       </div>
     `;
     document.body.appendChild(loader);
@@ -202,9 +202,9 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
     
-    // Animation des cartes de Gookies
-    const GookieCards = document.querySelectorAll('.Gookie-card');
-    GookieCards.forEach((card, index) => {
+    // Animation des cartes de Goukies
+    const GoukieCards = document.querySelectorAll('.Goukie-card');
+    GoukieCards.forEach((card, index) => {
       // Hover effects
       card.addEventListener('mouseenter', () => {
         gsap.to(card, {
@@ -443,7 +443,7 @@ function optimizeImagesForMobile() {
   if (window.innerWidth <= 768) {
     document.querySelectorAll('img').forEach(img => {
       // Réduire la qualité des images sur mobile pour des performances optimales
-      if (img.src.includes('Gookie PNG')) {
+      if (img.src.includes('Goukie PNG')) {
         img.loading = 'lazy';
       }
     });
@@ -489,29 +489,29 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // ==========================================
-// Gookie DU MOIS
+// Goukie DU MOIS
 // ==========================================
 
-function initGookieOfTheMonth() {
-const GookieOfTheMonth = {
+function initGoukieOfTheMonth() {
+const GoukieOfTheMonth = {
   id: "septembre",
   nom: "Septembre - Crumble Amande",
-  description: "Découvrez notre Gookie de la rentrée : une base sablée recouverte d'un crumble croustillant à l'amande.",
-  image: "gookie_images/le-?-1.webp",
+  description: "Découvrez notre Goukie de la rentrée : une base sablée recouverte d'un crumble croustillant à l'amande.",
+  image: "Goukie_images/le-?-1.webp",
   featured: true
 };
 
 // Vérifier s'il y a une section hero
 const heroSection = document.querySelector('#hero');
 if (heroSection) {
-  // Ajouter le badge Gookie du mois
+  // Ajouter le badge Goukie du mois
   const badge = document.createElement('div');
   badge.className = 'featured-badge';
   badge.innerHTML = `
     <div class="featured-content">
-      <span class="featured-title">Gookie du Mois</span>
-      <span class="featured-name">${GookieOfTheMonth.nom}</span>
-      <a href="Gookie-detail.html?id=${GookieOfTheMonth.id}" class="featured-link">Découvrir</a>
+      <span class="featured-title">Goukie du Mois</span>
+      <span class="featured-name">${GoukieOfTheMonth.nom}</span>
+      <a href="Goukie-detail.html?id=${GoukieOfTheMonth.id}" class="featured-link">Découvrir</a>
     </div>
   `;
   heroSection.appendChild(badge);
@@ -526,26 +526,26 @@ if (heroSection) {
   });
 }
 
-// Ajouter une bannière promotionnelle sur la page des Gookies
-const GookiePage = document.querySelector('.Gookies-catalogue');
-if (GookiePage) {
+// Ajouter une bannière promotionnelle sur la page des Goukies
+const GoukiePage = document.querySelector('.Goukies-catalogue');
+if (GoukiePage) {
   const banner = document.createElement('div');
-  banner.className = 'Gookie-month-banner';
+  banner.className = 'Goukie-month-banner';
   banner.innerHTML = `
     <div class="banner-content">
       <div class="banner-text">
-        <h3>Gookie du Mois</h3>
-        <h2>${GookieOfTheMonth.nom}</h2>
-        <p>${GookieOfTheMonth.description}</p>
-        <a href="Gookie-detail.html?id=${GookieOfTheMonth.id}" class="banner-btn">Découvrir</a>
+        <h3>Goukie du Mois</h3>
+        <h2>${GoukieOfTheMonth.nom}</h2>
+        <p>${GoukieOfTheMonth.description}</p>
+        <a href="Goukie-detail.html?id=${GoukieOfTheMonth.id}" class="banner-btn">Découvrir</a>
       </div>
       <div class="banner-image">
-        <img src="${GookieOfTheMonth.image}" alt="${GookieOfTheMonth.nom}">
+        <img src="${GoukieOfTheMonth.image}" alt="${GoukieOfTheMonth.nom}">
       </div>
     </div>
   `;
   
-  GookiePage.insertBefore(banner, GookiePage.firstChild);
+  GoukiePage.insertBefore(banner, GoukiePage.firstChild);
   
   // Animation de la bannière
   gsap.from('.banner-content', {
@@ -553,20 +553,20 @@ if (GookiePage) {
     opacity: 0,
     duration: 0.8,
     scrollTrigger: {
-      trigger: '.Gookie-month-banner',
+      trigger: '.Goukie-month-banner',
       start: 'top 80%'
     }
   });
 }
 
-// Mettre en avant le Gookie du mois dans la grille
-const GookieCards = document.querySelectorAll('.Gookie-card');
-GookieCards.forEach(card => {
-  if (card.href.includes(GookieOfTheMonth.id)) {
-    card.classList.add('featured-Gookie');
+// Mettre en avant le Goukie du mois dans la grille
+const GoukieCards = document.querySelectorAll('.Goukie-card');
+GoukieCards.forEach(card => {
+  if (card.href.includes(GoukieOfTheMonth.id)) {
+    card.classList.add('featured-Goukie');
     const ribbon = document.createElement('div');
     ribbon.className = 'featured-ribbon';
-    ribbon.textContent = 'Gookie du Mois';
+    ribbon.textContent = 'Goukie du Mois';
     card.appendChild(ribbon);
   }
 });
@@ -618,7 +618,7 @@ function updateCartCount() {
 // Animation d'ajout au panier
 function animateAddToCart(event) {
   const button = event.target;
-  const productCard = button.closest('.Gookie-card, .Gookie-detail');
+  const productCard = button.closest('.Goukie-card, .Goukie-detail');
   const productImage = productCard.querySelector('img');
   
   // Clone de l'image pour l'animation
@@ -734,7 +734,7 @@ function showCartModal() {
           <span>${calculateTotal()}€</span>
         </div>
         <div class="cart-info">
-          <p>Les Gookies sont disponibles uniquement au marché de Gouvieux, tous les dimanches.</p>
+          <p>Les Goukies sont disponibles uniquement au marché de Gouvieux, tous les dimanches.</p>
           <p>Suivez-nous sur Instagram <a href="https://instagram.com/les100_gluten_oeuf_lactose" target="_blank">@les100_gluten_oeuf_lactose</a></p>
         </div>
         <div class="cart-actions">
@@ -1423,7 +1423,7 @@ document.addEventListener('DOMContentLoaded', function() {
       header.classList.add('fixed-header');
       
       // Trouver le premier élément principal pour ajouter un padding
-      const mainContent = document.querySelector('#hero, #hero-histoire, .Gookies-intro, .contact-hero, .Gookie-detail-hero, .main-content, .page-hero');
+      const mainContent = document.querySelector('#hero, #hero-histoire, .Goukies-intro, .contact-hero, .Goukie-detail-hero, .main-content, .page-hero');
       if (mainContent) {
         mainContent.style.paddingTop = '70px';
       }

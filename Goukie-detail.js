@@ -1,23 +1,23 @@
-// Gookie-detail.js
+// Goukie-detail.js
 
 // 1. Récupère l'ID depuis l'URL
 const params = new URLSearchParams(window.location.search);
-const GookieId = params.get('id');
+const GoukieId = params.get('id');
 
 // Variables globales
 let selectedSize = 'moyen';
 let currentPrice = 3.90;
 let quantity = 1;
-let currentGookie = null;
+let currentGoukie = null;
 // NOUVEAU : Variables pour la galerie
-let GookieImages = [];
+let GoukieImages = [];
 let currentImageIndex = 0;
 
 
 // 2. Gestion des options de taille
 document.addEventListener('DOMContentLoaded', function() {
-  // Initialisation du Gookie sélectionné
-  fetchGookieData();
+  // Initialisation du Goukie sélectionné
+  fetchGoukieData();
   
   // Gestion de la quantité
   const quantityInput = document.getElementById('quantity');
@@ -52,11 +52,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 // NOUVEAU : Fonction pour mettre à jour la galerie (image principale et vignettes)
 function updateGallery(index) {
-  const mainImg = document.getElementById('Gookie-main-img');
+  const mainImg = document.getElementById('Goukie-main-img');
   const thumbnails = document.querySelectorAll('#thumbnail-container .thumbnail');
 
   // Mettre à jour l'image principale
-  mainImg.src = GookieImages[index];
+  mainImg.src = GoukieImages[index];
   
   // Mettre à jour la classe 'active' sur les vignettes
   thumbnails.forEach((thumb, i) => {
@@ -77,44 +77,44 @@ function updatePrice() {
   document.querySelector('.current-price').textContent = `${totalPrice.toFixed(2)} €`;
 }
 
-// Fonction pour configurer les boutons de taille en fonction du type de Gookie
-function setupSizeButtons(Gookie) {
+// Fonction pour configurer les boutons de taille en fonction du type de Goukie
+function setupSizeButtons(Goukie) {
   const sizeSelector = document.querySelector('.size-selector');
   
   // Vider le sélecteur de taille actuel
   sizeSelector.innerHTML = '';
   
-  // Déterminer la catégorie du Gookie et configurer les boutons en conséquence
-  if (Gookie.categorie === 'essentiels') {
-    // Pour les Gookies essentiels: petit, moyen
-    if (Gookie.prix.petit !== null) {
-      addSizeButton(sizeSelector, 'petit', 'Petit', Gookie.prix.petit);
+  // Déterminer la catégorie du Goukie et configurer les boutons en conséquence
+  if (Goukie.categorie === 'essentiels') {
+    // Pour les Goukies essentiels: petit, moyen
+    if (Goukie.prix.petit !== null) {
+      addSizeButton(sizeSelector, 'petit', 'Petit', Goukie.prix.petit);
     }
-    if (Gookie.prix.moyen !== null) {
-      addSizeButton(sizeSelector, 'moyen', 'Moyen', Gookie.prix.moyen);
+    if (Goukie.prix.moyen !== null) {
+      addSizeButton(sizeSelector, 'moyen', 'Moyen', Goukie.prix.moyen);
     }
-  } else if (Gookie.categorie === 'gourmets') {
-    // Pour les Gookies gourmets: moyen uniquement
-    if (Gookie.prix.moyen !== null) {
-      addSizeButton(sizeSelector, 'moyen', 'Standard', Gookie.prix.moyen);
+  } else if (Goukie.categorie === 'gourmets') {
+    // Pour les Goukies gourmets: moyen uniquement
+    if (Goukie.prix.moyen !== null) {
+      addSizeButton(sizeSelector, 'moyen', 'Standard', Goukie.prix.moyen);
     }
-  } else if (Gookie.categorie === 'edition_limitee') {
-    // Pour le Gookie du mois
-    if (Gookie.prix.petit !== null) {
-      addSizeButton(sizeSelector, 'petit', 'Petit', Gookie.prix.petit);
+  } else if (Goukie.categorie === 'edition_limitee') {
+    // Pour le Goukie du mois
+    if (Goukie.prix.petit !== null) {
+      addSizeButton(sizeSelector, 'petit', 'Petit', Goukie.prix.petit);
     }
-    if (Gookie.prix.moyen !== null) {
-      addSizeButton(sizeSelector, 'moyen', 'Moyen', Gookie.prix.moyen);
+    if (Goukie.prix.moyen !== null) {
+      addSizeButton(sizeSelector, 'moyen', 'Moyen', Goukie.prix.moyen);
     }
   }
   
-  // Pour les Gookies disponibles en format géant
-  if (Gookie.format_geant && (Gookie.format_geant.parts_4_6 !== null || Gookie.format_geant.parts_6_8 !== null)) {
-    if (Gookie.format_geant.parts_4_6 !== null) {
-      addSizeButton(sizeSelector, 'geant_4_6', 'Géant 4-6 parts', Gookie.format_geant.parts_4_6);
+  // Pour les Goukies disponibles en format géant
+  if (Goukie.format_geant && (Goukie.format_geant.parts_4_6 !== null || Goukie.format_geant.parts_6_8 !== null)) {
+    if (Goukie.format_geant.parts_4_6 !== null) {
+      addSizeButton(sizeSelector, 'geant_4_6', 'Géant 4-6 parts', Goukie.format_geant.parts_4_6);
     }
-    if (Gookie.format_geant.parts_6_8 !== null) {
-      addSizeButton(sizeSelector, 'geant_6_8', 'Géant 6-8 parts', Gookie.format_geant.parts_6_8);
+    if (Goukie.format_geant.parts_6_8 !== null) {
+      addSizeButton(sizeSelector, 'geant_6_8', 'Géant 6-8 parts', Goukie.format_geant.parts_6_8);
     }
   }
   
@@ -150,83 +150,83 @@ function addSizeButton(container, sizeId, sizeLabel, price) {
 }
 
 // Fonction pour afficher les formats d'achat groupés (lots)
-function displayPackFormats(Gookie) {
+function displayPackFormats(Goukie) {
   const optionGroup = document.querySelector('.option-group');
-  const priceContainer = document.querySelector('.Gookie-price-container');
+  const priceContainer = document.querySelector('.Goukie-price-container');
   
   // Créer un élément pour afficher les offres de lots si applicable
-  if (Gookie.categorie === 'essentiels' && Gookie.format_standard.x4 !== null) {
+  if (Goukie.categorie === 'essentiels' && Goukie.format_standard.x4 !== null) {
     const packInfo = document.createElement('div');
     packInfo.className = 'pack-info';
-    packInfo.innerHTML = `<p>Offre spéciale: Lot de 4 Gookies pour ${Gookie.format_standard.x4.toFixed(2)} €</p>`;
+    packInfo.innerHTML = `<p>Offre spéciale: Lot de 4 Goukies pour ${Goukie.format_standard.x4.toFixed(2)} €</p>`;
     priceContainer.insertAdjacentElement('afterend', packInfo);
-  } else if (Gookie.categorie === 'gourmets' && Gookie.format_gourmet.x3 !== null) {
+  } else if (Goukie.categorie === 'gourmets' && Goukie.format_gourmet.x3 !== null) {
     const packInfo = document.createElement('div');
     packInfo.className = 'pack-info';
     packInfo.innerHTML = `
       <p>Offres spéciales:</p>
       <ul>
-        <li>Lot de 3 Gookies gourmets: ${Gookie.format_gourmet.x3.toFixed(2)} €</li>
-        <li>Lot de 5 Gookies gourmets: ${Gookie.format_gourmet.x5.toFixed(2)} €</li>
+        <li>Lot de 3 Goukies gourmets: ${Goukie.format_gourmet.x3.toFixed(2)} €</li>
+        <li>Lot de 5 Goukies gourmets: ${Goukie.format_gourmet.x5.toFixed(2)} €</li>
       </ul>
     `;
     priceContainer.insertAdjacentElement('afterend', packInfo);
-  } else if (Gookie.categorie === 'mini') {
+  } else if (Goukie.categorie === 'mini') {
     const packInfo = document.createElement('div');
     packInfo.className = 'pack-info';
     packInfo.innerHTML = `
       <p>Formats disponibles:</p>
       <ul>
-        <li>2 mini Gookies: ${Gookie.format_mini.x2.toFixed(2)} €</li>
-        <li>3 mini Gookies: ${Gookie.format_mini.x3.toFixed(2)} €</li>
-        <li>6 mini Gookies: ${Gookie.format_mini.x6.toFixed(2)} €</li>
-        <li>9 mini Gookies: ${Gookie.format_mini.x9.toFixed(2)} €</li>
-        <li>12 mini Gookies: ${Gookie.format_mini.x12.toFixed(2)} €</li>
-        <li>18 mini Gookies: ${Gookie.format_mini.x18.toFixed(2)} €</li>
-        <li>24 mini Gookies: ${Gookie.format_mini.x24.toFixed(2)} €</li>
+        <li>2 mini Goukies: ${Goukie.format_mini.x2.toFixed(2)} €</li>
+        <li>3 mini Goukies: ${Goukie.format_mini.x3.toFixed(2)} €</li>
+        <li>6 mini Goukies: ${Goukie.format_mini.x6.toFixed(2)} €</li>
+        <li>9 mini Goukies: ${Goukie.format_mini.x9.toFixed(2)} €</li>
+        <li>12 mini Goukies: ${Goukie.format_mini.x12.toFixed(2)} €</li>
+        <li>18 mini Goukies: ${Goukie.format_mini.x18.toFixed(2)} €</li>
+        <li>24 mini Goukies: ${Goukie.format_mini.x24.toFixed(2)} €</li>
       </ul>
     `;
     priceContainer.insertAdjacentElement('afterend', packInfo);
   }
 }
 
-// 3. Récupération des données Gookies.json
-function fetchGookieData() {
-  fetch('./Gookies.json')
+// 3. Récupération des données Goukies.json
+function fetchGoukieData() {
+  fetch('./Goukies.json')
     .then(res => {
       if (!res.ok) {
         throw new Error(`Erreur HTTP : ${res.status}`);
       }
       return res.json();
     })
-    .then(Gookies => {
-      const Gookie = Gookies.find(c => c.id.toLowerCase() === GookieId.toLowerCase());
-      if (!Gookie) {
-        console.error('Gookie introuvable avec cet ID.');
+    .then(Goukies => {
+      const Goukie = Goukies.find(c => c.id.toLowerCase() === GoukieId.toLowerCase());
+      if (!Goukie) {
+        console.error('Goukie introuvable avec cet ID.');
         return;
       }
 
-      currentGookie = Gookie;
-      const mainImg = document.getElementById('Gookie-main-img');
+      currentGoukie = Goukie;
+      const mainImg = document.getElementById('Goukie-main-img');
       const thumbnailContainer = document.getElementById('thumbnail-container');
       const prevBtn = document.getElementById('prev-image-btn');
       const nextBtn = document.getElementById('next-image-btn');
 
       thumbnailContainer.innerHTML = '';
-      GookieImages = Gookie.images || (Gookie.image ? [Gookie.image] : []);
+      GoukieImages = Goukie.images || (Goukie.image ? [Goukie.image] : []);
       currentImageIndex = 0;
 
       // MODIFIÉ : Logique de la galerie d'images
-      if (GookieImages.length > 0) {
-        mainImg.src = GookieImages[0];
-        mainImg.alt = Gookie.nom;
+      if (GoukieImages.length > 0) {
+        mainImg.src = GoukieImages[0];
+        mainImg.alt = Goukie.nom;
 
-        if (GookieImages.length > 1) {
+        if (GoukieImages.length > 1) {
           // Affiche les vignettes
-          GookieImages.forEach((imgSrc, index) => {
+          GoukieImages.forEach((imgSrc, index) => {
             const thumb = document.createElement('img');
             thumb.src = imgSrc;
-            thumb.alt = `${Gookie.nom} - vue ${index + 1}`;
+            thumb.alt = `${Goukie.nom} - vue ${index + 1}`;
             thumb.className = 'thumbnail';
             thumb.addEventListener('click', () => updateGallery(index));
             thumbnailContainer.appendChild(thumb);
@@ -239,7 +239,7 @@ function fetchGookieData() {
           // Ajoute les événements sur les boutons
           nextBtn.addEventListener('click', () => {
             let nextIndex = currentImageIndex + 1;
-            if (nextIndex >= GookieImages.length) {
+            if (nextIndex >= GoukieImages.length) {
               nextIndex = 0; // Boucle au début
             }
             updateGallery(nextIndex);
@@ -248,7 +248,7 @@ function fetchGookieData() {
           prevBtn.addEventListener('click', () => {
             let prevIndex = currentImageIndex - 1;
             if (prevIndex < 0) {
-              prevIndex = GookieImages.length - 1; // Boucle à la fin
+              prevIndex = GoukieImages.length - 1; // Boucle à la fin
             }
             updateGallery(prevIndex);
           });
@@ -258,19 +258,19 @@ function fetchGookieData() {
         }
       }
 
-      document.getElementById('Gookie-name').textContent = Gookie.nom;
-      document.getElementById('Gookie-desc').textContent = Gookie.description;
+      document.getElementById('Goukie-name').textContent = Goukie.nom;
+      document.getElementById('Goukie-desc').textContent = Goukie.description;
       
-      if (Gookie.id.toLowerCase() === 'mai') {
-        document.getElementById('Gookie-badge').style.display = 'block';
+      if (Goukie.id.toLowerCase() === 'mai') {
+        document.getElementById('Goukie-badge').style.display = 'block';
       }
       
-      setupSizeButtons(Gookie);
-      displayPackFormats(Gookie);
+      setupSizeButtons(Goukie);
+      displayPackFormats(Goukie);
       
       const ingredientList = document.getElementById('ingredient-list');
       ingredientList.innerHTML = '';
-      Gookie.ingredients.forEach(ingredient => {
+      Goukie.ingredients.forEach(ingredient => {
         const li = document.createElement('li');
         li.textContent = ingredient;
         ingredientList.appendChild(li);
@@ -279,9 +279,9 @@ function fetchGookieData() {
       const addToCartBtn = document.querySelector('.add-to-cart');
       addToCartBtn.addEventListener('click', (event) => {
         const product = {
-          id: Gookie.id,
-          nom: Gookie.nom,
-          image: GookieImages[0],
+          id: Goukie.id,
+          nom: Goukie.nom,
+          image: GoukieImages[0],
           taille: selectedSize,
           prix: currentPrice,
           quantity: quantity
@@ -292,43 +292,43 @@ function fetchGookieData() {
         }
       });
       
-      setupSuggestions(Gookies, Gookie);
+      setupSuggestions(Goukies, Goukie);
     })
     .catch(err => {
-      console.error('Erreur lors du chargement des Gookies :', err);
+      console.error('Erreur lors du chargement des Goukies :', err);
     });
 }
 
 // Configuration du carrousel de suggestions
-function setupSuggestions(allGookies, currentGookie) {
+function setupSuggestions(allGoukies, currentGoukie) {
   const suggestionsTrack = document.getElementById('suggestions-track');
   suggestionsTrack.innerHTML = '';
   
-  const filteredGookies = allGookies.filter(c => c.id !== currentGookie.id);
+  const filteredGoukies = allGoukies.filter(c => c.id !== currentGoukie.id);
   
   const sortedSuggestions = [
-    ...filteredGookies.filter(c => c.categorie === currentGookie.categorie),
-    ...filteredGookies.filter(c => c.categorie !== currentGookie.categorie)
+    ...filteredGoukies.filter(c => c.categorie === currentGoukie.categorie),
+    ...filteredGoukies.filter(c => c.categorie !== currentGoukie.categorie)
   ];
   
   const suggestions = sortedSuggestions.slice(0, 6);
   
-  suggestions.forEach(Gookie => {
+  suggestions.forEach(Goukie => {
     const card = document.createElement('a');
-    card.href = `Gookie-detail.html?id=${Gookie.id}`;
-    card.className = 'Gookie-card';
-    const mainImage = Gookie.images ? Gookie.images[0] : Gookie.image;
+    card.href = `Goukie-detail.html?id=${Goukie.id}`;
+    card.className = 'Goukie-card';
+    const mainImage = Goukie.images ? Goukie.images[0] : Goukie.image;
     card.innerHTML = `
-      <img src="${mainImage}" alt="${Gookie.nom}">
-      <h3>${Gookie.nom}</h3>
-      <p>${Gookie.description.split('.')[0]}.</p>
+      <img src="${mainImage}" alt="${Goukie.nom}">
+      <h3>${Goukie.nom}</h3>
+      <p>${Goukie.description.split('.')[0]}.</p>
     `;
     suggestionsTrack.appendChild(card);
   });
   
   document.getElementById('prevSuggestion').addEventListener('click', () => {
     const track = document.getElementById('suggestions-track');
-    const cardWidth = track.querySelector('.Gookie-card').offsetWidth + 24;
+    const cardWidth = track.querySelector('.Goukie-card').offsetWidth + 24;
     track.scrollBy({ 
       left: -cardWidth * 3,
       behavior: 'smooth' 
@@ -337,7 +337,7 @@ function setupSuggestions(allGookies, currentGookie) {
 
   document.getElementById('nextSuggestion').addEventListener('click', () => {
     const track = document.getElementById('suggestions-track');
-    const cardWidth = track.querySelector('.Gookie-card').offsetWidth + 24;
+    const cardWidth = track.querySelector('.Goukie-card').offsetWidth + 24;
     track.scrollBy({ 
       left: cardWidth * 3,
       behavior: 'smooth' 

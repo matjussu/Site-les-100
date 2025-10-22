@@ -47,18 +47,18 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Fonction pour le Gookie du mois
-function initGookieOfTheMonth() {
-    const GookieOfTheMonth = {
+// Fonction pour le Goukie du mois
+function initGoukieOfTheMonth() {
+    const GoukieOfTheMonth = {
         id: "avril",
         nom: "Avril - Le 69",
-        description: "Un Gookie aux éclats de pistache et fleur d'oranger, célébrant l'arrivée du printemps",
-        image: "image/Gookie PNG/AVRIL.png",
+        description: "Un Goukie aux éclats de pistache et fleur d'oranger, célébrant l'arrivée du printemps",
+        image: "image/Goukie PNG/AVRIL.png",
         featured: true
     };
     
-    // Ajoutez ici le code pour afficher le Gookie du mois si nécessaire
+    // Ajoutez ici le code pour afficher le Goukie du mois si nécessaire
 }
 
 // Appeler la fonction au chargement de la page
-document.addEventListener('DOMContentLoaded', initGookieOfTheMonth);
+document.addEventListener('DOMContentLoaded', initGoukieOfTheMonth);

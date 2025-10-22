@@ -2,7 +2,7 @@
   {
     "id": "le-11",
     "nom": "Le 11",
-    "description": "Le Goukie classique aux pépites de chocolat noir, moelleux à l'intérieur et légèrement croustillant sur les bords. Une recette simple mais parfaitement exécutée.",
+    "description": "Nature aux pépites de chocolat",
     "images": [
       "goukie_images/le-11-01.webp",
       "goukie_images/le-11-2.webp"
@@ -45,6 +45,51 @@
       "parts_6_8": null
     }
   },
+
+  {
+    "id": "le-11m",
+    "nom": "Mini Le 11",
+    "description": "Nature aux pépites de chocolat",
+    "image": "goukie_images/11m.png",
+    "categorie": "essentiels",
+    "ingredients": [
+      "Farine de riz Bio",
+      "Sucre de canne blond Bio",
+      "Extrait de vanille",
+      "Compte de pomme bio fait maison",
+      "Margarine sans huile de palme",
+      "Chocolat noir en palet"
+    ],
+    "prix": {
+      "petit": 2.50,
+      "moyen": 4.50,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": 2.50,
+      "x2": 4.50,
+      "x3": 6.50,
+      "x6": 12.50,
+      "x9": 18.00,
+      "x12": 24.00,
+      "x18": 35.00,
+      "x24": 47.00
+    },
+    "format_standard": {
+      "unite": 4.50,
+      "x4": 16.00
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    }
+  },
+
   {
     "id": "le-08",
     "nom": "Le 08",
@@ -92,14 +137,57 @@
       "parts_6_8": null
     }
   },
+
   {
-    "id": "le-27",
-    "nom": "Le 27",
-    "description": "Un incontournable au beurre de cacahuètes bio maison.",
-    "images": [
-      "goukie_images/le-27-1.webp",
-      "goukie_images/27-2.png"
+    "id": "le-08-m",
+    "nom": "Mini Le 08",
+    "image":"goukie_images/08m.png",
+    "description": " Goukie chocolat avec des pépites de chocolats",
+    "categorie": "essentiels",
+    "ingredients": [
+      "Farine de riz Bio",
+      "Sucre de canne blond Bio",
+      "Extrait de vanille",
+      "Compte de pomme bio fait maison",
+      "Margarine sans huile de palme",
+      "Chocolat noir en palet",
+      "Chocolat en poudre van Houten"
     ],
+    "prix": {
+      "petit": 2.50,
+      "moyen": 4.50,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": 2.50,
+      "x2": 4.50,
+      "x3": 6.50,
+      "x6": 12.50,
+      "x9": 18.00,
+      "x12": 24.00,
+      "x18": 35.00,
+      "x24": 47.00
+    },
+    "format_standard": {
+      "unite": 4.50,
+      "x4": 16.00
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    }
+  },
+
+  {
+    "id": "le-27m",
+    "nom": "Mini Le 27",
+    "description": "Un incontournable au beurre de cacahuètes bio maison.",
+    "image":"goukie_images/27m.png",
     "categorie": "essentiels",
     "ingredients": [
       "Farine de riz Bio",
@@ -183,6 +271,51 @@
       "parts_6_8": null
     }
   },
+
+    {
+    "id": "le-05m",
+    "nom": "Mini le 05",
+    "description": "Un Goukie aux cramberries bio",
+    "image": "goukie_images/05m.png",
+    "categorie": "essentiels",
+    "ingredients": [
+      "Farine de riz Bio",
+      "Sucre de canne blond Bio",
+      "Extrait de vanille",
+      "Compte de pomme bio fait maison",
+      "Margarine sans huile de palme",
+      "Cranberries bio"
+    ],
+    "prix": {
+      "petit": 2.50,
+      "moyen": 4.50,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": 2.50,
+      "x2": 4.50,
+      "x3": 6.50,
+      "x6": 12.50,
+      "x9": 18.00,
+      "x12": 24.00,
+      "x18": 35.00,
+      "x24": 47.00
+    },
+    "format_standard": {
+      "unite": 4.50,
+      "x4": 16.00
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    }
+  },
+
   {
     "id": "le-03",
     "nom": "Le 03",
@@ -236,7 +369,8 @@
     "nom": "Le 03 Mini",
     "description": "Nature avec des pépites de chocolat et un cœur fondant au Nocciolata.",
     "images": [
-      "goukie_images/03m.png"
+      "goukie_images/03m.png",
+      "goukie_images/03m-2.png"
     ],
     "categorie": "gourmets",
     "ingredients": [
@@ -340,7 +474,7 @@
     ],
     "prix": {
       "petit": null,
-      "moyen": 5.00,
+      "moyen": 3.50,
       "grand": null
     },
     "format_mini": {

@@ -1,0 +1,42 @@
+<!-- ============================================ -->
+<!-- GOOGLE ANALYTICS 4 - À AJOUTER DANS <head> -->
+<!-- ============================================ -->
+<!--
+   Instructions :
+   1. Copiez ce code complet
+   2. Ouvrez chaque fichier HTML de votre site
+   3. Collez ce code juste APRÈS le Google Tag Manager (ligne ~25)
+   4. Remplacez G-XXXXXXXXXX par votre vrai ID de mesure (2 fois)
+   5. Sauvegardez et testez
+-->
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  // Mode consentement par défaut (RGPD)
+  gtag('consent', 'default', {
+    'analytics_storage': 'denied'
+  });
+
+  gtag('config', 'G-XXXXXXXXXX', {
+    'anonymize_ip': true,
+    'allow_google_signals': false
+  });
+</script>
+<!-- End Google Analytics 4 -->
+
+<!-- ============================================ -->
+<!-- FICHIERS À MODIFIER (7 fichiers) :          -->
+<!--                                              -->
+<!-- 1. index.html                                -->
+<!-- 2. Goukie.html                               -->
+<!-- 3. Goukie-detail.html                        -->
+<!-- 4. histoire.html                             -->
+<!-- 5. contact.html                              -->
+<!-- 6. merci.html                                -->
+<!-- 7. page_secrète.html (optionnel)             -->
+<!-- ============================================ -->

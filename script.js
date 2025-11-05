@@ -995,6 +995,10 @@ document.addEventListener('DOMContentLoaded', function() {
   Cart.initCartIcon();
   HistoirePage.init();
   GoukieOfTheMonth.init();
+
+  // Initialiser Analytics et Cookie Consent
+  CookieConsent.init();
+  Analytics.init();
 });
 
 window.addEventListener('load', () => {
@@ -1023,3 +1027,332 @@ window.addEventListener('pageshow', function(event) {
     window.location.reload();
   }
 });
+
+// ============================================================================
+// MODULE: GOOGLE ANALYTICS
+// ============================================================================
+
+const Analytics = {
+  isEnabled: false,
+  measurementId: 'G-XXXXXXXXXX', // À remplacer par votre vrai ID
+
+  init() {
+    // Vérifier le consentement cookies
+    const consent = localStorage.getItem('cookieConsent');
+    if (consent === 'accepted') {
+      this.enable();
+    }
+  },
+
+  enable() {
+    this.isEnabled = true;
+
+    // Charger Google Analytics
+    if (typeof gtag !== 'undefined') {
+      gtag('consent', 'update', {
+        'analytics_storage': 'granted'
+      });
+    }
+
+    // Tracker automatiquement la page actuelle
+    this.trackPageView();
+
+    // Setup des événements personnalisés
+    this.setupEventTracking();
+  },
+
+  disable() {
+    this.isEnabled = false;
+    if (typeof gtag !== 'undefined') {
+      gtag('consent', 'update', {
+        'analytics_storage': 'denied'
+      });
+    }
+  },
+
+  trackPageView() {
+    if (!this.isEnabled || typeof gtag === 'undefined') return;
+
+    gtag('event', 'page_view', {
+      page_title: document.title,
+      page_location: window.location.href,
+      page_path: window.location.pathname
+    });
+  },
+
+  trackEvent(eventName, eventParams = {}) {
+    if (!this.isEnabled || typeof gtag === 'undefined') return;
+
+    gtag('event', eventName, eventParams);
+  },
+
+  setupEventTracking() {
+    // Tracker les ajouts au panier
+    this.trackAddToCartEvents();
+
+    // Tracker les filtres catalogue
+    this.trackCatalogFilters();
+
+    // Tracker les clics sur les produits
+    this.trackProductClicks();
+
+    // Tracker les liens externes
+    this.trackExternalLinks();
+  },
+
+  trackAddToCartEvents() {
+    // Hook sur la méthode addToCart
+    const originalAddToCart = Cart.addToCart;
+    const self = this;
+
+    Cart.addToCart = function(product) {
+      // Appeler la fonction originale
+      const result = originalAddToCart.call(this, product);
+
+      // Tracker l'événement
+      self.trackEvent('add_to_cart', {
+        currency: 'EUR',
+        value: product.prix?.moyen || product.prix?.petit || 0,
+        items: [{
+          item_id: product.id,
+          item_name: product.nom,
+          item_category: product.categorie,
+          price: product.prix?.moyen || product.prix?.petit || 0,
+          quantity: 1
+        }]
+      });
+
+      return result;
+    };
+  },
+
+  trackCatalogFilters() {
+    // Attendre que les boutons de filtre soient présents
+    setTimeout(() => {
+      const filterButtons = document.querySelectorAll('.filter-btn');
+      filterButtons.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+          const category = e.target.dataset.category || e.target.textContent;
+          this.trackEvent('filter_catalog', {
+            filter_category: category
+          });
+        });
+      });
+    }, 1000);
+  },
+
+  trackProductClicks() {
+    // Attendre que les cartes produits soient présentes
+    setTimeout(() => {
+      const productCards = document.querySelectorAll('.Goukies-card');
+      productCards.forEach(card => {
+        card.addEventListener('click', () => {
+          const productName = card.querySelector('.Goukies-name')?.textContent || 'Unknown';
+          this.trackEvent('view_item', {
+            item_name: productName
+          });
+        });
+      });
+    }, 1000);
+  },
+
+  trackExternalLinks() {
+    document.querySelectorAll('a[href^="http"]').forEach(link => {
+      if (!link.href.includes(window.location.hostname)) {
+        link.addEventListener('click', (e) => {
+          this.trackEvent('click_external_link', {
+            link_url: e.target.href,
+            link_text: e.target.textContent
+          });
+        });
+      }
+    });
+  }
+};
+
+// ============================================================================
+// MODULE: COOKIE CONSENT BANNER (RGPD)
+// ============================================================================
+
+const CookieConsent = {
+  init() {
+    const consent = localStorage.getItem('cookieConsent');
+
+    // Si déjà répondu, ne rien afficher
+    if (consent) {
+      if (consent === 'accepted') {
+        Analytics.enable();
+      }
+      return;
+    }
+
+    // Afficher la bannière
+    this.showBanner();
+  },
+
+  showBanner() {
+    const banner = document.createElement('div');
+    banner.id = 'cookie-consent-banner';
+    banner.innerHTML = `
+      <div class="cookie-consent-content">
+        <p>
+          🍪 Nous utilisons des cookies pour améliorer votre expérience et analyser le trafic du site.
+        </p>
+        <div class="cookie-consent-buttons">
+          <button id="cookie-accept" class="cookie-btn cookie-accept">
+            Accepter
+          </button>
+          <button id="cookie-decline" class="cookie-btn cookie-decline">
+            Refuser
+          </button>
+        </div>
+      </div>
+    `;
+
+    document.body.appendChild(banner);
+
+    // Ajouter les styles inline
+    this.addStyles();
+
+    // Event listeners
+    document.getElementById('cookie-accept').addEventListener('click', () => {
+      this.accept();
+    });
+
+    document.getElementById('cookie-decline').addEventListener('click', () => {
+      this.decline();
+    });
+  },
+
+  accept() {
+    localStorage.setItem('cookieConsent', 'accepted');
+    this.hideBanner();
+    Analytics.enable();
+  },
+
+  decline() {
+    localStorage.setItem('cookieConsent', 'declined');
+    this.hideBanner();
+    Analytics.disable();
+  },
+
+  hideBanner() {
+    const banner = document.getElementById('cookie-consent-banner');
+    if (banner) {
+      banner.style.animation = 'slideDown 0.3s ease-out';
+      setTimeout(() => banner.remove(), 300);
+    }
+  },
+
+  addStyles() {
+    if (document.getElementById('cookie-consent-styles')) return;
+
+    const style = document.createElement('style');
+    style.id = 'cookie-consent-styles';
+    style.textContent = `
+      #cookie-consent-banner {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: rgba(60, 43, 26, 0.98);
+        color: white;
+        padding: 20px;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+        z-index: 10001;
+        animation: slideUp 0.3s ease-out;
+      }
+
+      .cookie-consent-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        flex-wrap: wrap;
+      }
+
+      .cookie-consent-content p {
+        margin: 0;
+        flex: 1;
+        min-width: 250px;
+      }
+
+      .cookie-consent-buttons {
+        display: flex;
+        gap: 10px;
+      }
+
+      .cookie-btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-weight: 600;
+        transition: all 0.3s ease;
+        font-size: 14px;
+      }
+
+      .cookie-accept {
+        background: #f8660e;
+        color: white;
+      }
+
+      .cookie-accept:hover {
+        background: #e55a0a;
+        transform: translateY(-2px);
+      }
+
+      .cookie-decline {
+        background: transparent;
+        color: white;
+        border: 2px solid white;
+      }
+
+      .cookie-decline:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      @keyframes slideUp {
+        from {
+          transform: translateY(100%);
+          opacity: 0;
+        }
+        to {
+          transform: translateY(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes slideDown {
+        from {
+          transform: translateY(0);
+          opacity: 1;
+        }
+        to {
+          transform: translateY(100%);
+          opacity: 0;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .cookie-consent-content {
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .cookie-consent-buttons {
+          width: 100%;
+          flex-direction: column;
+        }
+
+        .cookie-btn {
+          width: 100%;
+        }
+      }
+    `;
+
+    document.head.appendChild(style);
+  }
+};

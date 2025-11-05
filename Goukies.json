@@ -1047,6 +1047,54 @@
   },
 
   {
+    "id": "novembre",
+    "nom": "Le 31",
+    "description": "Le goukie de novembre revient.Un goukie doux et fondant, au bon goût de courge et d’épices de Noël, enveloppé d’un sucre à la cannelle qui croustille juste ce qu’il faut.",
+    "images": [
+      "goukie_images/31.png",
+      "goukie_images/31-2.png"
+    ],
+    "categorie": "edition_limitee",
+    "ingredients": [
+      "Farine de riz Bio",
+      "Sucre de canne blond Bio",
+      "courge bio",
+      "Margarine sans huile de palme",
+      "Compote de pomme bio fait maison",
+      "épices de Noël",
+      "sucre à la cannelle"
+    ],
+    "prix": {
+      "petit": null,
+      "moyen": 5.00,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": 2.50,
+      "x2": 4.50,
+      "x3": 6.50,
+      "x6": 12.50,
+      "x9": 18.00,
+      "x12": 24.00,
+      "x18": 35.00,
+      "x24": 47.00
+    },
+    "format_standard": {
+      "unite": 5.00,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    }
+  },
+
+  {
     "id": "septembre",
     "nom": "Le 09 - Crumble Amande",
     "description": "Le Goukie de la rentrée. Une base sablée recouverte d'un crumble croustillant à l'amande.",

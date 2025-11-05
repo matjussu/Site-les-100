@@ -845,8 +845,9 @@ const GoukieOfTheMonth = {
   },
 
   init() {
-    this.addHeroBadge();
-    this.addCatalogBanner();
+    // Badge et bannière désactivés
+    // this.addHeroBadge();
+    // this.addCatalogBanner();
     this.highlightInGrid();
   },
 

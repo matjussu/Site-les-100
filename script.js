@@ -1034,7 +1034,7 @@ window.addEventListener('pageshow', function(event) {
 
 const Analytics = {
   isEnabled: false,
-  measurementId: 'G-XXXXXXXXXX', // À remplacer par votre vrai ID
+  measurementId: 'G-W677K39BJN',
 
   init() {
     // Vérifier le consentement cookies

@@ -1,0 +1,172 @@
+/* ==========================================
+   VARIABLES CSS (DESIGN TOKENS)
+   À ajouter au DÉBUT de styles.css
+   ========================================== */
+
+:root {
+  /* === COULEURS === */
+  /* Principales */
+  --color-primary: #f8660e;
+  --color-primary-hover: #e55a0a;
+  --color-primary-light: #ff9147;
+
+  /* Texte */
+  --color-text: #3c2b1a;
+  --color-text-light: #6b5643;
+  --color-text-white: #ffffff;
+
+  /* Backgrounds */
+  --color-bg: #f4f4f4;
+  --color-bg-white: #ffffff;
+  --color-bg-overlay: rgba(255, 255, 255, 0.95);
+  --color-bg-overlay-dark: rgba(0, 0, 0, 0.5);
+
+  /* === ESPACEMENTS === */
+  --spacing-xs: 5px;
+  --spacing-sm: 10px;
+  --spacing-md: 20px;
+  --spacing-lg: 30px;
+  --spacing-xl: 40px;
+  --spacing-2xl: 60px;
+  --spacing-3xl: 80px;
+
+  /* === TYPOGRAPHIE === */
+  /* Famille de polices */
+  --font-primary: 'Poppins', sans-serif;
+  --font-accent: 'Playfair Display', serif;
+
+  /* Tailles de police */
+  --font-size-xs: 0.75rem;    /* 12px */
+  --font-size-sm: 0.875rem;   /* 14px */
+  --font-size-base: 1rem;     /* 16px */
+  --font-size-lg: 1.125rem;   /* 18px */
+  --font-size-xl: 1.25rem;    /* 20px */
+  --font-size-2xl: 1.5rem;    /* 24px */
+  --font-size-3xl: 2rem;      /* 32px */
+  --font-size-4xl: 2.5rem;    /* 40px */
+  --font-size-5xl: 3rem;      /* 48px */
+
+  /* Poids de police */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Hauteur de ligne */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.6;
+  --line-height-relaxed: 1.8;
+
+  /* === OMBRES === */
+  --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 5px 20px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.06);
+  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.15);
+  --shadow-2xl: 0 30px 60px rgba(0, 0, 0, 0.2);
+
+  /* === TRANSITIONS === */
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.3s ease;
+  --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  /* === BORDER RADIUS === */
+  --radius-sm: 8px;
+  --radius-md: 15px;
+  --radius-lg: 20px;
+  --radius-xl: 30px;
+  --radius-full: 50%;
+  --radius-pill: 9999px;
+
+  /* === Z-INDEX === */
+  --z-base: 1;
+  --z-dropdown: 100;
+  --z-sticky: 500;
+  --z-header: 1000;
+  --z-modal: 1050;
+  --z-notification: 2000;
+  --z-loader: 10000;
+
+  /* === BREAKPOINTS === */
+  --breakpoint-mobile: 480px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
+  --breakpoint-wide: 1280px;
+
+  /* === DIMENSIONS === */
+  --header-height: 70px;
+  --header-height-mobile: 60px;
+  --logo-size: 50px;
+  --logo-size-scrolled: 40px;
+  --logo-size-mobile: 40px;
+
+  /* === ANIMATIONS === */
+  --animation-duration-fast: 0.2s;
+  --animation-duration-normal: 0.5s;
+  --animation-duration-slow: 1s;
+}
+
+/* ==========================================
+   EXEMPLES D'UTILISATION
+   ========================================== */
+
+/*
+AVANT:
+.element {
+  color: #f8660e;
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+APRÈS:
+.element {
+  color: var(--color-primary);
+  background: var(--color-bg);
+  padding: var(--spacing-md);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+}
+*/
+
+/* ==========================================
+   CLASSES UTILITAIRES (OPTIONNEL)
+   ========================================== */
+
+/* Texte */
+.u-text-center { text-align: center; }
+.u-text-left { text-align: left; }
+.u-text-right { text-align: right; }
+
+.u-text-primary { color: var(--color-primary); }
+.u-text-white { color: var(--color-text-white); }
+
+/* Espacement */
+.u-mt-sm { margin-top: var(--spacing-sm); }
+.u-mt-md { margin-top: var(--spacing-md); }
+.u-mt-lg { margin-top: var(--spacing-lg); }
+
+.u-mb-sm { margin-bottom: var(--spacing-sm); }
+.u-mb-md { margin-bottom: var(--spacing-md); }
+.u-mb-lg { margin-bottom: var(--spacing-lg); }
+
+/* Display */
+.u-hidden { display: none; }
+.u-block { display: block; }
+.u-flex { display: flex; }
+.u-inline { display: inline; }
+
+/* Visibilité */
+.u-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.u-invisible {
+  opacity: 0;
+  visibility: hidden;
+}

@@ -1,176 +1,4 @@
 /* ==========================================
-   VARIABLES CSS (DESIGN TOKENS)
-   À ajouter au DÉBUT de styles.css
-   ========================================== */
-
-:root {
-  /* === COULEURS === */
-  /* Principales */
-  --color-primary: #f8660e;
-  --color-primary-hover: #e55a0a;
-  --color-primary-light: #ff9147;
-
-  /* Texte */
-  --color-text: #3c2b1a;
-  --color-text-light: #6b5643;
-  --color-text-white: #ffffff;
-
-  /* Backgrounds */
-  --color-bg: #f4f4f4;
-  --color-bg-white: #ffffff;
-  --color-bg-overlay: rgba(255, 255, 255, 0.95);
-  --color-bg-overlay-dark: rgba(0, 0, 0, 0.5);
-
-  /* === ESPACEMENTS === */
-  --spacing-xs: 5px;
-  --spacing-sm: 10px;
-  --spacing-md: 20px;
-  --spacing-lg: 30px;
-  --spacing-xl: 40px;
-  --spacing-2xl: 60px;
-  --spacing-3xl: 80px;
-
-  /* === TYPOGRAPHIE === */
-  /* Famille de polices */
-  --font-primary: 'Poppins', sans-serif;
-  --font-accent: 'Playfair Display', serif;
-
-  /* Tailles de police */
-  --font-size-xs: 0.75rem;    /* 12px */
-  --font-size-sm: 0.875rem;   /* 14px */
-  --font-size-base: 1rem;     /* 16px */
-  --font-size-lg: 1.125rem;   /* 18px */
-  --font-size-xl: 1.25rem;    /* 20px */
-  --font-size-2xl: 1.5rem;    /* 24px */
-  --font-size-3xl: 2rem;      /* 32px */
-  --font-size-4xl: 2.5rem;    /* 40px */
-  --font-size-5xl: 3rem;      /* 48px */
-
-  /* Poids de police */
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-
-  /* Hauteur de ligne */
-  --line-height-tight: 1.2;
-  --line-height-normal: 1.6;
-  --line-height-relaxed: 1.8;
-
-  /* === OMBRES === */
-  --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.05);
-  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.1);
-  --shadow-md: 0 5px 20px rgba(0, 0, 0, 0.1);
-  --shadow-lg: 0 10px 25px rgba(0, 0, 0, 0.06);
-  --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.15);
-  --shadow-2xl: 0 30px 60px rgba(0, 0, 0, 0.2);
-
-  /* === TRANSITIONS === */
-  --transition-fast: 0.15s ease;
-  --transition-base: 0.3s ease;
-  --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-bounce: 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
-
-  /* === BORDER RADIUS === */
-  --radius-sm: 8px;
-  --radius-md: 15px;
-  --radius-lg: 20px;
-  --radius-xl: 30px;
-  --radius-full: 50%;
-  --radius-pill: 9999px;
-
-  /* === Z-INDEX === */
-  --z-base: 1;
-  --z-dropdown: 100;
-  --z-sticky: 500;
-  --z-header: 1000;
-  --z-modal: 1050;
-  --z-notification: 2000;
-  --z-loader: 10000;
-
-  /* === BREAKPOINTS === */
-  --breakpoint-mobile: 480px;
-  --breakpoint-tablet: 768px;
-  --breakpoint-desktop: 1024px;
-  --breakpoint-wide: 1280px;
-
-  /* === DIMENSIONS === */
-  --header-height: 70px;
-  --header-height-mobile: 60px;
-  --logo-size: 50px;
-  --logo-size-scrolled: 40px;
-  --logo-size-mobile: 40px;
-
-  /* === ANIMATIONS === */
-  --animation-duration-fast: 0.2s;
-  --animation-duration-normal: 0.5s;
-  --animation-duration-slow: 1s;
-}
-
-/* ==========================================
-   EXEMPLES D'UTILISATION
-   ========================================== */
-
-/*
-AVANT:
-.element {
-  color: #f8660e;
-  background: #f4f4f4;
-  padding: 20px;
-  border-radius: 15px;
-  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease;
-}
-
-APRÈS:
-.element {
-  color: var(--color-primary);
-  background: var(--color-bg);
-  padding: var(--spacing-md);
-  border-radius: var(--radius-md);
-  box-shadow: var(--shadow-md);
-  transition: all var(--transition-base);
-}
-*/
-
-/* ==========================================
-   CLASSES UTILITAIRES (OPTIONNEL)
-   ========================================== */
-
-/* Texte */
-.u-text-center { text-align: center; }
-.u-text-left { text-align: left; }
-.u-text-right { text-align: right; }
-
-.u-text-primary { color: var(--color-primary); }
-.u-text-white { color: var(--color-text-white); }
-
-/* Espacement */
-.u-mt-sm { margin-top: var(--spacing-sm); }
-.u-mt-md { margin-top: var(--spacing-md); }
-.u-mt-lg { margin-top: var(--spacing-lg); }
-
-.u-mb-sm { margin-bottom: var(--spacing-sm); }
-.u-mb-md { margin-bottom: var(--spacing-md); }
-.u-mb-lg { margin-bottom: var(--spacing-lg); }
-
-/* Display */
-.u-hidden { display: none; }
-.u-block { display: block; }
-.u-flex { display: flex; }
-.u-inline { display: inline; }
-
-/* Visibilité */
-.u-visible {
-  opacity: 1;
-  visibility: visible;
-}
-
-.u-invisible {
-  opacity: 0;
-  visibility: hidden;
-}
-/* ==========================================
    ANIMATIONS PROFESSIONNELLES ET TRANSITIONS
    ========================================== */
 
@@ -189,10 +17,10 @@ html {
 
 body {
     font-family: 'Poppins', sans-serif;
-    background-color: var(--color-bg);
+    background-color: #f4f4f4;
     overflow-x: hidden;
     line-height: 1.6;
-    color: var(--color-text);
+    color: #3c2b1a;
 }
 
 /* Performance GPU */
@@ -213,7 +41,7 @@ html, body {
     padding: 0;
     width: 100%;
     overflow-x: hidden;
-    background-color: var(--color-bg); /* Même couleur que votre background */
+    background-color: #f4f4f4; /* Même couleur que votre background */
 }
 
 body {
@@ -230,7 +58,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--color-bg); /* Même couleur que le body au lieu de blanc */
+    background: #f4f4f4; /* Même couleur que le body au lieu de blanc */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -266,14 +94,14 @@ body {
     left: 0;
     width: 100%;
     height: 3px;
-    background: var(--color-primary);
+    background: #f8660e;
     transform-origin: left;
     transform: scaleX(0);
 }
 
 .loader-text {
     font-size: 1.2rem;
-    color: var(--color-text);
+    color: #3c2b1a;
     font-weight: 500;
 }
 
@@ -350,7 +178,7 @@ nav ul li {
 
 nav ul li a {
     position: relative;
-    color: var(--color-bg-white);
+    color: #ffffff;
     text-decoration: none;
     font-size: 1em; /* Réduit la taille de police */
     font-weight: 600;
@@ -361,12 +189,12 @@ nav ul li a {
 
 /* Navigation au scroll */
 header.scrolled nav ul li a {
-    color: var(--color-primary);
+    color: #f8660e;
     text-shadow: none;
 }
 
 nav ul li a:hover {
-    color: var(--color-primary);
+    color: #f8660e;
 }
 
 header.scrolled nav ul li a:hover {
@@ -380,7 +208,7 @@ nav ul li a::before {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--color-primary);
+    background: #f8660e;
     transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -508,7 +336,7 @@ nav ul li a.active::before {
 /* Bouton du hero */
 #hero .btn {
     background: white;
-    color: var(--color-primary);
+    color: #f8660e;
     padding: 12px 28px;
     border-radius: 30px;
     text-transform: uppercase;
@@ -520,7 +348,7 @@ nav ul li a.active::before {
 }
 
 #hero .btn:hover {
-    background: var(--color-primary);
+    background: #f8660e;
     color: white;
     transform: scale(1.05);
 }
@@ -557,8 +385,8 @@ nav ul li a.active::before {
 
 /* S'assure que l'image est visible même avec les animations */
 #hero .parallax-bg {
-    opacity: 1;
-    visibility: visible;
+    opacity: 1 !important;
+    visibility: visible !important;
 }
 
 /* Media queries */
@@ -660,7 +488,7 @@ nav ul li a.active::before {
 .Goukie-card h3 {
     font-size: 1.4em;
     font-weight: 600;
-    color: var(--color-primary);
+    color: #f8660e;
     margin: 10px 0 8px;
 }
 
@@ -680,7 +508,7 @@ nav ul li a.active::before {
 .incontournables-section h2 {
     font-size: 2.8em;
     margin-bottom: 60px;
-    color: var(--color-text);
+    color: #3c2b1a;
     font-weight: 600;
 }
 
@@ -734,7 +562,7 @@ nav ul li a.active::before {
 
 .histoire-content h2 {
     font-size: 3em;
-    color: var(--color-text);
+    color: #3c2b1a;
     font-weight: 600;
     margin-bottom: 20px;
 }
@@ -749,7 +577,7 @@ nav ul li a.active::before {
 
 .histoire-content .hero-btn {
     background: white;
-    color: var(--color-primary);
+    color: #f8660e;
     padding: 14px 35px;
     font-weight: 600;
     border-radius: 30px;
@@ -765,7 +593,7 @@ nav ul li a.active::before {
 }
 
 .histoire-content .hero-btn:hover {
-    background: var(--color-primary);
+    background: #f8660e;
     color: white;
     transform: scale(1.05);
 }
@@ -773,13 +601,13 @@ nav ul li a.active::before {
 /* Catalogue Goukies */
 .Goukies-catalogue {
     padding: 120px 30px;
-    background: linear-gradient(to bottom, #fffaf4, var(--color-bg-white));
+    background: linear-gradient(to bottom, #fffaf4, #ffffff);
     text-align: center;
 }
 
 .Goukies-catalogue h2 {
     font-size: 3.4em;
-    color: var(--color-text);
+    color: #3c2b1a;
     font-weight: 600;
     margin-bottom: 80px;
 }
@@ -840,7 +668,7 @@ nav ul li a.active::before {
     font-size: 3.5em;
     font-weight: 700;
     margin-bottom: 10px;
-    color: var(--color-primary);
+    color: #f8660e;
 }
 
 .Goukies-intro p {
@@ -880,7 +708,7 @@ nav ul li a.active::before {
 
 .Goukie-info h1 {
     font-size: 2.5em;
-    color: var(--color-primary);
+    color: #f8660e;
     margin-bottom: 20px;
 }
 
@@ -904,7 +732,7 @@ nav ul li a.active::before {
     font-size: 1em;
     padding: 10px 20px;
     border-radius: 12px;
-    border: 2px solid var(--color-primary);
+    border: 2px solid #f8660e;
     background-color: #fff;
     color: #333;
     font-weight: 500;
@@ -936,7 +764,7 @@ nav ul li a.active::before {
 }
 
 .btn-panier {
-    background-color: var(--color-primary);
+    background-color: #f8660e;
     color: white;
     font-weight: bold;
     border: none;
@@ -998,7 +826,7 @@ nav ul li a.active::before {
     position: absolute;
     top: 45%;
     transform: translateY(-50%);
-    background-color: var(--color-primary);
+    background-color: #f8660e;
     border: none;
     color: white;
     font-size: 2em;
@@ -1038,7 +866,7 @@ nav ul li a.active::before {
     top: 0;
     bottom: 0;
     width: 4px;
-    background: linear-gradient(to bottom, var(--color-primary), #ff8c3a);
+    background: linear-gradient(to bottom, #f8660e, #ff8c3a);
     transform: translateX(-50%) scaleY(0);
     transform-origin: top;
     border-radius: 4px;
@@ -1083,7 +911,7 @@ nav ul li a.active::before {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--color-primary), #ffa15f);
+    background: linear-gradient(135deg, #f8660e, #ffa15f);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -1163,7 +991,7 @@ nav ul li a.active::before {
 .our-mission h2 {
     font-size: 3rem;
     font-weight: 600;
-    color: var(--color-text);
+    color: #3c2b1a;
     margin-bottom: 50px;
 }
 
@@ -1180,7 +1008,7 @@ nav ul li a.active::before {
 }
 
 .cta-button {
-    background: linear-gradient(135deg, var(--color-primary), #ffa15f);
+    background: linear-gradient(135deg, #f8660e, #ffa15f);
     color: white;
     font-size: 1.1rem;
     font-weight: 600;
@@ -1207,7 +1035,7 @@ nav ul li a.active::before {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-bg);
+    background-color: #f4f4f4;
 }
 
 #hero-histoire img.parallax-bg {
@@ -1266,7 +1094,7 @@ nav ul li a.active::before {
 .hero-histoire-content h1 {
     font-size: 4.5rem;
     font-weight: 700;
-    color: var(--color-primary);
+    color: #f8660e;
     text-shadow: 0 3px 10px rgba(0,0,0,0.5);
     margin: 0 0 20px 0;
     z-index: 10;
@@ -1278,7 +1106,7 @@ nav ul li a.active::before {
 .hero-histoire-content .hero-tagline {
     font-size: 1.4rem;
     font-weight: 400;
-    color: var(--color-bg-white);
+    color: #ffffff;
     text-shadow: 0 2px 5px rgba(0,0,0,0.4);
     max-width: 600px;
     line-height: 1.6;
@@ -1291,7 +1119,7 @@ nav ul li a.active::before {
 
 /* Footer */
 .site-footer {
-    background-color: var(--color-text);
+    background-color: #3c2b1a;
     color: #f5f5f5;
     padding: 80px 30px 50px;
 }
@@ -1327,7 +1155,7 @@ nav ul li a.active::before {
 }
 
 .footer-links ul li a:hover {
-    color: var(--color-primary);
+    color: #f8660e;
 }
 
 .copyright {
@@ -1381,7 +1209,7 @@ body.page-loaded .animate-element:nth-child(3) { transition-delay: 0.3s; }
 }
 
 .animate-visible {
-    opacity: 1;
+    opacity: 1 !important;
     transform: translateY(0) !important;
 }
 
@@ -1389,7 +1217,7 @@ body.page-loaded .animate-element:nth-child(3) { transition-delay: 0.3s; }
     position: fixed;
     width: 10px;
     height: 10px;
-    background: var(--color-primary);
+    background: #f8660e;
     border-radius: 50%;
     pointer-events: none;
     z-index: 9999;
@@ -1399,7 +1227,7 @@ body.page-loaded .animate-element:nth-child(3) { transition-delay: 0.3s; }
     position: fixed;
     bottom: 30px;
     right: 30px;
-    background: var(--color-primary);
+    background: #f8660e;
     color: white;
     padding: 15px 30px;
     border-radius: 50px;
@@ -1439,7 +1267,7 @@ body.page-loaded .animate-element:nth-child(3) { transition-delay: 0.3s; }
     left: 0;
     width: 100%;
     height: 100%;
-    background: var(--color-bg); /* Même couleur que le background */
+    background: #f4f4f4; /* Même couleur que le background */
     transform-origin: bottom center;
     transform: scaleY(0);
     z-index: 9999;
@@ -1714,7 +1542,7 @@ img {
   
   /* Focus visible pour la navigation clavier */
   a:focus, button:focus, input:focus, select:focus {
-    outline: 3px solid var(--color-primary);
+    outline: 3px solid #f8660e;
     outline-offset: 2px;
   }
   
@@ -1723,7 +1551,7 @@ img {
     position: absolute;
     top: -40px;
     left: 0;
-    background: var(--color-primary);
+    background: #f8660e;
     color: white;
     padding: 8px;
     z-index: 100;
@@ -1763,7 +1591,7 @@ img {
     display: block;
     width: 25px;
     height: 3px;
-    background: var(--color-primary);
+    background: #f8660e;
     margin: 5px 0;
     transition: 0.3s;
   }
@@ -1928,7 +1756,7 @@ img {
     position: absolute;
     top: -8px;
     right: -8px;
-    background: var(--color-primary);
+    background: #f8660e;
     color: white;
     width: 20px;
     height: 20px;
@@ -2001,7 +1829,7 @@ img {
 }
 
 .view-cart-btn {
-    background: var(--color-primary);
+    background: #f8660e;
     color: white;
 }
 
@@ -2129,9 +1957,9 @@ img {
 }
 
 .quantity-btn:hover {
-   background: var(--color-primary);
+   background: #f8660e;
    color: white;
-   border-color: var(--color-primary);
+   border-color: #f8660e;
 }
 
 .remove-item {
@@ -2176,7 +2004,7 @@ img {
 }
 
 .cart-info a {
-   color: var(--color-primary);
+   color: #f8660e;
    text-decoration: none;
    font-weight: 500;
 }
@@ -2202,7 +2030,7 @@ img {
 }
 
 .contact-btn {
-   background: var(--color-primary);
+   background: #f8660e;
    color: white;
    border: none;
 }
@@ -2295,7 +2123,7 @@ img {
     position: absolute;
     top: 30px;
     left: 30px;
-    background: var(--color-primary);
+    background: #f8660e;
     color: white;
     padding: 8px 16px;
     border-radius: 20px;
@@ -2321,7 +2149,7 @@ img {
 }
 
 .thumbnail.active {
-    border-color: var(--color-primary);
+    border-color: #f8660e;
 }
 
 .thumbnail img {
@@ -2344,7 +2172,7 @@ img {
 
 #Goukie-name {
     font-size: 2.5rem;
-    color: var(--color-text);
+    color: #3c2b1a;
     margin: 0 0 10px 0;
 }
 
@@ -2386,7 +2214,7 @@ img {
 
 .Goukie-ingredients h3 {
     font-size: 1.2rem;
-    color: var(--color-text);
+    color: #3c2b1a;
     margin-bottom: 15px;
 }
 
@@ -2419,7 +2247,7 @@ img {
     display: block;
     font-weight: 600;
     margin-bottom: 10px;
-    color: var(--color-text);
+    color: #3c2b1a;
 }
 
 .size-selector {
@@ -2439,18 +2267,18 @@ img {
 }
 
 .size-option.active {
-    border-color: var(--color-primary);
+    border-color: #f8660e;
     background: #fff5ef;
 }
 
 .size-option:hover {
-    border-color: var(--color-primary);
+    border-color: #f8660e;
 }
 
 .size-option .price {
     display: block;
     margin-top: 5px;
-    color: var(--color-primary);
+    color: #f8660e;
     font-weight: 600;
 }
 
@@ -2481,8 +2309,8 @@ img {
 }
 
 .quantity-btn:hover {
-    border-color: var(--color-primary);
-    color: var(--color-primary);
+    border-color: #f8660e;
+    color: #f8660e;
 }
 
 #quantity {
@@ -2506,7 +2334,7 @@ img {
 .current-price {
     font-size: 2rem;
     font-weight: 700;
-    color: var(--color-primary);
+    color: #f8660e;
 }
 
 .tax-info {
@@ -2517,7 +2345,7 @@ img {
 .add-to-cart {
     width: 100%;
     padding: 18px;
-    background: linear-gradient(135deg, var(--color-primary), #ffa15f);
+    background: linear-gradient(135deg, #f8660e, #ffa15f);
     color: white;
     border: none;
     border-radius: 12px;
@@ -2584,7 +2412,7 @@ img {
 }
 
 .tab.active {
-    color: var(--color-primary);
+    color: #f8660e;
 }
 
 .tab.active::after {
@@ -2594,7 +2422,7 @@ img {
     left: 0;
     width: 100%;
     height: 2px;
-    background: var(--color-primary);
+    background: #f8660e;
 }
 
 .tab-content {
@@ -2635,7 +2463,7 @@ img {
 .Goukie-suggestions-enhanced h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: var(--color-text);
+    color: #3c2b1a;
     margin-bottom: 50px;
     font-weight: 600;
 }
@@ -2684,7 +2512,7 @@ img {
 .suggestions-track .Goukie-card h3 {
     font-size: 1.3rem;
     font-weight: 600;
-    color: var(--color-primary);
+    color: #f8660e;
     margin: 8px 0;
     text-align: center;
 }
@@ -2725,13 +2553,13 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-primary);
+    color: #f8660e;
     transition: all 0.3s ease;
     z-index: 10;
 }
 
 .carousel-nav:hover {
-    background: var(--color-primary);
+    background: #f8660e;
     color: white;
     transform: translateY(-50%) scale(1.1);
 }
@@ -2821,7 +2649,7 @@ img {
 }
 
 .featured-title {
-    color: var(--color-primary);
+    color: #f8660e;
     font-size: 0.9rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -2831,14 +2659,14 @@ img {
 .featured-name {
     font-size: 1.4rem;
     font-weight: 700;
-    color: var(--color-text);
+    color: #3c2b1a;
 }
 
 .featured-link {
     display: inline-block;
     margin-top: 10px;
     padding: 8px 20px;
-    background: var(--color-primary);
+    background: #f8660e;
     color: white;
     border-radius: 20px;
     text-decoration: none;
@@ -2867,7 +2695,7 @@ img {
     left: 0;
     right: 0;
     height: 5px;
-    background: linear-gradient(90deg, var(--color-primary), #ffa15f);
+    background: linear-gradient(90deg, #f8660e, #ffa15f);
 }
 
 .banner-content {
@@ -2884,7 +2712,7 @@ img {
 }
 
 .banner-text h3 {
-    color: var(--color-primary);
+    color: #f8660e;
     font-size: 1rem;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -2893,7 +2721,7 @@ img {
 
 .banner-text h2 {
     font-size: 3rem;
-    color: var(--color-text);
+    color: #3c2b1a;
     margin-bottom: 20px;
 }
 
@@ -2907,7 +2735,7 @@ img {
 .banner-btn {
     display: inline-block;
     padding: 15px 35px;
-    background: var(--color-primary);
+    background: #f8660e;
     color: white;
     border-radius: 30px;
     text-decoration: none;
@@ -2960,7 +2788,7 @@ img {
     position: absolute;
     top: 20px;
     right: -35px;
-    background: var(--color-primary);
+    background: #f8660e;
     color: white;
     padding: 8px 40px;
     transform: rotate(45deg);
@@ -3068,7 +2896,7 @@ img {
     font-size: 3.5rem;
     font-weight: 700;
     margin-bottom: 20px;
-    color: var(--color-primary);
+    color: #f8660e;
     text-shadow: 0 2px 10px rgba(0,0,0,0.5);
 }
 
@@ -3112,7 +2940,7 @@ img {
 }
 
 .info-card h3 {
-    color: var(--color-primary);
+    color: #f8660e;
     font-size: 1.4rem;
     margin-bottom: 15px;
     font-weight: 600;
@@ -3133,7 +2961,7 @@ img {
 }
 
 .contact-form-wrapper h2 {
-    color: var(--color-text);
+    color: #3c2b1a;
     font-size: 2.2rem;
     margin-bottom: 30px;
     font-weight: 600;
@@ -3151,7 +2979,7 @@ img {
 }
 
 .form-group label {
-    color: var(--color-text);
+    color: #3c2b1a;
     font-weight: 500;
     margin-bottom: 8px;
     font-size: 1.1rem;
@@ -3172,7 +3000,7 @@ img {
 .form-group input:focus,
 .form-group select:focus,
 .form-group textarea:focus {
-    border-color: var(--color-primary);
+    border-color: #f8660e;
     outline: none;
     box-shadow: 0 0 0 3px rgba(248, 102, 14, 0.1);
     background-color: white;
@@ -3184,7 +3012,7 @@ img {
 }
 
 .submit-button {
-    background: linear-gradient(135deg, var(--color-primary), #ffa15f);
+    background: linear-gradient(135deg, #f8660e, #ffa15f);
     color: white;
     border: none;
     padding: 18px 30px;
@@ -3303,8 +3131,8 @@ img {
 }
 
 .instagram-link:hover {
-    color: var(--color-primary);
-    border-color: var(--color-primary);
+    color: #f8660e;
+    border-color: #f8660e;
     transform: translateY(-2px);
 }
 
@@ -3348,7 +3176,7 @@ img {
 }
 
 .instagram-handle {
-    color: var(--color-primary);
+    color: #f8660e;
     font-weight: 600;
     font-size: 1.2rem;
     margin: 10px 0;
@@ -3371,7 +3199,7 @@ img {
     right: 20px;
     width: 40px;
     height: 40px;
-    background: var(--color-primary);
+    background: #f8660e;
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -3408,7 +3236,7 @@ img {
     display: block;
     width: 24px;
     height: 2px;
-    background: var(--color-primary);
+    background: #f8660e;
     margin: 5px auto;
     transition: transform 0.3s ease, opacity 0.3s ease;
   }
@@ -3468,7 +3296,7 @@ img {
     
     nav ul li a {
       font-size: 1.4rem !important;
-      color: var(--color-text) !important;
+      color: #3c2b1a !important;
       text-shadow: none !important;
       padding: 10px 0;
       display: block;
@@ -4285,37 +4113,37 @@ img {
 
 /* Styles pour forcer l'affichage des animations */
 .histoire-loaded .hero-histoire-content .animate-element {
-    opacity: 1;
+    opacity: 1 !important;
     transform: translateY(0) !important;
-    visibility: visible;
+    visibility: visible !important;
   }
   
   .animate-visible {
-    opacity: 1;
+    opacity: 1 !important;
     transform: translateY(0) !important;
-    visibility: visible;
+    visibility: visible !important;
     transition: none !important;
   }
 
   /* Fix d'urgence pour la page histoire */
 .story-timeline {
-    display: block;
-    opacity: 1;
-    visibility: visible;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
     z-index: 5; /* S'assurer qu'il est au-dessus des autres éléments */
   }
   
   .story-section {
-    display: block;
-    opacity: 1;
-    visibility: visible;
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
     margin-bottom: 40px !important;
   }
   
   .story-container {
-    display: flex;
-    opacity: 1;
-    visibility: visible;
+    display: flex !important;
+    opacity: 1 !important;
+    visibility: visible !important;
     background-color: white !important;
   }
   
@@ -4330,9 +4158,9 @@ img {
   
   /* Garantir que le contenu de la mission est visible */
   .our-mission {
-    display: block;
-    visibility: visible;
-    opacity: 1;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
 
   /* ==========================================
@@ -4344,9 +4172,9 @@ img {
     padding: 0 30px;
     position: relative;
     /* Garantir visibilité */
-    display: block;
-    visibility: visible;
-    opacity: 1;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
   
   .timeline-line {
@@ -4367,7 +4195,7 @@ img {
     top: 0;
     bottom: 0;
     width: 4px;
-    background: linear-gradient(to bottom, var(--color-primary), #ff8c3a);
+    background: linear-gradient(to bottom, #f8660e, #ff8c3a);
     transform: translateX(-50%) scaleY(0);
     transform-origin: top;
     border-radius: 4px;
@@ -4379,9 +4207,9 @@ img {
     position: relative;
     z-index: 3;
     /* Garantir visibilité */
-    display: block;
-    visibility: visible;
-    opacity: 1;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
   
   .story-container {
@@ -4397,9 +4225,9 @@ img {
     margin-left: auto;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     /* Garantir visibilité */
-    display: flex;
-    visibility: visible;
-    opacity: 1;
+    display: flex !important;
+    visibility: visible !important;
+    opacity: 1 !important;
   }
   
   .story-section:nth-child(even) .story-container {
@@ -4418,7 +4246,7 @@ img {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background: linear-gradient(135deg, var(--color-primary), #ffa15f);
+    background: linear-gradient(135deg, #f8660e, #ffa15f);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -4429,7 +4257,7 @@ img {
   
   .story-icon:hover {
     transform: scale(1.1);
-    background: linear-gradient(135deg, var(--color-primary), #ff8c3a);
+    background: linear-gradient(135deg, #f8660e, #ff8c3a);
   }
   
   .story-icon span {
@@ -4550,13 +4378,13 @@ img {
 @media (max-width: 768px) {
     #histoire-timeline-line,
     #histoire-timeline-progress {
-        opacity: 1;
-        visibility: visible;
+        opacity: 1 !important;
+        visibility: visible !important;
     }
     
     .histoire-story-container {
-        opacity: 1;
-        visibility: visible;
+        opacity: 1 !important;
+        visibility: visible !important;
         transform: none !important;
         box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
     }
@@ -4566,9 +4394,9 @@ img {
 
 /* Garantir la visibilité du header sur la page histoire */
 body:has(#histoire-timeline) header {
-  display: flex;
-  visibility: visible;
-  opacity: 1;
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
   z-index: 1000 !important;
   background-color: rgba(255, 255, 255, 0.95) !important;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1) !important;
@@ -4576,19 +4404,19 @@ body:has(#histoire-timeline) header {
 
 /* S'assurer que les sections d'histoire sont visibles */
 .histoire-story-section {
-  opacity: 1;
-  visibility: visible;
+  opacity: 1 !important;
+  visibility: visible !important;
   transform: none !important;
-  display: block;
+  display: block !important;
   margin-bottom: 80px !important;
 }
 
 /* Forcer l'affichage des conteneurs d'histoire */
 .histoire-story-container {
-  opacity: 1;
-  visibility: visible;
+  opacity: 1 !important;
+  visibility: visible !important;
   transform: none !important;
-  display: flex;
+  display: flex !important;
   background-color: white !important;
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08) !important;
 }
@@ -4597,22 +4425,22 @@ body:has(#histoire-timeline) header {
 .histoire-story-icon,
 .histoire-story-content,
 .histoire-timeline-connector {
-  opacity: 1;
-  visibility: visible;
+  opacity: 1 !important;
+  visibility: visible !important;
 }
 
 /* S'assurer que les éléments du hero sont visibles */
 #hero-histoire .animate-element {
-  opacity: 1;
+  opacity: 1 !important;
   transform: translateY(0) !important;
-  visibility: visible;
+  visibility: visible !important;
 }
 
 /* Corrections pour la timeline */
 #histoire-timeline-line,
 #histoire-timeline-progress {
-  visibility: visible;
-  opacity: 1;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* Corrections spécifiques pour mobile */
@@ -4658,7 +4486,7 @@ body:has(#histoire-timeline) header {
   
   /* Correction pour le header et le menu mobile sur cette page spécifique */
   body:has(#histoire-timeline) .menu-toggle {
-    display: block;
+    display: block !important;
   }
   
   body:has(#histoire-timeline) nav ul {
@@ -4666,7 +4494,7 @@ body:has(#histoire-timeline) header {
   }
   
   body:has(#histoire-timeline) nav ul li a {
-    color: var(--color-text) !important;
+    color: #3c2b1a !important;
     text-shadow: none !important;
   }
   
@@ -4728,8 +4556,8 @@ body:has(#histoire-timeline) header {
 /* Ajout au CSS - Pour s'assurer que le menu hamburger est toujours visible sur mobile */
 @media (max-width: 768px) {
   .menu-toggle {
-    display: block;
-    visibility: visible;
+    display: block !important;
+    visibility: visible !important;
     opacity: 1;
     position: absolute;
     z-index: 1005;
@@ -4746,7 +4574,7 @@ body:has(#histoire-timeline) header {
     display: block;
     width: 24px;
     height: 2px;
-    background: var(--color-primary);
+    background: #f8660e;
     margin: 5px 0;
     transition: all 0.3s ease;
   }
@@ -4779,7 +4607,7 @@ body:has(#histoire-timeline) header {
   }
   
   nav ul.active {
-    display: flex;
+    display: flex !important;
     animation: fadeIn 0.3s ease forwards;
   }
   
@@ -4823,7 +4651,7 @@ body:has(#histoire-timeline) header {
     display: block;
     width: 25px;
     height: 3px;
-    background-color: var(--color-primary);
+    background-color: #f8660e;
     margin: 5px 0;
     transition: transform 0.3s ease, opacity 0.3s ease;
   }
@@ -4869,7 +4697,7 @@ body:has(#histoire-timeline) header {
   
   body:has(#histoire-timeline) nav ul li a {
     font-size: 1.3rem;
-    color: var(--color-text);
+    color: #3c2b1a;
     padding: 10px 20px;
     display: block;
   }
@@ -4902,15 +4730,15 @@ body:has(#histoire-timeline) header {
 .histoire-story-icon,
 .histoire-story-content,
 .histoire-timeline-connector {
-  visibility: visible;
-  opacity: 1;
+  visibility: visible !important;
+  opacity: 1 !important;
 }
 
 /* Correctifs pour les animations sur la page histoire */
 .hero-histoire-content .animate-element {
-  opacity: 1;
+  opacity: 1 !important;
   transform: translateY(0) !important;
-  visibility: visible;
+  visibility: visible !important;
 }
 
 /* Correct overlay pour le hero */
@@ -4964,9 +4792,9 @@ body:has(#histoire-timeline) header {
   /* Correction pour le menu hamburger sur mobile */
   body:has(#histoire-timeline) .menu-toggle,
   body:has(.histoire-story-section) .menu-toggle {
-    display: block;
-    visibility: visible;
-    opacity: 1;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
     position: relative !important;
     margin-top : 20px !important;
     z-index: 1100 !important;
@@ -4976,17 +4804,17 @@ body:has(#histoire-timeline) header {
   
   body:has(#histoire-timeline) .menu-toggle span,
   body:has(.histoire-story-section) .menu-toggle span {
-    display: block;
+    display: block !important;
     width: 25px !important;
     height: 3px !important;
-    background-color: var(--color-primary) !important;
+    background-color: #f8660e !important;
     margin: 5px 0 !important;
   }
   
   /* Correction pour le menu mobile */
   body:has(#histoire-timeline) nav ul,
   body:has(.histoire-story-section) nav ul {
-    display: none;
+    display: none !important;
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
@@ -5006,15 +4834,15 @@ body:has(#histoire-timeline) header {
   
   body:has(#histoire-timeline) nav ul.active,
   body:has(.histoire-story-section) nav ul.active {
-    display: flex;
+    display: flex !important;
   }
   
   body:has(#histoire-timeline) nav ul li a,
   body:has(.histoire-story-section) nav ul li a {
-    color: var(--color-text) !important;
+    color: #3c2b1a !important;
     font-size: 1.3rem !important;
     text-shadow: none !important;
-    display: block;
+    display: block !important;
     padding: 15px 20px !important;
   }
   
@@ -5026,7 +4854,7 @@ body:has(#histoire-timeline) header {
   
   body:has(#histoire-timeline) .menu-toggle.active span:nth-child(2),
   body:has(.histoire-story-section) .menu-toggle.active span:nth-child(2) {
-    opacity: 0;
+    opacity: 0 !important;
   }
   
   body:has(#histoire-timeline) .menu-toggle.active span:nth-child(3),
@@ -5092,7 +4920,7 @@ header.scrolled {
 
 /* Améliorer la lisibilité du menu sur des fonds clairs au défilement */
 header.scrolled nav ul li a {
-  color: var(--color-primary) !important;
+  color: #f8660e !important;
   text-shadow: none !important;
 }
 
@@ -5105,25 +4933,25 @@ header.scrolled nav ul li a {
   
   /* Correction pour le menu hamburger */
   .menu-toggle {
-    display: block;
-    visibility: visible;
-    opacity: 1;
+    display: block !important;
+    visibility: visible !important;
+    opacity: 1 !important;
     position: relative !important;
     z-index: 1100 !important;
   }
   
   .menu-toggle span {
-    display: block;
+    display: block !important;
     width: 25px !important;
     height: 3px !important;
-    background-color: var(--color-primary) !important;
+    background-color: #f8660e !important;
     margin: 5px 0 !important;
     transition: transform 0.3s ease, opacity 0.3s ease;
   }
   
   /* Styles pour le menu mobile */
   nav ul {
-    display: none;
+    display: none !important;
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
@@ -5142,14 +4970,14 @@ header.scrolled nav ul li a {
   }
   
   nav ul.active {
-    display: flex;
+    display: flex !important;
   }
   
   nav ul li a {
-    color: var(--color-text) !important;
+    color: #3c2b1a !important;
     font-size: 1.3rem !important;
     text-shadow: none !important;
-    display: block;
+    display: block !important;
     padding: 15px 20px !important;
   }
   
@@ -5159,7 +4987,7 @@ header.scrolled nav ul li a {
   }
   
   .menu-toggle.active span:nth-child(2) {
-    opacity: 0;
+    opacity: 0 !important;
   }
   
   .menu-toggle.active span:nth-child(3) {
@@ -5188,7 +5016,7 @@ header.scrolled nav ul li a {
 
 /* Centre verticalement le menu hamburger sur toutes les pages */
 .menu-toggle {
-  display: flex;
+  display: flex !important;
   flex-direction: column !important;
   justify-content: center !important;
   align-items: center !important;
@@ -5202,24 +5030,24 @@ header.scrolled nav ul li a {
 
 /* Centre les barres du hamburger à l'intérieur du bouton */
 .menu-toggle span {
-  display: block;
+  display: block !important;
   width: 25px !important;
   height: 3px !important;
   margin: 3px !important;
-  background-color: var(--color-primary) !important;
+  background-color: #f8660e !important;
 }
 
 /* Assure que le header a une hauteur fixe pour toutes les pages */
 @media (max-width: 768px) {
   header {
     height: 60px !important;
-    display: flex;
+    display: flex !important;
     align-items: center !important;
   }
   
   /* Alignement du logo au centre vertical */
   .logo {
-    display: flex;
+    display: flex !important;
     align-items: center !important;
   }
 }
@@ -5227,20 +5055,20 @@ header.scrolled nav ul li a {
 /* Add this to your styles.css file */
 @media (max-width: 768px) {
   .quantity-btn {
-    color: var(--color-text) !important; /* Force the text color */
+    color: #3c2b1a !important; /* Force the text color */
   }
   
   .size-option {
-    color: var(--color-text) !important; /* Force the text color */
+    color: #3c2b1a !important; /* Force the text color */
   }
   
   .size-option .price {
-    color: var(--color-primary) !important; /* Keep the orange color for the price */
+    color: #f8660e !important; /* Keep the orange color for the price */
   }
   
   /* Make the quantity input text color consistent */
   #quantity {
-    color: var(--color-text) !important;
+    color: #3c2b1a !important;
   }
 }
 
@@ -5265,7 +5093,7 @@ header.scrolled nav ul li a {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-text);
+    color: #3c2b1a;
     transition: all 0.2s ease-in-out;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
 }

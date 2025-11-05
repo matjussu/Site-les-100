@@ -12,7 +12,7 @@
       "Farine de riz Bio",
       "Sucre de canne blond Bio",
       "Extrait de vanille",
-      "Compte de pomme bio fait maison",
+      "Compote de pomme bio fait maison",
       "Margarine sans huile de palme",
       "Chocolat noir en palet"
     ],
@@ -50,13 +50,13 @@
     "id": "le-11m",
     "nom": "Mini Le 11",
     "description": "Nature aux pépites de chocolat",
-    "image": "goukie_images/11m.png",
+    "images": ["goukie_images/11m.png"],
     "categorie": "essentiels",
     "ingredients": [
       "Farine de riz Bio",
       "Sucre de canne blond Bio",
       "Extrait de vanille",
-      "Compte de pomme bio fait maison",
+      "Compote de pomme bio fait maison",
       "Margarine sans huile de palme",
       "Chocolat noir en palet"
     ],
@@ -103,7 +103,7 @@
       "Farine de riz Bio",
       "Sucre de canne blond Bio",
       "Extrait de vanille",
-      "Compte de pomme bio fait maison",
+      "Compote de pomme bio fait maison",
       "Margarine sans huile de palme",
       "Chocolat noir en palet",
       "Chocolat en poudre van Houten"
@@ -141,14 +141,14 @@
   {
     "id": "le-08-m",
     "nom": "Mini Le 08",
-    "image":"goukie_images/08m.png",
+    "images": ["goukie_images/08m.png"],
     "description": " Goukie chocolat avec des pépites de chocolats",
     "categorie": "essentiels",
     "ingredients": [
       "Farine de riz Bio",
       "Sucre de canne blond Bio",
       "Extrait de vanille",
-      "Compte de pomme bio fait maison",
+      "Compote de pomme bio fait maison",
       "Margarine sans huile de palme",
       "Chocolat noir en palet",
       "Chocolat en poudre van Houten"
@@ -187,13 +187,13 @@
     "id": "le-27m",
     "nom": "Mini Le 27",
     "description": "Un incontournable au beurre de cacahuètes bio maison.",
-    "image":"goukie_images/27m.png",
+    "images": ["goukie_images/27m.png"],
     "categorie": "essentiels",
     "ingredients": [
       "Farine de riz Bio",
       "Sucre de canne blond Bio",
       "Extrait de vanille",
-      "Compte de pomme bio fait maison",
+      "Compote de pomme bio fait maison",
       "Margarine sans huile de palme",
       "Beurre de cacahouète fait maison avec cacahouète bio"
     ],
@@ -238,7 +238,7 @@
       "Farine de riz Bio",
       "Sucre de canne blond Bio",
       "Extrait de vanille",
-      "Compte de pomme bio fait maison",
+      "Compote de pomme bio fait maison",
       "Margarine sans huile de palme",
       "Cranberries bio"
     ],
@@ -276,13 +276,13 @@
     "id": "le-05m",
     "nom": "Mini le 05",
     "description": "Un Goukie aux cramberries bio",
-    "image": "goukie_images/05m.png",
+    "images": ["goukie_images/05m.png"],
     "categorie": "essentiels",
     "ingredients": [
       "Farine de riz Bio",
       "Sucre de canne blond Bio",
       "Extrait de vanille",
-      "Compte de pomme bio fait maison",
+      "Compote de pomme bio fait maison",
       "Margarine sans huile de palme",
       "Cranberries bio"
     ],
@@ -329,7 +329,7 @@
       "Farine de riz Bio",
       "Sucre de canne blond Bio",
       "Extrait de vanille",
-      "Compte de pomme bio fait maison",
+      "Compote de pomme bio fait maison",
       "Margarine sans huile de palme",
       "Beurre de cacahouète fait maison avec cacahouète bio",
       "Confiture de framboise locale"
@@ -377,7 +377,7 @@
       "Farine de riz Bio",
       "Sucre de canne blond Bio",
       "Extrait de vanille",
-      "Compte de pomme bio fait maison",
+      "Compote de pomme bio fait maison",
       "Margarine sans huile de palme",
       "Beurre de cacahouète fait maison avec cacahouète bio",
       "Confiture de framboise locale"
@@ -419,7 +419,7 @@
       "Farine de riz Bio",
       "Sucre de canne blond Bio",
       "Extrait de vanille",
-      "Compte de pomme bio fait maison",
+      "Compote de pomme bio fait maison",
       "Margarine sans huile de palme",
       "Nocciolata bio",
       "Chocolat noir en palet"
@@ -467,7 +467,7 @@
       "Farine de riz Bio",
       "Sucre de canne blond Bio",
       "Extrait de vanille",
-      "Compte de pomme bio fait maison",
+      "Compote de pomme bio fait maison",
       "Margarine sans huile de palme",
       "Nocciolata bio",
       "Chocolat noir en palet"
@@ -514,7 +514,7 @@
       "Farine de riz Bio",
       "Sucre de canne blond Bio",
       "Extrait de vanille",
-      "Compte de pomme bio fait maison",
+      "Compote de pomme bio fait maison",
       "Margarine sans huile de palme",
       "Nocciolata bio",
       "Chocolat noir en palet"
@@ -561,7 +561,7 @@
       "Farine de riz Bio",
       "Sucre de canne blond Bio",
       "Extrait de vanille",
-      "Compte de pomme bio fait maison",
+      "Compote de pomme bio fait maison",
       "Margarine sans huile de palme",
       "Chocolat noir en palet",
       "Chocolat en poudre van Houten",
@@ -610,7 +610,7 @@
       "Farine de riz Bio",
       "Sucre de canne blond Bio",
       "Extrait de vanille",
-      "Compte de pomme bio fait maison",
+      "Compote de pomme bio fait maison",
       "Margarine sans huile de palme",
       "Chocolat noir en palet",
       "Chocolat en poudre van Houten",
@@ -656,7 +656,7 @@
       "Farine de riz Bio",
       "Sucre de canne blond Bio",
       "Extrait de vanille",
-      "Compte de pomme bio fait maison",
+      "Compote de pomme bio fait maison",
       "Margarine sans huile de palme",
       "Chocolat noir en palet",
       "Beurre de pistache bio fait maison"
@@ -704,7 +704,7 @@
       "Farine de riz Bio",
       "Sucre de canne blond Bio",
       "Extrait de vanille",
-      "Compte de pomme bio fait maison",
+      "Compote de pomme bio fait maison",
       "Margarine sans huile de palme",
       "Chocolat noir en palet",
       "Beurre de pistache bio fait maison"
@@ -746,7 +746,7 @@
       "Farine de riz Bio",
       "Sucre de canne blond Bio",
       "Extrait de vanille",
-      "Compte de pomme bio fait maison",
+      "Compote de pomme bio fait maison",
       "Margarine sans huile de palme",
       "Chocolat noir en palet",
       "Chocolat en poudre van Houten",
@@ -795,7 +795,7 @@
       "Farine de riz Bio",
       "Sucre de canne blond Bio",
       "Extrait de vanille",
-      "Compte de pomme bio fait maison",
+      "Compote de pomme bio fait maison",
       "Margarine sans huile de palme",
       "Chocolat noir en palet",
       "Chocolat en poudre van Houten",
@@ -829,7 +829,7 @@
     "id": "le-02",
     "nom": "Le 02",
     "description": "Une touche citronnée subtile pour un Goukie frais et surprenant. Léger et parfait pour l'été.",
-    "image": "image/citron.jpeg",
+    "images": ["image/citron.jpeg"],
     "categorie": "essentiels",
     "ingredients": [
       "Farine de riz bio",
@@ -873,7 +873,7 @@
     "id": "le-65",
     "nom": "Le 65",
     "description": "Praliné maison dans une base de Goukie généreuse. Une délicieuse alliance de noisettes caramélisées et de Goukie moelleux.",
-    "image": "image/Goukie PNG/pralin.jpg",
+    "images": ["image/Goukie PNG/pralin.jpg"],
     "categorie": "essentiels",
     "ingredients": [
       "Farine de riz bio",
@@ -915,7 +915,7 @@
     "id": "le-12",
     "nom": "Le 12",
     "description": "Un cœur pistache au centre d'un Goukie moelleux aux pépites. Notre version du Goukie Le 10 avec des pépites de chocolat en plus.",
-    "image": "image/Goukie PNG/le 12 Pistache.png",
+    "images": ["image/Goukie PNG/le 12 Pistache.png"],
     "categorie": "mini",
     "ingredients": [
       "Farine de riz bio",
@@ -959,7 +959,7 @@
     "id": "mai",
     "nom": "Mai - Coeur coco",
     "description": "Le Goukie du mois, en édition limitée. Un Goukie coco avec un cœur fondant à la noix de coco. Parfait pour les amateurs de saveurs tropicales.",
-    "image": "image/Goukie PNG/Mai_2.jpeg",
+    "images": ["image/Goukie PNG/Mai_2.jpeg"],
     "categorie": "edition_limitee",
     "ingredients": [
       "Farine de riz bio",

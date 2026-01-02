@@ -311,22 +311,22 @@ header.scrolled {
 }
 
 .logo img {
-    width: 50px; /* Plus petit pour un header plus compact */
-    height: 50px;
+    width: 70px;
+    height: 70px;
     border-radius: 50%;
-    transition: transform 0.6s cubic-bezier(0.34, 1.56, 0.64, 1);
+    transition: transform 0.4s ease;
     cursor: pointer;
     object-fit: cover;
 }
 
-/* Logo plus petit au scroll */
+/* Logo garde la même taille au scroll (plus de saut visuel) */
 header.scrolled .logo img {
-    width: 40px;
-    height: 40px;
+    width: 70px;
+    height: 70px;
 }
 
 .logo img:hover {
-    transform: scale(1.1) rotate(5deg);
+    transform: scale(1.08);
 }
 
 /* Navigation */
@@ -373,20 +373,16 @@ header.scrolled nav ul li a:hover {
     color: #111010;
 }
 
-nav ul li a::before {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    height: 2px;
-    background: var(--color-primary);
-    transition: width 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+/* Style pour le lien actif */
+nav ul li a.active,
+nav ul li a[aria-current="page"] {
+    color: var(--color-primary);
 }
 
-nav ul li a:hover::before,
-nav ul li a.active::before {
-    width: 100%;
+header.scrolled nav ul li a.active,
+header.scrolled nav ul li a[aria-current="page"] {
+    color: var(--color-text);
+    font-weight: 700;
 }
 
 /* Media queries pour le responsive */
@@ -412,21 +408,21 @@ nav ul li a.active::before {
     header {
         padding: 8px 15px;
     }
-    
+
     .logo img {
-        width: 40px;
-        height: 40px;
+        width: 55px;
+        height: 55px;
     }
-    
+
     header.scrolled .logo img {
-        width: 35px;
-        height: 35px;
+        width: 55px;
+        height: 55px;
     }
-    
+
     nav ul {
         gap: 15px;
     }
-    
+
     nav ul li a {
         font-size: 0.8em;
     }
@@ -798,9 +794,9 @@ nav ul li a.active::before {
 .Goukies-intro {
     position: relative;
     height: 100vh;
-    background-image: url('image/cooks_cacahuetes.webp');
-    background-size: cover;
-    background-position: center;
+    background-image: url('image/magicquill.png');
+    background-size: 170%;
+    background-position: 46% 52%;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -837,16 +833,116 @@ nav ul li a.active::before {
 }
 
 .Goukies-intro h1 {
-    font-size: 3.5em;
-    font-weight: 700;
-    margin-bottom: 10px;
-    color: var(--color-primary);
+    font-size: 2.5em;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: white;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
 .Goukies-intro p {
-    font-size: 1.3em;
-    font-weight: 600;
+    font-size: 1.1em;
+    font-weight: 400;
     color: white;
+    text-shadow: 0 1px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* ==========================================
+   BARRE DE NAVIGATION DES CATÉGORIES
+   ========================================== */
+
+.category-nav {
+    position: sticky;
+    top: 90px;
+    z-index: 900;
+    background: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: top 0.3s ease;
+}
+
+/* Ajustement quand le header est scrolled */
+header.scrolled ~ main .category-nav,
+.category-nav.header-scrolled {
+    top: 80px;
+}
+
+.category-nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.category-nav-container::-webkit-scrollbar {
+    display: none;
+}
+
+.category-nav-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    list-style: none;
+    margin: 0;
+    padding: 15px 0;
+    min-width: max-content;
+}
+
+.category-nav-link {
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 25px;
+    background: #f8f8f8;
+    color: var(--color-text);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    white-space: nowrap;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+}
+
+.category-nav-link:hover {
+    background: #fff5ef;
+    color: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.category-nav-link.active {
+    background: var(--color-primary);
+    color: white;
+    border-color: var(--color-primary);
+}
+
+/* Responsive mobile */
+@media (max-width: 768px) {
+    .category-nav {
+        top: 80px;
+    }
+
+    .category-nav-list {
+        justify-content: flex-start;
+        padding: 12px 10px;
+        gap: 8px;
+    }
+
+    .category-nav-link {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-nav {
+        top: 70px;
+    }
+
+    .category-nav-link {
+        padding: 8px 14px;
+        font-size: 0.8rem;
+    }
 }
 
 /* Goukie detail */
@@ -1752,50 +1848,111 @@ img {
 /* Menu hamburger pour mobile */
 .menu-toggle {
     display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     background: none;
     border: none;
     cursor: pointer;
     padding: 10px;
     z-index: 1001;
-  }
-  
-  .menu-toggle span {
+    width: 44px;
+    height: 44px;
+}
+
+.menu-toggle span {
     display: block;
-    width: 25px;
-    height: 3px;
+    width: 24px;
+    height: 2px;
+    background: white;
+    margin: 4px 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    border-radius: 2px;
+}
+
+/* Hamburger blanc sur fond transparent, orange sur fond scrolled */
+header.scrolled .menu-toggle span {
     background: var(--color-primary);
-    margin: 5px 0;
-    transition: 0.3s;
-  }
-  
-  @media (max-width: 768px) {
+}
+
+/* Animation hamburger vers X */
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(6px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-6px) rotate(-45deg);
+}
+
+@media (max-width: 768px) {
     /* Header optimisé pour mobile */
     header {
-      padding: 10px 15px;
+        padding: 12px 20px;
     }
-    
+
+    header.scrolled {
+        padding: 10px 20px;
+    }
+
     .menu-toggle {
-      display: block;
+        display: flex;
     }
-    
+
+    /* Menu mobile en dropdown */
     nav ul {
-      position: fixed;
-      top: 70px;
-      left: 0;
-      right: 0;
-      background: white;
-      flex-direction: column;
-      padding: 20px;
-      display: none;
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+        position: fixed;
+        top: 80px;
+        left: 0;
+        right: 0;
+        background: white;
+        flex-direction: column;
+        padding: 20px;
+        gap: 0;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        border-radius: 0 0 20px 20px;
+        transform: translateY(-20px);
+        opacity: 0;
+        visibility: hidden;
+        transition: transform 0.3s ease, opacity 0.3s ease, visibility 0.3s ease;
+        max-height: calc(100vh - 100px);
+        overflow-y: auto;
     }
-    
+
     nav ul.active {
-      display: flex;
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
     }
-    
+
     nav ul li {
-      margin: 10px 0;
+        width: 100%;
+        border-bottom: 1px solid #f0f0f0;
+    }
+
+    nav ul li:last-child {
+        border-bottom: none;
+    }
+
+    nav ul li a {
+        display: block;
+        padding: 15px 20px;
+        color: var(--color-text) !important;
+        text-shadow: none !important;
+        font-size: 1.1rem;
+    }
+
+    nav ul li a:hover,
+    nav ul li a.active {
+        background: #f8f8f8;
+        color: var(--color-primary) !important;
+    }
+
+    nav ul li a::before {
+        display: none;
     }
     
     /* Hero section optimisée */
@@ -3391,102 +3548,7 @@ img {
     transform: scale(1.1);
 }
 
-/* Menu hamburger complet pour mobile */
-.menu-toggle {
-    display: none;
-    background: none;
-    border: none;
-    cursor: pointer;
-    padding: 10px;
-    z-index: 1001;
-    position: relative;
-    width: 44px;
-    height: 40px;
-  }
-  
-  .menu-toggle span {
-    display: block;
-    width: 24px;
-    height: 2px;
-    background: var(--color-primary);
-    margin: 5px auto;
-    transition: transform 0.3s ease, opacity 0.3s ease;
-  }
-  
-  /* Animation du menu hamburger en X */
-  .menu-toggle.active span:nth-child(1) {
-    transform: translateY(7px) rotate(45deg);
-  }
-  
-  .menu-toggle.active span:nth-child(2) {
-    opacity: 0;
-  }
-  
-  .menu-toggle.active span:nth-child(3) {
-    transform: translateY(-7px) rotate(-45deg);
-  }
-  
-  /* Styles de navigation mobile */
-  @media (max-width: 768px) {
-    header {
-      padding: 10px 15px;
-    }
-    
-    .menu-toggle {
-      display: block;
-    }
-    
-    nav ul {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(255, 255, 255, 0.95);
-      backdrop-filter: blur(10px);
-      flex-direction: column;
-      justify-content: center;
-      padding: 20px;
-      display: none;
-      z-index: 1000;
-      transition: transform 0.3s ease, opacity 0.3s ease;
-      transform: translateY(-100%);
-      opacity: 0;
-      height: 100vh;
-    }
-    
-    nav ul.active {
-      display: flex;
-      transform: translateY(0);
-      opacity: 1;
-    }
-    
-    nav ul li {
-      margin: 15px 0;
-      text-align: center;
-    }
-    
-    nav ul li a {
-      font-size: 1.4rem !important;
-      color: var(--color-text) !important;
-      text-shadow: none !important;
-      padding: 10px 0;
-      display: block;
-    }
-    
-    /* Gestion de l'icône panier dans le menu mobile */
-    .cart-icon {
-      margin: 20px auto 0;
-    }
-    
-    /* Arrière-plan sombre pour le header mobile au scroll */
-    header.scrolled {
-      background: rgba(255, 255, 255, 0.98);
-      backdrop-filter: blur(10px);
-    }
-  }
-
-  /* Optimisations mobile spécifiques pour la page d'accueil */
+/* Optimisations mobile spécifiques pour la page d'accueil */
 @media (max-width: 768px) {
     /* Hero section */
     #hero {
@@ -3677,11 +3739,11 @@ img {
     }
     
     .Goukies-intro h1 {
-      font-size: 2.5rem;
+      font-size: 2rem;
     }
-    
+
     .Goukies-intro p {
-      font-size: 1.1rem;
+      font-size: 1rem;
     }
     
     .Goukies-catalogue {
@@ -5184,47 +5246,7 @@ header.scrolled nav ul li a {
   }
 }
 
-
-
-/* Centre verticalement le menu hamburger sur toutes les pages */
-.menu-toggle {
-  display: flex;
-  flex-direction: column !important;
-  justify-content: center !important;
-  align-items: center !important;
-  height: 10px !important;
-  padding: 0 !important;
-  margin: 0 !important;
-  margin-bottom: 20px !important;
-  background: transparent !important;
-  border: none !important;
-}
-
-/* Centre les barres du hamburger à l'intérieur du bouton */
-.menu-toggle span {
-  display: block;
-  width: 25px !important;
-  height: 3px !important;
-  margin: 3px !important;
-  background-color: var(--color-primary) !important;
-}
-
-/* Assure que le header a une hauteur fixe pour toutes les pages */
-@media (max-width: 768px) {
-  header {
-    height: 60px !important;
-    display: flex;
-    align-items: center !important;
-  }
-  
-  /* Alignement du logo au centre vertical */
-  .logo {
-    display: flex;
-    align-items: center !important;
-  }
-}
-
-/* Add this to your styles.css file */
+/* Corrections spécifiques mobile */
 @media (max-width: 768px) {
   .quantity-btn {
     color: var(--color-text) !important; /* Force the text color */

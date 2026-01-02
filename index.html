@@ -102,17 +102,22 @@
 
 <header role="banner">
   <div class="logo">
-    <a href="index.html" aria-label="Retour à l'accueil">
-      <img src="logo/logo les100_DEF ROND.png" alt="Les 100 - Goukies artisanaux" />
+    <a href="index.html" aria-label="Retour à l'accueil - Les 100">
+      <img src="logo/logo les100_DEF ROND.png" alt="Les 100" width="70" height="70" />
     </a>
   </div>
   <nav role="navigation" aria-label="Navigation principale">
-    <ul role="menubar">
-      <li role="none"><a role="menuitem" href="Goukie.html" aria-label="Voir nos Goukies">Goukies</a></li>
-      <li role="none"><a role="menuitem" href="histoire.html" aria-label="Découvrir notre histoire">Notre Histoire</a></li>
-      <li role="none"><a role="menuitem" href="contact.html" aria-label="Nous contacter">Contact</a></li>
+    <ul>
+      <li><a href="Goukie.html" data-page="goukies">Goukies</a></li>
+      <li><a href="histoire.html" data-page="histoire">Notre Histoire</a></li>
+      <li><a href="contact.html" data-page="contact">Contact</a></li>
     </ul>
   </nav>
+  <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+  </button>
 </header>
 
 <section id="hero" class="parallax-container hero">

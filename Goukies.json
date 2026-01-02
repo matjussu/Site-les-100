@@ -1138,5 +1138,184 @@
       "parts_4_6": null,
       "parts_6_8": null
     }
+  },
+
+  {
+    "id": "le-88",
+    "nom": "Le 88",
+    "description": "Goukie doré au gingembre intense, cœur ultra fondant à la purée d'amande maison & gingembre frais.",
+    "images": [
+      "goukie_images/88.png",
+      "goukie_images/88-2.png"
+    ],
+    "categorie": "gourmets",
+    "ingredients": [
+      "Farine de riz bio",
+      "Sucre de canne blond bio",
+      "Margarine sans huile de palme",
+      "Compote de pommes bio fait maison",
+      "Gingembre bio",
+      "Patate douce bio"
+    ],
+    "prix": {
+      "petit": null,
+      "moyen": 5.00,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": null,
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
+    },
+    "format_standard": {
+      "unite": null,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": 5.00,
+      "x3": 14.00,
+      "x5": 23.00
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    }
+  },
+
+  {
+    "id": "le-21",
+    "nom": "Le 21",
+    "description": "Un goukie d'hiver chaleureux, 100 % marron. Un cœur généreux, moelleux, réconfortant, intensément gourmand.",
+    "images": [
+      "goukie_images/21.png",
+      "goukie_images/21-2.png"
+    ],
+    "categorie": "insolites",
+    "ingredients": [
+      "Farine de riz bio",
+      "Sucre de canne blond bio",
+      "Margarine sans huile de palme",
+      "Compote de pommes bio fait maison",
+      "Châtaigne bio"
+    ],
+    "prix": {
+      "petit": null,
+      "moyen": 5.00,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": null,
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
+    },
+    "format_standard": {
+      "unite": null,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": 5.00,
+      "x3": 14.00,
+      "x5": 23.00
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    }
+  },
+
+  {
+    "id": "apple-butter",
+    "nom": "Apple Butter",
+    "description": "Une crème de pommes cuite longuement, toute douce et réconfortante… avec une touche d'épices qui met vraiment la pomme en valeur. À tartiner, à ajouter dans un yaourt, sur une brioche… ou à savourer directement à la petite cuillère.",
+    "images": [
+      "goukie_images/apple_butter.webp"
+    ],
+    "categorie": "epicerie",
+    "ingredients": [
+      "Pommes bio",
+      "Sucre de canne blond bio",
+      "Sirop d'érable"
+    ],
+    "prix": {
+      "petit": null,
+      "moyen": 8.00,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": null,
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
+    },
+    "format_standard": {
+      "unite": null,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    }
+  },
+
+  {
+    "id": "pumpkin-butter",
+    "nom": "Pumpkin Butter",
+    "description": "Une pâte à tartiner ultra-veloutée, 100% maison, pleine de courge rôtie, de chaleur et de vraies épices d'automne. À tartiner sur du pain, à glisser dans un latte… ou directement à la cuillère.",
+    "images": [
+      "goukie_images/pumpkin_butter.webp"
+    ],
+    "categorie": "epicerie",
+    "ingredients": [
+      "Courge bio",
+      "Sirop d'érable",
+      "Sucre muscobado bio"
+    ],
+    "prix": {
+      "petit": null,
+      "moyen": 8.00,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": null,
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
+    },
+    "format_standard": {
+      "unite": null,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    }
   }
 ]

@@ -180,19 +180,24 @@
 <body>
   <div id="page-transition"></div>
 
-  <header>
+  <header role="banner">
     <div class="logo">
-      <a href="index.html">
-        <img src="logo/logo les100_DEF ROND.png" alt="Logo Les 100" />
+      <a href="index.html" aria-label="Retour à l'accueil - Les 100">
+        <img src="logo/logo les100_DEF ROND.png" alt="Les 100" width="70" height="70" />
       </a>
     </div>
-    <nav>
+    <nav role="navigation" aria-label="Navigation principale">
       <ul>
-        <li><a href="Goukie.html">Goukies</a></li>
-        <li><a href="histoire.html">Notre Histoire</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="Goukie.html" data-page="goukies">Goukies</a></li>
+        <li><a href="histoire.html" data-page="histoire">Notre Histoire</a></li>
+        <li><a href="contact.html" data-page="contact">Contact</a></li>
       </ul>
     </nav>
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </header>
 
 <section class="Goukies-intro">
@@ -203,6 +208,22 @@
       <p>Tout ce dont vous avez toujours rêvé sans gluten, sans oeufs et sans lactose</p>
     </div>
 </section>
+
+<!-- Barre de navigation des catégories -->
+<nav class="category-nav" aria-label="Catégories de Goukies">
+  <div class="category-nav-container">
+    <ul class="category-nav-list">
+      <li><a href="#edition-limitee" class="category-nav-link active">Édition Limitée</a></li>
+      <li><a href="#les-essentiels" class="category-nav-link">Les Essentiels</a></li>
+      <li><a href="#les-gourmets" class="category-nav-link">Les Gourmets</a></li>
+      <li><a href="#les-insolites" class="category-nav-link">Les Insolites</a></li>
+      <li><a href="#les-minis-essentiels" class="category-nav-link">Minis Essentiels</a></li>
+      <li><a href="#les-minis-gourmets" class="category-nav-link">Minis Gourmets</a></li>
+      <li><a href="#les-geants" class="category-nav-link">Les Géants</a></li>
+      <li><a href="#epicerie" class="category-nav-link">Épicerie</a></li>
+    </ul>
+  </div>
+</nav>
 
 <section class="Goukies-section" id="edition-limitee">
   <div class="container">
@@ -289,11 +310,30 @@
         <h3>Le 18</h3>
         <p>Chocolat et pistache réunis pour un Goukie aussi beau que bon.</p>
       </a>
+
+      <a href="Goukie-detail.html?id=le-88" class="Goukie-card">
+        <img src="goukie_images/88.png" alt="Le 88">
+        <h3>Le 88</h3>
+        <p>Goukie doré au gingembre intense, cœur ultra fondant à la purée d'amande maison & gingembre frais.</p>
+      </a>
     </div>
   </div>
 </section>
 
+<section class="Goukies-section" id="les-insolites">
+  <div class="container">
+    <h2 class="category-title">Les Insolites</h2>
+    <p class="category-description">Des créations originales et surprenantes pour les amateurs de saveurs inattendues.</p>
 
+    <div class="Goukies-grid">
+      <a href="Goukie-detail.html?id=le-21" class="Goukie-card">
+        <img src="goukie_images/21.png" alt="Le 21">
+        <h3>Le 21</h3>
+        <p>Un goukie d'hiver chaleureux, 100 % marron. Un cœur généreux, moelleux, réconfortant, intensément gourmand.</p>
+      </a>
+    </div>
+  </div>
+</section>
 
 <section class="Goukies-section" id="les-minis-essentiels">
   <div class="container">
@@ -393,6 +433,27 @@
         </div>
         <h3>Commande sur mesure</h3>
         <p>Contactez-nous pour commander n'importe quel parfum en version géante</p>
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="Goukies-section" id="epicerie">
+  <div class="container">
+    <h2 class="category-title">Épicerie</h2>
+    <p class="category-description">Nos pâtes à tartiner artisanales, 100% maison, sans gluten, sans œufs et sans lactose.</p>
+
+    <div class="Goukies-grid">
+      <a href="Goukie-detail.html?id=apple-butter" class="Goukie-card">
+        <img src="goukie_images/apple_butter.webp" alt="Apple Butter">
+        <h3>Apple Butter</h3>
+        <p>Une crème de pommes cuite longuement, toute douce et réconfortante… avec une touche d'épices qui met vraiment la pomme en valeur.</p>
+      </a>
+
+      <a href="Goukie-detail.html?id=pumpkin-butter" class="Goukie-card">
+        <img src="goukie_images/pumpkin_butter.webp" alt="Pumpkin Butter">
+        <h3>Pumpkin Butter</h3>
+        <p>Une pâte à tartiner ultra-veloutée, 100% maison, pleine de courge rôtie, de chaleur et de vraies épices d'automne.</p>
       </a>
     </div>
   </div>

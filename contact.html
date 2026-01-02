@@ -66,19 +66,24 @@
 <body>
     <div id="page-transition"></div>
 
-    <header>
+    <header role="banner">
         <div class="logo">
-            <a href="index.html">
-                <img src="logo/logo les100_DEF ROND.png" alt="Logo Les 100" />
+            <a href="index.html" aria-label="Retour à l'accueil - Les 100">
+                <img src="logo/logo les100_DEF ROND.png" alt="Les 100" width="70" height="70" />
             </a>
         </div>
-        <nav>
+        <nav role="navigation" aria-label="Navigation principale">
             <ul>
-                <li><a href="Goukie.html">Goukies</a></li>
-                <li><a href="histoire.html">Notre Histoire</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="Goukie.html" data-page="goukies">Goukies</a></li>
+                <li><a href="histoire.html" data-page="histoire">Notre Histoire</a></li>
+                <li><a href="contact.html" data-page="contact">Contact</a></li>
             </ul>
         </nav>
+        <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
     </header>
 
     <section class="contact-hero">

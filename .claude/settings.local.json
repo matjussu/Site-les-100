@@ -1,0 +1,19 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(/tmp/styles-head.css)",
+      "Bash(/tmp/styles-tail.css)",
+      "Bash(chmod:*)",
+      "Bash(awk:*)",
+      "Bash(./optimize-css.sh:*)",
+      "Bash(sed:*)",
+      "Bash(mv:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "Bash(identify:*)",
+      "Bash(python3:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

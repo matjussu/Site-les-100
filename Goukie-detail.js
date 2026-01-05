@@ -15,15 +15,15 @@ let currentImageIndex = 0;
 
 
 // 2. Gestion des options de taille
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Initialisation du Goukie sélectionné
   fetchGoukieData();
-  
+
   // Gestion de la quantité
   const quantityInput = document.getElementById('quantity');
   const minusBtn = document.querySelector('.quantity-btn.minus');
   const plusBtn = document.querySelector('.quantity-btn.plus');
-  
+
   minusBtn.addEventListener('click', () => {
     if (quantity > 1) {
       quantity--;
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', function() {
       updatePrice();
     }
   });
-  
+
   plusBtn.addEventListener('click', () => {
     if (quantity < 10) {
       quantity++;
@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
       updatePrice();
     }
   });
-  
+
   quantityInput.addEventListener('change', () => {
     quantity = parseInt(quantityInput.value);
     if (quantity < 1) quantity = 1;
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function() {
     quantityInput.value = quantity;
     updatePrice();
   });
-  
+
 });
 
 // NOUVEAU : Fonction pour mettre à jour la galerie (image principale et vignettes)
@@ -57,7 +57,7 @@ function updateGallery(index) {
 
   // Mettre à jour l'image principale
   mainImg.src = GoukieImages[index];
-  
+
   // Mettre à jour la classe 'active' sur les vignettes
   thumbnails.forEach((thumb, i) => {
     if (i === index) {
@@ -80,10 +80,10 @@ function updatePrice() {
 // Fonction pour configurer les boutons de taille en fonction du type de Goukie
 function setupSizeButtons(Goukie) {
   const sizeSelector = document.querySelector('.size-selector');
-  
+
   // Vider le sélecteur de taille actuel
   sizeSelector.innerHTML = '';
-  
+
   // Déterminer la catégorie du Goukie et configurer les boutons en conséquence
   if (Goukie.categorie === 'essentiels') {
     // Pour les Goukies essentiels: petit, moyen
@@ -127,23 +127,23 @@ function setupSizeButtons(Goukie) {
       addSizeButton(sizeSelector, 'geant_6_8', 'Géant 6-8 parts', Goukie.format_geant.parts_6_8);
     }
   }
-  
+
   // Ajouter les écouteurs d'événements pour les boutons de taille
   const sizeOptions = document.querySelectorAll('.size-option');
   sizeOptions.forEach(button => {
-    button.addEventListener('click', function() {
+    button.addEventListener('click', function () {
       // Retirer la classe active de tous les boutons
       sizeOptions.forEach(btn => btn.classList.remove('active'));
       // Ajouter la classe active au bouton cliqué
       this.classList.add('active');
-      
+
       // Mettre à jour la taille sélectionnée et le prix
       selectedSize = this.dataset.size;
       currentPrice = parseFloat(this.querySelector('.price').dataset.price);
       updatePrice();
     });
   });
-  
+
   // Sélectionner le premier bouton par défaut
   if (sizeOptions.length > 0) {
     sizeOptions[0].click();
@@ -163,7 +163,7 @@ function addSizeButton(container, sizeId, sizeLabel, price) {
 function displayPackFormats(Goukie) {
   const optionGroup = document.querySelector('.option-group');
   const priceContainer = document.querySelector('.Goukie-price-container');
-  
+
   // Créer un élément pour afficher les offres de lots si applicable
   if (Goukie.categorie === 'essentiels' && Goukie.format_standard.x4 !== null) {
     const packInfo = document.createElement('div');
@@ -252,7 +252,7 @@ function fetchGoukieData() {
             thumb.addEventListener('click', () => updateGallery(index));
             thumbnailContainer.appendChild(thumb);
           });
-          
+
           // Affiche les boutons de navigation
           prevBtn.style.display = 'flex';
           nextBtn.style.display = 'flex';
@@ -281,14 +281,14 @@ function fetchGoukieData() {
 
       document.getElementById('Goukie-name').textContent = Goukie.nom;
       document.getElementById('Goukie-desc').textContent = Goukie.description;
-      
+
       if (Goukie.id.toLowerCase() === 'mai') {
         document.getElementById('Goukie-badge').style.display = 'block';
       }
-      
+
       setupSizeButtons(Goukie);
       displayPackFormats(Goukie);
-      
+
       const ingredientList = document.getElementById('ingredient-list');
       ingredientList.innerHTML = '';
       Goukie.ingredients.forEach(ingredient => {
@@ -296,7 +296,23 @@ function fetchGoukieData() {
         li.textContent = ingredient;
         ingredientList.appendChild(li);
       });
-      
+
+      // AJOUT : Carte Circuit Court / Provenance
+      // Supprime une éventuelle carte existante (au cas où)
+      const existingCard = document.querySelector('.provenance-card');
+      if (existingCard) existingCard.remove();
+
+      if (Goukie.provenance) {
+        const ingredientsContainer = document.querySelector('.Goukie-ingredients');
+        const provenanceCard = document.createElement('div');
+        provenanceCard.className = 'provenance-card';
+        provenanceCard.innerHTML = `
+          <span class="provenance-badge">Circuit court</span>
+          <p class="provenance-text">Les ${Goukie.provenance_ingredient || 'ingrédients bio'} proviennent de : ${Goukie.provenance}</p>
+        `;
+        ingredientsContainer.appendChild(provenanceCard);
+      }
+
       const addToCartBtn = document.querySelector('.add-to-cart');
       addToCartBtn.addEventListener('click', (event) => {
         const product = {
@@ -307,12 +323,12 @@ function fetchGoukieData() {
           prix: currentPrice,
           quantity: quantity
         };
-        
+
         if (typeof addToCart === 'function') {
           addToCart(product, event);
         }
       });
-      
+
       setupSuggestions(Goukies, Goukie);
     })
     .catch(err => {
@@ -324,16 +340,16 @@ function fetchGoukieData() {
 function setupSuggestions(allGoukies, currentGoukie) {
   const suggestionsTrack = document.getElementById('suggestions-track');
   suggestionsTrack.innerHTML = '';
-  
+
   const filteredGoukies = allGoukies.filter(c => c.id !== currentGoukie.id);
-  
+
   const sortedSuggestions = [
     ...filteredGoukies.filter(c => c.categorie === currentGoukie.categorie),
     ...filteredGoukies.filter(c => c.categorie !== currentGoukie.categorie)
   ];
-  
+
   const suggestions = sortedSuggestions.slice(0, 6);
-  
+
   suggestions.forEach(Goukie => {
     const card = document.createElement('a');
     card.href = `Goukie-detail.html?id=${Goukie.id}`;
@@ -346,22 +362,22 @@ function setupSuggestions(allGoukies, currentGoukie) {
     `;
     suggestionsTrack.appendChild(card);
   });
-  
+
   document.getElementById('prevSuggestion').addEventListener('click', () => {
     const track = document.getElementById('suggestions-track');
     const cardWidth = track.querySelector('.Goukie-card').offsetWidth + 24;
-    track.scrollBy({ 
+    track.scrollBy({
       left: -cardWidth * 3,
-      behavior: 'smooth' 
+      behavior: 'smooth'
     });
   });
 
   document.getElementById('nextSuggestion').addEventListener('click', () => {
     const track = document.getElementById('suggestions-track');
     const cardWidth = track.querySelector('.Goukie-card').offsetWidth + 24;
-    track.scrollBy({ 
+    track.scrollBy({
       left: cardWidth * 3,
-      behavior: 'smooth' 
+      behavior: 'smooth'
     });
   });
 
@@ -372,7 +388,7 @@ function setupSuggestions(allGoukies, currentGoukie) {
   function updateButtonsVisibility() {
     prevBtn.style.opacity = track.scrollLeft <= 0 ? '0.5' : '1';
     prevBtn.style.pointerEvents = track.scrollLeft <= 0 ? 'none' : 'auto';
-    
+
     const maxScroll = track.scrollWidth - track.clientWidth;
     nextBtn.style.opacity = track.scrollLeft >= maxScroll - 5 ? '0.5' : '1';
     nextBtn.style.pointerEvents = track.scrollLeft >= maxScroll - 5 ? 'none' : 'auto';

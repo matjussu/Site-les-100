@@ -45,12 +45,13 @@
       "parts_6_8": null
     }
   },
-
   {
     "id": "le-11m",
     "nom": "Mini Le 11",
     "description": "Nature aux pépites de chocolat",
-    "images": ["goukie_images/11m.png"],
+    "images": [
+      "goukie_images/11m.png"
+    ],
     "categorie": "essentiels",
     "ingredients": [
       "Farine de riz Bio",
@@ -89,7 +90,6 @@
       "parts_6_8": null
     }
   },
-
   {
     "id": "le-08",
     "nom": "Le 08",
@@ -137,11 +137,12 @@
       "parts_6_8": null
     }
   },
-
   {
     "id": "le-08-m",
     "nom": "Mini Le 08",
-    "images": ["goukie_images/08m.png"],
+    "images": [
+      "goukie_images/08m.png"
+    ],
     "description": " Goukie chocolat avec des pépites de chocolats",
     "categorie": "essentiels",
     "ingredients": [
@@ -182,12 +183,13 @@
       "parts_6_8": null
     }
   },
-
   {
     "id": "le-27m",
     "nom": "Mini Le 27",
     "description": "Un incontournable au beurre de cacahuètes bio maison.",
-    "images": ["goukie_images/27m.png"],
+    "images": [
+      "goukie_images/27m.png"
+    ],
     "categorie": "essentiels",
     "ingredients": [
       "Farine de riz Bio",
@@ -232,7 +234,8 @@
     "description": "Un Goukie aux cramberries bio",
     "images": [
       "goukie_images/05.png",
-      "goukie_images/05-2.png"],
+      "goukie_images/05-2.png"
+    ],
     "categorie": "essentiels",
     "ingredients": [
       "Farine de riz Bio",
@@ -271,12 +274,13 @@
       "parts_6_8": null
     }
   },
-
-    {
+  {
     "id": "le-05m",
     "nom": "Mini le 05",
     "description": "Un Goukie aux cramberries bio",
-    "images": ["goukie_images/05m.png"],
+    "images": [
+      "goukie_images/05m.png"
+    ],
     "categorie": "essentiels",
     "ingredients": [
       "Farine de riz Bio",
@@ -315,7 +319,6 @@
       "parts_6_8": null
     }
   },
-
   {
     "id": "le-03",
     "nom": "Le 03",
@@ -363,9 +366,8 @@
       "parts_6_8": null
     }
   },
-
-    {
-   "id": "le-03m",
+  {
+    "id": "le-03m",
     "nom": "Le 03 Mini",
     "description": "Nature avec des pépites de chocolat et un cœur fondant au Nocciolata.",
     "images": [
@@ -384,7 +386,7 @@
     ],
     "prix": {
       "petit": null,
-      "moyen": 3.50
+      "moyen": 3
     },
     "format_mini": {
       "unite": 3.00,
@@ -453,8 +455,7 @@
       "parts_6_8": null
     }
   },
-
-    {
+  {
     "id": "le-04m",
     "nom": "Le 04 mini",
     "description": "Nature avec des pépites de chocolat et un cœur fondant au Nocciolata.",
@@ -474,7 +475,7 @@
     ],
     "prix": {
       "petit": null,
-      "moyen": 3.50,
+      "moyen": 3,
       "grand": null
     },
     "format_mini": {
@@ -501,9 +502,8 @@
       "parts_6_8": null
     }
   },
-
   {
-   "id": "le-04-big",
+    "id": "le-04-big",
     "nom": "géant Gourmands",
     "description": "Tout les Goukies gourmands peuvent être adaptés en géant sur commande",
     "images": [
@@ -596,8 +596,7 @@
       "parts_6_8": null
     }
   },
-
-   {
+  {
     "id": "le-06m",
     "nom": "Le 06 mini",
     "description": "Chocolat  avec des pépites de chocolat et un cœur fondant au Nocciolata",
@@ -618,7 +617,7 @@
     ],
     "prix": {
       "petit": null,
-      "moyen": 3.50,
+      "moyen": 3,
       "grand": null
     },
     "format_mini": {
@@ -635,14 +634,11 @@
       "unite": null,
       "x4": null
     },
-
     "format_geant": {
       "parts_4_6": null,
       "parts_6_8": null
     }
   },
-
-  
   {
     "id": "le-10",
     "nom": "Le 10",
@@ -690,7 +686,6 @@
       "parts_6_8": null
     }
   },
-
   {
     "id": "10mini",
     "nom": "Le 10 mini",
@@ -711,16 +706,16 @@
     ],
     "prix": {
       "petit": null,
-      "moyen": 3.50,
+      "moyen": 3,
       "grand": null
     },
     "format_mini": {
       "unite": null,
       "x2": null,
-      "x3": null,
-      "x6": null,
+      "x3": 8,
+      "x6": 14,
       "x9": null,
-      "x12": null,
+      "x10": 23,
       "x18": null,
       "x24": null
     },
@@ -781,9 +776,8 @@
       "parts_6_8": null
     }
   },
-
   {
-  "id": "le-18m",
+    "id": "le-18m",
     "nom": "le 18 mini",
     "description": " Chocolat  avec des pépites de chocolat et un cœur fondant à la pistache",
     "images": [
@@ -803,7 +797,7 @@
     ],
     "prix": {
       "petit": null,
-      "moyen": 3.50,
+      "moyen": 3,
       "grand": null
     },
     "format_mini": {
@@ -829,7 +823,9 @@
     "id": "le-02",
     "nom": "Le 02",
     "description": "Une touche citronnée subtile pour un Goukie frais et surprenant. Léger et parfait pour l'été.",
-    "images": ["image/citron.jpeg"],
+    "images": [
+      "image/citron.jpeg"
+    ],
     "categorie": "essentiels",
     "ingredients": [
       "Farine de riz bio",
@@ -867,13 +863,13 @@
       "parts_6_8": 42.00
     }
   },
-
-  
   {
     "id": "le-65",
     "nom": "Le 65",
     "description": "Praliné maison dans une base de Goukie généreuse. Une délicieuse alliance de noisettes caramélisées et de Goukie moelleux.",
-    "images": ["image/Goukie PNG/pralin.jpg"],
+    "images": [
+      "image/Goukie PNG/pralin.jpg"
+    ],
     "categorie": "essentiels",
     "ingredients": [
       "Farine de riz bio",
@@ -915,7 +911,9 @@
     "id": "le-12",
     "nom": "Le 12",
     "description": "Un cœur pistache au centre d'un Goukie moelleux aux pépites. Notre version du Goukie Le 10 avec des pépites de chocolat en plus.",
-    "images": ["image/Goukie PNG/le 12 Pistache.png"],
+    "images": [
+      "image/Goukie PNG/le 12 Pistache.png"
+    ],
     "categorie": "mini",
     "ingredients": [
       "Farine de riz bio",
@@ -943,49 +941,6 @@
     },
     "format_standard": {
       "unite": null,
-      "x4": null
-    },
-    "format_gourmet": {
-      "unite": null,
-      "x3": null,
-      "x5": null
-    },
-    "format_geant": {
-      "parts_4_6": null,
-      "parts_6_8": null
-    }
-  },
-  {
-    "id": "mai",
-    "nom": "Mai - Coeur coco",
-    "description": "Le Goukie du mois, en édition limitée. Un Goukie coco avec un cœur fondant à la noix de coco. Parfait pour les amateurs de saveurs tropicales.",
-    "images": ["image/Goukie PNG/Mai_2.jpeg"],
-    "categorie": "edition_limitee",
-    "ingredients": [
-      "Farine de riz bio",
-      "Cacao en poudre bio",
-      "poudre de coco bio",
-      "Sucre de canne blond bio",
-      "Boisson végétale",
-      "Pomme bio"
-    ],
-    "prix": {
-      "petit": 2.50,
-      "moyen": 5.00,
-      "grand": null
-    },
-    "format_mini": {
-      "unite": 2.50,
-      "x2": 4.50,
-      "x3": 6.50,
-      "x6": 12.50,
-      "x9": 18.00,
-      "x12": 24.00,
-      "x18": 35.00,
-      "x24": 47.00
-    },
-    "format_standard": {
-      "unite": 5.00,
       "x4": null
     },
     "format_gourmet": {
@@ -1045,7 +1000,6 @@
       "parts_6_8": null
     }
   },
-
   {
     "id": "novembre",
     "nom": "Le 31",
@@ -1093,7 +1047,6 @@
       "parts_6_8": null
     }
   },
-
   {
     "id": "septembre",
     "nom": "Le 09 - Crumble Amande",
@@ -1139,7 +1092,6 @@
       "parts_6_8": null
     }
   },
-
   {
     "id": "le-88",
     "nom": "Le 88",
@@ -1186,7 +1138,6 @@
       "parts_6_8": null
     }
   },
-
   {
     "id": "le-21",
     "nom": "Le 21",
@@ -1205,7 +1156,7 @@
     ],
     "prix": {
       "petit": null,
-      "moyen": 5.00,
+      "moyen": 5.50,
       "grand": null
     },
     "format_mini": {
@@ -1224,23 +1175,24 @@
     },
     "format_gourmet": {
       "unite": 5.00,
-      "x3": 14.00,
-      "x5": 23.00
+      "x3": 15.50,
+      "x5": 26.00
     },
     "format_geant": {
       "parts_4_6": null,
       "parts_6_8": null
     }
   },
-
   {
     "id": "apple-butter",
     "nom": "Apple Butter",
-    "description": "Une crème de pommes cuite longuement, toute douce et réconfortante… avec une touche d'épices qui met vraiment la pomme en valeur. À tartiner, à ajouter dans un yaourt, sur une brioche… ou à savourer directement à la petite cuillère.",
+    "description": "Une crème de pommes cuite longuement, toute douce et réconfortante… avec une touche d'épices qui met vraiment la pomme en valeur. À tartiner, à ajouter dans un yaourt, sur une brioche… ou à savourer directement à la petite cuillère. Les pots font 220ml.",
     "images": [
       "goukie_images/apple_butter.webp"
     ],
     "categorie": "epicerie",
+    "provenance": "La Pommeraie de Chaussoy-Epagny",
+    "provenance_ingredient": "pommes bio",
     "ingredients": [
       "Pommes bio",
       "Sucre de canne blond bio",
@@ -1248,7 +1200,7 @@
     ],
     "prix": {
       "petit": null,
-      "moyen": 8.00,
+      "moyen": 6.00,
       "grand": null
     },
     "format_mini": {
@@ -1275,23 +1227,24 @@
       "parts_6_8": null
     }
   },
-
   {
     "id": "pumpkin-butter",
     "nom": "Pumpkin Butter",
-    "description": "Une pâte à tartiner ultra-veloutée, 100% maison, pleine de courge rôtie, de chaleur et de vraies épices d'automne. À tartiner sur du pain, à glisser dans un latte… ou directement à la cuillère.",
+    "description": "Une pâte à tartiner ultra-veloutée, 100% maison, pleine de courge rôtie, de chaleur et de vraies épices d'automne. À tartiner sur du pain, à glisser dans un latte… ou directement à la cuillère. Les pots font 220ml. ",
     "images": [
       "goukie_images/pumpkin_butter.webp"
     ],
     "categorie": "epicerie",
+    "provenance": "La ferme de l'horizon à Saint-Leu d'Esserent",
+    "provenance_ingredient": "courges bio",
     "ingredients": [
       "Courge bio",
       "Sirop d'érable",
-      "Sucre muscobado bio"
+      "Sucre muscovado bio"
     ],
     "prix": {
       "petit": null,
-      "moyen": 8.00,
+      "moyen": 6.50,
       "grand": null
     },
     "format_mini": {

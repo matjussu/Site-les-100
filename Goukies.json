@@ -822,21 +822,21 @@
   {
     "id": "le-02",
     "nom": "Le 02",
-    "description": "Une touche citronnée subtile pour un Goukie frais et surprenant. Léger et parfait pour l'été.",
+    "description": "Le gookie du mois de Janvier ! Une touche citronnée subtile pour un Goukie gourmand.",
     "images": [
-      "image/citron.jpeg"
+      "goukie_images/02.png"
     ],
-    "categorie": "essentiels",
+    "categorie": "insolites",
     "ingredients": [
-      "Farine de riz bio",
-      "Citron bio",
-      "Sucre de canne blond bio",
-      "Boisson végétale de riz et d'amandes bio",
-      "Pomme bio"
+      "Farine de riz Bio",
+      "Sucre de canne blond Bio",
+      "Compote de pomme bio fait maison",
+      "Margarine sans huile de palme",
+      "Citron bio"
     ],
     "prix": {
-      "petit": 2.50,
-      "moyen": 4.50,
+      "petit": null,
+      "moyen": 5.50,
       "grand": null
     },
     "format_mini": {
@@ -850,17 +850,17 @@
       "x24": 47.00
     },
     "format_standard": {
-      "unite": 4.50,
-      "x4": 16.00
+      "unite": null,
+      "x4": null
     },
     "format_gourmet": {
-      "unite": null,
-      "x3": null,
-      "x5": null
+      "unite": 5.50,
+      "x3": 15.50,
+      "x5": 26.00
     },
     "format_geant": {
-      "parts_4_6": 36.00,
-      "parts_6_8": 42.00
+      "parts_4_6": null,
+      "parts_6_8": null
     }
   },
   {
@@ -1265,6 +1265,52 @@
       "unite": null,
       "x3": null,
       "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    }
+  },
+  {
+    "id": "le-35",
+    "nom": "Le 35",
+    "description": "Une pâte coco douce et délicate avec un cœur fondant d’azuki",
+    "images": [
+      "goukie_images/35.png",
+      "goukie_images/35-2.png"
+    ],
+    "categorie": "gourmets",
+    "ingredients": [
+      "Farine de riz Bio",
+      "Sucre de canne blond Bio",
+      "Compote de pomme bio fait maison",
+      "Margarine sans huile de palme",
+      "Noix de coco",
+      "Pâte de haricots rouges Azuki"
+    ],
+    "prix": {
+      "petit": null,
+      "moyen": 5.00,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": null,
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
+    },
+    "format_standard": {
+      "unite": null,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": 5.00,
+      "x3": 14.00,
+      "x5": 23.00
     },
     "format_geant": {
       "parts_4_6": null,

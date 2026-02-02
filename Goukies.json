@@ -866,11 +866,11 @@
   {
     "id": "le-65",
     "nom": "Le 65",
-    "description": "Praliné maison dans une base de Goukie généreuse. Une délicieuse alliance de noisettes caramélisées et de Goukie moelleux.",
+    "description": "Le goukie pralin de février. Pralin maison, noisettes et amandes bio torréfiées.",
     "images": [
-      "image/Goukie PNG/pralin.jpg"
+      "goukie_images/65.png"
     ],
-    "categorie": "essentiels",
+    "categorie": "insolites",
     "ingredients": [
       "Farine de riz bio",
       "Praliné maison bio (noisettes caramélisées)",

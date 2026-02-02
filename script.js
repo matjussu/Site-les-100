@@ -825,10 +825,10 @@ const HistoirePage = {
 // ==========================================
 const GoukieOfTheMonth = {
   data: {
-    id: "novembre",
-    nom: "Novembre - Crumble Amande",
-    description: "Découvrez notre Goukie de la rentrée : une base sablée recouverte d'un crumble croustillant à l'amande.",
-    image: "goukie_images/le-novembre-1.webp",
+    id: "le-65",
+    nom: "Le 65 - Pralin de Février",
+    description: "Le goukie pralin de février. Pralin maison, noisettes et amandes bio torréfiées.",
+    image: "goukie_images/65.png",
     featured: true
   },
 

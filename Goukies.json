@@ -907,6 +907,49 @@
     }
   },
   {
+    "id": "le-20",
+    "nom": "Le 20",
+    "description": "Le goukie de mars à l'érable. Un goukie moelleux au sucre d'érable, relevé de cristaux croquants qui révèlent toute son intensité.",
+    "images": [
+      "goukie_images/20.png"
+    ],
+    "categorie": "insolites",
+    "ingredients": [
+      "Farine de riz bio",
+      "Sucre d'érable",
+      "Sucre de canne blond bio",
+      "Compote de pomme bio"
+    ],
+    "prix": {
+      "petit": 2.50,
+      "moyen": 4.50,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": 2.50,
+      "x2": 4.50,
+      "x3": 6.50,
+      "x6": 12.50,
+      "x9": 18.00,
+      "x12": 24.00,
+      "x18": 35.00,
+      "x24": 47.00
+    },
+    "format_standard": {
+      "unite": 4.50,
+      "x4": 16.00
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    }
+  },
+  {
     "id": "le-12",
     "nom": "Le 12",
     "description": "Un cœur pistache au centre d'un Goukie moelleux aux pépites. Notre version du Goukie Le 10 avec des pépites de chocolat en plus.",

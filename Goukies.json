@@ -917,12 +917,11 @@
     "ingredients": [
       "Farine de riz bio",
       "Sucre d'érable",
-      "Sucre de canne blond bio",
       "Compote de pomme bio"
     ],
     "prix": {
       "petit": 2.50,
-      "moyen": 4.50,
+      "moyen": 5.50,
       "grand": null
     },
     "format_mini": {

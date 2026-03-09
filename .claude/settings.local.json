@@ -13,7 +13,10 @@
       "Bash(identify:*)",
       "Bash(python3:*)",
       "Bash(git checkout:*)",
-      "Bash(git merge:*)"
+      "Bash(git merge:*)",
+      "Bash(wc:*)",
+      "WebSearch",
+      "WebFetch(domain:formsubmit.co)"
     ],
     "deny": [],
     "ask": []

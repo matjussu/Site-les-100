@@ -371,14 +371,37 @@
     <script>
         // Animation du contenu de la page
         document.addEventListener('DOMContentLoaded', function() {
+            // Détection commande
+            var wasOrder = localStorage.getItem('orderSubmitted');
+            if (wasOrder === 'true') {
+                var heroH1 = document.querySelector('.thank-you-hero-content h1');
+                var heroP = document.querySelector('.thank-you-hero-content p');
+                var contentH2 = document.querySelector('.thank-you-content h2');
+                var contentP = document.querySelectorAll('.thank-you-content p');
+
+                if (heroH1) heroH1.textContent = 'Commande envoyée !';
+                if (heroP) heroP.textContent = 'Merci pour votre commande';
+                if (contentH2) contentH2.textContent = 'Merci pour votre commande !';
+                if (contentP[0]) contentP[0].textContent = 'Nous avons bien reçu votre commande et nous vous contacterons rapidement pour confirmer les détails et le retrait.';
+                if (contentP[1]) contentP[1].textContent = 'À très bientôt au marché !';
+
+                // Vider le panier
+                localStorage.removeItem('cart');
+                localStorage.removeItem('orderSubmitted');
+
+                // Mettre à jour le badge panier
+                var cartCount = document.querySelector('.cart-count');
+                if (cartCount) cartCount.textContent = '0';
+            }
+
             // Anime les éléments avec un délai
-            const thankYouContent = document.querySelector('.thank-you-content');
-            const actionButtons = document.querySelector('.action-buttons');
-            
-            setTimeout(() => {
+            var thankYouContent = document.querySelector('.thank-you-content');
+            var actionButtons = document.querySelector('.action-buttons');
+
+            setTimeout(function() {
                 thankYouContent.style.opacity = '0';
                 thankYouContent.style.transform = 'translateY(30px)';
-                
+
                 // Animation avec GSAP
                 gsap.to(thankYouContent, {
                     opacity: 1,
@@ -386,7 +409,7 @@
                     duration: 0.8,
                     ease: 'power2.out'
                 });
-                
+
                 gsap.to(actionButtons, {
                     opacity: 1,
                     y: 0,

@@ -592,11 +592,11 @@ const Cart = {
             <span>${this.calculateTotal()}€</span>
           </div>
           <div class="cart-info">
-            <p>Les Goukies sont disponibles uniquement au marché de Gouvieux, tous les dimanches.</p>
+            <p>Les Goukies sont disponibles uniquement au marché le vendredi, samedi et dimanche. Si vous voulez faire une commande, veuillez nous contacter.</p>
             <p>Suivez-nous sur Instagram <a href="https://instagram.com/les100_gluten_oeuf_lactose" target="_blank">@les100_gluten_oeuf_lactose</a></p>
           </div>
           <div class="cart-actions">
-            <a href="contact.html" class="contact-btn">Nous contacter</a>
+            ${cart.length > 0 ? '<a href="contact.html?panier=1" class="contact-btn">Commander ces goukies</a>' : ''}
             <button class="close-cart-btn">Continuer vos découvertes</button>
           </div>
         </div>

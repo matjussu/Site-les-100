@@ -98,8 +98,8 @@
     <section class="contact-hero">
         <div class="contact-hero-overlay"></div>
         <div class="contact-hero-content">
-            <h1>Contactez-nous</h1>
-            <p>Une question ? Une commande spéciale ? Nous sommes à votre écoute</p>
+            <h1 id="contact-hero-title">Contactez-nous</h1>
+            <p id="contact-hero-subtitle">Une question ? Une commande spéciale ? Nous sommes à votre écoute</p>
         </div>
     </section>
 
@@ -139,7 +139,17 @@
             </div>
 
             <div class="contact-form-wrapper">
-                <h2>Envoyez-nous un message</h2>
+                <div id="order-summary" class="order-summary" style="display: none;">
+                    <h3>Récapitulatif de votre panier</h3>
+                    <div id="order-items"></div>
+                    <div class="order-total">
+                        <span>Total :</span>
+                        <span id="order-total-value"></span>
+                    </div>
+                    <button type="button" id="modify-cart-btn" class="modify-cart-link">Modifier le panier</button>
+                    <p class="order-disclaimer">Les prix sont indicatifs. Le montant exact sera confirmé lors du retrait.</p>
+                </div>
+                <h2 id="form-heading">Envoyez-nous un message</h2>
                 <form id="contact-form" class="contact-form" action="https://formsubmit.co/sophie.les100@gmail.com"
                     method="POST">
                     <!-- Champs de configuration FormSubmit -->

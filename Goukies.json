@@ -1357,5 +1357,51 @@
       "parts_4_6": null,
       "parts_6_8": null
     }
+  },
+  {
+    "id": "le-30",
+    "nom": "Le 30",
+    "description": "Le goukie du printemps. Une base vanille douce et dorée, un cœur fondant à l'ube, intensément violet et délicatement parfumé.",
+    "images": [
+      "goukie_images/30.webp",
+      "goukie_images/30-2.webp"
+    ],
+    "categorie": "insolites",
+    "ingredients": [
+      "Farine de riz Bio",
+      "Sucre de canne blond Bio",
+      "Extrait de vanille",
+      "Compote de pomme bio fait maison",
+      "Margarine sans huile de palme",
+      "Ube (igname violette)"
+    ],
+    "prix": {
+      "petit": null,
+      "moyen": 5.00,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": 2.50,
+      "x2": 4.50,
+      "x3": 6.50,
+      "x6": 12.50,
+      "x9": 18.00,
+      "x12": 24.00,
+      "x18": 35.00,
+      "x24": 47.00
+    },
+    "format_standard": {
+      "unite": 5.00,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    }
   }
 ]

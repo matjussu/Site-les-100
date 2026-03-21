@@ -1368,16 +1368,15 @@
     ],
     "categorie": "insolites",
     "ingredients": [
+      "Vanille Bio",
+      "Ube (igname violette)",
       "Farine de riz Bio",
       "Sucre de canne blond Bio",
-      "Extrait de vanille",
-      "Compote de pomme bio fait maison",
-      "Margarine sans huile de palme",
-      "Ube (igname violette)"
+      "Compote de pomme maison Bio"
     ],
     "prix": {
       "petit": null,
-      "moyen": 5.00,
+      "moyen": 5.50,
       "grand": null
     },
     "format_mini": {
@@ -1391,7 +1390,7 @@
       "x24": 47.00
     },
     "format_standard": {
-      "unite": 5.00,
+      "unite": 5.50,
       "x4": null
     },
     "format_gourmet": {

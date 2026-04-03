@@ -825,10 +825,10 @@ const HistoirePage = {
 // ==========================================
 const GoukieOfTheMonth = {
   data: {
-    id: "le-65",
-    nom: "Le 65 - Pralin de Février",
-    description: "Le goukie pralin de février. Pralin maison, noisettes et amandes bio torréfiées.",
-    image: "goukie_images/65.png",
+    id: "le-19",
+    nom: "Le 19 - Browkie d'Avril",
+    description: "Une base goukie nature moelleuse aux pépites de chocolat, recouverte d'un brownie fondant.",
+    image: "goukie_images/19.png",
     featured: true
   },
 

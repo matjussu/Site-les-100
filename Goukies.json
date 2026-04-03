@@ -1402,5 +1402,50 @@
       "parts_4_6": null,
       "parts_6_8": null
     }
+  },
+  {
+    "id": "le-19",
+    "nom": "Le 19",
+    "description": "Le BROWKIE d'avril. Une base goukie nature moelleuse aux pépites de chocolat, recouverte d'un brownie fondant.",
+    "images": [
+      "goukie_images/19.png",
+      "goukie_images/19-2.png"
+    ],
+    "categorie": "insolites",
+    "ingredients": [
+      "Farine de riz Bio",
+      "Sucre de canne blond Bio",
+      "Compote de pomme maison Bio",
+      "Chocolat noir",
+      "Cacao en poudre non sucré"
+    ],
+    "prix": {
+      "petit": null,
+      "moyen": 5.50,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": 2.50,
+      "x2": 4.50,
+      "x3": 6.50,
+      "x6": 12.50,
+      "x9": 18.00,
+      "x12": 24.00,
+      "x18": 35.00,
+      "x24": 47.00
+    },
+    "format_standard": {
+      "unite": 5.50,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    }
   }
 ]

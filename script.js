@@ -825,10 +825,10 @@ const HistoirePage = {
 // ==========================================
 const GoukieOfTheMonth = {
   data: {
-    id: "le-19",
-    nom: "Le 19 - Browkie d'Avril",
-    description: "Une base goukie nature moelleuse aux pépites de chocolat, recouverte d'un brownie fondant.",
-    image: "goukie_images/19.png",
+    id: "le-15",
+    nom: "Le 15 - Chocolat & Coco de Mai",
+    description: "Chocolat noir intense, cœur fondant à la noix de coco. Un contraste franc entre puissance et douceur.",
+    image: "goukie_images/15.png",
     featured: true
   },
 

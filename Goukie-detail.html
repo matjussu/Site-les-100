@@ -5,8 +5,9 @@
   <meta charset="UTF-8">
   <meta name="description"
     content="Découvrez en détail nos Goukies artisanaux Les 100, leurs ingrédients bio, et les différentes tailles disponibles. Sans gluten, sans œufs et sans lactose.">
-  <title>Détail Goukie - Les 100</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex,follow">
+  <title>Détail Goukie - Les 100</title>
   <link rel="stylesheet" href="styles.css">
   <link rel="preload" href="logo/logo les100_DEF ROND.png" as="image">
   <link rel="preload" href="styles.css" as="style">
@@ -55,140 +56,39 @@
   <meta property="og:url" content="https://les-100.fr/Goukie-detail.html">
   <meta property="og:type" content="website">
 
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Les 100 - Détail Goukies">
-  <meta name="twitter:description" content="Goukies artisanaux sans gluten, œufs et lactose.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Fiche Goukie - Les 100">
+  <meta name="twitter:description" content="Ingrédients, formats et provenance de nos Goukies artisanaux sans gluten, œufs et lactose.">
   <meta name="twitter:image" content="https://les-100.fr/logo/logo les100_DEF ROND.png">
 
   <link rel="canonical" href="https://les-100.fr/Goukie-detail.html">
 
-  <style>
-    /* Styles spécifiques pour la page détail Goukie */
-    .pack-info {
-      background-color: #fff5ef;
-      padding: 15px;
-      border-radius: 10px;
-      margin: 20px 0;
-    }
-
-    .pack-info p {
-      font-weight: 600;
-      color: #f8660e;
-      margin-bottom: 8px;
-    }
-
-    .pack-info ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-    }
-
-    .pack-info li {
-      padding: 5px 0;
-      border-bottom: 1px solid #eee;
-    }
-
-    .allergy-note {
-      font-style: italic;
-      color: #666;
-      margin-top: 15px;
-      font-size: 0.9rem;
-    }
-
-    .bio-badge {
-      display: inline-block;
-      background-color: #8bc34a;
-      color: white;
-      padding: 5px 12px;
-      border-radius: 20px;
-      font-weight: 600;
-      font-size: 0.8rem;
-      margin-bottom: 20px;
-    }
-
-    .categorie-badge {
-      display: inline-block;
-      background-color: #f8660e;
-      color: white;
-      padding: 5px 12px;
-      border-radius: 20px;
-      font-weight: 600;
-      font-size: 0.8rem;
-      margin-right: 10px;
-    }
-
-    .thumbnail-container {
-      display: flex;
-      gap: 10px;
-      margin-top: 15px;
-      justify-content: center;
-    }
-
-    .thumbnail {
-      width: 80px;
-      height: 80px;
-      object-fit: cover;
-      border-radius: 8px;
-      cursor: pointer;
-      opacity: 0.7;
-      transition: opacity 0.2s ease;
-    }
-
-    .thumbnail:hover {
-      opacity: 1;
-    }
-
-    .thumbnail.active {
-      opacity: 1;
-      border: 2px solid #f8660e;
-    }
-
-    .provenance-card {
-      background-color: #f1f8e9;
-      /* Light green background */
-      padding: 15px;
-      border-radius: 10px;
-      margin-top: 15px;
-      border-left: 4px solid #8bc34a;
-      /* Green accent border */
-    }
-
-    .provenance-badge {
-      display: inline-block;
-      background-color: #8bc34a;
-      color: white;
-      padding: 4px 10px;
-      border-radius: 20px;
-      font-weight: 600;
-      font-size: 0.8rem;
-      margin-bottom: 8px;
-    }
-
-    .provenance-text {
-      color: #33691e;
-      font-size: 0.95rem;
-      font-weight: 500;
-      margin: 0;
-    }
-  </style>
 </head>
 
 <body>
   <div id="page-transition"></div>
 
-  <header>
+  <header role="banner">
     <div class="logo">
-      <a href="index.html"><img src="logo/logo les100_DEF ROND.png" alt="Logo Les 100" /></a>
+      <a href="index.html" aria-label="Retour à l'accueil - Les 100">
+        <img src="logo/logo les100_DEF ROND.png" alt="Les 100" width="70" height="70" />
+      </a>
     </div>
-    <nav>
+    <nav role="navigation" aria-label="Navigation principale">
       <ul>
-        <li><a href="Goukie.html">Goukies</a></li>
-        <li><a href="epicerie.html">Épicerie</a></li>
-        <li><a href="allergenes.html">Allergènes</a></li>
-        <li><a href="histoire.html">Notre Histoire</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="index.html" data-page="accueil">Accueil</a></li>
+        <li><a href="Goukie.html" data-page="goukies">Goukies</a></li>
+        <li><a href="epicerie.html" data-page="epicerie">Épicerie</a></li>
+        <li><a href="allergenes.html" data-page="allergenes">Allergènes</a></li>
+        <li><a href="histoire.html" data-page="histoire">Notre Histoire</a></li>
+        <li><a href="contact.html" data-page="contact">Contact</a></li>
       </ul>
     </nav>
+    <button class="menu-toggle" aria-label="Ouvrir le menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
   </header>
 
   <section class="Goukie-detail-hero">
@@ -324,7 +224,7 @@
           <span>@les100_gluten_oeuf_lactose</span>
         </a>
       </div>
-      <p class="copyright">Les 100 &copy; 2025 - Tous droits réservés</p>
+      <p class="copyright">Les 100 &copy; 2024-2026 - Tous droits réservés</p>
     </div>
   </footer>
 

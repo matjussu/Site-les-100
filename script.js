@@ -102,11 +102,15 @@ const MobileMenu = {
   setActivePage() {
     const currentPage = window.location.pathname.split('/').pop() || 'index.html';
     const pageMap = {
-      'index.html': null,
+      '': 'accueil',
+      'index.html': 'accueil',
       'Goukie.html': 'goukies',
+      'Goukie-detail.html': 'goukies',
+      'epicerie.html': 'epicerie',
+      'allergenes.html': 'allergenes',
       'histoire.html': 'histoire',
       'contact.html': 'contact',
-      'Goukie-detail.html': 'goukies'
+      'merci.html': 'contact'
     };
 
     const activeDataPage = pageMap[currentPage];
@@ -1132,6 +1136,17 @@ window.addEventListener('pageshow', function(event) {
     window.location.reload();
   }
 });
+
+// ==========================================
+// SERVICE WORKER (PWA)
+// ==========================================
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('sw.js').catch(() => {
+      // Échec silencieux : le site fonctionne sans cache offline
+    });
+  });
+}
 
 // ============================================================================
 // MODULE: GOOGLE ANALYTICS

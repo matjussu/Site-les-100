@@ -52,9 +52,9 @@
     <meta property="og:url" content="https://les-100.fr/epicerie.html">
     <meta property="og:type" content="website">
 
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:title" content="Les 100 - Épicerie">
-    <meta name="twitter:description" content="Pâtes à tartiner artisanales sans allergènes.">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Épicerie maison - Les 100">
+    <meta name="twitter:description" content="Apple Butter, Pumpkin Butter et autres pâtes à tartiner maison sans gluten, œufs ni lactose.">
     <meta name="twitter:image" content="https://les-100.fr/logo/logo les100_DEF ROND.png">
 
     <link rel="canonical" href="https://les-100.fr/epicerie.html">
@@ -62,52 +62,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-    <style>
-        /* Réutilisation des styles de la page Goukie */
-        .Goukies-section {
-            padding: 80px 0;
-        }
-
-        .category-title {
-            font-size: 2.5rem;
-            text-align: center;
-            color: #3c2b1a;
-            margin-bottom: 30px;
-            position: relative;
-        }
-
-        .category-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: #f8660e;
-            border-radius: 3px;
-        }
-
-        .category-description {
-            text-align: center;
-            max-width: 800px;
-            margin: 0 auto 50px;
-            font-size: 1.1rem;
-            color: #666;
-            line-height: 1.6;
-        }
-
-        .Goukies-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-            justify-content: center;
-            /* Centrer la grille si peu d'éléments */
-        }
-    </style>
 </head>
 
 <body>
@@ -121,8 +75,9 @@
         </div>
         <nav role="navigation" aria-label="Navigation principale">
             <ul>
+                <li><a href="index.html" data-page="accueil">Accueil</a></li>
                 <li><a href="Goukie.html" data-page="goukies">Goukies</a></li>
-                <li><a href="epicerie.html" class="active" data-page="epicerie">Épicerie</a></li>
+                <li><a href="epicerie.html" data-page="epicerie">Épicerie</a></li>
                 <li><a href="allergenes.html" data-page="allergenes">Allergènes</a></li>
                 <li><a href="histoire.html" data-page="histoire">Notre Histoire</a></li>
                 <li><a href="contact.html" data-page="contact">Contact</a></li>
@@ -197,7 +152,7 @@
                     <span>@les100_gluten_oeuf_lactose</span>
                 </a>
             </div>
-            <p class="copyright">Les 100 &copy; 2025 - Tous droits réservés</p>
+            <p class="copyright">Les 100 &copy; 2024-2026 - Tous droits réservés</p>
         </div>
     </footer>
 

@@ -63,89 +63,6 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 
-  <style>
-    /* Styles spécifiques pour la page des Goukies */
-    .Goukies-section {
-      padding: 80px 0;
-    }
-
-    .category-title {
-      font-size: 2.5rem;
-      text-align: center;
-      color: #3c2b1a;
-      margin-bottom: 30px;
-      position: relative;
-    }
-
-    .category-title::after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 80px;
-      height: 3px;
-      background: #f8660e;
-      border-radius: 3px;
-    }
-
-    .category-description {
-      text-align: center;
-      max-width: 800px;
-      margin: 0 auto 50px;
-      font-size: 1.1rem;
-      color: #666;
-      line-height: 1.6;
-    }
-
-    .price-info {
-      text-align: center;
-      margin-bottom: 40px;
-      background-color: #fff5ef;
-      padding: 15px;
-      border-radius: 10px;
-      max-width: 800px;
-      margin: 0 auto 40px;
-    }
-
-    .price-info p {
-      margin: 5px 0;
-      font-size: 1.0rem;
-    }
-
-    .price-info strong {
-      color: #f8660e;
-    }
-
-    .Goukies-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 30px;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .Goukies-section:nth-child(odd) {
-      background-color: #fffaf4;
-    }
-
-    .Goukies-section:nth-child(even) {
-      background-color: #fff;
-    }
-
-    /* Styles pour centrer le Goukie du mois et corriger la banderole */
-    .edition-limitee-grid {
-      display: flex;
-      justify-content: center;
-    }
-
-    .Goukie-du-mois {
-      max-width: 350px;
-      position: relative;
-      overflow: visible;
-    }
-  </style>
 </head>
 
 <body>
@@ -159,6 +76,7 @@
     </div>
     <nav role="navigation" aria-label="Navigation principale">
       <ul>
+        <li><a href="index.html" data-page="accueil">Accueil</a></li>
         <li><a href="Goukie.html" data-page="goukies">Goukies</a></li>
         <li><a href="epicerie.html" data-page="epicerie">Épicerie</a></li>
         <li><a href="allergenes.html" data-page="allergenes">Allergènes</a></li>
@@ -483,7 +401,7 @@
           <span>@les100_gluten_oeuf_lactose</span>
         </a>
       </div>
-      <p class="copyright">Les 100 &copy; 2025 - Tous droits réservés</p>
+      <p class="copyright">Les 100 &copy; 2024-2026 - Tous droits réservés</p>
     </div>
   </footer>
 

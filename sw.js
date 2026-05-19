@@ -1,16 +1,24 @@
-// Version du cache
-const CACHE_NAME = 'les100-cache-v3';
+// Version du cache (à incrémenter à chaque déploiement majeur)
+const CACHE_NAME = 'les100-cache-v4';
 
 // Ressources à mettre en cache immédiatement
 const CACHE_URLS = [
+  './',
   'index.html',
   'Goukie.html',
+  'Goukie-detail.html',
+  'epicerie.html',
+  'allergenes.html',
+  'histoire.html',
+  'contact.html',
+  'merci.html',
   'styles.css',
   'script.js',
+  'Goukie-detail.js',
+  'contact.js',
+  'Goukies.json',
   'logo/logo les100_DEF ROND.png',
-  'logo/logo_horizontale.png',
-  'image/Goukie_accueil.png',
-  // Ajoutez d'autres ressources importantes
+  'logo/logo les100_DEF.png'
 ];
 
 // Installation du service worker

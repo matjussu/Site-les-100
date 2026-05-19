@@ -62,47 +62,7 @@
   <meta name="twitter:description" content="Goukies artisanaux sans gluten, sans œufs et sans lactose.">
   <meta name="twitter:image" content="https://les-100.fr/logo/logo les100_DEF ROND.png">
 
-  <link rel="canonical" href="https://les-100.fr/index.html">
-
-  <style>
-    /* Styles spécifiques pour corriger l'image de fond sur mobile */
-    #hero .parallax-bg {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      background-image: url('image/accueil_Goukie_2.jpg');
-      background-size: cover;
-      background-position: center;
-      background-repeat: no-repeat;
-      z-index: -1;
-      filter: brightness(0.5);
-    }
-
-    @media (max-width: 768px) {
-      #hero .parallax-bg {
-        background-attachment: scroll;
-        background-position: center top;
-      }
-    }
-
-
-    /* Animation subtile pour attirer l'attention */
-    @keyframes giftPulse {
-
-      0%,
-      100% {
-        transform: scale(1);
-        box-shadow: 0 8px 25px rgba(248, 102, 14, 0.3);
-      }
-
-      50% {
-        transform: scale(1.05);
-        box-shadow: 0 12px 30px rgba(248, 102, 14, 0.4);
-      }
-    }
-  </style>
+  <link rel="canonical" href="https://les-100.fr/">
 </head>
 
 <body>
@@ -116,6 +76,7 @@
     </div>
     <nav role="navigation" aria-label="Navigation principale">
       <ul>
+        <li><a href="index.html" data-page="accueil">Accueil</a></li>
         <li><a href="Goukie.html" data-page="goukies">Goukies</a></li>
         <li><a href="epicerie.html" data-page="epicerie">Épicerie</a></li>
         <li><a href="allergenes.html" data-page="allergenes">Allergènes</a></li>
@@ -206,7 +167,7 @@
           <span>@les100_gluten_oeuf_lactose</span>
         </a>
       </div>
-      <p class="copyright">Les 100 &copy; 2025 - Tous droits réservés</p>
+      <p class="copyright">Les 100 &copy; 2024-2026 - Tous droits réservés</p>
     </div>
   </footer>
 

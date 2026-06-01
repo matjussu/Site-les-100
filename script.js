@@ -829,10 +829,10 @@ const HistoirePage = {
 // ==========================================
 const GoukieOfTheMonth = {
   data: {
-    id: "le-15",
-    nom: "Le 15 - Chocolat & Coco de Mai",
-    description: "Chocolat noir intense, cœur fondant à la noix de coco. Un contraste franc entre puissance et douceur.",
-    image: "goukie_images/15.png",
+    id: "le-29",
+    nom: "Le 29 - Ube & Sésame noir de Juin",
+    description: "Une pâte à l'ube délicatement parfumée, enveloppant un cœur fondant de sésame noir bio. Un contraste subtil entre douceur et caractère.",
+    image: "goukie_images/29.webp",
     featured: true
   },
 

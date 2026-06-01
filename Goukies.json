@@ -17,23 +17,23 @@
       "Chocolat noir en palet"
     ],
     "prix": {
-      "petit": 2.50,
-      "moyen": 4.50,
+      "petit": 2.5,
+      "moyen": 4.5,
       "grand": null
     },
     "format_mini": {
-      "unite": 2.50,
-      "x2": 4.50,
-      "x3": 6.50,
-      "x6": 12.50,
-      "x9": 18.00,
-      "x12": 24.00,
-      "x18": 35.00,
-      "x24": 47.00
+      "unite": 2.5,
+      "x2": 4.5,
+      "x3": 6.5,
+      "x6": 12.5,
+      "x9": 18.0,
+      "x12": 24.0,
+      "x18": 35.0,
+      "x24": 47.0
     },
     "format_standard": {
-      "unite": 4.50,
-      "x4": 16.00
+      "unite": 4.5,
+      "x4": 16.0
     },
     "format_gourmet": {
       "unite": null,
@@ -62,23 +62,23 @@
       "Chocolat noir en palet"
     ],
     "prix": {
-      "petit": 2.50,
-      "moyen": 4.50,
+      "petit": 2.5,
+      "moyen": 4.5,
       "grand": null
     },
     "format_mini": {
-      "unite": 2.50,
-      "x2": 4.50,
-      "x3": 6.50,
-      "x6": 12.50,
-      "x9": 18.00,
-      "x12": 24.00,
-      "x18": 35.00,
-      "x24": 47.00
+      "unite": 2.5,
+      "x2": 4.5,
+      "x3": 6.5,
+      "x6": 12.5,
+      "x9": 18.0,
+      "x12": 24.0,
+      "x18": 35.0,
+      "x24": 47.0
     },
     "format_standard": {
-      "unite": 4.50,
-      "x4": 16.00
+      "unite": 4.5,
+      "x4": 16.0
     },
     "format_gourmet": {
       "unite": null,
@@ -109,23 +109,23 @@
       "Chocolat en poudre van Houten"
     ],
     "prix": {
-      "petit": 2.50,
-      "moyen": 4.50,
+      "petit": 2.5,
+      "moyen": 4.5,
       "grand": null
     },
     "format_mini": {
-      "unite": 2.50,
-      "x2": 4.50,
-      "x3": 6.50,
-      "x6": 12.50,
-      "x9": 18.00,
-      "x12": 24.00,
-      "x18": 35.00,
-      "x24": 47.00
+      "unite": 2.5,
+      "x2": 4.5,
+      "x3": 6.5,
+      "x6": 12.5,
+      "x9": 18.0,
+      "x12": 24.0,
+      "x18": 35.0,
+      "x24": 47.0
     },
     "format_standard": {
-      "unite": 4.50,
-      "x4": 16.00
+      "unite": 4.5,
+      "x4": 16.0
     },
     "format_gourmet": {
       "unite": null,
@@ -155,23 +155,23 @@
       "Chocolat en poudre van Houten"
     ],
     "prix": {
-      "petit": 2.50,
-      "moyen": 4.50,
+      "petit": 2.5,
+      "moyen": 4.5,
       "grand": null
     },
     "format_mini": {
-      "unite": 2.50,
-      "x2": 4.50,
-      "x3": 6.50,
-      "x6": 12.50,
-      "x9": 18.00,
-      "x12": 24.00,
-      "x18": 35.00,
-      "x24": 47.00
+      "unite": 2.5,
+      "x2": 4.5,
+      "x3": 6.5,
+      "x6": 12.5,
+      "x9": 18.0,
+      "x12": 24.0,
+      "x18": 35.0,
+      "x24": 47.0
     },
     "format_standard": {
-      "unite": 4.50,
-      "x4": 16.00
+      "unite": 4.5,
+      "x4": 16.0
     },
     "format_gourmet": {
       "unite": null,
@@ -200,23 +200,23 @@
       "Beurre de cacahouète fait maison avec cacahouète bio"
     ],
     "prix": {
-      "petit": 2.50,
-      "moyen": 4.50,
+      "petit": 2.5,
+      "moyen": 4.5,
       "grand": null
     },
     "format_mini": {
-      "unite": 2.50,
-      "x2": 4.50,
-      "x3": 6.50,
-      "x6": 12.50,
-      "x9": 18.00,
-      "x12": 24.00,
-      "x18": 35.00,
-      "x24": 47.00
+      "unite": 2.5,
+      "x2": 4.5,
+      "x3": 6.5,
+      "x6": 12.5,
+      "x9": 18.0,
+      "x12": 24.0,
+      "x18": 35.0,
+      "x24": 47.0
     },
     "format_standard": {
-      "unite": 4.50,
-      "x4": 16.00
+      "unite": 4.5,
+      "x4": 16.0
     },
     "format_gourmet": {
       "unite": null,
@@ -246,23 +246,23 @@
       "Cranberries bio"
     ],
     "prix": {
-      "petit": 2.50,
-      "moyen": 4.50,
+      "petit": 2.5,
+      "moyen": 4.5,
       "grand": null
     },
     "format_mini": {
-      "unite": 2.50,
-      "x2": 4.50,
-      "x3": 6.50,
-      "x6": 12.50,
-      "x9": 18.00,
-      "x12": 24.00,
-      "x18": 35.00,
-      "x24": 47.00
+      "unite": 2.5,
+      "x2": 4.5,
+      "x3": 6.5,
+      "x6": 12.5,
+      "x9": 18.0,
+      "x12": 24.0,
+      "x18": 35.0,
+      "x24": 47.0
     },
     "format_standard": {
-      "unite": 4.50,
-      "x4": 16.00
+      "unite": 4.5,
+      "x4": 16.0
     },
     "format_gourmet": {
       "unite": null,
@@ -291,23 +291,23 @@
       "Cranberries bio"
     ],
     "prix": {
-      "petit": 2.50,
-      "moyen": 4.50,
+      "petit": 2.5,
+      "moyen": 4.5,
       "grand": null
     },
     "format_mini": {
-      "unite": 2.50,
-      "x2": 4.50,
-      "x3": 6.50,
-      "x6": 12.50,
-      "x9": 18.00,
-      "x12": 24.00,
-      "x18": 35.00,
-      "x24": 47.00
+      "unite": 2.5,
+      "x2": 4.5,
+      "x3": 6.5,
+      "x6": 12.5,
+      "x9": 18.0,
+      "x12": 24.0,
+      "x18": 35.0,
+      "x24": 47.0
     },
     "format_standard": {
-      "unite": 4.50,
-      "x4": 16.00
+      "unite": 4.5,
+      "x4": 16.0
     },
     "format_gourmet": {
       "unite": null,
@@ -339,7 +339,7 @@
     ],
     "prix": {
       "petit": null,
-      "moyen": 5.00,
+      "moyen": 5.0,
       "grand": null
     },
     "format_mini": {
@@ -357,9 +357,9 @@
       "x4": null
     },
     "format_gourmet": {
-      "unite": 5.00,
-      "x3": 14.00,
-      "x5": 23.00
+      "unite": 5.0,
+      "x3": 14.0,
+      "x5": 23.0
     },
     "format_geant": {
       "parts_4_6": null,
@@ -389,14 +389,14 @@
       "moyen": 3
     },
     "format_mini": {
-      "unite": 3.00,
-      "x3": 8.00,
-      "x6": 14.00,
-      "x10": 23.00
+      "unite": 3.0,
+      "x3": 8.0,
+      "x6": 14.0,
+      "x10": 23.0
     },
     "format_standard": {
-      "unite": 4.50,
-      "x4": 16.00
+      "unite": 4.5,
+      "x4": 16.0
     },
     "format_gourmet": {
       "unite": null,
@@ -428,7 +428,7 @@
     ],
     "prix": {
       "petit": null,
-      "moyen": 5.00,
+      "moyen": 5.0,
       "grand": null
     },
     "format_mini": {
@@ -446,9 +446,9 @@
       "x4": null
     },
     "format_gourmet": {
-      "unite": 5.00,
-      "x3": 14.00,
-      "x5": 23.00
+      "unite": 5.0,
+      "x3": 14.0,
+      "x5": 23.0
     },
     "format_geant": {
       "parts_4_6": null,
@@ -493,9 +493,9 @@
       "x4": null
     },
     "format_gourmet": {
-      "unite": 5.00,
-      "x3": 14.00,
-      "x5": 23.00
+      "unite": 5.0,
+      "x3": 14.0,
+      "x5": 23.0
     },
     "format_geant": {
       "parts_4_6": null,
@@ -520,23 +520,23 @@
       "Chocolat noir en palet"
     ],
     "prix": {
-      "petit": 2.50,
+      "petit": 2.5,
       "moyen": null,
       "grand": null
     },
     "format_mini": {
-      "unite": 2.50,
-      "x2": 4.50,
-      "x3": 6.50,
-      "x6": 12.50,
-      "x9": 18.00,
-      "x12": 24.00,
-      "x18": 35.00,
-      "x24": 47.00
+      "unite": 2.5,
+      "x2": 4.5,
+      "x3": 6.5,
+      "x6": 12.5,
+      "x9": 18.0,
+      "x12": 24.0,
+      "x18": 35.0,
+      "x24": 47.0
     },
     "format_standard": {
-      "unite": 4.50,
-      "x4": 16.00
+      "unite": 4.5,
+      "x4": 16.0
     },
     "format_gourmet": {
       "unite": null,
@@ -544,8 +544,8 @@
       "x5": null
     },
     "format_geant": {
-      "parts_4_6": 36.00,
-      "parts_6_8": 42.00
+      "parts_4_6": 36.0,
+      "parts_6_8": 42.0
     }
   },
   {
@@ -569,7 +569,7 @@
     ],
     "prix": {
       "petit": null,
-      "moyen": 5.00,
+      "moyen": 5.0,
       "grand": null
     },
     "format_mini": {
@@ -587,9 +587,9 @@
       "x4": null
     },
     "format_gourmet": {
-      "unite": 5.00,
-      "x3": 14.00,
-      "x5": 23.00
+      "unite": 5.0,
+      "x3": 14.0,
+      "x5": 23.0
     },
     "format_geant": {
       "parts_4_6": null,
@@ -659,7 +659,7 @@
     ],
     "prix": {
       "petit": null,
-      "moyen": 5.00,
+      "moyen": 5.0,
       "grand": null
     },
     "format_mini": {
@@ -677,9 +677,9 @@
       "x4": null
     },
     "format_gourmet": {
-      "unite": 5.00,
-      "x3": 14.00,
-      "x5": 23.00
+      "unite": 5.0,
+      "x3": 14.0,
+      "x5": 23.0
     },
     "format_geant": {
       "parts_4_6": null,
@@ -749,7 +749,7 @@
     ],
     "prix": {
       "petit": null,
-      "moyen": 5.00,
+      "moyen": 5.0,
       "grand": null
     },
     "format_mini": {
@@ -767,9 +767,9 @@
       "x4": null
     },
     "format_gourmet": {
-      "unite": 5.00,
-      "x3": 14.00,
-      "x5": 23.00
+      "unite": 5.0,
+      "x3": 14.0,
+      "x5": 23.0
     },
     "format_geant": {
       "parts_4_6": null,
@@ -836,27 +836,27 @@
     ],
     "prix": {
       "petit": null,
-      "moyen": 5.50,
+      "moyen": 5.5,
       "grand": null
     },
     "format_mini": {
-      "unite": 2.50,
-      "x2": 4.50,
-      "x3": 6.50,
-      "x6": 12.50,
-      "x9": 18.00,
-      "x12": 24.00,
-      "x18": 35.00,
-      "x24": 47.00
+      "unite": 2.5,
+      "x2": 4.5,
+      "x3": 6.5,
+      "x6": 12.5,
+      "x9": 18.0,
+      "x12": 24.0,
+      "x18": 35.0,
+      "x24": 47.0
     },
     "format_standard": {
       "unite": null,
       "x4": null
     },
     "format_gourmet": {
-      "unite": 5.50,
-      "x3": 15.50,
-      "x5": 26.00
+      "unite": 5.5,
+      "x3": 15.5,
+      "x5": 26.0
     },
     "format_geant": {
       "parts_4_6": null,
@@ -878,23 +878,23 @@
       "Compote de pomme bio"
     ],
     "prix": {
-      "petit": 2.50,
-      "moyen": 4.50,
+      "petit": 2.5,
+      "moyen": 4.5,
       "grand": null
     },
     "format_mini": {
-      "unite": 2.50,
-      "x2": 4.50,
-      "x3": 6.50,
-      "x6": 12.50,
-      "x9": 18.00,
-      "x12": 24.00,
-      "x18": 35.00,
-      "x24": 47.00
+      "unite": 2.5,
+      "x2": 4.5,
+      "x3": 6.5,
+      "x6": 12.5,
+      "x9": 18.0,
+      "x12": 24.0,
+      "x18": 35.0,
+      "x24": 47.0
     },
     "format_standard": {
-      "unite": 4.50,
-      "x4": 16.00
+      "unite": 4.5,
+      "x4": 16.0
     },
     "format_gourmet": {
       "unite": null,
@@ -920,23 +920,23 @@
       "Compote de pomme bio"
     ],
     "prix": {
-      "petit": 2.50,
-      "moyen": 5.50,
+      "petit": 2.5,
+      "moyen": 5.5,
       "grand": null
     },
     "format_mini": {
-      "unite": 2.50,
-      "x2": 4.50,
-      "x3": 6.50,
-      "x6": 12.50,
-      "x9": 18.00,
-      "x12": 24.00,
-      "x18": 35.00,
-      "x24": 47.00
+      "unite": 2.5,
+      "x2": 4.5,
+      "x3": 6.5,
+      "x6": 12.5,
+      "x9": 18.0,
+      "x12": 24.0,
+      "x18": 35.0,
+      "x24": 47.0
     },
     "format_standard": {
-      "unite": 4.50,
-      "x4": 16.00
+      "unite": 4.5,
+      "x4": 16.0
     },
     "format_gourmet": {
       "unite": null,
@@ -966,19 +966,19 @@
       "Pomme bio"
     ],
     "prix": {
-      "petit": 2.50,
+      "petit": 2.5,
       "moyen": null,
       "grand": null
     },
     "format_mini": {
-      "unite": 2.50,
-      "x2": 4.50,
-      "x3": 6.50,
-      "x6": 12.50,
-      "x9": 18.00,
-      "x12": 24.00,
-      "x18": 35.00,
-      "x24": 47.00
+      "unite": 2.5,
+      "x2": 4.5,
+      "x3": 6.5,
+      "x6": 12.5,
+      "x9": 18.0,
+      "x12": 24.0,
+      "x18": 35.0,
+      "x24": 47.0
     },
     "format_standard": {
       "unite": null,
@@ -1014,21 +1014,21 @@
     ],
     "prix": {
       "petit": null,
-      "moyen": 5.00,
+      "moyen": 5.0,
       "grand": null
     },
     "format_mini": {
-      "unite": 2.50,
-      "x2": 4.50,
-      "x3": 6.50,
-      "x6": 12.50,
-      "x9": 18.00,
-      "x12": 24.00,
-      "x18": 35.00,
-      "x24": 47.00
+      "unite": 2.5,
+      "x2": 4.5,
+      "x3": 6.5,
+      "x6": 12.5,
+      "x9": 18.0,
+      "x12": 24.0,
+      "x18": 35.0,
+      "x24": 47.0
     },
     "format_standard": {
-      "unite": 5.00,
+      "unite": 5.0,
       "x4": null
     },
     "format_gourmet": {
@@ -1061,21 +1061,21 @@
     ],
     "prix": {
       "petit": null,
-      "moyen": 5.00,
+      "moyen": 5.0,
       "grand": null
     },
     "format_mini": {
-      "unite": 2.50,
-      "x2": 4.50,
-      "x3": 6.50,
-      "x6": 12.50,
-      "x9": 18.00,
-      "x12": 24.00,
-      "x18": 35.00,
-      "x24": 47.00
+      "unite": 2.5,
+      "x2": 4.5,
+      "x3": 6.5,
+      "x6": 12.5,
+      "x9": 18.0,
+      "x12": 24.0,
+      "x18": 35.0,
+      "x24": 47.0
     },
     "format_standard": {
-      "unite": 5.00,
+      "unite": 5.0,
       "x4": null
     },
     "format_gourmet": {
@@ -1105,22 +1105,22 @@
       "Compote de pomme bio fait maison"
     ],
     "prix": {
-      "petit": 2.50,
-      "moyen": 5.00,
+      "petit": 2.5,
+      "moyen": 5.0,
       "grand": null
     },
     "format_mini": {
-      "unite": 2.50,
-      "x2": 4.50,
-      "x3": 6.50,
-      "x6": 12.50,
-      "x9": 18.00,
-      "x12": 24.00,
-      "x18": 35.00,
-      "x24": 47.00
+      "unite": 2.5,
+      "x2": 4.5,
+      "x3": 6.5,
+      "x6": 12.5,
+      "x9": 18.0,
+      "x12": 24.0,
+      "x18": 35.0,
+      "x24": 47.0
     },
     "format_standard": {
-      "unite": 5.00,
+      "unite": 5.0,
       "x4": null
     },
     "format_gourmet": {
@@ -1152,7 +1152,7 @@
     ],
     "prix": {
       "petit": null,
-      "moyen": 5.00,
+      "moyen": 5.0,
       "grand": null
     },
     "format_mini": {
@@ -1170,9 +1170,9 @@
       "x4": null
     },
     "format_gourmet": {
-      "unite": 5.00,
-      "x3": 14.00,
-      "x5": 23.00
+      "unite": 5.0,
+      "x3": 14.0,
+      "x5": 23.0
     },
     "format_geant": {
       "parts_4_6": null,
@@ -1197,7 +1197,7 @@
     ],
     "prix": {
       "petit": null,
-      "moyen": 5.50,
+      "moyen": 5.5,
       "grand": null
     },
     "format_mini": {
@@ -1215,9 +1215,9 @@
       "x4": null
     },
     "format_gourmet": {
-      "unite": 5.00,
-      "x3": 15.50,
-      "x5": 26.00
+      "unite": 5.0,
+      "x3": 15.5,
+      "x5": 26.0
     },
     "format_geant": {
       "parts_4_6": null,
@@ -1241,7 +1241,7 @@
     ],
     "prix": {
       "petit": null,
-      "moyen": 6.00,
+      "moyen": 6.0,
       "grand": null
     },
     "format_mini": {
@@ -1285,7 +1285,7 @@
     ],
     "prix": {
       "petit": null,
-      "moyen": 6.50,
+      "moyen": 6.5,
       "grand": null
     },
     "format_mini": {
@@ -1331,7 +1331,7 @@
     ],
     "prix": {
       "petit": null,
-      "moyen": 5.00,
+      "moyen": 5.0,
       "grand": null
     },
     "format_mini": {
@@ -1349,9 +1349,9 @@
       "x4": null
     },
     "format_gourmet": {
-      "unite": 5.00,
-      "x3": 14.00,
-      "x5": 23.00
+      "unite": 5.0,
+      "x3": 14.0,
+      "x5": 23.0
     },
     "format_geant": {
       "parts_4_6": null,
@@ -1376,21 +1376,21 @@
     ],
     "prix": {
       "petit": null,
-      "moyen": 5.50,
+      "moyen": 5.5,
       "grand": null
     },
     "format_mini": {
-      "unite": 2.50,
-      "x2": 4.50,
-      "x3": 6.50,
-      "x6": 12.50,
-      "x9": 18.00,
-      "x12": 24.00,
-      "x18": 35.00,
-      "x24": 47.00
+      "unite": 2.5,
+      "x2": 4.5,
+      "x3": 6.5,
+      "x6": 12.5,
+      "x9": 18.0,
+      "x12": 24.0,
+      "x18": 35.0,
+      "x24": 47.0
     },
     "format_standard": {
-      "unite": 5.50,
+      "unite": 5.5,
       "x4": null
     },
     "format_gourmet": {
@@ -1421,21 +1421,21 @@
     ],
     "prix": {
       "petit": null,
-      "moyen": 5.50,
+      "moyen": 5.5,
       "grand": null
     },
     "format_mini": {
-      "unite": 2.50,
-      "x2": 4.50,
-      "x3": 6.50,
-      "x6": 12.50,
-      "x9": 18.00,
-      "x12": 24.00,
-      "x18": 35.00,
-      "x24": 47.00
+      "unite": 2.5,
+      "x2": 4.5,
+      "x3": 6.5,
+      "x6": 12.5,
+      "x9": 18.0,
+      "x12": 24.0,
+      "x18": 35.0,
+      "x24": 47.0
     },
     "format_standard": {
-      "unite": 5.50,
+      "unite": 5.5,
       "x4": null
     },
     "format_gourmet": {
@@ -1468,21 +1468,112 @@
     ],
     "prix": {
       "petit": null,
-      "moyen": 5.50,
+      "moyen": 5.5,
       "grand": null
     },
     "format_mini": {
-      "unite": 2.50,
-      "x2": 4.50,
-      "x3": 6.50,
-      "x6": 12.50,
-      "x9": 18.00,
-      "x12": 24.00,
-      "x18": 35.00,
-      "x24": 47.00
+      "unite": 2.5,
+      "x2": 4.5,
+      "x3": 6.5,
+      "x6": 12.5,
+      "x9": 18.0,
+      "x12": 24.0,
+      "x18": 35.0,
+      "x24": 47.0
     },
     "format_standard": {
-      "unite": 5.50,
+      "unite": 5.5,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    }
+  },
+  {
+    "id": "le-29",
+    "nom": "Le 29",
+    "description": "Le goukie de juin. Une pâte à l'ube délicatement parfumée, enveloppant un cœur fondant de sésame noir bio. Un contraste subtil entre douceur et caractère.",
+    "images": [
+      "goukie_images/29.webp",
+      "goukie_images/29-2.webp"
+    ],
+    "categorie": "insolites",
+    "ingredients": [
+      "Farine de riz Bio",
+      "Sucre de canne blond Bio",
+      "Compote de pomme maison Bio",
+      "Ube (igname violette)",
+      "Sésame noir Bio"
+    ],
+    "prix": {
+      "petit": null,
+      "moyen": 5.5,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": 2.5,
+      "x2": 4.5,
+      "x3": 6.5,
+      "x6": 12.5,
+      "x9": 18.0,
+      "x12": 24.0,
+      "x18": 35.0,
+      "x24": 47.0
+    },
+    "format_standard": {
+      "unite": 5.5,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    }
+  },
+  {
+    "id": "le-80",
+    "nom": "Le 80",
+    "description": "Le goukie d'été : une pâte délicatement parfumée au basilic bio frais, un cœur fondant à la fraise locale et une légère touche de sésame.",
+    "images": [
+      "goukie_images/80.webp",
+      "goukie_images/80-2.webp"
+    ],
+    "categorie": "insolites",
+    "ingredients": [
+      "Farine de riz Bio",
+      "Sucre de canne blond Bio",
+      "Compote de pomme maison Bio",
+      "Basilic frais Bio",
+      "Fraise locale",
+      "Sésame"
+    ],
+    "prix": {
+      "petit": null,
+      "moyen": 5.5,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": 2.5,
+      "x2": 4.5,
+      "x3": 6.5,
+      "x6": 12.5,
+      "x9": 18.0,
+      "x12": 24.0,
+      "x18": 35.0,
+      "x24": 47.0
+    },
+    "format_standard": {
+      "unite": 5.5,
       "x4": null
     },
     "format_gourmet": {

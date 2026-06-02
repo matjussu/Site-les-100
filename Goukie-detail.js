@@ -86,17 +86,26 @@ function setupSizeButtons(Goukie) {
 
   // Déterminer la catégorie du Goukie et configurer les boutons en conséquence
   if (Goukie.categorie === 'essentiels') {
-    // Pour les Goukies essentiels: petit, moyen
+    // Essentiels : à l'unité + lot de 4 (la promo devient sélectionnable)
     if (Goukie.prix.petit !== null) {
-      addSizeButton(sizeSelector, 'petit', 'Petit', Goukie.prix.petit);
+      addSizeButton(sizeSelector, 'Petit', 'Petit', Goukie.prix.petit);
     }
     if (Goukie.prix.moyen !== null) {
-      addSizeButton(sizeSelector, 'moyen', 'Moyen', Goukie.prix.moyen);
+      addSizeButton(sizeSelector, "À l'unité", "À l'unité", Goukie.prix.moyen);
+    }
+    if (Goukie.format_standard && Goukie.format_standard.x4 !== null) {
+      addSizeButton(sizeSelector, 'Lot de 4', 'Lot de 4', Goukie.format_standard.x4);
     }
   } else if (Goukie.categorie === 'gourmets') {
-    // Pour les Goukies gourmets: moyen uniquement
+    // Gourmets : à l'unité + lots de 3 et 5 (promos sélectionnables)
     if (Goukie.prix.moyen !== null) {
-      addSizeButton(sizeSelector, 'moyen', 'Standard', Goukie.prix.moyen);
+      addSizeButton(sizeSelector, "À l'unité", "À l'unité", Goukie.prix.moyen);
+    }
+    if (Goukie.format_gourmet && Goukie.format_gourmet.x3 !== null) {
+      addSizeButton(sizeSelector, 'Lot de 3', 'Lot de 3', Goukie.format_gourmet.x3);
+    }
+    if (Goukie.format_gourmet && Goukie.format_gourmet.x5 !== null) {
+      addSizeButton(sizeSelector, 'Lot de 5', 'Lot de 5', Goukie.format_gourmet.x5);
     }
   } else if (Goukie.categorie === 'edition_limitee') {
     // Pour le Goukie du mois
@@ -107,9 +116,15 @@ function setupSizeButtons(Goukie) {
       addSizeButton(sizeSelector, 'moyen', 'Moyen', Goukie.prix.moyen);
     }
   } else if (Goukie.categorie === 'insolites') {
-    // Pour les Goukies insolites
+    // Insolites : à l'unité + lots de 3 et 5 (promos sélectionnables)
     if (Goukie.prix.moyen !== null) {
-      addSizeButton(sizeSelector, 'moyen', 'Standard', Goukie.prix.moyen);
+      addSizeButton(sizeSelector, "À l'unité", "À l'unité", Goukie.prix.moyen);
+    }
+    if (Goukie.format_gourmet && Goukie.format_gourmet.x3 !== null) {
+      addSizeButton(sizeSelector, 'Lot de 3', 'Lot de 3', Goukie.format_gourmet.x3);
+    }
+    if (Goukie.format_gourmet && Goukie.format_gourmet.x5 !== null) {
+      addSizeButton(sizeSelector, 'Lot de 5', 'Lot de 5', Goukie.format_gourmet.x5);
     }
   } else if (Goukie.categorie === 'epicerie') {
     // Pour les produits d'épicerie (pots)
@@ -178,40 +193,12 @@ function addSizeButton(container, sizeId, sizeLabel, price) {
   container.appendChild(button);
 }
 
-// Fonction pour afficher les formats d'achat groupés (lots)
+// Les lots/offres sont désormais des boutons de taille sélectionnables
+// (cf. setupSizeButtons), pour que le prix promo s'applique réellement au
+// panier et à la commande. Cette fonction est conservée en no-op pour ne pas
+// casser son appel existant.
 function displayPackFormats(Goukie) {
-  const optionGroup = document.querySelector('.option-group');
-  const priceContainer = document.querySelector('.Goukie-price-container');
-
-  // Créer un élément pour afficher les offres de lots si applicable
-  if (Goukie.categorie === 'essentiels' && Goukie.format_standard.x4 !== null) {
-    const packInfo = document.createElement('div');
-    packInfo.className = 'pack-info';
-    packInfo.innerHTML = `<p>Offre spéciale: Lot de 4 Goukies pour ${Goukie.format_standard.x4.toFixed(2)} €</p>`;
-    priceContainer.insertAdjacentElement('afterend', packInfo);
-  } else if (Goukie.categorie === 'gourmets' && Goukie.format_gourmet.x3 !== null) {
-    const packInfo = document.createElement('div');
-    packInfo.className = 'pack-info';
-    packInfo.innerHTML = `
-      <p>Offres spéciales:</p>
-      <ul>
-        <li>Lot de 3 Goukies gourmets: ${Goukie.format_gourmet.x3.toFixed(2)} €</li>
-        <li>Lot de 5 Goukies gourmets: ${Goukie.format_gourmet.x5.toFixed(2)} €</li>
-      </ul>
-    `;
-    priceContainer.insertAdjacentElement('afterend', packInfo);
-  } else if (Goukie.categorie === 'insolites' && Goukie.format_gourmet && Goukie.format_gourmet.x3 !== null) {
-    const packInfo = document.createElement('div');
-    packInfo.className = 'pack-info';
-    packInfo.innerHTML = `
-      <p>Offres spéciales:</p>
-      <ul>
-        <li>Lot de 3 Goukies insolites: ${Goukie.format_gourmet.x3.toFixed(2)} €</li>
-        <li>Lot de 5 Goukies insolites: ${Goukie.format_gourmet.x5.toFixed(2)} €</li>
-      </ul>
-    `;
-    priceContainer.insertAdjacentElement('afterend', packInfo);
-  }
+  // no-op : les formats groupés sont gérés par setupSizeButtons
 }
 
 // 3. Récupération des données Goukies.json

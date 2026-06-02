@@ -5491,6 +5491,32 @@ header.scrolled nav ul li a {
     line-height: 1.6;
 }
 
+/* Sous-titres de groupe (ex : Les Insolites → du mois / de saison) */
+.subcategory-title {
+    font-size: 1.6rem;
+    text-align: center;
+    color: #3c2b1a;
+    margin: 0 0 35px;
+    position: relative;
+}
+
+.subcategory-title::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 3px;
+    background: #f8660e;
+    border-radius: 3px;
+}
+
+/* Espace avant un sous-titre qui suit une grille (2e groupe et suivants) */
+.Goukies-grid + .subcategory-title {
+    margin-top: 60px;
+}
+
 .Goukies-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));

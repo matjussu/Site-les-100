@@ -5517,9 +5517,80 @@ header.scrolled nav ul li a {
     margin-top: 60px;
 }
 
+/* Insolites — vedettes du moment (goukie du mois + de saison en cours) */
+.insolites-featured {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto 10px;
+    padding: 0 20px;
+}
+
+.insolites-featured .Goukie-card {
+    width: 340px;
+    max-width: 100%;
+}
+
+.insolite-badge {
+    display: inline-block;
+    background: #f8660e;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+}
+
+/* Insolites — archive des anciens goukies, repliable */
+.insolites-archive {
+    margin: 25px 0 0;
+}
+
+.insolites-archive-toggle {
+    display: block;
+    width: fit-content;
+    margin: 0 auto;
+    cursor: pointer;
+    list-style: none;
+    background: #fff;
+    border: 2px solid #f8660e;
+    color: #f8660e;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 12px 28px;
+    border-radius: 999px;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.insolites-archive-toggle::-webkit-details-marker {
+    display: none;
+}
+
+.insolites-archive-toggle::after {
+    content: ' \25be';
+}
+
+.insolites-archive[open] .insolites-archive-toggle::after {
+    content: ' \25b4';
+}
+
+.insolites-archive-toggle:hover {
+    background: #f8660e;
+    color: #fff;
+}
+
+.insolites-archive[open] .insolites-archive-toggle {
+    margin-bottom: 45px;
+}
+
 .Goukies-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, 250px);
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;

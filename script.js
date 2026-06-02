@@ -1148,6 +1148,32 @@ if ('serviceWorker' in navigator) {
   });
 }
 
+// ==========================================
+// INSOLITES — archive repliable (<details>)
+// Les cartes masquées reçoivent gsap opacity:0 au chargement ; on les
+// rend visibles + on recalcule les ScrollTrigger à l'ouverture.
+// ==========================================
+document.addEventListener('DOMContentLoaded', () => {
+  const insolitesArchive = document.querySelector('.insolites-archive');
+  if (!insolitesArchive) return;
+
+  insolitesArchive.addEventListener('toggle', () => {
+    if (!insolitesArchive.open) return;
+
+    insolitesArchive.querySelectorAll('.Goukie-card').forEach(card => {
+      if (typeof gsap !== 'undefined') {
+        gsap.set(card, { opacity: 1, y: 0 });
+      } else {
+        card.style.opacity = '1';
+      }
+    });
+
+    if (typeof ScrollTrigger !== 'undefined') {
+      ScrollTrigger.refresh();
+    }
+  });
+});
+
 // ============================================================================
 // MODULE: GOOGLE ANALYTICS
 // ============================================================================

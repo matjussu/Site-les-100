@@ -1,7 +1,7 @@
 // Version du cache (à incrémenter à chaque déploiement majeur)
-const CACHE_NAME = 'les100-cache-v4';
+const CACHE_NAME = 'les100-cache-v5';
 
-// Ressources à mettre en cache immédiatement
+// Ressources à mettre en cache immédiatement (fallback hors-ligne)
 const CACHE_URLS = [
   './',
   'index.html',
@@ -21,49 +21,65 @@ const CACHE_URLS = [
   'logo/logo les100_DEF.png'
 ];
 
-// Installation du service worker
+// Ressources servies "network-first" : app shell + données qui évoluent.
+// Tout le reste (images...) reste "cache-first" pour la performance.
+function isNetworkFirst(request) {
+  if (request.mode === 'navigate') return true;
+  const url = new URL(request.url);
+  return /\.(html|css|js|json)$/i.test(url.pathname);
+}
+
+// Installation : pré-cache + activation immédiate du nouveau SW
 self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
-      .then(cache => {
-        return cache.addAll(CACHE_URLS);
-      })
+      .then(cache => cache.addAll(CACHE_URLS))
+      .then(() => self.skipWaiting())
   );
 });
 
-// Activer le nouveau service worker
+// Activation : purge des anciens caches + prise de contrôle immédiate des onglets
 self.addEventListener('activate', event => {
   event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
+    caches.keys()
+      .then(cacheNames => Promise.all(
         cacheNames.map(cacheName => {
           if (cacheName !== CACHE_NAME) {
             return caches.delete(cacheName);
           }
         })
-      );
-    })
+      ))
+      .then(() => self.clients.claim())
   );
 });
 
-// Stratégie de mise en cache: Cache-first puis réseau
+// Stratégie de fetch
 self.addEventListener('fetch', event => {
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        if (response) {
-          return response;
-        }
-        return fetch(event.request).then(networkResponse => {
-          // Mettre en cache la nouvelle ressource si c'est une requête GET
-          if (event.request.method === 'GET') {
-            return caches.open(CACHE_NAME).then(cache => {
-              cache.put(event.request, networkResponse.clone());
-              return networkResponse;
-            });
-          }
+  if (event.request.method !== 'GET') return;
+
+  if (isNetworkFirst(event.request)) {
+    // Network-first : on tente le réseau, on rafraîchit le cache, fallback cache si hors-ligne
+    event.respondWith(
+      fetch(event.request)
+        .then(networkResponse => {
+          const copy = networkResponse.clone();
+          caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy));
           return networkResponse;
-        });
-      })
+        })
+        .catch(() => caches.match(event.request))
+    );
+    return;
+  }
+
+  // Cache-first (images et autres ressources statiques)
+  event.respondWith(
+    caches.match(event.request).then(response => {
+      if (response) return response;
+      return fetch(event.request).then(networkResponse => {
+        const copy = networkResponse.clone();
+        caches.open(CACHE_NAME).then(cache => cache.put(event.request, copy));
+        return networkResponse;
+      });
+    })
   );
 });

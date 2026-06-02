@@ -61,7 +61,7 @@ Site-les-100/
 - **Google Fonts** - Poppins & Playfair Display
 
 ### Services tiers
-- **Google Tag Manager** (GTM-NB5WZXPV) - Analytics
+- **Google Analytics 4** (G-W677K39BJN) - Mesure d'audience (Consent Mode RGPD)
 - **FormSubmit** - Gestion des formulaires de contact
 - **Instagram** - Intégration réseaux sociaux (@les100_gluten_oeuf_lactose)
 
@@ -285,9 +285,20 @@ Value: votre-username.github.io
 
 ## 📊 Analytics
 
-Google Tag Manager est configuré avec l'ID `GTM-NB5WZXPV`.
+Google Analytics 4 est configuré avec l'ID de mesure `G-W677K39BJN`, installé dans
+le `<head>` de toutes les pages HTML.
 
-Pour consulter les statistiques, accéder à [Google Analytics](https://analytics.google.com).
+- **Consent Mode (RGPD)** : `analytics_storage` est `denied` par défaut. Une bannière
+  cookies (`CookieConsent` dans `script.js`) le passe à `granted` si le visiteur
+  accepte. Tant que le visiteur n'a pas accepté, GA4 envoie des pings sans cookie
+  (le trafic est mesuré, mais les visiteurs uniques ne sont pas dédupliqués).
+- **Événements custom** (module `Analytics` dans `script.js`) : `add_to_cart`,
+  `view_item`, `filter_catalog`, `click_external_link`.
+- **Page vue** : envoyée automatiquement par `gtag('config', …)`. Ne pas la
+  ré-émettre manuellement (cela créerait un double comptage).
+
+Pour consulter les statistiques, accéder à [Google Analytics](https://analytics.google.com)
+→ propriété `G-W677K39BJN`.
 
 ## 🐛 Debug & Résolution de problèmes
 

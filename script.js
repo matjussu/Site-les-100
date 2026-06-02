@@ -1191,17 +1191,22 @@ const Analytics = {
   },
 
   enable() {
+    // Idempotent : CookieConsent.init() ET Analytics.init() peuvent tous deux
+    // appeler enable() au même chargement. Sans ce garde, les événements
+    // seraient hookés en double (un add_to_cart compterait pour 2).
+    if (this.isEnabled) return;
     this.isEnabled = true;
 
-    // Charger Google Analytics
+    // Passer le consentement à "granted" pour activer le tracking cookie
     if (typeof gtag !== 'undefined') {
       gtag('consent', 'update', {
         'analytics_storage': 'granted'
       });
     }
 
-    // Tracker automatiquement la page actuelle
-    this.trackPageView();
+    // NB : pas d'appel manuel à trackPageView() ici. Le gtag('config', …)
+    // du <head> envoie déjà automatiquement une page vue à chaque chargement.
+    // L'ajouter ici doublonnait la page vue sur chaque page.
 
     // Setup des événements personnalisés
     this.setupEventTracking();

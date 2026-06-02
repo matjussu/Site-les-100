@@ -190,7 +190,7 @@
     "images": [
       "goukie_images/27m.png"
     ],
-    "categorie": "essentiels",
+    "categorie": "gourmets",
     "ingredients": [
       "Farine de riz Bio",
       "Sucre de canne blond Bio",
@@ -1580,6 +1580,52 @@
       "unite": null,
       "x3": null,
       "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    }
+  },
+  {
+    "id": "le-27",
+    "nom": "Le 27",
+    "description": "Beurre de cacahuètes maison intense et fondant. Un incontournable au beurre de cacahuètes bio maison.",
+    "images": [
+      "goukie_images/le-27-1.webp",
+      "goukie_images/27-2.png"
+    ],
+    "categorie": "gourmets",
+    "ingredients": [
+      "Farine de riz Bio",
+      "Sucre de canne blond Bio",
+      "Extrait de vanille",
+      "Compote de pomme bio fait maison",
+      "Margarine sans huile de palme",
+      "Beurre de cacahouète fait maison avec cacahouète bio"
+    ],
+    "prix": {
+      "petit": null,
+      "moyen": 5.0,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": null,
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
+    },
+    "format_standard": {
+      "unite": null,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": 5.0,
+      "x3": 14.0,
+      "x5": 23.0
     },
     "format_geant": {
       "parts_4_6": null,

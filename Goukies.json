@@ -52,7 +52,7 @@
     "images": [
       "goukie_images/11m.png"
     ],
-    "categorie": "essentiels",
+    "categorie": "mini",
     "ingredients": [
       "Farine de riz Bio",
       "Sucre de canne blond Bio",
@@ -67,11 +67,12 @@
       "grand": null
     },
     "format_mini": {
-      "unite": 2.5,
+      "x1": 2.5,
       "x2": 4.5,
       "x3": 6.5,
       "x6": 12.5,
       "x9": 18.0,
+      "x10": null,
       "x12": 24.0,
       "x18": 35.0,
       "x24": 47.0
@@ -144,7 +145,7 @@
       "goukie_images/08m.png"
     ],
     "description": " Goukie chocolat avec des pépites de chocolats",
-    "categorie": "essentiels",
+    "categorie": "mini",
     "ingredients": [
       "Farine de riz Bio",
       "Sucre de canne blond Bio",
@@ -160,11 +161,12 @@
       "grand": null
     },
     "format_mini": {
-      "unite": 2.5,
+      "x1": 2.5,
       "x2": 4.5,
       "x3": 6.5,
       "x6": 12.5,
       "x9": 18.0,
+      "x10": null,
       "x12": 24.0,
       "x18": 35.0,
       "x24": 47.0
@@ -190,7 +192,7 @@
     "images": [
       "goukie_images/27m.png"
     ],
-    "categorie": "gourmets",
+    "categorie": "mini",
     "ingredients": [
       "Farine de riz Bio",
       "Sucre de canne blond Bio",
@@ -205,14 +207,15 @@
       "grand": null
     },
     "format_mini": {
-      "unite": 2.5,
-      "x2": 4.5,
-      "x3": 6.5,
-      "x6": 12.5,
-      "x9": 18.0,
-      "x12": 24.0,
-      "x18": 35.0,
-      "x24": 47.0
+      "x1": 3.0,
+      "x2": 5.0,
+      "x3": 8.0,
+      "x6": 14.0,
+      "x9": null,
+      "x10": 23.0,
+      "x12": null,
+      "x18": null,
+      "x24": null
     },
     "format_standard": {
       "unite": 4.5,
@@ -281,7 +284,7 @@
     "images": [
       "goukie_images/05m.png"
     ],
-    "categorie": "essentiels",
+    "categorie": "mini",
     "ingredients": [
       "Farine de riz Bio",
       "Sucre de canne blond Bio",
@@ -296,11 +299,12 @@
       "grand": null
     },
     "format_mini": {
-      "unite": 2.5,
+      "x1": 2.5,
       "x2": 4.5,
       "x3": 6.5,
       "x6": 12.5,
       "x9": 18.0,
+      "x10": null,
       "x12": 24.0,
       "x18": 35.0,
       "x24": 47.0
@@ -374,7 +378,7 @@
       "goukie_images/03m.png",
       "goukie_images/03m-2.png"
     ],
-    "categorie": "gourmets",
+    "categorie": "mini",
     "ingredients": [
       "Farine de riz Bio",
       "Sucre de canne blond Bio",
@@ -389,10 +393,15 @@
       "moyen": 3
     },
     "format_mini": {
-      "unite": 3.0,
+      "x1": 3.0,
+      "x2": 5.0,
       "x3": 8.0,
       "x6": 14.0,
-      "x10": 23.0
+      "x9": null,
+      "x10": 23.0,
+      "x12": null,
+      "x18": null,
+      "x24": null
     },
     "format_standard": {
       "unite": 4.5,
@@ -463,7 +472,7 @@
       "goukie_images/04m.png",
       "goukie_images/04m-2.png"
     ],
-    "categorie": "gourmets",
+    "categorie": "mini",
     "ingredients": [
       "Farine de riz Bio",
       "Sucre de canne blond Bio",
@@ -479,11 +488,12 @@
       "grand": null
     },
     "format_mini": {
-      "unite": null,
-      "x2": null,
-      "x3": null,
-      "x6": null,
+      "x1": 3.0,
+      "x2": 5.0,
+      "x3": 8.0,
+      "x6": 14.0,
       "x9": null,
+      "x10": 23.0,
       "x12": null,
       "x18": null,
       "x24": null
@@ -604,7 +614,7 @@
       "goukie_images/06M.png",
       "goukie_images/06m-2.png"
     ],
-    "categorie": "gourmets",
+    "categorie": "mini",
     "ingredients": [
       "Farine de riz Bio",
       "Sucre de canne blond Bio",
@@ -621,11 +631,12 @@
       "grand": null
     },
     "format_mini": {
-      "unite": null,
-      "x2": null,
-      "x3": null,
-      "x6": null,
+      "x1": 3.0,
+      "x2": 5.0,
+      "x3": 8.0,
+      "x6": 14.0,
       "x9": null,
+      "x10": 23.0,
       "x12": null,
       "x18": null,
       "x24": null
@@ -694,7 +705,7 @@
       "goukie_images/010m.png",
       "goukie_images/010m-2.png"
     ],
-    "categorie": "gourmets",
+    "categorie": "mini",
     "ingredients": [
       "Farine de riz Bio",
       "Sucre de canne blond Bio",
@@ -710,12 +721,13 @@
       "grand": null
     },
     "format_mini": {
-      "unite": null,
-      "x2": null,
-      "x3": 8,
-      "x6": 14,
+      "x1": 3.0,
+      "x2": 5.0,
+      "x3": 8.0,
+      "x6": 14.0,
       "x9": null,
-      "x10": 23,
+      "x10": 23.0,
+      "x12": null,
       "x18": null,
       "x24": null
     },
@@ -784,7 +796,7 @@
       "goukie_images/018m.png",
       "goukie_images/18m-2.png"
     ],
-    "categorie": "gourmets",
+    "categorie": "mini",
     "ingredients": [
       "Farine de riz Bio",
       "Sucre de canne blond Bio",
@@ -801,11 +813,12 @@
       "grand": null
     },
     "format_mini": {
-      "unite": null,
-      "x2": null,
-      "x3": null,
-      "x6": null,
+      "x1": 3.0,
+      "x2": 5.0,
+      "x3": 8.0,
+      "x6": 14.0,
       "x9": null,
+      "x10": 23.0,
       "x12": null,
       "x18": null,
       "x24": null
@@ -878,8 +891,8 @@
       "Compote de pomme bio"
     ],
     "prix": {
-      "petit": 2.5,
-      "moyen": 4.5,
+      "petit": null,
+      "moyen": 5.5,
       "grand": null
     },
     "format_mini": {
@@ -893,13 +906,13 @@
       "x24": 47.0
     },
     "format_standard": {
-      "unite": 4.5,
-      "x4": 16.0
+      "unite": null,
+      "x4": null
     },
     "format_gourmet": {
-      "unite": null,
-      "x3": null,
-      "x5": null
+      "unite": 5.5,
+      "x3": 15.5,
+      "x5": 26.0
     },
     "format_geant": {
       "parts_4_6": null,
@@ -920,7 +933,7 @@
       "Compote de pomme bio"
     ],
     "prix": {
-      "petit": 2.5,
+      "petit": null,
       "moyen": 5.5,
       "grand": null
     },
@@ -935,13 +948,13 @@
       "x24": 47.0
     },
     "format_standard": {
-      "unite": 4.5,
-      "x4": 16.0
+      "unite": null,
+      "x4": null
     },
     "format_gourmet": {
-      "unite": null,
-      "x3": null,
-      "x5": null
+      "unite": 5.5,
+      "x3": 15.5,
+      "x5": 26.0
     },
     "format_geant": {
       "parts_4_6": null,
@@ -1215,7 +1228,7 @@
       "x4": null
     },
     "format_gourmet": {
-      "unite": 5.0,
+      "unite": 5.5,
       "x3": 15.5,
       "x5": 26.0
     },
@@ -1390,13 +1403,13 @@
       "x24": 47.0
     },
     "format_standard": {
-      "unite": 5.5,
+      "unite": null,
       "x4": null
     },
     "format_gourmet": {
-      "unite": null,
-      "x3": null,
-      "x5": null
+      "unite": 5.5,
+      "x3": 15.5,
+      "x5": 26.0
     },
     "format_geant": {
       "parts_4_6": null,
@@ -1435,13 +1448,13 @@
       "x24": 47.0
     },
     "format_standard": {
-      "unite": 5.5,
+      "unite": null,
       "x4": null
     },
     "format_gourmet": {
-      "unite": null,
-      "x3": null,
-      "x5": null
+      "unite": 5.5,
+      "x3": 15.5,
+      "x5": 26.0
     },
     "format_geant": {
       "parts_4_6": null,
@@ -1482,13 +1495,13 @@
       "x24": 47.0
     },
     "format_standard": {
-      "unite": 5.5,
+      "unite": null,
       "x4": null
     },
     "format_gourmet": {
-      "unite": null,
-      "x3": null,
-      "x5": null
+      "unite": 5.5,
+      "x3": 15.5,
+      "x5": 26.0
     },
     "format_geant": {
       "parts_4_6": null,
@@ -1527,13 +1540,13 @@
       "x24": 47.0
     },
     "format_standard": {
-      "unite": 5.5,
+      "unite": null,
       "x4": null
     },
     "format_gourmet": {
-      "unite": null,
-      "x3": null,
-      "x5": null
+      "unite": 5.5,
+      "x3": 15.5,
+      "x5": 26.0
     },
     "format_geant": {
       "parts_4_6": null,
@@ -1573,13 +1586,13 @@
       "x24": 47.0
     },
     "format_standard": {
-      "unite": 5.5,
+      "unite": null,
       "x4": null
     },
     "format_gourmet": {
-      "unite": null,
-      "x3": null,
-      "x5": null
+      "unite": 5.5,
+      "x3": 15.5,
+      "x5": 26.0
     },
     "format_geant": {
       "parts_4_6": null,

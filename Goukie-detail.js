@@ -116,6 +116,25 @@ function setupSizeButtons(Goukie) {
     if (Goukie.prix.moyen !== null) {
       addSizeButton(sizeSelector, 'moyen', 'Pot', Goukie.prix.moyen);
     }
+  } else if (Goukie.categorie === 'mini') {
+    // Pour les Goukies mini : un bouton par format défini (non-null) dans format_mini
+    const miniFormats = [
+      ['x1', "À l'unité"],
+      ['x2', '×2'],
+      ['x3', '×3'],
+      ['x6', '×6'],
+      ['x9', '×9'],
+      ['x10', '×10'],
+      ['x12', '×12'],
+      ['x18', '×18'],
+      ['x24', '×24']
+    ];
+    const fm = Goukie.format_mini || {};
+    miniFormats.forEach(([key, label]) => {
+      if (fm[key] !== null && fm[key] !== undefined) {
+        addSizeButton(sizeSelector, key, label, fm[key]);
+      }
+    });
   }
 
   // Pour les Goukies disponibles en format géant
@@ -189,22 +208,6 @@ function displayPackFormats(Goukie) {
       <ul>
         <li>Lot de 3 Goukies insolites: ${Goukie.format_gourmet.x3.toFixed(2)} €</li>
         <li>Lot de 5 Goukies insolites: ${Goukie.format_gourmet.x5.toFixed(2)} €</li>
-      </ul>
-    `;
-    priceContainer.insertAdjacentElement('afterend', packInfo);
-  } else if (Goukie.categorie === 'mini') {
-    const packInfo = document.createElement('div');
-    packInfo.className = 'pack-info';
-    packInfo.innerHTML = `
-      <p>Formats disponibles:</p>
-      <ul>
-        <li>2 mini Goukies: ${Goukie.format_mini.x2.toFixed(2)} €</li>
-        <li>3 mini Goukies: ${Goukie.format_mini.x3.toFixed(2)} €</li>
-        <li>6 mini Goukies: ${Goukie.format_mini.x6.toFixed(2)} €</li>
-        <li>9 mini Goukies: ${Goukie.format_mini.x9.toFixed(2)} €</li>
-        <li>12 mini Goukies: ${Goukie.format_mini.x12.toFixed(2)} €</li>
-        <li>18 mini Goukies: ${Goukie.format_mini.x18.toFixed(2)} €</li>
-        <li>24 mini Goukies: ${Goukie.format_mini.x24.toFixed(2)} €</li>
       </ul>
     `;
     priceContainer.insertAdjacentElement('afterend', packInfo);

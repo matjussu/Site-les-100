@@ -153,12 +153,15 @@ function setupSizeButtons(Goukie) {
   }
 
   // Pour les Goukies disponibles en format géant
-  if (Goukie.format_geant && (Goukie.format_geant.parts_4_6 !== null || Goukie.format_geant.parts_6_8 !== null)) {
-    if (Goukie.format_geant.parts_4_6 !== null) {
+  if (Goukie.format_geant) {
+    if (Goukie.format_geant.parts_4_6 !== null && Goukie.format_geant.parts_4_6 !== undefined) {
       addSizeButton(sizeSelector, 'geant_4_6', 'Géant 4-6 parts', Goukie.format_geant.parts_4_6);
     }
-    if (Goukie.format_geant.parts_6_8 !== null) {
+    if (Goukie.format_geant.parts_6_8 !== null && Goukie.format_geant.parts_6_8 !== undefined) {
       addSizeButton(sizeSelector, 'geant_6_8', 'Géant 6-8 parts', Goukie.format_geant.parts_6_8);
+    }
+    if (Goukie.format_geant.parts_8_10 !== null && Goukie.format_geant.parts_8_10 !== undefined) {
+      addSizeButton(sizeSelector, 'geant_8_10', 'Géant 8-10 parts', Goukie.format_geant.parts_8_10);
     }
   }
 
@@ -271,6 +274,16 @@ function fetchGoukieData() {
 
       document.getElementById('Goukie-name').textContent = Goukie.nom;
       document.getElementById('Goukie-desc').textContent = Goukie.description;
+
+      // Poids du goukie (100 g pour les goukies individuels, absent pour minis et géants)
+      const existingWeight = document.querySelector('.Goukie-weight');
+      if (existingWeight) existingWeight.remove();
+      if (Goukie.poids_g) {
+        const weightEl = document.createElement('p');
+        weightEl.className = 'Goukie-weight';
+        weightEl.textContent = `Poids : ${Goukie.poids_g} g`;
+        document.getElementById('Goukie-desc').insertAdjacentElement('afterend', weightEl);
+      }
 
       if (Goukie.id.toLowerCase() === 'mai') {
         document.getElementById('Goukie-badge').style.display = 'block';

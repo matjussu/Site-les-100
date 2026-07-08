@@ -2513,6 +2513,13 @@ header.scrolled .menu-toggle span {
     margin-bottom: 30px;
 }
 
+.Goukie-weight {
+    font-size: 0.95rem;
+    color: #888;
+    margin-top: -20px;
+    margin-bottom: 30px;
+}
+
 /* Features */
 .Goukie-features {
     display: flex;

@@ -405,9 +405,19 @@ const PageLoader = {
     }
 
     const loader = this.create();
-    const images = document.querySelectorAll('img');
+    // Ne compter que les images chargees immediatement : les images en
+    // loading="lazy" ne se chargent qu'a l'entree dans le viewport, donc
+    // jamais tant que le loader couvre la page (deadlock).
+    const images = document.querySelectorAll('img:not([loading="lazy"])');
     let loadedImages = 0;
     const totalImages = images.length;
+    let removed = false;
+
+    const removeOnce = () => {
+      if (removed) return;
+      removed = true;
+      this.remove(loader);
+    };
 
     const imageLoaded = () => {
       loadedImages++;
@@ -419,7 +429,7 @@ const PageLoader = {
       });
 
       if (loadedImages === totalImages) {
-        this.remove(loader);
+        removeOnce();
       }
     };
 
@@ -433,8 +443,12 @@ const PageLoader = {
     });
 
     if (totalImages === 0) {
-      setTimeout(() => this.remove(loader), 1500);
+      setTimeout(removeOnce, 1500);
     }
+
+    // Filet de securite : le loader ne doit jamais bloquer la page plus de
+    // 2,5 s, quoi qu'il arrive cote images.
+    setTimeout(removeOnce, 2500);
   },
 
   remove(loader) {

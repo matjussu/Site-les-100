@@ -113,7 +113,7 @@ function setupSizeButtons(Goukie) {
       addSizeButton(sizeSelector, 'petit', 'Petit', Goukie.prix.petit);
     }
     if (Goukie.prix.moyen !== null) {
-      addSizeButton(sizeSelector, 'moyen', 'Moyen', Goukie.prix.moyen);
+      addSizeButton(sizeSelector, 'moyen', "À l'unité", Goukie.prix.moyen);
     }
   } else if (Goukie.categorie === 'insolites') {
     // Insolites : à l'unité + lots de 3 et 5 (promos sélectionnables)

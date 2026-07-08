@@ -18,7 +18,7 @@
     ],
     "prix": {
       "petit": 3.0,
-      "moyen": 4.5,
+      "moyen": 5.0,
       "grand": null
     },
     "format_mini": {
@@ -32,7 +32,7 @@
       "x24": 47.0
     },
     "format_standard": {
-      "unite": 4.5,
+      "unite": 5.0,
       "x4": 16.0
     },
     "format_gourmet": {
@@ -112,7 +112,7 @@
     ],
     "prix": {
       "petit": 3.0,
-      "moyen": 4.5,
+      "moyen": 5.0,
       "grand": null
     },
     "format_mini": {
@@ -126,7 +126,7 @@
       "x24": 47.0
     },
     "format_standard": {
-      "unite": 4.5,
+      "unite": 5.0,
       "x4": 16.0
     },
     "format_gourmet": {
@@ -252,7 +252,7 @@
     ],
     "prix": {
       "petit": 3.0,
-      "moyen": 4.5,
+      "moyen": 5.0,
       "grand": null
     },
     "format_mini": {
@@ -266,7 +266,7 @@
       "x24": 47.0
     },
     "format_standard": {
-      "unite": 4.5,
+      "unite": 5.0,
       "x4": 16.0
     },
     "format_gourmet": {
@@ -1565,6 +1565,52 @@
     "format_geant": {
       "parts_4_6": null,
       "parts_6_8": null
+    },
+    "poids_g": 100
+  },
+  {
+    "id": "juillet",
+    "nom": "Le 07",
+    "description": "Le goukie de juillet. Toute la finesse du matcha dans un Goukie au cœur fondant, disponible en version chocolat blanc vegan ou chocolat noir.",
+    "images": [
+      "goukie_images/07.webp",
+      "goukie_images/07-2.webp",
+      "goukie_images/07-noir.webp",
+      "goukie_images/07-noir-2.webp"
+    ],
+    "categorie": "edition_limitee",
+    "ingredients": [
+      "Farine de riz Bio",
+      "Sucre de canne blond Bio",
+      "Compote de pomme maison Bio",
+      "Matcha",
+      "Chocolat blanc vegan ou chocolat noir"
+    ],
+    "prix": {
+      "petit": null,
+      "moyen": 5.5,
+      "grand": null
+    },
+    "format_mini": {
+      "x1": null,
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x10": null
+    },
+    "format_standard": {
+      "unite": null,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null,
+      "parts_8_10": null
     },
     "poids_g": 100
   },

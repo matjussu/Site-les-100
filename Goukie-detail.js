@@ -126,6 +126,11 @@ function setupSizeButtons(Goukie) {
     if (Goukie.format_gourmet && Goukie.format_gourmet.x5 !== null) {
       addSizeButton(sizeSelector, 'Lot de 5', 'Lot de 5', Goukie.format_gourmet.x5);
     }
+  } else if (Goukie.categorie === 'ice') {
+    // Ice Goukie : vendu a l'unite uniquement
+    if (Goukie.prix.moyen !== null) {
+      addSizeButton(sizeSelector, "À l'unité", "À l'unité", Goukie.prix.moyen);
+    }
   } else if (Goukie.categorie === 'epicerie') {
     // Pour les produits d'épicerie (pots)
     if (Goukie.prix.moyen !== null) {

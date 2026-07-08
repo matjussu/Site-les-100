@@ -1,5 +1,45 @@
 [
   {
+    "id": "le-01",
+    "nom": "Le 01",
+    "description": "150 g de pur plaisir : deux Goukies moelleux garnis d'une généreuse glace végétale bio maison.",
+    "images": [
+      "goukie_images/01.webp"
+    ],
+    "categorie": "ice",
+    "ingredients": [
+      "Deux Goukies moelleux",
+      "Glace végétale bio maison"
+    ],
+    "prix": {
+      "petit": null,
+      "moyen": 8.0,
+      "grand": null
+    },
+    "format_mini": {
+      "x1": null,
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x10": null
+    },
+    "format_standard": {
+      "unite": null,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null,
+      "parts_8_10": null
+    },
+    "poids_g": 150
+  },
+  {
     "id": "le-11",
     "nom": "Le 11",
     "description": "Nature aux pépites de chocolat",

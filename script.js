@@ -245,7 +245,8 @@ const PageAnimations = {
 
   setupCardAnimations() {
     const GoukieCards = document.querySelectorAll('.Goukie-card');
-    GoukieCards.forEach((card, index) => {
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    GoukieCards.forEach((card) => {
       card.addEventListener('mouseenter', () => {
         gsap.to(card, {
           y: -10,
@@ -284,15 +285,28 @@ const PageAnimations = {
         }
       });
 
+      // Reveal au scroll. On calcule un index LOCAL à la grille parente et on
+      // plafonne le délai : l'ancien `delay: index * 0.1` était cumulatif sur
+      // TOUTES les cartes de la page (~30), donc les cartes du bas attendaient
+      // jusqu'à ~3 s après leur entrée dans le viewport, d'où l'apparition
+      // lente "au fur et à mesure". Ici le stagger reste léger et ne s'accumule
+      // jamais d'une section à l'autre.
+      if (reduceMotion) {
+        gsap.set(card, { opacity: 1, y: 0 });
+        return;
+      }
+      const siblings = Array.from(card.parentElement.children)
+        .filter(el => el.classList.contains('Goukie-card'));
+      const localIndex = siblings.indexOf(card);
       gsap.from(card, {
         opacity: 0,
-        y: 60,
-        duration: 0.8,
-        delay: index * 0.1,
+        y: 40,
+        duration: 0.5,
+        delay: Math.min(localIndex, 3) * 0.08,
         ease: 'power3.out',
         scrollTrigger: {
           trigger: card,
-          start: 'top 85%'
+          start: 'top 88%'
         }
       });
     });

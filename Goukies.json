@@ -1,15 +1,102 @@
 [
   {
     "id": "le-01",
-    "nom": "Le 01",
+    "nom": "Vanille",
     "description": "150 g de pur plaisir : deux Goukies moelleux garnis d'une généreuse glace végétale bio maison.",
     "images": [
       "goukie_images/01.webp"
     ],
     "categorie": "ice",
     "ingredients": [
-      "Deux Goukies moelleux",
-      "Glace végétale bio maison"
+      "Lait d'amande vanille bio",
+      "Vanille bio",
+      "Fécule de maïs bio",
+      "Beurre d'amande maison bio"
+    ],
+    "prix": {
+      "petit": null,
+      "moyen": 8.0,
+      "grand": null
+    },
+    "format_mini": {
+      "x1": null,
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x10": null
+    },
+    "format_standard": {
+      "unite": null,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null,
+      "parts_8_10": null
+    },
+    "poids_g": 150
+  },
+  {
+    "id": "ice-chocolat",
+    "nom": "Chocolat",
+    "description": "150 g de pur plaisir : deux Goukies nature aux pépites de chocolat renfermant une généreuse glace végétale maison au chocolat.",
+    "images": [
+      "goukie_images/ice-chocolat.webp"
+    ],
+    "categorie": "ice",
+    "ingredients": [
+      "Cacao",
+      "Chocolat noir",
+      "Lait d'amande vanille bio",
+      "Beurre d'amande maison bio",
+      "Fécule de maïs bio"
+    ],
+    "prix": {
+      "petit": null,
+      "moyen": 8.0,
+      "grand": null
+    },
+    "format_mini": {
+      "x1": null,
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x10": null
+    },
+    "format_standard": {
+      "unite": null,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null,
+      "parts_8_10": null
+    },
+    "poids_g": 150
+  },
+  {
+    "id": "ice-coco",
+    "nom": "Coco",
+    "description": "150 g de pur plaisir : deux Goukies chocolat aux pépites de chocolat renfermant une généreuse glace végétale maison bio à la noix de coco.",
+    "images": [
+      "goukie_images/ice-coco.webp"
+    ],
+    "categorie": "ice",
+    "ingredients": [
+      "Lait de coco bio",
+      "Lait d'amande vanille bio",
+      "Beurre d'amande maison bio",
+      "Fécule de maïs bio"
     ],
     "prix": {
       "petit": null,

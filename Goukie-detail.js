@@ -85,18 +85,10 @@ function setupSizeButtons(Goukie) {
   sizeSelector.innerHTML = '';
 
   // Déterminer la catégorie du Goukie et configurer les boutons en conséquence
-  if (Goukie.categorie === 'essentiels') {
-    // Essentiels : à l'unité + lot de 4 (la promo devient sélectionnable)
-    if (Goukie.prix.petit !== null) {
-      addSizeButton(sizeSelector, 'Petit', 'Petit', Goukie.prix.petit);
-    }
-    if (Goukie.prix.moyen !== null) {
-      addSizeButton(sizeSelector, "À l'unité", "À l'unité", Goukie.prix.moyen);
-    }
-    if (Goukie.format_standard && Goukie.format_standard.x4 !== null) {
-      addSizeButton(sizeSelector, 'Lot de 4', 'Lot de 4', Goukie.format_standard.x4);
-    }
-  } else if (Goukie.categorie === 'gourmets') {
+  // La categorie "essentiels" (bouton Petit + lot de 4) a ete retiree le
+  // 2026-09-06 : Goukies.json ne contient plus aucune fiche essentiels, Le 08 et
+  // Le 11 etant passes au format Gourmets. La branche etait donc inatteignable.
+  if (Goukie.categorie === 'gourmets') {
     // Gourmets : à l'unité + lots de 3 et 5 (promos sélectionnables)
     if (Goukie.prix.moyen !== null) {
       addSizeButton(sizeSelector, "À l'unité", "À l'unité", Goukie.prix.moyen);
@@ -127,9 +119,15 @@ function setupSizeButtons(Goukie) {
       addSizeButton(sizeSelector, 'Lot de 5', 'Lot de 5', Goukie.format_gourmet.x5);
     }
   } else if (Goukie.categorie === 'ice') {
-    // Ice Goukie : vendu a l'unite uniquement
+    // Ice Goukie : a l'unite + lots de 3 et 5 (promos selectionnables)
     if (Goukie.prix.moyen !== null) {
       addSizeButton(sizeSelector, "À l'unité", "À l'unité", Goukie.prix.moyen);
+    }
+    if (Goukie.format_gourmet && Goukie.format_gourmet.x3 !== null) {
+      addSizeButton(sizeSelector, 'Lot de 3', 'Lot de 3', Goukie.format_gourmet.x3);
+    }
+    if (Goukie.format_gourmet && Goukie.format_gourmet.x5 !== null) {
+      addSizeButton(sizeSelector, 'Lot de 5', 'Lot de 5', Goukie.format_gourmet.x5);
     }
   } else if (Goukie.categorie === 'epicerie') {
     // Pour les produits d'épicerie (pots)

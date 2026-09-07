@@ -225,8 +225,8 @@
     "nom": "Le 08",
     "description": " Goukie chocolat avec des pépites de chocolats",
     "images": [
-      "goukie_images/08.png",
-      "goukie_images/08-2.png"
+      "goukie_images/08.webp",
+      "goukie_images/08-2.webp"
     ],
     "categorie": "gourmets",
     "ingredients": [

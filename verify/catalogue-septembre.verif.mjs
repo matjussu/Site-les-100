@@ -109,6 +109,10 @@ async function lireFiche(id) {
     labelTaille: !!document.querySelector('label[for="Goukie-size"]'),
     groupe: document.querySelector('.size-selector')?.getAttribute('aria-label') || null,
     imgNat: document.getElementById('Goukie-main-img')?.naturalWidth || 0,
+    galerie: [
+      document.getElementById('Goukie-main-img')?.getAttribute('src'),
+      ...[...document.querySelectorAll('#thumbnail-container .thumbnail')].map((t) => t.getAttribute('src')),
+    ].filter(Boolean),
   }));
 }
 
@@ -144,6 +148,21 @@ for (const id of ['le-08', 'le-11']) {
   check(!labels.includes('Petit'), `${id} : plus de bouton Petit (${labels.join(', ')})`);
   check(!labels.includes('Lot de 4'), `${id} : plus de lot de 4 (${labels.join(', ')})`);
 }
+
+// -- 2a bis) Photos livrees par Matteo le 07/09 : fiche Le 08 entierement en
+// webp, et Ice Goukie Chocolat sur sa propre photo (plus celle du groupe des 3).
+// La galerie rend l'image principale PUIS les vignettes : la premiere vignette
+// repete la principale, on compte donc les sources distinctes.
+const galerie08 = [...new Set(saboter(fiches['le-08'].galerie, ['goukie_images/08.png']))];
+check(
+  galerie08.length === 2 && galerie08.every((src) => src.endsWith('.webp')),
+  `le-08 : 2 vues distinctes, toutes en webp (${galerie08.join(', ')})`,
+);
+const galerieIce = saboter(fiches['ice-chocolat'].galerie, ['goukie_images/3_glaces.png']);
+check(
+  galerieIce[0] === 'goukie_images/ice-chocolat.webp',
+  `ice-chocolat : photo dediee servie (${galerieIce.join(', ')})`,
+);
 
 // -- 2b) Ingredients : marque retiree, azuki reformule
 const fiche35 = await lireFiche('le-35');

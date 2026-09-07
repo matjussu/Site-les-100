@@ -30,9 +30,9 @@
       "x4": null
     },
     "format_gourmet": {
-      "unite": null,
-      "x3": null,
-      "x5": null
+      "unite": 8.0,
+      "x3": 23.0,
+      "x5": 39.0
     },
     "format_geant": {
       "parts_4_6": null,
@@ -73,9 +73,9 @@
       "x4": null
     },
     "format_gourmet": {
-      "unite": null,
-      "x3": null,
-      "x5": null
+      "unite": 8.0,
+      "x3": 23.0,
+      "x5": 39.0
     },
     "format_geant": {
       "parts_4_6": null,
@@ -115,9 +115,9 @@
       "x4": null
     },
     "format_gourmet": {
-      "unite": null,
-      "x3": null,
-      "x5": null
+      "unite": 8.0,
+      "x3": 23.0,
+      "x5": 39.0
     },
     "format_geant": {
       "parts_4_6": null,
@@ -134,7 +134,7 @@
       "goukie_images/le-11-01.webp",
       "goukie_images/le-11-2.webp"
     ],
-    "categorie": "essentiels",
+    "categorie": "gourmets",
     "ingredients": [
       "Farine de riz Bio",
       "Sucre de canne blond Bio",
@@ -144,7 +144,7 @@
       "Chocolat noir en palet"
     ],
     "prix": {
-      "petit": 3.0,
+      "petit": null,
       "moyen": 5.0,
       "grand": null
     },
@@ -159,13 +159,13 @@
       "x24": 47.0
     },
     "format_standard": {
-      "unite": 5.0,
-      "x4": 16.0
+      "unite": null,
+      "x4": null
     },
     "format_gourmet": {
-      "unite": null,
-      "x3": null,
-      "x5": null
+      "unite": 5.0,
+      "x3": 14.0,
+      "x5": 23.0
     },
     "format_geant": {
       "parts_4_6": null,
@@ -217,17 +217,18 @@
     "format_geant": {
       "parts_4_6": null,
       "parts_6_8": null
-    }
+    },
+    "poids_g": 50
   },
   {
     "id": "le-08",
     "nom": "Le 08",
     "description": " Goukie chocolat avec des pépites de chocolats",
     "images": [
-      "goukie_images/08.png",
-      "goukie_images/08-2.png"
+      "goukie_images/08.webp",
+      "goukie_images/08-2.webp"
     ],
-    "categorie": "essentiels",
+    "categorie": "gourmets",
     "ingredients": [
       "Farine de riz Bio",
       "Sucre de canne blond Bio",
@@ -235,10 +236,10 @@
       "Compote de pomme bio fait maison",
       "Margarine sans huile de palme",
       "Chocolat noir en palet",
-      "Chocolat en poudre van Houten"
+      "Chocolat en poudre Noir Intense"
     ],
     "prix": {
-      "petit": 3.0,
+      "petit": null,
       "moyen": 5.0,
       "grand": null
     },
@@ -253,13 +254,13 @@
       "x24": 47.0
     },
     "format_standard": {
-      "unite": 5.0,
-      "x4": 16.0
+      "unite": null,
+      "x4": null
     },
     "format_gourmet": {
-      "unite": null,
-      "x3": null,
-      "x5": null
+      "unite": 5.0,
+      "x3": 14.0,
+      "x5": 23.0
     },
     "format_geant": {
       "parts_4_6": null,
@@ -282,7 +283,7 @@
       "Compote de pomme bio fait maison",
       "Margarine sans huile de palme",
       "Chocolat noir en palet",
-      "Chocolat en poudre van Houten"
+      "Chocolat en poudre Noir Intense"
     ],
     "prix": {
       "petit": null,
@@ -312,7 +313,8 @@
     "format_geant": {
       "parts_4_6": null,
       "parts_6_8": null
-    }
+    },
+    "poids_g": 50
   },
   {
     "id": "le-27m",
@@ -358,7 +360,8 @@
     "format_geant": {
       "parts_4_6": null,
       "parts_6_8": null
-    }
+    },
+    "poids_g": 50
   },
   {
     "id": "le-03",
@@ -453,7 +456,8 @@
     "format_geant": {
       "parts_4_6": null,
       "parts_6_8": null
-    }
+    },
+    "poids_g": 50
   },
   {
     "id": "le-04",
@@ -549,7 +553,8 @@
     "format_geant": {
       "parts_4_6": null,
       "parts_6_8": null
-    }
+    },
+    "poids_g": 50
   },
   {
     "id": "le-04-big",
@@ -652,7 +657,7 @@
       "Compote de pomme bio fait maison",
       "Margarine sans huile de palme",
       "Chocolat noir en palet",
-      "Chocolat en poudre van Houten",
+      "Chocolat en poudre Noir Intense",
       "Nocciolata bio"
     ],
     "prix": {
@@ -701,7 +706,7 @@
       "Compote de pomme bio fait maison",
       "Margarine sans huile de palme",
       "Chocolat noir en palet",
-      "Chocolat en poudre van Houten",
+      "Chocolat en poudre Noir Intense",
       "Nocciolata bio"
     ],
     "prix": {
@@ -727,7 +732,8 @@
     "format_geant": {
       "parts_4_6": null,
       "parts_6_8": null
-    }
+    },
+    "poids_g": 50
   },
   {
     "id": "le-10",
@@ -818,7 +824,8 @@
     "format_geant": {
       "parts_4_6": null,
       "parts_6_8": null
-    }
+    },
+    "poids_g": 50
   },
   {
     "id": "le-18",
@@ -836,7 +843,7 @@
       "Compote de pomme bio fait maison",
       "Margarine sans huile de palme",
       "Chocolat noir en palet",
-      "Chocolat en poudre van Houten",
+      "Chocolat en poudre Noir Intense",
       "Beurre de pistache bio fait maison"
     ],
     "prix": {
@@ -885,7 +892,7 @@
       "Compote de pomme bio fait maison",
       "Margarine sans huile de palme",
       "Chocolat noir en palet",
-      "Chocolat en poudre van Houten",
+      "Chocolat en poudre Noir Intense",
       "Beurre de pistache bio fait maison"
     ],
     "prix": {
@@ -911,7 +918,8 @@
     "format_geant": {
       "parts_4_6": null,
       "parts_6_8": null
-    }
+    },
+    "poids_g": 50
   },
   {
     "id": "le-02",
@@ -1090,7 +1098,8 @@
     "format_geant": {
       "parts_4_6": null,
       "parts_6_8": null
-    }
+    },
+    "poids_g": 50
   },
   {
     "id": "octobre",
@@ -1430,7 +1439,7 @@
       "Compote de pomme bio fait maison",
       "Margarine sans huile de palme",
       "Noix de coco",
-      "Pâte de haricots rouges Azuki"
+      "Haricot rouge azuki"
     ],
     "prix": {
       "petit": null,
@@ -1755,7 +1764,7 @@
     ],
     "prix": {
       "petit": null,
-      "moyen": 4.5,
+      "moyen": 5.5,
       "grand": null
     },
     "format_mini": {
@@ -1770,9 +1779,9 @@
       "x4": null
     },
     "format_gourmet": {
-      "unite": null,
-      "x3": null,
-      "x5": null
+      "unite": 5.5,
+      "x3": 15.5,
+      "x5": 26.0
     },
     "format_geant": {
       "parts_4_6": null,

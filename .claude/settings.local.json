@@ -20,5 +20,10 @@
     ],
     "deny": [],
     "ask": []
-  }
+  },
+  "disabledMcpjsonServers": [
+    "telegram-jarvis",
+    "claude-peers",
+    "qmd"
+  ]
 }

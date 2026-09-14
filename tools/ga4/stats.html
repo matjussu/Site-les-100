@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Statistiques — Les 100</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+<style>
+  :root{
+    --bg:#f7f1e8; --card:#fffdf9; --ink:#3c2b1a; --muted:#9b8a76;
+    --gold:#c8862d; --gold-soft:#e7c88a; --line:#ece2d3; --green:#5a8a4c; --red:#c25b4a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);
+       font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+       line-height:1.5;padding:32px 20px 60px}
+  .wrap{max-width:960px;margin:0 auto}
+  header{margin-bottom:28px}
+  h1{font-size:28px;margin:0 0 4px;letter-spacing:-.02em}
+  .sub{color:var(--muted);font-size:14px}
+  h2{font-size:15px;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);
+     margin:36px 0 14px;font-weight:600}
+  .kpis{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px}
+  .kpi{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px}
+  .kpi .n{font-size:30px;font-weight:700;letter-spacing:-.02em}
+  .kpi .l{font-size:12px;color:var(--muted);text-transform:uppercase;letter-spacing:.05em;margin-top:2px}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:20px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  @media(max-width:680px){.grid2{grid-template-columns:1fr}}
+  table{width:100%;border-collapse:collapse;font-size:14px}
+  th,td{text-align:right;padding:9px 10px;border-bottom:1px solid var(--line)}
+  th:first-child,td:first-child{text-align:left}
+  thead th{font-size:11px;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600}
+  tbody tr:last-child td{border-bottom:none}
+  .up{color:var(--green);font-weight:600}.down{color:var(--red);font-weight:600}
+  .partial{color:var(--gold);font-size:11px;font-weight:600;background:#fbf2dd;
+            padding:1px 7px;border-radius:20px;margin-left:6px;vertical-align:middle}
+  .bar-row{display:flex;align-items:center;gap:10px;margin:9px 0;font-size:14px}
+  .bar-row .lab{flex:0 0 42%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .bar-track{flex:1;background:#f1e8d8;border-radius:6px;height:18px;overflow:hidden}
+  .bar-fill{height:100%;background:linear-gradient(90deg,var(--gold-soft),var(--gold));border-radius:6px}
+  .bar-row .v{flex:0 0 48px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted)}
+  .note{background:#fbf2dd;border:1px solid var(--gold-soft);border-radius:12px;
+        padding:14px 16px;font-size:13px;color:#7a5a26;margin-top:30px}
+  .chart-box{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 14px}
+  footer{margin-top:34px;color:var(--muted);font-size:12px;text-align:center}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>📊 Statistiques — Les 100</h1>
+    <div class="sub" id="sub"></div>
+  </header>
+
+  <div class="kpis" id="kpis"></div>
+
+  <h2>Visiteurs par mois</h2>
+  <div class="chart-box"><canvas id="chart" height="120"></canvas></div>
+
+  <h2>Détail mensuel</h2>
+  <div class="card"><table id="mtable">
+    <thead><tr><th>Mois</th><th>Visiteurs</th><th>Nouveaux</th><th>Sessions</th><th>Pages vues</th><th>Évol.</th></tr></thead>
+    <tbody></tbody>
+  </table></div>
+
+  <div class="grid2">
+    <div><h2>D'où viennent les visiteurs</h2><div class="card" id="sources"></div></div>
+    <div><h2>Pages les plus vues</h2><div class="card" id="pages"></div></div>
+  </div>
+  <div class="grid2">
+    <div><h2>Appareils</h2><div class="card" id="devices"></div></div>
+    <div><h2>Villes</h2><div class="card" id="villes"></div></div>
+  </div>
+
+  <div class="note" id="note"></div>
+  <footer>Données Google Analytics 4 · propriété <span id="pid"></span> · généré le <span id="gen"></span></footer>
+</div>
+
+<script>
+const DATA = {"property": "506723083", "measurement": "G-W677K39BJN", "genere_le": "2026-06-03", "depuis": "2025-05-01", "monthly": [{"mois": "2025-11", "visiteurs": 18, "nouveaux": 18, "sessions": 26, "vues": 183}, {"mois": "2025-12", "visiteurs": 18, "nouveaux": 15, "sessions": 34, "vues": 240}, {"mois": "2026-01", "visiteurs": 40, "nouveaux": 35, "sessions": 94, "vues": 1387}, {"mois": "2026-02", "visiteurs": 41, "nouveaux": 35, "sessions": 105, "vues": 763}, {"mois": "2026-03", "visiteurs": 53, "nouveaux": 35, "sessions": 98, "vues": 984}, {"mois": "2026-04", "visiteurs": 12, "nouveaux": 8, "sessions": 21, "vues": 172}, {"mois": "2026-05", "visiteurs": 43, "nouveaux": 37, "sessions": 61, "vues": 684}, {"mois": "2026-06", "visiteurs": 7, "nouveaux": 3, "sessions": 15, "vues": 374}], "totals": {"visiteurs": 199, "nouveaux": 186, "sessions": 455, "vues": 4787, "duree": 255.46912832307692, "engagement": 94.5054945054945}, "pages": [{"label": "/Goukie.html", "val": 1797}, {"label": "/Goukie-detail.html", "val": 1132}, {"label": "/", "val": 851}, {"label": "/contact.html", "val": 250}, {"label": "/index.html", "val": 201}, {"label": "/epicerie.html", "val": 183}, {"label": "/allergenes.html", "val": 178}, {"label": "/histoire.html", "val": 159}], "sources": [{"label": "Direct", "val": 204}, {"label": "Referral", "val": 104}, {"label": "Organic Social", "val": 76}, {"label": "Organic Search", "val": 67}, {"label": "Unassigned", "val": 8}], "devices": [{"label": "mobile", "val": 234}, {"label": "desktop", "val": 219}, {"label": "tablet", "val": 2}], "villes": [{"label": "Paris", "val": 85}, {"label": "(not set)", "val": 27}, {"label": "Lamorlaye", "val": 21}, {"label": "Amsterdam", "val": 12}, {"label": "Gouvieux", "val": 9}, {"label": "Dublin", "val": 6}, {"label": "Grenoble", "val": 5}, {"label": "Lyon", "val": 4}]};
+const fmt = n => n.toLocaleString('fr-FR');
+const PAGE_LABELS = {'/':'Accueil','/index.html':'Accueil','/Goukie.html':'Catalogue Goukies',
+  '/Goukie-detail.html':'Fiche produit','/allergenes.html':'Allergènes','/epicerie.html':'Épicerie',
+  '/histoire.html':'Notre histoire','/contact.html':'Contact','/merci.html':'Merci (commande)'};
+const SRC_LABELS = {'Organic Search':'Recherche Google','Direct':'Direct / bouche-à-oreille',
+  'Referral':'Liens externes','Organic Social':'Réseaux sociaux','Unassigned':'Non identifié',
+  'Organic Video':'Vidéo','Email':'E-mail'};
+const DEV_LABELS = {'mobile':'📱 Mobile','desktop':'💻 Ordinateur','tablet':'📲 Tablette'};
+
+document.getElementById('sub').textContent =
+  `Période : depuis ${DATA.depuis} · site ${DATA.measurement}`;
+document.getElementById('pid').textContent = DATA.property;
+document.getElementById('gen').textContent = DATA.genere_le;
+
+// KPIs
+const t = DATA.totals;
+const kpis = [
+  ['Visiteurs', fmt(t.visiteurs)], ['Sessions', fmt(t.sessions)],
+  ['Pages vues', fmt(t.vues)], ['Nouveaux', fmt(t.nouveaux)],
+  ['Durée moy.', Math.round(t.duree)+'s'], ['Engagement', Math.round(t.engagement)+'%'],
+];
+document.getElementById('kpis').innerHTML = kpis.map(([l,n])=>
+  `<div class="kpi"><div class="n">${n}</div><div class="l">${l}</div></div>`).join('');
+
+// Tableau mensuel (dernier mois = partiel)
+const tb = document.querySelector('#mtable tbody');
+DATA.monthly.forEach((m,i)=>{
+  const prev = i>0 ? DATA.monthly[i-1].visiteurs : null;
+  let ev='—';
+  if(prev){const p=Math.round((m.visiteurs-prev)/prev*100);
+    ev=`<span class="${p>=0?'up':'down'}">${p>=0?'+':''}${p}%</span>`;}
+  const last = i===DATA.monthly.length-1;
+  tb.innerHTML += `<tr><td>${m.mois}${last?'<span class="partial">en cours</span>':''}</td>`+
+    `<td>${fmt(m.visiteurs)}</td><td>${fmt(m.nouveaux)}</td>`+
+    `<td>${fmt(m.sessions)}</td><td>${fmt(m.vues)}</td><td>${ev}</td></tr>`;
+});
+
+// Graphe
+new Chart(document.getElementById('chart'),{
+  data:{labels:DATA.monthly.map(m=>m.mois),
+    datasets:[
+      {type:'bar',label:'Visiteurs',data:DATA.monthly.map(m=>m.visiteurs),
+       backgroundColor:'#c8862d',borderRadius:6,order:2},
+      {type:'line',label:'Sessions',data:DATA.monthly.map(m=>m.sessions),
+       borderColor:'#8a5a2b',backgroundColor:'#8a5a2b',tension:.3,order:1,pointRadius:3}]},
+  options:{responsive:true,plugins:{legend:{position:'bottom'}},
+    scales:{y:{beginAtZero:true,grid:{color:'#ece2d3'}},x:{grid:{display:false}}}}
+});
+
+// Barres horizontales
+function bars(elId, items, labelMap){
+  const max = Math.max(...items.map(i=>i.val),1);
+  document.getElementById(elId).innerHTML = items.map(i=>{
+    const lab = labelMap && labelMap[i.label] ? labelMap[i.label] : i.label;
+    return `<div class="bar-row"><span class="lab" title="${i.label}">${lab}</span>`+
+      `<span class="bar-track"><span class="bar-fill" style="width:${i.val/max*100}%"></span></span>`+
+      `<span class="v">${fmt(i.val)}</span></div>`;
+  }).join('');
+}
+bars('sources', DATA.sources, SRC_LABELS);
+bars('pages', DATA.pages, PAGE_LABELS);
+bars('devices', DATA.devices, DEV_LABELS);
+bars('villes', DATA.villes, null);
+
+document.getElementById('note').innerHTML =
+  '⚠️ <b>À savoir :</b> les données démarrent en novembre 2025 (GA4 n\'était pas installé avant). '+
+  'Le mois en cours est partiel. Les <b>pages vues</b> et l\'<b>engagement</b> d\'avant juin 2026 '+
+  'sont surévalués (bug de comptage corrigé le 03/06/2026) — le <b>nombre de visiteurs reste fiable</b>.';
+</script>
+</body>
+</html>

@@ -1246,23 +1246,22 @@
   {
     "id": "le-88",
     "nom": "Le 88",
-    "description": "Goukie doré au gingembre intense, cœur ultra fondant à la purée d'amande maison & gingembre frais.",
+    "description": "Gingembre, cœur fondant amande et gingembre.",
     "images": [
-      "goukie_images/88.png",
-      "goukie_images/88-2.png"
+      "goukie_images/88.webp",
+      "goukie_images/88-2.webp"
     ],
-    "categorie": "gourmets",
+    "categorie": "allies",
     "ingredients": [
       "Farine de riz bio",
-      "Sucre de canne blond bio",
-      "Margarine sans huile de palme",
-      "Compote de pommes bio fait maison",
+      "Sucre de coco non raffiné",
+      "Compote de pomme",
       "Gingembre bio",
-      "Patate douce bio"
+      "Beurre d'amande bio maison"
     ],
     "prix": {
       "petit": null,
-      "moyen": 5.0,
+      "moyen": 6.0,
       "grand": null
     },
     "format_mini": {
@@ -1280,9 +1279,191 @@
       "x4": null
     },
     "format_gourmet": {
-      "unite": 5.0,
-      "x3": 14.0,
-      "x5": 23.0
+      "unite": 6.0,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    },
+    "poids_g": 100
+  },
+  {
+    "id": "le-67",
+    "nom": "Le 67",
+    "description": "Noisette, cœur fondant noisette et chocolat blanc, enrobé de chocolat noir.",
+    "images": [
+      "goukie_images/67.webp",
+      "goukie_images/67-2.webp"
+    ],
+    "categorie": "insolites",
+    "ingredients": [
+      "Farine de riz bio",
+      "Sucre de canne non raffiné",
+      "Compote de pomme bio faite maison",
+      "Beurre de noisette maison bio",
+      "Chocolat blanc vegan"
+    ],
+    "prix": {
+      "petit": null,
+      "moyen": 5.5,
+      "grand": null
+    },
+    "format_mini": {
+      "x1": null,
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x10": null
+    },
+    "format_standard": {
+      "unite": null,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": 5.5,
+      "x3": 15.5,
+      "x5": 26.0
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null,
+      "parts_8_10": null
+    },
+    "poids_g": 100
+  },
+  {
+    "id": "le-09",
+    "nom": "Le 09",
+    "description": "Amande, cœur généreux de pommes compotées.",
+    "images": [
+      "goukie_images/09.webp",
+      "goukie_images/09-2.webp"
+    ],
+    "categorie": "insolites",
+    "ingredients": [
+      "Farine de riz bio",
+      "Sucre de canne non raffiné",
+      "Compote de pomme",
+      "Pomme bio",
+      "Beurre d'amande maison bio"
+    ],
+    "prix": {
+      "petit": null,
+      "moyen": 5.5,
+      "grand": null
+    },
+    "format_mini": {
+      "x1": null,
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x10": null
+    },
+    "format_standard": {
+      "unite": null,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": 5.5,
+      "x3": 15.5,
+      "x5": 26.0
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null,
+      "parts_8_10": null
+    },
+    "poids_g": 100
+  },
+  {
+    "id": "le-79",
+    "nom": "Le 79",
+    "description": "Une pâte aux notes chaudes de Golden Latte qui renferme un cœur fondant de caramel de datte.",
+    "images": [
+      "goukie_images/79.webp",
+      "goukie_images/79-2.webp"
+    ],
+    "categorie": "allies",
+    "ingredients": [
+      "Farine de riz bio",
+      "Sucre de coco non raffiné",
+      "Compote de pomme",
+      "Épices (curcuma, gingembre, cannelle, poivre)",
+      "Datte Medjool bio",
+      "Beurre d'amande bio maison"
+    ],
+    "prix": {
+      "petit": null,
+      "moyen": 6.0,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": null,
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
+    },
+    "format_standard": {
+      "unite": null,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": 6.0,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    },
+    "poids_g": 100
+  },
+  {
+    "id": "le-22",
+    "nom": "Le 22",
+    "description": "Une pâte à la protéine de chanvre et aux flocons d'avoine, doucement sucrée au sucre de coco, avec de généreuses pépites de chocolat noir.",
+    "images": [
+      "goukie_images/22.webp",
+      "goukie_images/22-2.webp"
+    ],
+    "categorie": "allies",
+    "ingredients": [
+      "Farine de riz bio",
+      "Sucre de coco non raffiné",
+      "Compote de pomme",
+      "Protéine de chanvre bio",
+      "Flocons d'avoine sans gluten",
+      "Pépites de chocolat bio"
+    ],
+    "prix": {
+      "petit": null,
+      "moyen": 6.0,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": null,
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
+    },
+    "format_standard": {
+      "unite": null,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": 6.0,
+      "x3": null,
+      "x5": null
     },
     "format_geant": {
       "parts_4_6": null,

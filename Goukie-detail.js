@@ -118,6 +118,18 @@ function setupSizeButtons(Goukie) {
     if (Goukie.format_gourmet && Goukie.format_gourmet.x5 !== null) {
       addSizeButton(sizeSelector, 'Lot de 5', 'Lot de 5', Goukie.format_gourmet.x5);
     }
+  } else if (Goukie.categorie === 'allies') {
+    // Allies : a l'unite, et lots de 3 et 5 seulement si definis (les Allies
+    // d'octobre 2026 n'ont qu'un prix unitaire : x3/x5 null -> non affiches).
+    if (Goukie.prix.moyen !== null) {
+      addSizeButton(sizeSelector, "À l'unité", "À l'unité", Goukie.prix.moyen);
+    }
+    if (Goukie.format_gourmet && Goukie.format_gourmet.x3 !== null) {
+      addSizeButton(sizeSelector, 'Lot de 3', 'Lot de 3', Goukie.format_gourmet.x3);
+    }
+    if (Goukie.format_gourmet && Goukie.format_gourmet.x5 !== null) {
+      addSizeButton(sizeSelector, 'Lot de 5', 'Lot de 5', Goukie.format_gourmet.x5);
+    }
   } else if (Goukie.categorie === 'ice') {
     // Ice Goukie : a l'unite + lots de 3 et 5 (promos selectionnables)
     if (Goukie.prix.moyen !== null) {

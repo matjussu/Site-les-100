@@ -1,4 +1,7 @@
-// Verif-kit v2 - modifs catalogue du 2026-09-06 (demandes Matteo)
+// Verif-kit v2 - maj catalogue octobre 2026 (ordre 2026-10-01-0945)
+// Herite de catalogue-septembre : conserve ses regressions ET ajoute la maj
+// d'octobre (nouveaux goukies 67/09/79/22, categorie Allies, maj Le 88,
+// vedettes 67/09, archives 48/80).
 // Couvre : texte Edition Limitee, Le 80 dans l'archive saison, prix Le 48,
 // Le 08 / Le 11 au format Gourmets, lots Ice Goukies, poids des minis,
 // ingredients (marque retiree, azuki reformule), suppression du mot "Taille".
@@ -44,7 +47,7 @@ check(
 
 // -- 1b) Archive des Insolites : compteur et goukies de saison
 const resume = await s.page.$eval('.insolites-archive-toggle', (el) => el.textContent.trim());
-check(resume.includes('(10)'), `compteur archive a 10 (${resume})`);
+check(resume.includes('(11)'), `compteur archive a 11 (${resume})`);
 
 await s.page.click('.insolites-archive-toggle');
 await settle(s.page);
@@ -67,13 +70,22 @@ check(
   'Le 80 (ete) present dans les goukies de saison',
 );
 
-// -- 1c) Le 80 reste en vedette Goukie de saison
+// -- 1c) Vedettes octobre : Le 67 goukie du mois, Le 09 goukie de saison ;
+// Le 48 et Le 80 ne sont plus en vedette (descendus en archive).
 const vedettes = await s.page.$$eval('.insolites-featured .Goukie-card', (els) =>
   els.map((a) => ({ href: a.getAttribute('href'), badge: a.querySelector('.insolite-badge')?.textContent.trim() })),
 );
 check(
-  vedettes.some((v) => v.href === 'Goukie-detail.html?id=le-80' && v.badge === 'Goukie de saison'),
-  `Le 80 toujours en vedette Goukie de saison (${JSON.stringify(vedettes)})`,
+  vedettes.some((v) => v.href === 'Goukie-detail.html?id=le-67' && v.badge === 'Goukie du mois'),
+  `Le 67 en vedette Goukie du mois (${JSON.stringify(vedettes)})`,
+);
+check(
+  vedettes.some((v) => v.href === 'Goukie-detail.html?id=le-09' && v.badge === 'Goukie de saison'),
+  `Le 09 en vedette Goukie de saison (${JSON.stringify(vedettes)})`,
+);
+check(
+  !vedettes.some((v) => v.href === 'Goukie-detail.html?id=le-48' || v.href === 'Goukie-detail.html?id=le-80'),
+  'Le 48 / Le 80 ne sont plus en vedette',
 );
 
 // -- 1d) Aucune image cassee sur tout le catalogue, archive ouverte comprise
@@ -89,7 +101,24 @@ const carte08 = await s.page.$eval(
 );
 check(carte08.src === 'goukie_images/08.webp' && carte08.nat === 400, `carte Le 08 (${JSON.stringify(carte08)})`);
 
-await s.page.screenshot({ path: 'verify/captures/catalogue-septembre.png', fullPage: true });
+// -- 1f) Nouvelle categorie Les Allies : section + lien nav + 3 cartes (88, 79, 22)
+const alliesSection = await s.page.$('#les-allies');
+check(alliesSection !== null, 'section #les-allies presente');
+const alliesNav = await s.page.$('a[href="#les-allies"]');
+check(alliesNav !== null, 'lien nav Les Allies present');
+const alliesCards = await s.page.$$eval('#les-allies .Goukie-card', (els) => els.map((a) => a.getAttribute('href')));
+console.log('ALLIES', JSON.stringify(alliesCards));
+check(alliesCards.length === 3, `Les Allies = 3 cartes (${alliesCards.length})`);
+for (const id of ['le-88', 'le-79', 'le-22']) {
+  check(alliesCards.includes(`Goukie-detail.html?id=${id}`), `${id} present dans Les Allies`);
+}
+
+// -- 1g) Le 88 a quitte Les Gourmets
+const gourmetsCards = await s.page.$$eval('#les-gourmets .Goukie-card', (els) => els.map((a) => a.getAttribute('href')));
+check(!gourmetsCards.includes('Goukie-detail.html?id=le-88'), 'Le 88 ne figure plus dans Les Gourmets');
+
+await s.page.screenshot({ path: 'verify/captures/catalogue-octobre.png', fullPage: true });
+await s.page.locator('#les-allies').screenshot({ path: 'verify/captures/allies-section.png' });
 
 // ============================================================ 2) FICHES
 async function lireFiche(id) {
@@ -117,6 +146,11 @@ async function lireFiche(id) {
 }
 
 const attendus = {
+  'le-67': [["À l'unité", 5.5], ['Lot de 3', 15.5], ['Lot de 5', 26]],
+  'le-09': [["À l'unité", 5.5], ['Lot de 3', 15.5], ['Lot de 5', 26]],
+  'le-79': [["À l'unité", 6]],
+  'le-22': [["À l'unité", 6]],
+  'le-88': [["À l'unité", 6]],
   'le-48': [["À l'unité", 5.5], ['Lot de 3', 15.5], ['Lot de 5', 26]],
   'le-80': [["À l'unité", 5.5], ['Lot de 3', 15.5], ['Lot de 5', 26]],
   'le-08': [["À l'unité", 5], ['Lot de 3', 14], ['Lot de 5', 23]],
@@ -192,7 +226,7 @@ check(erreursConsole.length === 0, `0 erreur JS (${JSON.stringify(erreursConsole
 
 // Captures nommees APRES navigation explicite : une capture prise en fin de
 // boucle porterait le nom d'une fiche et le contenu d'une autre.
-for (const id of ['le-08', 'ice-chocolat', 'le-08-m']) {
+for (const id of ['le-67', 'le-09', 'le-79', 'le-22', 'le-88', 'le-08', 'ice-chocolat']) {
   await lireFiche(id);
   await s.page.screenshot({ path: `verify/captures/fiche-${id}.png` });
 }

@@ -314,6 +314,10 @@ function fetchGoukieData() {
         li.textContent = ingredient;
         ingredientList.appendChild(li);
       });
+      // Liste vide (recette en attente de la cliente) : on masque le bloc pour ne pas
+      // laisser le titre "Ingrédients principaux" seul, sauf s'il porte une carte provenance.
+      document.querySelector('.Goukie-ingredients').style.display =
+        Goukie.ingredients.length === 0 && !Goukie.provenance ? 'none' : '';
 
       // AJOUT : Carte Circuit Court / Provenance
       // Supprime une éventuelle carte existante (au cas où)
@@ -326,7 +330,7 @@ function fetchGoukieData() {
         provenanceCard.className = 'provenance-card';
         provenanceCard.innerHTML = `
           <span class="provenance-badge">Circuit court</span>
-          <p class="provenance-text">Les ${Goukie.provenance_ingredient || 'ingrédients bio'} proviennent de : ${Goukie.provenance}</p>
+          <p class="provenance-text">Les ${Goukie.provenance_ingredient || 'ingrédients bio'} proviennent de ${Goukie.provenance}</p>
         `;
         ingredientsContainer.appendChild(provenanceCard);
       }

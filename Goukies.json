@@ -608,7 +608,7 @@
     "nom": "Géant Insolites",
     "description": "Les Insolites sont également disponibles en format à partager, selon les saisons",
     "images": [
-      "goukie_images/02.png"
+      "goukie_images/geant-insolites.webp"
     ],
     "categorie": "insolites",
     "ingredients": [
@@ -1334,6 +1334,44 @@
     "poids_g": 100
   },
   {
+    "id": "le-31",
+    "nom": "Le 31",
+    "description": "Un Goukie aux douces saveurs d'automne, avec une pâte à la pumpkin délicatement parfumée aux épices Pumpkin Spice et un cœur fondant de Pumpkin Butter maison.",
+    "images": [
+      "goukie_images/31.webp",
+      "goukie_images/31-2.webp"
+    ],
+    "categorie": "insolites",
+    "ingredients": [],
+    "prix": {
+      "petit": null,
+      "moyen": 5.5,
+      "grand": null
+    },
+    "format_mini": {
+      "x1": null,
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x10": null
+    },
+    "format_standard": {
+      "unite": null,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": 5.5,
+      "x3": 15.5,
+      "x5": 26.0
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null,
+      "parts_8_10": null
+    },
+    "poids_g": 100
+  },
+  {
     "id": "le-09",
     "nom": "Le 09",
     "description": "Amande, cœur généreux de pommes compotées.",
@@ -1530,11 +1568,12 @@
     "ingredients": [
       "Pommes bio",
       "Sucre de canne blond bio",
-      "Sirop d'érable"
+      "Sirop d'érable",
+      "Épices bio (cannelle, gingembre, muscade, piment de la Jamaïque et girofle)"
     ],
     "prix": {
       "petit": null,
-      "moyen": 6.0,
+      "moyen": 6.5,
       "grand": null
     },
     "format_mini": {
@@ -1574,7 +1613,132 @@
     "ingredients": [
       "Courge bio",
       "Sirop d'érable",
-      "Sucre muscovado bio"
+      "Sucre muscovado bio",
+      "Épices bio (cannelle, gingembre, muscade, piment de la Jamaïque et girofle)"
+    ],
+    "prix": {
+      "petit": null,
+      "moyen": 6.5,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": null,
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
+    },
+    "format_standard": {
+      "unite": null,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    }
+  },
+  {
+    "id": "pear-butter",
+    "nom": "Pear Butter",
+    "description": "Une crème de poires cuite longuement, douce et fondante… délicatement parfumée à la cardamome et aux clous de girofle qui révèlent toute la douceur de la poire. À tartiner, à ajouter dans un yaourt, sur une brioche… ou à savourer directement à la petite cuillère. Les pots font 220 ml.",
+    "images": [
+      "goukie_images/pear_butter.webp"
+    ],
+    "categorie": "epicerie",
+    "provenance": "La Pommeraie de Chaussoy-Epagny",
+    "provenance_ingredient": "poires bio",
+    "ingredients": [
+      "Poires bio",
+      "Sucre muscovado bio",
+      "Épices bio (cardamome et clous de girofle)"
+    ],
+    "prix": {
+      "petit": null,
+      "moyen": 6.5,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": null,
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
+    },
+    "format_standard": {
+      "unite": null,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    }
+  },
+  {
+    "id": "almond-butter",
+    "nom": "Almond Butter",
+    "description": "100% d'amande bio",
+    "images": [
+      "goukie_images/almond_butter.webp"
+    ],
+    "categorie": "epicerie",
+    "ingredients": [
+      "Amandes bio"
+    ],
+    "prix": {
+      "petit": null,
+      "moyen": 6.5,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": null,
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
+    },
+    "format_standard": {
+      "unite": null,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    }
+  },
+  {
+    "id": "peanut-butter",
+    "nom": "Peanut Butter",
+    "description": "100% de cacahuètes bio",
+    "images": [
+      "goukie_images/peanut_butter.webp"
+    ],
+    "categorie": "epicerie",
+    "ingredients": [
+      "Cacahuètes bio"
     ],
     "prix": {
       "petit": null,

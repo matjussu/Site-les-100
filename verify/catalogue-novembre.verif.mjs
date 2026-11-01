@@ -1,4 +1,5 @@
-// Verif-kit v2 - maj catalogue octobre 2026 (ordre 2026-10-01-0945)
+// Verif-kit v2 - maj catalogue octobre 2026 (ordre 2026-10-01-0945), adapte a
+// novembre (ordre 2026-11-01-1805) : Le 31 goukie du mois, Le 67 en archive.
 // Herite de catalogue-septembre : conserve ses regressions ET ajoute la maj
 // d'octobre (nouveaux goukies 67/09/79/22, categorie Allies, maj Le 88,
 // vedettes 67/09, archives 48/80).
@@ -47,7 +48,7 @@ check(
 
 // -- 1b) Archive des Insolites : compteur et goukies de saison
 const resume = await s.page.$eval('.insolites-archive-toggle', (el) => el.textContent.trim());
-check(resume.includes('(11)'), `compteur archive a 11 (${resume})`);
+check(resume.includes('(12)'), `compteur archive a 12 (${resume})`);
 
 await s.page.click('.insolites-archive-toggle');
 await settle(s.page);
@@ -70,22 +71,22 @@ check(
   'Le 80 (ete) present dans les goukies de saison',
 );
 
-// -- 1c) Vedettes octobre : Le 67 goukie du mois, Le 09 goukie de saison ;
-// Le 48 et Le 80 ne sont plus en vedette (descendus en archive).
+// -- 1c) Vedettes novembre : Le 31 goukie du mois, Le 09 goukie de saison ;
+// Le 67, Le 48 et Le 80 ne sont plus en vedette (descendus en archive).
 const vedettes = await s.page.$$eval('.insolites-featured .Goukie-card', (els) =>
   els.map((a) => ({ href: a.getAttribute('href'), badge: a.querySelector('.insolite-badge')?.textContent.trim() })),
 );
 check(
-  vedettes.some((v) => v.href === 'Goukie-detail.html?id=le-67' && v.badge === 'Goukie du mois'),
-  `Le 67 en vedette Goukie du mois (${JSON.stringify(vedettes)})`,
+  vedettes.some((v) => v.href === 'Goukie-detail.html?id=le-31' && v.badge === 'Goukie du mois'),
+  `Le 31 en vedette Goukie du mois (${JSON.stringify(vedettes)})`,
 );
 check(
   vedettes.some((v) => v.href === 'Goukie-detail.html?id=le-09' && v.badge === 'Goukie de saison'),
   `Le 09 en vedette Goukie de saison (${JSON.stringify(vedettes)})`,
 );
 check(
-  !vedettes.some((v) => v.href === 'Goukie-detail.html?id=le-48' || v.href === 'Goukie-detail.html?id=le-80'),
-  'Le 48 / Le 80 ne sont plus en vedette',
+  !vedettes.some((v) => ['le-67', 'le-48', 'le-80'].some((id) => v.href === `Goukie-detail.html?id=${id}`)),
+  'Le 67 / Le 48 / Le 80 ne sont plus en vedette',
 );
 
 // -- 1d) Aucune image cassee sur tout le catalogue, archive ouverte comprise
@@ -117,7 +118,7 @@ for (const id of ['le-88', 'le-79', 'le-22']) {
 const gourmetsCards = await s.page.$$eval('#les-gourmets .Goukie-card', (els) => els.map((a) => a.getAttribute('href')));
 check(!gourmetsCards.includes('Goukie-detail.html?id=le-88'), 'Le 88 ne figure plus dans Les Gourmets');
 
-await s.page.screenshot({ path: 'verify/captures/catalogue-octobre.png', fullPage: true });
+await s.page.screenshot({ path: 'verify/captures/catalogue-novembre.png', fullPage: true });
 await s.page.locator('#les-allies').screenshot({ path: 'verify/captures/allies-section.png' });
 
 // ============================================================ 2) FICHES

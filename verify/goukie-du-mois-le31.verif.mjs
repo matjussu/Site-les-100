@@ -1,8 +1,9 @@
 // Verif-kit v2 - ordre 2026-11-01-1805 (novembre : Le 31 goukie du mois, Geant
 // Insolites, epicerie a 5 produits). Adapte de goukie-du-mois-le67 : Le 31 devient
 // le goukie du mois (Le 09 reste goukie de saison), Le 67 descend dans l'archive
-// des mois. Ingredients du Le 31 volontairement vides (decision Matteo 13961,
-// recette a confirmer par la cliente) : le bloc ingredients doit etre masque.
+// des mois. Ingredients du Le 31 : vides le 01/11 (decision Matteo 13961), puis
+// fournis par la cliente le meme soir (ordre 2026-11-01-1910) : bloc affiche.
+// Descriptifs Almond / Peanut Butter remplaces par ceux de la cliente (meme ordre).
 // Serveur statique python http.server, harness du kit.
 //
 // Levier de falsification (regle 9) : SABOTAGE_VERIF=1 altere les MESURES lues
@@ -138,8 +139,12 @@ check(
   le31.desc === "Un Goukie aux douces saveurs d'automne, avec une pâte à la pumpkin délicatement parfumée aux épices Pumpkin Spice et un cœur fondant de Pumpkin Butter maison.",
   'Le 31 : description de Matteo mot pour mot',
 );
-check(saboter(le31.ingredients, ['courge bio']).length === 0, `Le 31 : aucun ingredient (${le31.ingredients.length})`);
-check(saboter(le31.blocVisible, true) === false, 'Le 31 : bloc "Ingredients principaux" masque (pas de titre orphelin)');
+check(
+  JSON.stringify(saboter(le31.ingredients, [])) === JSON.stringify(
+    ['Butternut', 'Farine de riz', 'Sucre de canne non raffiné', 'Compote de pomme', 'Pomme bio', 'Épices de Noël']),
+  `Le 31 : 6 ingredients de la cliente, dans l'ordre (${le31.ingredients.join(' | ')})`,
+);
+check(saboter(le31.blocVisible, false) === true, 'Le 31 : bloc "Ingredients principaux" affiche');
 check(le31.imgSrc?.endsWith('goukie_images/31.webp') && le31.imgW === 400, `Le 31 : image 31.webp peinte (${le31.imgSrc}, ${le31.imgW})`);
 check(le31.thumbs === 2, `Le 31 : 2 vignettes (${le31.thumbs})`);
 check(
@@ -170,9 +175,13 @@ const attendu = {
     prov: "Les courges bio proviennent de La ferme de l'horizon à Saint-Leu d'Esserent" },
   'pear-butter': { img: 'pear_butter.webp', ingr: ['Poires bio', 'Sucre muscovado bio', 'Épices bio (cardamome et clous de girofle)'],
     prov: 'Les poires bio proviennent de La Pommeraie de Chaussoy-Epagny', desc: /cardamome.*Les pots font 220 ml\.$/ },
-  'almond-butter': { img: 'almond_butter.webp', ingr: ['Amandes bio'], prov: null, desc: /^100% d'amande bio$/ },
-  'peanut-butter': { img: 'peanut_butter.webp', ingr: ['Cacahuètes bio'], prov: null, desc: /^100% de cacahuètes bio$/ },
+  'almond-butter': { img: 'almond_butter.webp', ingr: ['Amandes bio'], prov: null, desc: /^Un beurre d'amande artisanal, préparé avec des ingrédients 100 % bio, pour savourer toute la douceur de l'amande\.$/ },
+  'peanut-butter': { img: 'peanut_butter.webp', ingr: ['Cacahuètes bio'], prov: null, desc: /^Un beurre de cacahuète artisanal, composé à 100 % de cacahuètes bio, pour retrouver toute leur saveur dans une cuillère gourmande\.$/ },
 };
+// Texte des cards de epicerie.html, lu avant les fiches pour comparer les descriptifs.
+await gotoWithRetry(s.page, `${srv.baseUrl}/epicerie.html`, () => !!document.querySelector('#epicerie .Goukie-card'));
+const cartesTexte = Object.fromEntries(await s.page.$$eval('#epicerie .Goukie-card', (els) =>
+  els.map((a) => [a.getAttribute('href').split('id=')[1], a.querySelector('p')?.textContent.replace(/\s+/g, ' ').trim()])));
 for (const [id, a] of Object.entries(attendu)) {
   const f = await lireFiche(id);
   console.log(`DETAIL ${id} =>`, JSON.stringify({ ...f, desc: f.desc?.slice(0, 60) }));
@@ -181,7 +190,11 @@ for (const [id, a] of Object.entries(attendu)) {
   check(JSON.stringify(f.ingredients) === JSON.stringify(a.ingr), `${id} : ingredients (${f.ingredients.join(' | ')})`);
   check(saboter(f.provenance, 'Les x proviennent de : y') === a.prov, `${id} : carte provenance (${f.provenance})`);
   check(f.imgSrc === `goukie_images/${a.img}` && f.imgW > 0, `${id} : photo ${a.img} peinte (${f.imgSrc}, ${f.imgW})`);
-  if (a.desc) check(a.desc.test(f.desc || ''), `${id} : descriptif`);
+  if (a.desc) check(a.desc.test(saboter(f.desc || '', '100% bio')), `${id} : descriptif`);
+  // Pear : la card ne reprend que la 1re phrase (comme Apple / Pumpkin) ; Almond / Peanut : texte entier.
+  if (['almond-butter', 'peanut-butter'].includes(id)) {
+    check(a.desc.test(saboter(cartesTexte[id] || '', '100% bio.')), `${id} : meme descriptif sur la card epicerie`);
+  }
   check(f.blocVisible, `${id} : bloc ingredients visible`);
   await s.page.screenshot({ path: `verify/captures/fiche-${id}.png` });
 }

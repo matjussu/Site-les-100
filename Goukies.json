@@ -1342,7 +1342,14 @@
       "goukie_images/31-2.webp"
     ],
     "categorie": "insolites",
-    "ingredients": [],
+    "ingredients": [
+      "Butternut",
+      "Farine de riz",
+      "Sucre de canne non raffiné",
+      "Compote de pomme",
+      "Pomme bio",
+      "Épices de Noël"
+    ],
     "prix": {
       "petit": null,
       "moyen": 5.5,
@@ -1692,7 +1699,7 @@
   {
     "id": "almond-butter",
     "nom": "Almond Butter",
-    "description": "100% d'amande bio",
+    "description": "Un beurre d'amande artisanal, préparé avec des ingrédients 100 % bio, pour savourer toute la douceur de l'amande.",
     "images": [
       "goukie_images/almond_butter.webp"
     ],
@@ -1732,7 +1739,7 @@
   {
     "id": "peanut-butter",
     "nom": "Peanut Butter",
-    "description": "100% de cacahuètes bio",
+    "description": "Un beurre de cacahuète artisanal, composé à 100 % de cacahuètes bio, pour retrouver toute leur saveur dans une cuillère gourmande.",
     "images": [
       "goukie_images/peanut_butter.webp"
     ],

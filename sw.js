@@ -1,5 +1,5 @@
 // Version du cache (à incrémenter à chaque déploiement majeur)
-const CACHE_NAME = 'les100-cache-v9';
+const CACHE_NAME = 'les100-cache-v10';
 
 // Ressources à mettre en cache immédiatement (fallback hors-ligne)
 const CACHE_URLS = [

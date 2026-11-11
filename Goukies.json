@@ -150,13 +150,13 @@
     },
     "format_mini": {
       "unite": 2.5,
-      "x2": 4.5,
-      "x3": 6.5,
-      "x6": 12.5,
-      "x9": 18.0,
-      "x12": 24.0,
-      "x18": 35.0,
-      "x24": 47.0
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
     },
     "format_standard": {
       "unite": null,
@@ -196,11 +196,11 @@
     },
     "format_mini": {
       "x1": 3.0,
-      "x2": 5.0,
-      "x3": 8.0,
-      "x6": 14.0,
+      "x2": null,
+      "x3": null,
+      "x6": null,
       "x9": null,
-      "x10": 23.0,
+      "x10": null,
       "x12": null,
       "x18": null,
       "x24": null
@@ -245,13 +245,13 @@
     },
     "format_mini": {
       "unite": 2.5,
-      "x2": 4.5,
-      "x3": 6.5,
-      "x6": 12.5,
-      "x9": 18.0,
-      "x12": 24.0,
-      "x18": 35.0,
-      "x24": 47.0
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
     },
     "format_standard": {
       "unite": null,
@@ -292,11 +292,11 @@
     },
     "format_mini": {
       "x1": 3.0,
-      "x2": 5.0,
-      "x3": 8.0,
-      "x6": 14.0,
+      "x2": null,
+      "x3": null,
+      "x6": null,
       "x9": null,
-      "x10": 23.0,
+      "x10": null,
       "x12": null,
       "x18": null,
       "x24": null
@@ -339,11 +339,11 @@
     },
     "format_mini": {
       "x1": 3.0,
-      "x2": 5.0,
-      "x3": 8.0,
-      "x6": 14.0,
+      "x2": null,
+      "x3": null,
+      "x6": null,
       "x9": null,
-      "x10": 23.0,
+      "x10": null,
       "x12": null,
       "x18": null,
       "x24": null
@@ -435,11 +435,11 @@
     },
     "format_mini": {
       "x1": 3.0,
-      "x2": 5.0,
-      "x3": 8.0,
-      "x6": 14.0,
+      "x2": null,
+      "x3": null,
+      "x6": null,
       "x9": null,
-      "x10": 23.0,
+      "x10": null,
       "x12": null,
       "x18": null,
       "x24": null
@@ -532,11 +532,11 @@
     },
     "format_mini": {
       "x1": 3.0,
-      "x2": 5.0,
-      "x3": 8.0,
-      "x6": 14.0,
+      "x2": null,
+      "x3": null,
+      "x6": null,
       "x9": null,
-      "x10": 23.0,
+      "x10": null,
       "x12": null,
       "x18": null,
       "x24": null
@@ -580,13 +580,13 @@
     },
     "format_mini": {
       "unite": 2.5,
-      "x2": 4.5,
-      "x3": 6.5,
-      "x6": 12.5,
-      "x9": 18.0,
-      "x12": 24.0,
-      "x18": 35.0,
-      "x24": 47.0
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
     },
     "format_standard": {
       "unite": 4.5,
@@ -716,11 +716,11 @@
     },
     "format_mini": {
       "x1": 3.0,
-      "x2": 5.0,
-      "x3": 8.0,
-      "x6": 14.0,
+      "x2": null,
+      "x3": null,
+      "x6": null,
       "x9": null,
-      "x10": 23.0,
+      "x10": null,
       "x12": null,
       "x18": null,
       "x24": null
@@ -808,11 +808,11 @@
     },
     "format_mini": {
       "x1": 3.0,
-      "x2": 5.0,
-      "x3": 8.0,
-      "x6": 14.0,
+      "x2": null,
+      "x3": null,
+      "x6": null,
       "x9": null,
-      "x10": 23.0,
+      "x10": null,
       "x12": null,
       "x18": null,
       "x24": null
@@ -902,11 +902,11 @@
     },
     "format_mini": {
       "x1": 3.0,
-      "x2": 5.0,
-      "x3": 8.0,
-      "x6": 14.0,
+      "x2": null,
+      "x3": null,
+      "x6": null,
       "x9": null,
-      "x10": 23.0,
+      "x10": null,
       "x12": null,
       "x18": null,
       "x24": null
@@ -943,13 +943,13 @@
     },
     "format_mini": {
       "unite": 2.5,
-      "x2": 4.5,
-      "x3": 6.5,
-      "x6": 12.5,
-      "x9": 18.0,
-      "x12": 24.0,
-      "x18": 35.0,
-      "x24": 47.0
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
     },
     "format_standard": {
       "unite": null,
@@ -987,13 +987,13 @@
     },
     "format_mini": {
       "unite": 2.5,
-      "x2": 4.5,
-      "x3": 6.5,
-      "x6": 12.5,
-      "x9": 18.0,
-      "x12": 24.0,
-      "x18": 35.0,
-      "x24": 47.0
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
     },
     "format_standard": {
       "unite": null,
@@ -1030,13 +1030,13 @@
     },
     "format_mini": {
       "unite": 2.5,
-      "x2": 4.5,
-      "x3": 6.5,
-      "x6": 12.5,
-      "x9": 18.0,
-      "x12": 24.0,
-      "x18": 35.0,
-      "x24": 47.0
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
     },
     "format_standard": {
       "unite": null,
@@ -1077,11 +1077,11 @@
     },
     "format_mini": {
       "x1": 3.0,
-      "x2": 5.0,
-      "x3": 8.0,
-      "x6": 14.0,
+      "x2": null,
+      "x3": null,
+      "x6": null,
       "x9": null,
-      "x10": 23.0,
+      "x10": null,
       "x12": null,
       "x18": null,
       "x24": null
@@ -1126,13 +1126,13 @@
     },
     "format_mini": {
       "unite": 2.5,
-      "x2": 4.5,
-      "x3": 6.5,
-      "x6": 12.5,
-      "x9": 18.0,
-      "x12": 24.0,
-      "x18": 35.0,
-      "x24": 47.0
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
     },
     "format_standard": {
       "unite": 5.0,
@@ -1174,13 +1174,13 @@
     },
     "format_mini": {
       "unite": 2.5,
-      "x2": 4.5,
-      "x3": 6.5,
-      "x6": 12.5,
-      "x9": 18.0,
-      "x12": 24.0,
-      "x18": 35.0,
-      "x24": 47.0
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
     },
     "format_standard": {
       "unite": 5.0,
@@ -1220,13 +1220,13 @@
     },
     "format_mini": {
       "unite": 2.5,
-      "x2": 4.5,
-      "x3": 6.5,
-      "x6": 12.5,
-      "x9": 18.0,
-      "x12": 24.0,
-      "x18": 35.0,
-      "x24": 47.0
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
     },
     "format_standard": {
       "unite": 5.0,
@@ -1846,13 +1846,13 @@
     },
     "format_mini": {
       "unite": 2.5,
-      "x2": 4.5,
-      "x3": 6.5,
-      "x6": 12.5,
-      "x9": 18.0,
-      "x12": 24.0,
-      "x18": 35.0,
-      "x24": 47.0
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
     },
     "format_standard": {
       "unite": null,
@@ -1892,13 +1892,13 @@
     },
     "format_mini": {
       "unite": 2.5,
-      "x2": 4.5,
-      "x3": 6.5,
-      "x6": 12.5,
-      "x9": 18.0,
-      "x12": 24.0,
-      "x18": 35.0,
-      "x24": 47.0
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
     },
     "format_standard": {
       "unite": null,
@@ -1940,13 +1940,13 @@
     },
     "format_mini": {
       "unite": 2.5,
-      "x2": 4.5,
-      "x3": 6.5,
-      "x6": 12.5,
-      "x9": 18.0,
-      "x12": 24.0,
-      "x18": 35.0,
-      "x24": 47.0
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
     },
     "format_standard": {
       "unite": null,
@@ -2165,13 +2165,13 @@
     },
     "format_mini": {
       "unite": 2.5,
-      "x2": 4.5,
-      "x3": 6.5,
-      "x6": 12.5,
-      "x9": 18.0,
-      "x12": 24.0,
-      "x18": 35.0,
-      "x24": 47.0
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
     },
     "format_standard": {
       "unite": null,
@@ -2212,13 +2212,13 @@
     },
     "format_mini": {
       "unite": 2.5,
-      "x2": 4.5,
-      "x3": 6.5,
-      "x6": 12.5,
-      "x9": 18.0,
-      "x12": 24.0,
-      "x18": 35.0,
-      "x24": 47.0
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
     },
     "format_standard": {
       "unite": null,

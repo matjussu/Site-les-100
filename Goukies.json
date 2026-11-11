@@ -31,8 +31,8 @@
     },
     "format_gourmet": {
       "unite": 8.0,
-      "x3": 23.0,
-      "x5": 39.0
+      "x3": null,
+      "x5": null
     },
     "format_geant": {
       "parts_4_6": null,
@@ -74,8 +74,8 @@
     },
     "format_gourmet": {
       "unite": 8.0,
-      "x3": 23.0,
-      "x5": 39.0
+      "x3": null,
+      "x5": null
     },
     "format_geant": {
       "parts_4_6": null,
@@ -116,8 +116,8 @@
     },
     "format_gourmet": {
       "unite": 8.0,
-      "x3": 23.0,
-      "x5": 39.0
+      "x3": null,
+      "x5": null
     },
     "format_geant": {
       "parts_4_6": null,
@@ -164,8 +164,8 @@
     },
     "format_gourmet": {
       "unite": 5.0,
-      "x3": 14.0,
-      "x5": 23.0
+      "x3": null,
+      "x5": null
     },
     "format_geant": {
       "parts_4_6": null,
@@ -259,8 +259,8 @@
     },
     "format_gourmet": {
       "unite": 5.0,
-      "x3": 14.0,
-      "x5": 23.0
+      "x3": null,
+      "x5": null
     },
     "format_geant": {
       "parts_4_6": null,
@@ -402,8 +402,8 @@
     },
     "format_gourmet": {
       "unite": 5.0,
-      "x3": 14.0,
-      "x5": 23.0
+      "x3": null,
+      "x5": null
     },
     "format_geant": {
       "parts_4_6": null,
@@ -498,8 +498,8 @@
     },
     "format_gourmet": {
       "unite": 5.0,
-      "x3": 14.0,
-      "x5": 23.0
+      "x3": null,
+      "x5": null
     },
     "format_geant": {
       "parts_4_6": null,
@@ -547,8 +547,8 @@
     },
     "format_gourmet": {
       "unite": 5.0,
-      "x3": 14.0,
-      "x5": 23.0
+      "x3": null,
+      "x5": null
     },
     "format_geant": {
       "parts_4_6": null,
@@ -681,8 +681,8 @@
     },
     "format_gourmet": {
       "unite": 5.0,
-      "x3": 14.0,
-      "x5": 23.0
+      "x3": null,
+      "x5": null
     },
     "format_geant": {
       "parts_4_6": null,
@@ -755,7 +755,7 @@
     ],
     "prix": {
       "petit": null,
-      "moyen": 5.0,
+      "moyen": 5.5,
       "grand": null
     },
     "format_mini": {
@@ -773,9 +773,9 @@
       "x4": null
     },
     "format_gourmet": {
-      "unite": 5.0,
-      "x3": 14.0,
-      "x5": 23.0
+      "unite": 5.5,
+      "x3": null,
+      "x5": null
     },
     "format_geant": {
       "parts_4_6": null,
@@ -848,7 +848,7 @@
     ],
     "prix": {
       "petit": null,
-      "moyen": 5.0,
+      "moyen": 5.5,
       "grand": null
     },
     "format_mini": {
@@ -866,9 +866,9 @@
       "x4": null
     },
     "format_gourmet": {
-      "unite": 5.0,
-      "x3": 14.0,
-      "x5": 23.0
+      "unite": 5.5,
+      "x3": null,
+      "x5": null
     },
     "format_geant": {
       "parts_4_6": null,
@@ -957,8 +957,8 @@
     },
     "format_gourmet": {
       "unite": 5.5,
-      "x3": 15.5,
-      "x5": 26.0
+      "x3": null,
+      "x5": null
     },
     "format_geant": {
       "parts_4_6": null,
@@ -1001,8 +1001,8 @@
     },
     "format_gourmet": {
       "unite": 5.5,
-      "x3": 15.5,
-      "x5": 26.0
+      "x3": null,
+      "x5": null
     },
     "format_geant": {
       "parts_4_6": null,
@@ -1044,8 +1044,8 @@
     },
     "format_gourmet": {
       "unite": 5.5,
-      "x3": 15.5,
-      "x5": 26.0
+      "x3": null,
+      "x5": null
     },
     "format_geant": {
       "parts_4_6": null,
@@ -1323,8 +1323,8 @@
     },
     "format_gourmet": {
       "unite": 5.5,
-      "x3": 15.5,
-      "x5": 26.0
+      "x3": null,
+      "x5": null
     },
     "format_geant": {
       "parts_4_6": null,
@@ -1368,8 +1368,8 @@
     },
     "format_gourmet": {
       "unite": 5.5,
-      "x3": 15.5,
-      "x5": 26.0
+      "x3": null,
+      "x5": null
     },
     "format_geant": {
       "parts_4_6": null,
@@ -1412,8 +1412,8 @@
     },
     "format_gourmet": {
       "unite": 5.5,
-      "x3": 15.5,
-      "x5": 26.0
+      "x3": null,
+      "x5": null
     },
     "format_geant": {
       "parts_4_6": null,
@@ -1553,8 +1553,8 @@
     },
     "format_gourmet": {
       "unite": 5.5,
-      "x3": 15.5,
-      "x5": 26.0
+      "x3": null,
+      "x5": null
     },
     "format_geant": {
       "parts_4_6": null,
@@ -1709,7 +1709,7 @@
     ],
     "prix": {
       "petit": null,
-      "moyen": 6.5,
+      "moyen": 10.0,
       "grand": null
     },
     "format_mini": {
@@ -1749,7 +1749,7 @@
     ],
     "prix": {
       "petit": null,
-      "moyen": 6.5,
+      "moyen": 7.0,
       "grand": null
     },
     "format_mini": {
@@ -1814,8 +1814,8 @@
     },
     "format_gourmet": {
       "unite": 5.0,
-      "x3": 14.0,
-      "x5": 23.0
+      "x3": null,
+      "x5": null
     },
     "format_geant": {
       "parts_4_6": null,
@@ -1860,8 +1860,8 @@
     },
     "format_gourmet": {
       "unite": 5.5,
-      "x3": 15.5,
-      "x5": 26.0
+      "x3": null,
+      "x5": null
     },
     "format_geant": {
       "parts_4_6": null,
@@ -1906,8 +1906,8 @@
     },
     "format_gourmet": {
       "unite": 5.5,
-      "x3": 15.5,
-      "x5": 26.0
+      "x3": null,
+      "x5": null
     },
     "format_geant": {
       "parts_4_6": null,
@@ -1954,8 +1954,8 @@
     },
     "format_gourmet": {
       "unite": 5.5,
-      "x3": 15.5,
-      "x5": 26.0
+      "x3": null,
+      "x5": null
     },
     "format_geant": {
       "parts_4_6": null,
@@ -2043,8 +2043,8 @@
     },
     "format_gourmet": {
       "unite": 5.5,
-      "x3": 15.5,
-      "x5": 26.0
+      "x3": null,
+      "x5": null
     },
     "format_geant": {
       "parts_4_6": null,
@@ -2087,8 +2087,8 @@
     },
     "format_gourmet": {
       "unite": 5.5,
-      "x3": 15.5,
-      "x5": 26.0
+      "x3": null,
+      "x5": null
     },
     "format_geant": {
       "parts_4_6": null,
@@ -2132,8 +2132,8 @@
     },
     "format_gourmet": {
       "unite": 5.5,
-      "x3": 15.5,
-      "x5": 26.0
+      "x3": null,
+      "x5": null
     },
     "format_geant": {
       "parts_4_6": null,
@@ -2179,8 +2179,8 @@
     },
     "format_gourmet": {
       "unite": 5.5,
-      "x3": 15.5,
-      "x5": 26.0
+      "x3": null,
+      "x5": null
     },
     "format_geant": {
       "parts_4_6": null,
@@ -2226,8 +2226,8 @@
     },
     "format_gourmet": {
       "unite": 5.5,
-      "x3": 15.5,
-      "x5": 26.0
+      "x3": null,
+      "x5": null
     },
     "format_geant": {
       "parts_4_6": null,
@@ -2273,8 +2273,8 @@
     },
     "format_gourmet": {
       "unite": 5.0,
-      "x3": 14.0,
-      "x5": 23.0
+      "x3": null,
+      "x5": null
     },
     "format_geant": {
       "parts_4_6": null,

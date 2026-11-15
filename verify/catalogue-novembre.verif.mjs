@@ -213,7 +213,7 @@ for (const id of ['le-08', 'le-06', 'le-18', 'le-08-m', 'le-06m', 'le-18m']) {
 }
 
 // -- 2c) Minis : poids unitaire affiche
-for (const id of ['le-03m', 'le-04m', 'le-06m', '10mini', 'le-18m', 'le-27m', 'le-08-m', 'le-11m', 'le-12']) {
+for (const id of ['le-03m', 'le-04m', 'le-06m', '10mini', 'le-18m', 'le-27m', 'le-08-m', 'le-11m']) {
   const f = await lireFiche(id);
   const poids = saboter(f.poids, 'Poids : 100 g');
   check(poids === 'Poids : 50 g', `${id} : poids 50 g (${poids})`);

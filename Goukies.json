@@ -1056,32 +1056,31 @@
   {
     "id": "le-12",
     "nom": "Le 12",
-    "description": "Un cœur pistache au centre d'un Goukie moelleux aux pépites. Notre version du Goukie Le 10 avec des pépites de chocolat en plus.",
+    "description": "Sésame noir, charbon végétal & cœur citron.",
     "images": [
-      "image/Goukie PNG/le 12 Pistache.png"
+      "goukie_images/12.webp",
+      "goukie_images/12-2.webp"
     ],
-    "categorie": "mini",
+    "categorie": "allies",
     "ingredients": [
       "Farine de riz bio",
-      "Pépites de chocolat noir",
-      "Crème de pistache",
-      "Pistaches bio concassées",
-      "Sucre de canne blond bio",
-      "Boisson végétale",
-      "Pomme bio"
+      "Sucre de canne blond bio non raffiné",
+      "Compote de pomme bio maison",
+      "Sésame noir",
+      "Charbon végétal",
+      "Citron"
     ],
     "prix": {
       "petit": null,
-      "moyen": 3.0,
+      "moyen": 6.0,
       "grand": null
     },
     "format_mini": {
-      "x1": 3.0,
+      "unite": null,
       "x2": null,
       "x3": null,
       "x6": null,
       "x9": null,
-      "x10": null,
       "x12": null,
       "x18": null,
       "x24": null
@@ -1091,7 +1090,7 @@
       "x4": null
     },
     "format_gourmet": {
-      "unite": null,
+      "unite": 6.0,
       "x3": null,
       "x5": null
     },
@@ -1099,7 +1098,7 @@
       "parts_4_6": null,
       "parts_6_8": null
     },
-    "poids_g": 50
+    "poids_g": 100
   },
   {
     "id": "octobre",
@@ -1750,6 +1749,49 @@
     "prix": {
       "petit": null,
       "moyen": 7.0,
+      "grand": null
+    },
+    "format_mini": {
+      "unite": null,
+      "x2": null,
+      "x3": null,
+      "x6": null,
+      "x9": null,
+      "x12": null,
+      "x18": null,
+      "x24": null
+    },
+    "format_standard": {
+      "unite": null,
+      "x4": null
+    },
+    "format_gourmet": {
+      "unite": null,
+      "x3": null,
+      "x5": null
+    },
+    "format_geant": {
+      "parts_4_6": null,
+      "parts_6_8": null
+    }
+  },
+  {
+    "id": "apple-detox",
+    "nom": "Apple Detox",
+    "description": "Une seconde vie pour l’eau de nos compotes bio ! Un concentré artisanal associant la douceur de la pomme à la fraîcheur du citron, au gingembre et au curcuma. 100 % bio, sans sucre ajouté. À savourer pur en shot ou dilué, chaud ou froid, selon vos envies. 1 pot = environ 4 shots.",
+    "images": [
+      "goukie_images/apple_detox.webp"
+    ],
+    "categorie": "epicerie",
+    "ingredients": [
+      "Eau de pomme",
+      "Gingembre bio",
+      "Citron bio",
+      "Curcuma bio"
+    ],
+    "prix": {
+      "petit": null,
+      "moyen": 5.5,
       "grand": null
     },
     "format_mini": {
